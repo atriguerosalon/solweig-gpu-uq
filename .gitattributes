@@ -1,0 +1,4 @@
+# LF everywhere: the code runs in WSL/Linux, and CRLF breaks shell scripts there
+* text=auto eol=lf
+*.png binary
+*.npz binary

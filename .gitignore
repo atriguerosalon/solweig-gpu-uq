@@ -1,0 +1,12 @@
+data/
+runs/
+runs_*/
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+# meeting context and other private notes
+docs/internal/
+# large or regenerable figure data; summary PNGs and JSON reports are kept
+figures/profile/*.npz
+figures/profile/cprofile_day.prof
