@@ -7,6 +7,9 @@ SOLWEIG has no uncertainty quantification. This repo asks the first question on 
 ## What it does
 
 - **One at a time:** nine inputs, each set to a low and a high value (18 runs of 24 hours).
+- **Morris screening:** the same nine inputs changed together along 10 random trajectories (100 runs), with indices for domain means, sunlit and shaded ground, the area in very strong heat stress, and per pixel.
+- **Emulator:** a per-pixel linear fit on the Morris runs, cross-validated, then used for Monte Carlo uncertainty maps.
+- **Spatial air temperature:** SOLWEIG-GPU uses one air temperature for the whole domain. This recomputes UTCI with a spatially varying field to see how much that assumption matters. It needs no extra model runs.
 
 Perturbations are context managers that patch module constants, the land-cover table or the met file, and always restore them, so all cases run in one process and share the cached sky view factor.
 
@@ -27,7 +30,12 @@ Data: the SOLWEIG-GPU v2.0 sample (Austin, Texas, 2 m), [Zenodo 21081622](https:
 python scripts/crop_domain.py --src data/austin/Input_rasters --dst data/austin_crop --size 1000
 python scripts/run_all.py --rasters data/austin_crop --met data/ownmet_Forcing_data.txt
 python scripts/make_figures.py --rasters data/austin_crop --hour 14
+python scripts/run_morris.py --rasters data/austin_crop --met data/ownmet_Forcing_data.txt   # resumable, about 1 h
+python scripts/analyse_morris.py --runs runs_morris --out figures
+python scripts/spatial_ta.py --runs runs --out figures
 ```
+
+For the whole day, run to 23:00 with every hour saved (`run_morris.py --hour 23 --all-hours --runs runs_morris_day`), then `scripts/analyse_morris_day.py`.
 
 Each script's `--help` lists its arguments. Cost on an RTX 4070 Laptop GPU: about 4.7 min per 24-hour run of 2 x 2 km, once the sky view factor is cached.
 
