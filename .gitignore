@@ -10,3 +10,5 @@ docs/internal/
 # large or regenerable figure data; summary PNGs and JSON reports are kept
 figures/profile/*.npz
 figures/profile/cprofile_day.prof
+# raw profiler output (contains local paths)
+figures/profile/cprofile_day.txt
