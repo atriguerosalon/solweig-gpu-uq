@@ -10,6 +10,8 @@ SOLWEIG has no uncertainty quantification. This repo asks the first question on 
 - **Morris screening:** the same nine inputs changed together along 10 random trajectories (100 runs), with indices for domain means, sunlit and shaded ground, the area in very strong heat stress, and per pixel.
 - **Emulator:** a per-pixel linear fit on the Morris runs, cross-validated, then used for Monte Carlo uncertainty maps.
 - **Spatial air temperature:** SOLWEIG-GPU uses one air temperature for the whole domain. This recomputes UTCI with a spatially varying field to see how much that assumption matters. It needs no extra model runs.
+- **Los Angeles, against measurements:** a 2 x 2 km, 2 m domain for Pacoima built from public data (USGS 3DEP, LA County building outlines, Meta/WRI 1 m canopy height, ESA WorldCover), with the 30 July 2019 forcing from the Van Nuys airport station and ERA5 radiation. Regular (albedo 0.07) and coated (0.25) pavement are compared with the Tmrt that Middel et al. (2020, ERL 15, 064016) measured over both that day, with SOLWEIG's default ground heating and with heating set to the measured surface temperatures.
+- **Heat kept after sunset (experimental):** SOLWEIG drops the ground to air temperature at sunset. An opt-in patch lets the daytime excess decay instead, to see how much of the evening gap to the measurements that explains.
 
 Perturbations are context managers that patch module constants, the land-cover table or the met file, and always restore them, so all cases run in one process and share the cached sky view factor.
 
@@ -19,7 +21,7 @@ Linux or WSL with an NVIDIA GPU. GDAL is installed from conda-forge.
 
 ```bash
 bash scripts/setup_env.sh            # micromamba env "solweig": Python 3.11, GDAL, PyTorch (CUDA 12.1), solweig-gpu 2.0.0, SALib
-micromamba run -n solweig pytest     # 6 tests, CPU only, no data or network needed
+micromamba run -n solweig pytest     # 11 tests, CPU only, no data or network needed
 ```
 
 Data: the SOLWEIG-GPU v2.0 sample (Austin, Texas, 2 m), [Zenodo 21081622](https://zenodo.org/records/21081622). Only `Input_rasters.zip` and `ownmet_Forcing_data.txt` are needed; put them in `data/`.
@@ -36,6 +38,17 @@ python scripts/spatial_ta.py --runs runs --out figures
 ```
 
 For the whole day, run to 23:00 with every hour saved (`run_morris.py --hour 23 --all-hours --runs runs_morris_day`), then `scripts/analyse_morris_day.py`.
+
+Los Angeles (the first two download public data, no account or key needed):
+
+```bash
+python scripts/build_la_domain.py --lat 34.2735 --lon -118.410 --size 1000 --res 2 --out data/la/pacoima
+python scripts/make_la_met.py --date 2019-07-30 --station VNY --lat 34.2735 --lon -118.41 --out data/la/met_pacoima_20190730.txt
+python scripts/run_la_pavement.py --rasters data/la/pacoima --met data/la/met_pacoima_20190730.txt
+python scripts/analyse_la_pavement.py --runs runs_la --rasters data/la/pacoima --out figures
+python scripts/run_la_storage.py --runs runs_la
+python scripts/analyse_la_storage.py --runs runs_la --rasters data/la/pacoima --out figures
+```
 
 Each script's `--help` lists its arguments. Cost on an RTX 4070 Laptop GPU: about 4.7 min per 24-hour run of 2 x 2 km, once the sky view factor is cached.
 
