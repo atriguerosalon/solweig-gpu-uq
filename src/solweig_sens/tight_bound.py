@@ -14,6 +14,23 @@ masks and hourly Shadow, Tmrt and UTCI, three repeats). Sky view factor 106 -> 4
 21.9 -> 19.8 s on an RTX 4070 laptop, with fast functions and compact masks. The saving grows
 with the city's elevation and is nil at sea level.
 
+Why it is exact, in more detail. A skipped step has dropped more than the height range, so for
+every source cell q and target cell p, ``a[q] - dz`` and ``vegdem[q] - dz`` are below ``a[p]``:
+``f = max(f, temp)`` keeps f (f starts at a), and the strict tests ``> a`` (sh, fabovea,
+gabovea and the "last" variants) are all false, so vegsh and sh do not change. ``shvoveg`` is a
+maximum, not a test: it only matters where vegsh > 0, and there it already holds a value no
+more than one step's drop below ``a[p]``; the loop always runs the first step past the bound,
+so every skipped step's value is lower still. ``vbshvegsh`` keeps counting, but is turned into
+0/1 at the end, and a cell can only be non-zero there if it was before the skipped steps. Ties
+cannot flip a strict comparison, and the margin, one step's drop (about 1 cm even with the sun
+0.5 degrees above the horizon on 1 m pixels), is far above float32 rounding at these heights
+(0.00003 m at 400 m).
+
+Credit: the bound comes from Isma A. Di Carlo's fork of SOLWEIG-GPU
+(https://github.com/iadicarlo/SOLWEIG-GPU, commit 5932ef9, 8 Oct 2026), where it is part of a
+change that also alters results (sky-patch azimuths and vegetation shadows). Here it is applied
+alone to v2.0.0, where it changes nothing.
+
 It wraps the functions as they are installed when the block is entered, so enter it inside
 ``fast_solweig()`` (innermost), or the fast shadow function replaces the wrapper.
 """
