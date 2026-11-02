@@ -24,7 +24,7 @@ def main() -> None:
     import solweig_gpu.solweig as sw
     import solweig_gpu.utci_process as up
 
-    from solweig_sens import compact_masks, fast_gvf, fast_shadow, fast_sky, heat_storage
+    from solweig_sens import compact_masks, fast_gvf, fast_shadow, fast_sky, fast_sky_shadow, heat_storage
 
     def orig(fn):
         return textwrap.dedent(inspect.getsource(fn))
@@ -46,6 +46,8 @@ def main() -> None:
         ("C4", "compute_utci", orig(up.compute_utci), c4["compute_utci"], "diffsh computed on demand"),
         ("C5", "svf_calculator", orig(shadow_mod.svf_calculator), compact_masks.patched_svf_source("bits"),
          "build sky-patch masks compactly in the sky view factor step"),
+        ("C7", "shadow", orig(shadow_mod.shadow), fast_sky_shadow.patched_source(),
+         "sky-patch shadow steps without per-step syncs"),
     ]
     out_dir = ROOT / "docs" / "patches"
     out_dir.mkdir(parents=True, exist_ok=True)

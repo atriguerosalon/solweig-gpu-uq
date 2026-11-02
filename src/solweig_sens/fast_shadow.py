@@ -28,8 +28,11 @@ DZ = "dz = (ds * index) * tanaltitudebyscale"
 
 
 def _shadow_steps(amaxvalue, azimuth, signsin, signcos, tanaz, dssin, dscos, tanaltbyscale,
-                  sizex, sizey, p4, p34, p54, p74):
-    """Slice bounds and shadow heights for every step the original loop would run."""
+                  sizex, sizey, p4, p34, p54, p74, start=0):
+    """Slice bounds and shadow heights for every step the original loop would run.
+
+    ``start`` is the loop's first index: 0 here, 1 in the sky-patch loop (fast_sky_shadow.py).
+    """
     device = tanaz.device
     cond = bool((((p4 <= azimuth) & (azimuth < p34)) | ((p54 <= azimuth) & (azimuth < p74))).item())
     ds = dssin if cond else dscos
@@ -41,7 +44,7 @@ def _shadow_steps(amaxvalue, azimuth, signsin, signcos, tanaz, dssin, dscos, tan
     t, d, amax = float(tanaltbyscale), float(ds), float(amaxvalue)
     if t > 0 and d > 0 and math.isfinite(amax):
         kmax = min(kmax, int(math.ceil(max(amax, 0.0) / (d * t))) + 3)
-    index = torch.arange(kmax, device=device, dtype=torch.float32)
+    index = torch.arange(start, start + kmax, device=device, dtype=torch.float32)
     if cond:
         dy = signsin * index
         dx = -1 * signcos * torch.abs(torch.round(index / tanaz))

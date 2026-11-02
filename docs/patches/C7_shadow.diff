@@ -1,0 +1,56 @@
+--- solweig_gpu v2.0.0: shadow (original)
++++ solweig-sensitivity C7: shadow (sky-patch shadow steps without per-step syncs)
+@@ -77,31 +77,16 @@
+     gabovea = None
+     vegsh2 = None
+ 
+-    while (amaxvalue >= dz and torch.abs(dx) < sizex and torch.abs(dy) < sizey):
+-        if (pibyfour <= azimuth < threetimespibyfour or fivetimespibyfour <= azimuth < seventimespibyfour):
+-            dy = signsinazimuth * index
+-            dx = -1. * signcosazimuth * torch.abs(torch.round(index / tanazimuth))
+-            ds = dssin
+-        else:
+-            dy = signsinazimuth * torch.abs(torch.round(index * tanazimuth))
+-            dx = -1. * signcosazimuth * index
+-            ds = dscos
+-
+-        dz = ds * index * tanaltitudebyscale
++    _bush_any = bool(bush.max() > 0.)
++    _steps, _dzs = _shadow_steps(amaxvalue, azimuth, signsinazimuth, signcosazimuth, tanazimuth, dssin, dscos,
++                                 tanaltitudebyscale, sizex, sizey, pibyfour, threetimespibyfour,
++                                 fivetimespibyfour, seventimespibyfour, start=1)
++    for _k, (xc1, xc2, yc1, yc2, xp1, xp2, yp1, yp2) in enumerate(_steps):
++        dz = _dzs[_k]
+ 
+         tempvegdem.zero_()
+         tempvegdem2.zero_()
+         temp.zero_()
+-        absdx = torch.abs(dx)
+-        absdy = torch.abs(dy)
+-        xc1 = int((dx + absdx) / 2.)
+-        xc2 = int(sizex + (dx - absdx) / 2.)
+-        yc1 = int((dy + absdy) / 2.)
+-        yc2 = int(sizey + (dy - absdy) / 2.)
+-        xp1 = int(-((dx - absdx) / 2.))
+-        xp2 = int(sizex - (dx + absdx) / 2.)
+-        yp1 = int(-((dy - absdy) / 2.))
+-        yp2 = int(sizey - (dy + absdy) / 2.)
+ 
+         tempvegdem[xp1:xp2, yp1:yp2] = vegdem[xc1:xc2, yc1:yc2] - dz
+         tempvegdem2[xp1:xp2, yp1:yp2] = vegdem2[xc1:xc2, yc1:yc2] - dz
+@@ -127,11 +112,11 @@
+             vegsh = vegsh * (vegdem2 > a).float()
+             vbshvegsh.zero_()
+ 
+-        if bush.max() > 0. and torch.max(fabovea * bush) > 0.:
++        if _bush_any:  # same update, chosen on the GPU instead of read back every step
++            _hit = torch.max(fabovea * bush) > 0.
+             tempbush.zero_()
+-            tempbush[int(xp1):int(xp2), int(yp1):int(yp2)] = bush[int(xc1):int(xc2), int(yc1):int(yc2)] - dz
+-            g = torch.max(g, tempbush)
+-            g *= bushplant
++            tempbush[xp1:xp2, yp1:yp2] = bush[xc1:xc2, yc1:yc2] - dz
++            g = torch.where(_hit, torch.max(g, tempbush) * bushplant, g)
+ 
+         index += 1.
+ 
