@@ -26,6 +26,7 @@ import numpy as np  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from solweig_sens import plotstyle  # noqa: E402
 from solweig_sens.analysis import UTCI_VERY_STRONG, outdoor_mask  # noqa: E402
 
 
@@ -114,20 +115,25 @@ def main() -> None:
         m[outdoor] = v
         return m
 
-    fig, axes = plt.subplots(1, 3, figsize=(15, 4.9))
+    from osgeo import gdal
+
+    plotstyle.use()
+    px = abs(gdal.Open(str(args.runs / "rasters" / "Building_DSM.tif")).GetGeoTransform()[1])
+    fig, axes = plt.subplots(1, 3, figsize=(14, 4.9))
     for ax, data, title, cmap, label, lim in [
-        (axes[0], base_o, "Baseline UTCI, 14:00", "inferno", "°C", None),
-        (axes[1], std, "Spread of UTCI from input uncertainty (std)", "viridis", "°C", None),
-        (axes[2], p38, "Probability of very strong heat stress (UTCI ≥ 38 °C)", "RdBu_r", "probability", (0, 1)),
+        (axes[0], base_o, "UTCI at 14:00, defaults", "inferno", "UTCI (°C)", None),
+        (axes[1], std, "Uncertainty from the inputs", "viridis", "standard deviation of UTCI (°C)", None),
+        (axes[2], p38, "Chance of very strong heat stress", "RdBu_r", "P(UTCI ≥ 38 °C)", (0, 1)),
     ]:
         im = ax.imshow(to_map(data), cmap=cmap, vmin=None if lim is None else lim[0], vmax=None if lim is None else lim[1])
-        ax.set_title(title, fontsize=10)
-        fig.colorbar(im, ax=ax, shrink=0.75, label=label)
-        ax.set_xticks([])
-        ax.set_yticks([])
-    fig.suptitle("Linear emulator fitted on 100 SOLWEIG-GPU runs; inputs uniform over the assumed ranges", fontsize=9)
-    fig.tight_layout()
-    fig.savefig(args.out / "emulator_uq_maps.png", dpi=140)
+        ax.set_title(title)
+        fig.colorbar(im, ax=ax, shrink=0.8, label=label)
+        plotstyle.map_axes(ax)
+    plotstyle.scalebar(axes[0], px)
+    fig.text(0.5, -0.04, f"Austin sample. Per-pixel linear emulator fitted on the 100 Morris runs of SOLWEIG-GPU, "
+             f"then {n:,} Monte Carlo samples with the nine inputs uniform over their assumed ranges. White: roofs.",
+             ha="center", fontsize=8, color="0.35")
+    fig.savefig(args.out / "emulator_uq_maps.png")
     plt.close(fig)
 
 

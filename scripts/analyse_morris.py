@@ -20,6 +20,7 @@ import pandas as pd  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from solweig_sens import plotstyle  # noqa: E402
 from solweig_sens.analysis import outdoor_mask  # noqa: E402
 
 
@@ -79,21 +80,21 @@ def main() -> None:
           .sort_values("all", ascending=False).to_string())
 
     # mu* as bars, sigma as whiskers, sun and shade side by side.
+    plotstyle.use()
     order = df[df.region == "all"].sort_values("mu_star").input.tolist()
     y = np.arange(len(order))
-    fig, ax = plt.subplots(figsize=(7.5, 0.42 * len(order) + 1.4))
-    for dy, region, color, name in [(0.2, "sun", "#E45756", "sunlit"), (-0.2, "shade", "#4C78A8", "shaded")]:
+    fig, ax = plt.subplots(figsize=(7.5, 0.42 * len(order) + 1.6))
+    for dy, region, color, name in [(0.2, "sun", plotstyle.SUN, "sunlit"), (-0.2, "shade", plotstyle.SHADE, "shaded")]:
         sub = df[df.region == region].set_index("input").loc[order]
         ax.barh(y + dy, sub.mu_star, height=0.38, color=color, label=f"{name} ground")
         ax.errorbar(sub.mu_star, y + dy, xerr=[np.zeros(len(order)), sub.sigma], fmt="none",
                     ecolor="0.25", elinewidth=0.9, capsize=2)
-    ax.set_yticks(y, order)
-    ax.set_xlabel("μ*: mean |change in mean UTCI| per full input range (°C); whisker = σ")
-    ax.set_title("Morris screening, 14:00, 100 runs")
+    ax.set_yticks(y, [plotstyle.input_label(o) for o in order])
+    ax.set_xlabel("μ*: change in mean UTCI over the full input range (°C)")
+    ax.set_title("Morris screening, Austin sample, 14:00 (100 runs)")
     ax.grid(axis="x", alpha=0.3)
-    ax.legend(frameon=False, loc="lower right")
-    fig.tight_layout()
-    fig.savefig(args.out / "morris_mu_sigma.png", dpi=160)
+    ax.legend(frameon=False, loc="lower right", title="Whisker: σ (interactions)", title_fontsize=8)
+    fig.savefig(args.out / "morris_mu_sigma.png")
     plt.close(fig)
 
     # Per-pixel. Air temperature leads everywhere, so map the leading surface or body input
@@ -105,28 +106,36 @@ def main() -> None:
     lead_ta = 100 * (np.argmax(mu_px, axis=0)[outdoor] == labels.index("air temperature")).mean()
     dom = np.where(outdoor, np.array(surf)[np.argmax(mu_px[surf], axis=0)], -1)
     present = [p for p in surf if (dom == p).any()]
-    cmap = plt.get_cmap("tab10")
+    share = lambda m: 100 * m.sum() / outdoor.sum()  # noqa: E731
+    pct = lambda m: f"{share(m):.0f}%" if share(m) >= 0.5 else "<1%"  # noqa: E731
+    colors ={p: matplotlib.colors.to_rgb(plotstyle.INPUT_COLORS[labels[p]]) for p in present}
     img = np.ones(dom.shape + (3,))
     for p in present:
-        img[dom == p] = cmap(p)[:3]
-    img[~outdoor] = 0.75
-    fig, axes = plt.subplots(1, 3, figsize=(15, 4.9))
+        img[dom == p] = colors[p]
+    img[~outdoor] = 0.85
+    from osgeo import gdal
+
+    px = abs(gdal.Open(str(args.runs / "rasters" / "Building_DSM.tif")).GetGeoTransform()[1])
+    fig, axes = plt.subplots(1, 3, figsize=(14, 4.9))
     im = axes[0].imshow(np.where(outdoor, base, np.nan), cmap="inferno")
-    axes[0].set_title("Baseline UTCI at 14:00 (roofs blank)")
-    fig.colorbar(im, ax=axes[0], shrink=0.75, label="°C")
+    axes[0].set_title("UTCI at 14:00, defaults")
+    fig.colorbar(im, ax=axes[0], shrink=0.8, label="UTCI (°C)")
     axes[1].imshow(img)
-    axes[1].set_title(f"Leading surface or body input\n(air temperature leads at {lead_ta:.0f}% of pixels)")
-    axes[1].legend(handles=[plt.Rectangle((0, 0), 1, 1, color=cmap(p)) for p in present],
-                   labels=[f"{labels[p]} ({100 * (dom == p).sum() / outdoor.sum():.0f}%)" for p in present],
-                   loc="upper center", bbox_to_anchor=(0.5, -0.02), frameon=False, fontsize=8, ncol=2)
+    axes[1].set_title("Which uncertain material or body input matters most")
+    axes[1].legend(handles=[plt.Rectangle((0, 0), 1, 1, color=colors[p]) for p in present],
+                   labels=[f"{plotstyle.input_label(labels[p])} ({pct(dom == p)})" for p in present],
+                   loc="upper center", bbox_to_anchor=(0.5, -0.01), frameon=False,
+                   ncol=2)
     im = axes[2].imshow(np.where(outdoor, mu_px[surf].sum(axis=0), np.nan), cmap="viridis")
-    axes[2].set_title("Summed μ* of the five surface and body inputs")
-    fig.colorbar(im, ax=axes[2], shrink=0.75, label="°C")
+    axes[2].set_title("How much they matter together")
+    fig.colorbar(im, ax=axes[2], shrink=0.8, label="sum of μ* of the five (°C)")
     for ax in axes:
-        ax.set_xticks([])
-        ax.set_yticks([])
-    fig.tight_layout()
-    fig.savefig(args.out / "morris_dominant_input.png", dpi=150)
+        plotstyle.map_axes(ax)
+    plotstyle.scalebar(axes[0], px)
+    fig.text(0.5, -0.04, f"Austin sample, Morris screening (100 runs). Air temperature is the leading input at "
+             f"{lead_ta:.0f}% of pixels, so the middle map ranks the five surface and body properties "
+             "(albedo, emissivity, body absorption). Grey and white: roofs.", ha="center", fontsize=8, color="0.35")
+    fig.savefig(args.out / "morris_dominant_input.png")
     plt.close(fig)
 
 

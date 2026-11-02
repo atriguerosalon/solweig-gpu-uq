@@ -24,6 +24,7 @@ from osgeo import gdal  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from solweig_sens import plotstyle  # noqa: E402
 from solweig_sens.analysis import read_stack  # noqa: E402
 
 # Middel et al. (2020), Pacoima, coated minus regular asphalt; time in PDT (LST + 1 h).
@@ -87,27 +88,31 @@ def main() -> None:
         dn = np.mean([np.mean((tmrt[b][h] - tmrt[a][h])[outdoor]) for h in list(range(21, 24)) + list(range(0, 6))])
         print(f"{label}: all outdoor ground, 12-18 h mean dTmrt {dt:+.2f} C, dUTCI {du:+.2f} C; night (21-05 h) dTmrt {dn:+.2f} C")
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.3))
+    plotstyle.use()
+    band = plt.Rectangle((0, 0), 1, 1, color="0.6", alpha=0.35, lw=0)
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.6))
     ax = axes[0]
-    for label, color, name in [("default", "#E45756", "SOLWEIG as is (albedo only)"),
-                               ("fit", "#4C78A8", "SOLWEIG + measured surface cooling")]:
+    for label, color, name in [("default", plotstyle.HIGH, "SOLWEIG as is (albedo only)"),
+                               ("fit", plotstyle.LOW, "SOLWEIG + measured surface cooling")]:
         r = rows[label]
         ax.fill_between(hours, r[:, 0], r[:, 2], color=color, alpha=0.2, lw=0)
         ax.plot(hours, r[:, 1], color=color, label=name)
     ax.plot(list(MEAS_DTMRT), list(MEAS_DTMRT.values()), "ko", label="measured, Pacoima (albedo 0.25)")
     ax.plot(list(MEAS_DTMRT_SV), list(MEAS_DTMRT_SV.values()), "o", mfc="none", mec="0.4",
             label="measured, Sun Valley (albedo 0.18)")
+    handles, names = ax.get_legend_handles_labels()
+    ax.legend(handles + [band], names + ["model: middle half of open sunlit pixels"], frameon=False,
+              loc="upper right")
     ax.axhline(0, color="0.5", lw=0.8)
     ax.set_xlim(6, 23)
     ax.set_xlabel("Hour, 30 July 2019 (PDT)")
     ax.set_ylabel("Tmrt, coated minus regular asphalt (°C)")
-    ax.set_title("Cool-pavement effect on pedestrians, open sunlit ground")
-    ax.legend(frameon=False, fontsize=8)
+    ax.set_title("Coating effect on pedestrians")
     ax.grid(alpha=0.3)
 
     ax = axes[1]
-    for c, color, name in [("regular_default", "#E45756", "SOLWEIG, default ground heating"),
-                           ("regular_fit", "#4C78A8", "SOLWEIG, ground heating fitted")]:
+    for c, color, name in [("regular_default", plotstyle.HIGH, "SOLWEIG, default ground heating"),
+                           ("regular_fit", plotstyle.LOW, "SOLWEIG, ground heating fitted")]:
         r = absolute[c]
         ax.fill_between(hours, r[:, 0], r[:, 2], color=color, alpha=0.2, lw=0)
         ax.plot(hours, r[:, 1], color=color, label=name)
@@ -115,29 +120,35 @@ def main() -> None:
     ax.set_xlim(0, 23)
     ax.set_xlabel("Hour, 30 July 2019 (PDT)")
     ax.set_ylabel("Tmrt over regular asphalt (°C)")
-    ax.set_title("Absolute Tmrt, open sunlit ground")
-    ax.legend(frameon=False, fontsize=8)
+    ax.set_title("Tmrt itself")
+    ax.legend(frameon=False)
     ax.grid(alpha=0.3)
-    fig.tight_layout()
-    fig.savefig(args.out / "la_pavement_vs_middel.png", dpi=160)
+    fig.text(0.5, -0.03, "Pacoima, Los Angeles, on the day of the MaRTy measurements (Middel et al. 2020, "
+             "Environ. Res. Lett. 15, 064016). Model: median over open sunlit ground (no building, no tree, sky view "
+             "above 0.75); shading: 25th to 75th percentile.", ha="center", fontsize=8, color="0.35")
+    fig.savefig(args.out / "la_pavement_vs_middel.png")
     plt.close(fig)
 
     # Map of the effect at 13:00 for the fitted case, all outdoor ground.
     h = 13
+    px = abs(gdal.Open(str(args.rasters / "Building_DSM.tif")).GetGeoTransform()[1])
     d = np.where(outdoor, tmrt["coated_fit"][h] - tmrt["regular_fit"][h], np.nan)
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.8))
     im = axes[0].imshow(np.where(outdoor, tmrt["regular_fit"][h], np.nan), cmap="inferno")
-    axes[0].set_title("Tmrt, regular asphalt, 13:00 PDT")
-    fig.colorbar(im, ax=axes[0], shrink=0.75, label="°C")
-    lim = np.nanpercentile(np.abs(d), 99)
-    im = axes[1].imshow(d, cmap="RdBu_r", vmin=-lim, vmax=lim)
-    axes[1].set_title("Coated minus regular (with surface cooling)")
-    fig.colorbar(im, ax=axes[1], shrink=0.75, label="°C")
+    axes[0].set_title("Tmrt at 13:00, regular asphalt everywhere")
+    fig.colorbar(im, ax=axes[0], shrink=0.8, label="Tmrt (°C)")
+    cmap = plt.get_cmap("OrRd").copy()
+    cmap.set_bad("0.75")  # roofs grey here: white would read as "no change"
+    im = axes[1].imshow(d, cmap=cmap, vmin=0, vmax=np.nanpercentile(d, 99.5))
+    axes[1].set_title("If all asphalt were coated: change in Tmrt")
+    fig.colorbar(im, ax=axes[1], shrink=0.8, label="ΔTmrt (°C)", extend="both")
     for ax in axes:
-        ax.set_xticks([])
-        ax.set_yticks([])
-    fig.tight_layout()
-    fig.savefig(args.out / "la_pavement_map_13h.png", dpi=140)
+        plotstyle.map_axes(ax)
+    plotstyle.scalebar(axes[0], px)
+    fig.text(0.5, -0.03, "Pacoima, 2 x 2 km at 2 m, 30 July 2019. Coating: albedo 0.07 → 0.25, with the surface "
+             "cooling measured by Middel et al. 2020. Roofs: white (left), grey (right).", ha="center", fontsize=8,
+             color="0.35")
+    fig.savefig(args.out / "la_pavement_map_13h.png")
     plt.close(fig)
 
 

@@ -34,6 +34,7 @@ import torch  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from solweig_sens import plotstyle  # noqa: E402
 from solweig_sens.analysis import outdoor_mask, read_stack  # noqa: E402
 from solweig_sens.perturb import MET_COLS  # noqa: E402
 
@@ -117,26 +118,38 @@ def main() -> None:
                 "spearman_rank": spearman(b, n),
             })
             if uhii == 2.0:
-                maps[hour] = (np.where(outdoor, dT, np.nan), np.where(outdoor, u_new - u_base[hour], np.nan))
+                maps[hour] = (np.where(outdoor, u_base[hour], np.nan), np.where(outdoor, dT, np.nan),
+                              np.where(outdoor, u_new, np.nan), rows[-1]["spearman_rank"])
     df = pd.DataFrame(rows)
     df.to_csv(args.out / "spatial_ta.csv", index=False, float_format="%.3f")
     print(df.round(3).to_string(index=False))
 
-    fig, axes = plt.subplots(2, 2, figsize=(9.5, 8.4))
+    # Does a spatial air temperature move the hotspots? Same UTCI scale left and right in each row.
+    plotstyle.use()
+    px = abs(gdal.Open(str(args.rasters / "Building_DSM.tif")).GetGeoTransform()[1])
+    fig, axes = plt.subplots(2, 3, figsize=(13, 8.4))
     for r, hour in enumerate((14, 22)):
-        dT, du = maps[hour]
-        lim = np.nanpercentile(np.abs(dT), 99)
-        im = axes[r, 0].imshow(dT, cmap="RdBu_r", vmin=-lim, vmax=lim)
-        axes[r, 0].set_title(f"Air temperature anomaly, {hour:02d}:00 (uhii = 2 K)")
-        fig.colorbar(im, ax=axes[r, 0], shrink=0.8, label="K")
-        im = axes[r, 1].imshow(du, cmap="RdBu_r", vmin=-lim, vmax=lim)
-        axes[r, 1].set_title(f"Resulting ΔUTCI, {hour:02d}:00")
-        fig.colorbar(im, ax=axes[r, 1], shrink=0.8, label="°C")
+        u0, dT, u1, rho = maps[hour]
+        lo, hi = np.nanpercentile(np.concatenate([u0[outdoor], u1[outdoor]]), [1, 99])
+        lim = plotstyle.symmetric_limit(dT[outdoor])
+        im = axes[r, 0].imshow(u0, cmap="inferno", vmin=lo, vmax=hi)
+        axes[r, 0].set_title(f"{hour:02d}:00, one air temperature (as SOLWEIG)")
+        fig.colorbar(im, ax=axes[r, 0], shrink=0.8, label="UTCI (°C)")
+        im = axes[r, 1].imshow(dT, cmap="RdBu_r", vmin=-lim, vmax=lim)
+        axes[r, 1].set_title("Imposed air-temperature anomaly")
+        fig.colorbar(im, ax=axes[r, 1], shrink=0.8, label="ΔT (K)", extend="both")
+        im = axes[r, 2].imshow(u1, cmap="inferno", vmin=lo, vmax=hi)
+        axes[r, 2].set_title(f"With the anomaly (rank correlation {rho:.2f})")
+        fig.colorbar(im, ax=axes[r, 2], shrink=0.8, label="UTCI (°C)")
     for ax in axes.flat:
-        ax.set_xticks([])
-        ax.set_yticks([])
-    fig.tight_layout()
-    fig.savefig(args.out / "spatial_ta_maps.png", dpi=140)
+        plotstyle.map_axes(ax)
+    plotstyle.scalebar(axes[0, 0], px)
+    fig.text(0.5, -0.02, "Austin sample. Illustrative anomaly, amplitude 2 K, shaped like the urban-heat-island term "
+             "SOLWEIG-GPU's authors drafted (2 − sky view − tree cover); domain mean unchanged. UTCI recomputed "
+             "from the saved Tmrt.\nRank correlation of UTCI between the two maps: by day the hotspots stay where "
+             "the sun and shade put them; at night the air-temperature pattern moves them. White: roofs.",
+             ha="center", fontsize=8, color="0.35")
+    fig.savefig(args.out / "spatial_ta_maps.png")
     plt.close(fig)
 
 

@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from analyse_morris import elementary_effects  # noqa: E402
+from solweig_sens import plotstyle  # noqa: E402
 from solweig_sens.analysis import outdoor_mask  # noqa: E402
 
 
@@ -57,25 +58,28 @@ def main() -> None:
           .loc[[labels[p] for p in order]].round(2).to_string())
     print("\nbaseline mean outdoor UTCI by hour:", np.round(base[:, outdoor].mean(axis=1), 1).tolist())
 
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4.6), gridspec_kw={"width_ratios": [1.15, 1]})
+    plotstyle.use()
+    fig, axes = plt.subplots(1, 2, figsize=(14, 4.6), gridspec_kw={"width_ratios": [1.15, 1]})
     im = axes[0].imshow(mu_star[order], aspect="auto", cmap="viridis")
-    axes[0].set_yticks(range(k), [labels[p] for p in order])
+    axes[0].set_yticks(range(k), [plotstyle.input_label(labels[p]) for p in order])
     axes[0].set_xticks(hours[::2], hours[::2])
-    axes[0].set_xlabel("Hour (local)")
-    axes[0].set_title("μ* by hour (°C UTCI per full input range)")
-    fig.colorbar(im, ax=axes[0], shrink=0.85)
-    cmap = plt.get_cmap("tab10")
-    for p in order:
-        if labels[p] in ("air temperature", "relative humidity"):
-            continue
-        axes[1].plot(hours, mu_star[p], color=cmap(p), label=labels[p])
-    axes[1].set_xlabel("Hour (local)")
+    axes[0].set_xlabel("Hour (local time)")
+    axes[0].set_title("All nine inputs, every hour")
+    fig.colorbar(im, ax=axes[0], shrink=0.85, label="μ* (°C)")
+    rest = [p for p in order if labels[p] not in ("air temperature", "relative humidity")]
+    for p in sorted(rest, key=lambda p: -mu_star[p].max()):  # legend in order of peak importance
+        axes[1].plot(hours, mu_star[p], color=plotstyle.INPUT_COLORS[labels[p]], lw=1.6,
+                     label=plotstyle.input_label(labels[p]))
+    axes[1].set_xlabel("Hour (local time)")
     axes[1].set_ylabel("μ* (°C)")
-    axes[1].set_title("Without air temperature and humidity")
-    axes[1].legend(frameon=False, fontsize=8)
+    axes[1].set_xlim(0, 23)
+    axes[1].set_title("The seven others, on their own scale")
+    axes[1].legend(frameon=False, loc="upper left", bbox_to_anchor=(1.01, 1.0))
     axes[1].grid(alpha=0.3)
-    fig.tight_layout()
-    fig.savefig(args.out / "morris_day.png", dpi=150)
+    fig.text(0.5, -0.03, "Morris screening on the Austin sample, 100 full-day runs. μ*: change in domain-mean "
+             "UTCI over the full range of an input. Air temperature and humidity lead at every hour (left).",
+             ha="center", fontsize=8, color="0.35")
+    fig.savefig(args.out / "morris_day.png")
     plt.close(fig)
 
 
