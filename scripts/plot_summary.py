@@ -23,11 +23,12 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
 
 P = Path(__file__).resolve().parents[1] / "figures" / "profile"
 INK, MUTED = "#1B232C", "#56616D"
 C_ORIG, C_FAST, C_BEST = "#9AA6B2", "#4C78A8", "#0E6A78"
-NOTE = "RTX 4070 Laptop GPU (8 GB), WSL2; single runs, about ±2 s run-to-run noise."
+NOTE = "RTX 4070 Laptop GPU (8 GB), WSL2, 30 Oct 2026. Time: bars = summary of the recorded runs, dots = each run."
 
 
 def load(name):
@@ -36,27 +37,44 @@ def load(name):
 
 
 def steps(hist, mem, comp):
+    """(label, summary seconds, memory record, colour, every recorded run in seconds) per step."""
     t = hist["summary"]
+    runs = {k: [r["seconds"][k] for r in hist["runs"] if k in r["seconds"]] for k in t}
     pac = comp["pacoima_summer"]["runs"]
     return [
-        ("Original,\nWindows drive", t["A"], mem["peak"]["original"], C_ORIG),
-        ("Original,\nLinux disk", t["B"], mem["peak"]["original"], C_ORIG),
-        ("+ fast sky\n(chunk 64)", t["C"], mem["peak"]["+ fast sky"], C_FAST),
-        ("+ fast view\nfactors", t["D"], mem["peak"]["+ fast sky + view factors"], C_FAST),
-        ("+ fast\nshadows", t["E"], mem["peak"]["all three"], C_FAST),
-        ("sky chunk\n64 → 8", t.get("E8", mem["chunk_sweep"]["8"]["seconds"]), mem["chunk_sweep"]["8"], C_FAST),
-        ("+ bit-packed\nmasks", t.get("F", pac["fast + bit masks"]["seconds"]), pac["fast + bit masks"], C_BEST),
+        ("Original,\nWindows drive", t["A"], mem["peak"]["original"], C_ORIG, runs["A"]),
+        ("Original,\nLinux disk", t["B"], mem["peak"]["original"], C_ORIG, runs["B"]),
+        ("+ fast sky\n(chunk 64)", t["C"], mem["peak"]["+ fast sky"], C_FAST, runs["C"]),
+        ("+ fast view\nfactors", t["D"], mem["peak"]["+ fast sky + view factors"], C_FAST, runs["D"]),
+        ("+ fast\nshadows", t["E"], mem["peak"]["all three"], C_FAST, runs["E"]),
+        ("sky chunk\n64 → 8", t["E8"], mem["chunk_sweep"]["8"], C_FAST, runs["E8"]),
+        ("+ bit-packed\nmasks", t["F"], pac["fast + bit masks"], C_BEST, runs["F"]),
     ]
 
 
 def draw_time(ax, st):
-    x = range(len(st))
-    bars = ax.bar(x, [s[1] for s in st], color=[s[3] for s in st])
+    # The first bar is a setup change (where WSL writes outputs), not a code change: set it apart.
+    x = [0] + [i + 0.6 for i in range(1, len(st))]
+    bars = ax.bar(x, [s[1] for s in st], color=[s[3] for s in st], alpha=0.85)
+    for xi, s in zip(x, st):  # every recorded run, spread a little sideways so they do not overlap
+        pts = s[4]
+        offs = np.linspace(-0.18, 0.18, len(pts)) if len(pts) > 1 else [0.0]
+        ax.scatter([xi + o for o in offs], pts, s=22, color=INK, zorder=3, edgecolor="white", linewidth=0.5)
     for b, s in zip(bars, st):
-        ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 1.5, f"{s[1]:.0f} s", ha="center", fontsize=9, color=INK)
-    ax.set_xticks(list(x), [s[0] for s in st], fontsize=8.5)
+        top = max(b.get_height(), max(s[4]))
+        ax.text(b.get_x() + b.get_width() / 2, top + 3, f"{s[1]:.0f} s\nn = {len(s[4])}", ha="center",
+                fontsize=8.5, color=INK)
+    ymax = max(max(s[4]) for s in st) * 1.18
+    ax.axvline(0.8, color=MUTED, lw=0.8, ls=":")
+    ax.text(0, st[0][1] / 2, "setup,\nnot code:\nWSL writing\nto the\nWindows\ndrive", ha="center", va="center",
+            fontsize=8, color="white")
+    ax.text(x[1] - 0.4, ymax * 0.97, "code changes, outputs on the Linux disk", ha="left", va="top",
+            fontsize=8, color=MUTED)
+    ax.set_xticks(x, [s[0] for s in st], fontsize=8.5)
     ax.set_ylabel("one simulated day, 1000 x 1000 tile (s)")
-    ax.set_title("Time per tile-day: 103 s → about 23 s", loc="left", fontweight="bold")
+    ax.set_ylim(0, ymax)
+    ax.set_title(f"Time per tile-day, code changes: {st[1][1]:.0f} s → {st[-1][1]:.0f} s, same outputs",
+                 loc="left", fontweight="bold")
     ax.grid(axis="y", alpha=0.3)
 
 
@@ -84,7 +102,7 @@ def draw_svf(ax, svf):
     secs = [svf[n]["seconds"] for n in names]
     b = ax.bar([0, 1], vals, color=[C_ORIG, C_BEST], width=0.55)
     for bb, v, s in zip(b, vals, secs):
-        ax.text(bb.get_x() + bb.get_width() / 2, v + 0.04, f"{v:.2f} GiB\n{s:.0f} s", ha="center", fontsize=9)
+        ax.text(bb.get_x() + bb.get_width() / 2, v + 0.04, f"{v:.2f} GiB\n{s:.0f} s (n = 1)", ha="center", fontsize=9)
     ax.set_xticks([0, 1], ["original", "compact masks"])
     ax.set_ylabel("peak reserved GPU memory (GiB)")
     ax.set_ylim(0, max(vals) * 1.35)
@@ -106,14 +124,14 @@ def draw_bigtile(ax, big, cmp):
         if not ok:
             txt = "out of memory"
         else:
-            txt = f"{v:.1f} GiB, {r['seconds'] / 60:.0f} min"
+            txt = f"{v:.1f} GiB, {r['seconds'] / 60:.0f} min (n = 1)"
             if over:
-                txt += "\nmore than the GPU has: the Windows driver\nspilled to system RAM (would fail on Linux)"
+                txt += "\nover the GPU's 8 GB: spilled to system RAM\n(Windows driver allows it; Linux would fail)"
         ax.text(v + 0.15, i, txt, va="center", fontsize=8.5)
     ax.axvline(total, color=MUTED, ls="--", lw=0.9)
     ax.text(total, len(rows) - 0.45, f" {total:.0f} GiB GPU", fontsize=8, color=MUTED)
     ax.set_yticks(range(len(rows)), [r[0] for r in rows], fontsize=9)
-    ax.set_xlim(0, vmax * 1.9)
+    ax.set_xlim(0, vmax * 1.75)
     ax.set_xlabel("peak reserved GPU memory (GiB)")
     title = f"A {big['tile']} tile (4 x 4 km) on the 8 GB laptop GPU"
     if cmp:

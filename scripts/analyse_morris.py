@@ -59,15 +59,20 @@ def main() -> None:
     outdoor = outdoor_mask(args.runs / "rasters", base.shape) & np.isfinite(base)
     sun, shade = outdoor & (shadow > 0.5), outdoor & (shadow <= 0.5)
 
-    # Domain-level indices.
+    # Domain-level indices, with a bootstrap 95% interval for mu* over the trajectories (only 10 of them,
+    # so mu* itself is uncertain; sigma is a different thing: the spread of the effects, i.e. interactions).
+    rng = np.random.default_rng(0)
     rows = []
     for region, m in [("all", outdoor), ("sun", sun), ("shade", shade)]:
         Y = fields[:, m].mean(axis=1)
         ee = elementary_effects(X, Y, bounds, k)
+        boot = rng.integers(0, len(ee), size=(2000, len(ee)))
         for p in range(k):
+            mu_b = np.nanmean(np.abs(ee[boot, p]), axis=1)
             rows.append({"region": region, "input": labels[p],
                          "mu_star": np.nanmean(np.abs(ee[:, p])), "mu": np.nanmean(ee[:, p]),
-                         "sigma": np.nanstd(ee[:, p], ddof=1)})
+                         "sigma": np.nanstd(ee[:, p], ddof=1),
+                         "mu_star_lo95": np.percentile(mu_b, 2.5), "mu_star_hi95": np.percentile(mu_b, 97.5)})
     Y38 = 100 * (fields[:, outdoor] >= 38.0).mean(axis=1)
     ee38 = elementary_effects(X, Y38, bounds, k)
     for p in range(k):
@@ -79,21 +84,47 @@ def main() -> None:
     print(df.pivot(index="input", columns="region", values="mu_star").round(2)
           .sort_values("all", ascending=False).to_string())
 
-    # mu* as bars, sigma as whiskers, sun and shade side by side.
+    # Left: mu* with its bootstrap 95% interval, sun and shade side by side. Right: mu* against sigma
+    # (the classic Morris plot: far right = important, high up = interacting or non-linear).
     plotstyle.use()
     order = df[df.region == "all"].sort_values("mu_star").input.tolist()
     y = np.arange(len(order))
-    fig, ax = plt.subplots(figsize=(7.5, 0.42 * len(order) + 1.6))
+    fig, (ax, bx) = plt.subplots(1, 2, figsize=(13, 0.42 * len(order) + 1.8), gridspec_kw={"width_ratios": [1.25, 1]})
     for dy, region, color, name in [(0.2, "sun", plotstyle.SUN, "sunlit"), (-0.2, "shade", plotstyle.SHADE, "shaded")]:
         sub = df[df.region == region].set_index("input").loc[order]
         ax.barh(y + dy, sub.mu_star, height=0.38, color=color, label=f"{name} ground")
-        ax.errorbar(sub.mu_star, y + dy, xerr=[np.zeros(len(order)), sub.sigma], fmt="none",
-                    ecolor="0.25", elinewidth=0.9, capsize=2)
+        ax.errorbar(sub.mu_star, y + dy, xerr=[sub.mu_star - sub.mu_star_lo95, sub.mu_star_hi95 - sub.mu_star],
+                    fmt="none", ecolor="0.2", elinewidth=1, capsize=2.5)
     ax.set_yticks(y, [plotstyle.input_label(o) for o in order])
     ax.set_xlabel("μ*: change in mean UTCI over the full input range (°C)")
-    ax.set_title("Morris screening, Austin sample, 14:00 (100 runs)")
+    ax.set_title("Importance, with 95% bootstrap interval")
     ax.grid(axis="x", alpha=0.3)
-    ax.legend(frameon=False, loc="lower right", title="Whisker: σ (interactions)", title_fontsize=8)
+    ax.legend(frameon=False, loc="lower right")
+    for region, marker, name in [("sun", "o", "sunlit"), ("shade", "s", "shaded")]:
+        sub = df[df.region == region].set_index("input")
+        for inp, r in sub.iterrows():
+            bx.scatter(r.mu_star, r.sigma, marker=marker, s=46, color=plotstyle.INPUT_COLORS[inp],
+                       edgecolor="white", linewidth=0.6, zorder=3)
+    ss = df[df.region.isin(["sun", "shade"])]
+    xmax, ymax = ss.mu_star.max() * 1.08, ss.sigma.max() * 1.35
+    bx.plot([0, xmax], [0, 0.1 * xmax], color="0.6", lw=0.8, ls="--")
+    xl = min(xmax, 0.95 * ymax / 0.1)  # where the line leaves the panel
+    bx.text(xl * 0.97, 0.1 * xl, "σ = 0.1 μ*", ha="right", va="bottom", fontsize=8, color="0.45",
+            rotation=0)
+    bx.set_xlim(0, xmax)
+    bx.set_ylim(0, ymax)
+    bx.set_xlabel("μ* (°C)")
+    bx.set_ylabel("σ (°C): spread of the effect")
+    bx.set_title("Importance against interaction")
+    bx.grid(alpha=0.3)
+    handles = [plt.Line2D([], [], ls="", marker="o", color=plotstyle.INPUT_COLORS[o], label=plotstyle.input_label(o))
+               for o in reversed(order)]
+    handles += [plt.Line2D([], [], ls="", marker=mk, color="0.4", mfc="none", label=f"{nm} ground")
+                for mk, nm in (("o", "sunlit"), ("s", "shaded"))]
+    bx.legend(handles=handles, frameon=False, loc="upper left", bbox_to_anchor=(1.01, 1.0))
+    fig.text(0.5, -0.03, "Morris screening on the Austin sample at 14:00: 10 trajectories, 100 SOLWEIG-GPU runs. "
+             "Intervals: 2000 bootstrap resamples of the trajectories. Below the dashed line an input acts almost "
+             "additively (little interaction or non-linearity).", ha="center", fontsize=8, color="0.35")
     fig.savefig(args.out / "morris_mu_sigma.png")
     plt.close(fig)
 

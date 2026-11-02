@@ -32,6 +32,16 @@ MEAS_DTMRT = {12.5: 4.2, 13.5: 4.0, 14.5: 3.7, 15.5: 2.8, 16.5: 2.6, 17.5: 1.2, 
 MEAS_DTMRT_SV = {12.5: 4.2, 13.5: 4.2, 14.5: 3.0, 15.5: 2.2, 16.5: 2.3, 17.5: 1.2, 18.5: 0.2, 21.0: -0.9}  # Sun Valley, albedo 0.18
 # Absolute Tmrt over regular asphalt, Pacoima: 11:30 LST, peak at 15:30 LST, 20:00 LST.
 MEAS_TMRT_ASPHALT = {12.5: 57.6, 16.5: 64.4, 21.0: 24.9}
+# MaRTy's Hukseflux 4-component net radiometers: +-10% for shortwave and longwave (Middel & Krayenhoff 2019,
+# Sci. Total Environ. 687, 137-151, Fig. 2). Tmrt (K) goes as the absorbed flux to the 1/4, so a common
+# calibration error of +-10% moves Tmrt by +-2.5% in kelvin, and a coated-minus-regular difference by the
+# same 2.5% of itself (it nearly cancels: same cart, same sensors). Random sensor noise is not reported.
+RADIOMETER_ACCURACY = 0.10
+
+
+def tmrt_error(tmrt_c: float) -> float:
+    """Tmrt uncertainty (K) from the radiometer accuracy, for an absolute Tmrt in deg C."""
+    return RADIOMETER_ACCURACY / 4 * (tmrt_c + 273.15)
 CASES = ["regular_default", "coated_default", "regular_fit", "coated_fit"]
 
 
@@ -97,7 +107,9 @@ def main() -> None:
         r = rows[label]
         ax.fill_between(hours, r[:, 0], r[:, 2], color=color, alpha=0.2, lw=0)
         ax.plot(hours, r[:, 1], color=color, label=name)
-    ax.plot(list(MEAS_DTMRT), list(MEAS_DTMRT.values()), "ko", label="measured, Pacoima (albedo 0.25)")
+    ax.errorbar(list(MEAS_DTMRT), list(MEAS_DTMRT.values()),
+                yerr=[RADIOMETER_ACCURACY / 4 * abs(v) for v in MEAS_DTMRT.values()], fmt="ko", capsize=2.5,
+                label="measured, Pacoima (albedo 0.25)")
     ax.plot(list(MEAS_DTMRT_SV), list(MEAS_DTMRT_SV.values()), "o", mfc="none", mec="0.4",
             label="measured, Sun Valley (albedo 0.18)")
     handles, names = ax.get_legend_handles_labels()
@@ -116,16 +128,20 @@ def main() -> None:
         r = absolute[c]
         ax.fill_between(hours, r[:, 0], r[:, 2], color=color, alpha=0.2, lw=0)
         ax.plot(hours, r[:, 1], color=color, label=name)
-    ax.plot(list(MEAS_TMRT_ASPHALT), list(MEAS_TMRT_ASPHALT.values()), "ko", label="measured, Pacoima asphalt")
+    ax.errorbar(list(MEAS_TMRT_ASPHALT), list(MEAS_TMRT_ASPHALT.values()),
+                yerr=[tmrt_error(v) for v in MEAS_TMRT_ASPHALT.values()], fmt="ko", capsize=3,
+                label="measured, Pacoima asphalt (radiometers ±10%)")
     ax.set_xlim(0, 23)
     ax.set_xlabel("Hour, 30 July 2019 (PDT)")
     ax.set_ylabel("Tmrt over regular asphalt (°C)")
     ax.set_title("Tmrt itself")
     ax.legend(frameon=False)
     ax.grid(alpha=0.3)
-    fig.text(0.5, -0.03, "Pacoima, Los Angeles, on the day of the MaRTy measurements (Middel et al. 2020, "
+    fig.text(0.5, -0.09, "Pacoima, Los Angeles, on the day of the MaRTy measurements (Middel et al. 2020, "
              "Environ. Res. Lett. 15, 064016). Model: median over open sunlit ground (no building, no tree, sky view "
-             "above 0.75); shading: 25th to 75th percentile.", ha="center", fontsize=8, color="0.35")
+             "above 0.75); shading: 25th to 75th percentile.\nError bars: MaRTy's radiometer accuracy (±10%, "
+             "Middel & Krayenhoff 2019) propagated to Tmrt; on the difference it nearly cancels (same sensors). "
+             "Random sensor noise not reported.", ha="center", fontsize=8, color="0.35")
     fig.savefig(args.out / "la_pavement_vs_middel.png")
     plt.close(fig)
 

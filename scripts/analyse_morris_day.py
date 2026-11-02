@@ -47,8 +47,13 @@ def main() -> None:
     ee = elementary_effects(X, Y, bounds, k)  # (trajectories, k, hours)
     mu_star = np.nanmean(np.abs(ee), axis=0)
     sigma = np.nanstd(ee, axis=0, ddof=1)
+    # bootstrap 95% interval of mu* over the trajectories (only 10 of them)
+    boot = np.random.default_rng(0).integers(0, len(ee), size=(2000, len(ee)))
+    mu_b = np.nanmean(np.abs(ee[boot]), axis=1)  # (resamples, k, hours)
+    lo95, hi95 = np.percentile(mu_b, 2.5, axis=0), np.percentile(mu_b, 97.5, axis=0)
     hours = np.arange(Y.shape[1])
-    df = pd.DataFrame([{"hour": h, "input": labels[p], "mu_star": mu_star[p, h], "sigma": sigma[p, h]}
+    df = pd.DataFrame([{"hour": h, "input": labels[p], "mu_star": mu_star[p, h], "sigma": sigma[p, h],
+                        "mu_star_lo95": lo95[p, h], "mu_star_hi95": hi95[p, h]}
                        for p in range(k) for h in hours])
     df.to_csv(args.out / "morris_day_indices.csv", index=False, float_format="%.3f")
 
@@ -68,12 +73,13 @@ def main() -> None:
     fig.colorbar(im, ax=axes[0], shrink=0.85, label="μ* (°C)")
     rest = [p for p in order if labels[p] not in ("air temperature", "relative humidity")]
     for p in sorted(rest, key=lambda p: -mu_star[p].max()):  # legend in order of peak importance
-        axes[1].plot(hours, mu_star[p], color=plotstyle.INPUT_COLORS[labels[p]], lw=1.6,
-                     label=plotstyle.input_label(labels[p]))
+        c = plotstyle.INPUT_COLORS[labels[p]]
+        axes[1].fill_between(hours, lo95[p], hi95[p], color=c, alpha=0.18, lw=0)
+        axes[1].plot(hours, mu_star[p], color=c, lw=1.6, label=plotstyle.input_label(labels[p]))
     axes[1].set_xlabel("Hour (local time)")
     axes[1].set_ylabel("μ* (°C)")
     axes[1].set_xlim(0, 23)
-    axes[1].set_title("The seven others, on their own scale")
+    axes[1].set_title("The seven others, with 95% bootstrap bands")
     axes[1].legend(frameon=False, loc="upper left", bbox_to_anchor=(1.01, 1.0))
     axes[1].grid(alpha=0.3)
     fig.text(0.5, -0.03, "Morris screening on the Austin sample, 100 full-day runs. μ*: change in domain-mean "
