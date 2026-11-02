@@ -1,0 +1,29 @@
+--- solweig_gpu v2.0.0: svf_calculator (original)
++++ solweig-sensitivity C5: svf_calculator (build sky-patch masks compactly in the sky view factor step)
+@@ -119,9 +119,9 @@
+     skyvaultaziint = torch.tensor([360 / patches for patches in aziinterval], device=device)
+     iazimuth = torch.zeros((1, torch.sum(aziinterval).item()), device=device)
+ 
+-    shmat = torch.zeros((rows, cols, sum(aziinterval)), device=device)
+-    vegshmat = torch.zeros((rows, cols, sum(aziinterval)), device=device)
+-    vbshvegshmat = torch.zeros((rows, cols, sum(aziinterval)), device=device)
++    shmat = _MaskBuilder(rows, cols, int(sum(aziinterval)), device, "bits")
++    vegshmat = _MaskBuilder(rows, cols, int(sum(aziinterval)), device, "bits")
++    vbshvegshmat = _MaskBuilder(rows, cols, int(sum(aziinterval)), device, "bits")
+ 
+     index = 0
+     for j in range(skyvaultaltint.shape[0]):
+@@ -206,11 +206,11 @@
+     if save_rasters:
+         save_svf_zip_npz_outputs(output_dir=output_dir, gdal_dsm=gdal_dsm_local, svf=svf, svfE=svfE, svfS=svfS, svfW=svfW, svfN=svfN,
+             svfveg=svfveg, svfEveg=svfEveg, svfSveg=svfSveg, svfWveg=svfWveg, svfNveg=svfNveg, svfaveg=svfaveg, svfEaveg=svfEaveg,
+-            svfSaveg=svfSaveg, svfWaveg=svfWaveg, svfNaveg=svfNaveg, shmat=shmat, vegshmat=vegshmat, vbshvegshmat=vbshvegshmat,
++            svfSaveg=svfSaveg, svfWaveg=svfWaveg, svfNaveg=svfNaveg, shmat=shmat.saveable(), vegshmat=vegshmat.saveable(), vbshvegshmat=vbshvegshmat.saveable(),
+             svftotal=SVFtotal, number=number,
+         )
+ 
+     del sh, vegsh,vbshvegsh, last, weight
+     torch.cuda.empty_cache()
+ 
+-    return svf, svfaveg, svfE, svfEaveg, svfEveg, svfN, svfNaveg, svfNveg, svfS, svfSaveg, svfSveg, svfveg, svfW, svfWaveg, svfWveg, vegshmat, vbshvegshmat, shmat, SVFtotal
++    return svf, svfaveg, svfE, svfEaveg, svfEveg, svfN, svfNaveg, svfNveg, svfS, svfSaveg, svfSveg, svfveg, svfW, svfWaveg, svfWveg, vegshmat.final(), vbshvegshmat.final(), shmat.final(), SVFtotal

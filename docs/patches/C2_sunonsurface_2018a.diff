@@ -1,0 +1,42 @@
+--- solweig_gpu v2.0.0: sunonsurface_2018a (original)
++++ solweig-sensitivity C2: sunonsurface_2018a (ground view factor steps without per-step syncs)
+@@ -90,26 +90,10 @@
+     signsinazimuth = torch.sign(sinazimuth)
+     signcosazimuth = torch.sign(cosazimuth)
+ 
+-    for n in torch.arange(0, second, device=device):
+-        if (pibyfour <= azimuth and azimuth < threetimespibyfour) or (fivetimespibyfour <= azimuth and azimuth < seventimespibyfour):
+-            dy = signsinazimuth * index
+-            dx = -1 * signcosazimuth * torch.abs(torch.round(index / tanazimuth))
+-        else:
+-            dy = signsinazimuth * torch.abs(torch.round(index * tanazimuth))
+-            dx = -1 * signcosazimuth * index
+-
+-        absdx = torch.abs(dx)
+-        absdy = torch.abs(dy)
+-
+-        xc1 = ((dx + absdx) / 2).int()
+-        xc2 = (sizex + (dx - absdx) / 2).int()
+-        yc1 = ((dy + absdy) / 2).int()
+-        yc2 = (sizey + (dy - absdy) / 2).int()
+-
+-        xp1 = -((dx - absdx) / 2).int()
+-        xp2 = (sizex - (dx + absdx) / 2).int()
+-        yp1 = -((dy - absdy) / 2).int()
+-        yp2 = (sizey - (dy + absdy) / 2).int()
++    _offsets = _gvf_offsets(azimuth, signsinazimuth, signcosazimuth, tanazimuth, second, sizex, sizey,
++                            pibyfour, threetimespibyfour, fivetimespibyfour, seventimespibyfour)
++    _first = float(first)
++    for n, (xc1, xc2, yc1, yc2, xp1, xp2, yp1, yp2) in enumerate(_offsets):
+ 
+         tempbu[xp1:xp2, yp1:yp2] = buildings[xc1:xc2, yc1:yc2]
+         tempsh[xp1:xp2, yp1:yp2] = shadow[xc1:xc2, yc1:yc2]
+@@ -141,7 +125,7 @@
+         weightsumalbwallnosh += tempbubwall * albedo_b
+ 
+         ind = 1
+-        if (n + 1) <= first:
++        if (n + 1) <= _first:
+             weightsumwall_first = weightsumwall / ind
+             weightsumsh_first = weightsumsh / ind
+             wallsuninfluence_first = weightsumwall_first > 0

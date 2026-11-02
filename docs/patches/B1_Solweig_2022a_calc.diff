@@ -1,0 +1,19 @@
+--- solweig_gpu v2.0.0: Solweig_2022a_calc (original)
++++ solweig-sensitivity B1: Solweig_2022a_calc (ground heat kept after sunset (experiment only))
+@@ -171,6 +171,7 @@
+         LupS, timeaddnotused, Tgmap1S = TsWaveDelay_2015a(gvfLupS, firstdaytime, timeadd, timestepdec, Tgmap1S)
+         LupW, timeaddnotused, Tgmap1W = TsWaveDelay_2015a(gvfLupW, firstdaytime, timeadd, timestepdec, Tgmap1W)
+         LupN, timeaddnotused, Tgmap1N = TsWaveDelay_2015a(gvfLupN, firstdaytime, timeadd, timestepdec, Tgmap1N)
++        _HEAT_STORAGE.day(Lup, SBC, emis_grid, Ta)
+ 
+         # # For Tg output in POIs
+         TgTemp = Tg * shadow + Ta
+@@ -218,7 +219,7 @@
+         Kside = torch.zeros((rows,cols), device=device)
+ 
+         # # # # Lup # # # #
+-        Lup = SBC * emis_grid * ((Knight + Ta + Tg + 273.15) ** 4)
++        Lup = SBC * emis_grid * ((Knight + Ta + Tg + 273.15) ** 4) + _HEAT_STORAGE.night()
+         if landcover == 1:
+             Lup[lc_grid == 3] = (SBC * 0.98 * (Twater + 273.15) ** 4).float()  # nocturnal Water temp
+ 

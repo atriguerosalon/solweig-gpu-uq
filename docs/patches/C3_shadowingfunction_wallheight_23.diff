@@ -1,0 +1,41 @@
+--- solweig_gpu v2.0.0: shadowingfunction_wallheight_23 (original)
++++ solweig-sensitivity C3: shadowingfunction_wallheight_23 (shadow casting steps without per-step syncs)
+@@ -53,33 +53,17 @@
+     lastgabovea = None
+     vegsh2 = None
+ 
+-    while (amaxvalue >= dz) and (torch.abs(dx) < sizex) and (torch.abs(dy) < sizey):
+-        if ((pibyfour <= azimuth) and (azimuth < threetimespibyfour)) or ((fivetimespibyfour <= azimuth) and (azimuth < seventimespibyfour)):
+-            dy = signsinazimuth * index
+-            dx = -1 * signcosazimuth * torch.abs(torch.round(index / tanazimuth))
+-            ds = dssin
+-        else:
+-            dy = signsinazimuth * torch.abs(torch.round(index * tanazimuth))
+-            dx = -1 * signcosazimuth * index
+-            ds = dscos
+-
+-        dz = (ds * index) * tanaltitudebyscale
++    _steps, _dzs = _shadow_steps(amaxvalue, azimuth, signsinazimuth, signcosazimuth, tanazimuth, dssin, dscos,
++                                 tanaltitudebyscale, sizex, sizey, pibyfour, threetimespibyfour,
++                                 fivetimespibyfour, seventimespibyfour)
++    for _k, (xc1, xc2, yc1, yc2, xp1, xp2, yp1, yp2) in enumerate(_steps):
++        dz = _dzs[_k]
+         tempvegdem.zero_()
+         tempvegdem2.zero_()
+         temp.zero_()
+         templastfabovea.zero_()
+         templastgabovea.zero_()
+ 
+-        absdx = torch.abs(dx)
+-        absdy = torch.abs(dy)
+-        xc1 = int((dx + absdx) / 2)
+-        xc2 = int(sizex + (dx - absdx) / 2)
+-        yc1 = int((dy + absdy) / 2)
+-        yc2 = int(sizey + (dy - absdy) / 2)
+-        xp1 = -int((dx - absdx) / 2)
+-        xp2 = int(sizex - (dx + absdx) / 2)
+-        yp1 = -int((dy - absdy) / 2)
+-        yp2 = int(sizey - (dy + absdy) / 2)
+ 
+         tempvegdem[xp1:xp2, yp1:yp2] = vegdem[xc1:xc2, yc1:yc2] - dz
+         tempvegdem2[xp1:xp2, yp1:yp2] = vegdem2[xc1:xc2, yc1:yc2] - dz
