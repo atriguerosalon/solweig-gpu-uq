@@ -1,0 +1,19 @@
+case,input,value,dUTCI_mean,dUTCI_sun,dUTCI_shade,dUTCI_p95_abs,dTmrt_mean,area_ge38_pct
+wall_albedo_lo,wall albedo,0.100,0.000,,0.000,0.000,0.000,0.000
+wall_albedo_hi,wall albedo,0.400,0.000,,0.000,0.000,0.000,0.000
+wall_emis_lo,wall emissivity,0.850,-0.053,,-0.053,0.194,-0.181,0.000
+wall_emis_hi,wall emissivity,0.950,0.052,,0.052,0.192,0.180,0.000
+abs_k_lo,body shortwave absorption,0.600,0.000,,0.000,0.000,0.000,0.000
+abs_k_hi,body shortwave absorption,0.800,0.000,,0.000,0.000,0.000,0.000
+paved_albedo_lo,paved albedo,0.100,0.000,,0.000,0.000,0.000,0.000
+paved_albedo_hi,paved albedo,0.350,0.000,,0.000,0.000,0.000,0.000
+paved_emis_lo,paved emissivity,0.900,-0.506,,-0.506,0.591,-1.736,0.000
+paved_emis_hi,paved emissivity,0.980,0.298,,0.298,0.348,1.025,0.000
+ta_lo,air temperature,-2.000,-2.594,,-2.594,2.627,-2.228,0.000
+ta_hi,air temperature,2.000,2.652,,2.652,2.685,2.235,0.000
+rh_lo,relative humidity,-15.000,-1.058,,-1.058,1.110,-0.588,0.000
+rh_hi,relative humidity,15.000,1.121,,1.121,1.166,0.496,0.000
+wind_lo,wind speed,0.500,1.695,,1.695,1.712,0.000,0.000
+wind_hi,wind speed,1.500,-1.837,,-1.837,1.852,0.000,0.000
+kdown_lo,global radiation,0.900,0.100,,0.100,0.128,0.343,0.000
+kdown_hi,global radiation,1.100,0.000,,0.000,0.000,0.000,0.000

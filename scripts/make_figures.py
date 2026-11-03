@@ -30,24 +30,28 @@ def pixel_size(rasters: Path) -> float:
 
 
 def tornado(df, path: Path, hour: int) -> None:
-    """Low and high case per input, split into sunlit and shaded ground."""
+    """Low and high case per input, split into sunlit and shaded ground (one panel after sunset)."""
     groups = (
         df.assign(span=df["dUTCI_mean"].abs())
         .groupby("input")["span"].max().sort_values().index.tolist()
     )
-    fig, axes = plt.subplots(1, 2, figsize=(10, 0.45 * len(groups) + 1.6), sharey=True)
-    for ax, col, title in zip(axes, ["dUTCI_sun", "dUTCI_shade"], ["Sunlit", "Shaded"]):
+    no_sun = df["dUTCI_sun"].isna().all() or (df["dUTCI_sun"].abs().max() == 0)
+    panels = [("dUTCI_mean", "All outdoor")] if no_sun else [("dUTCI_sun", "Sunlit"), ("dUTCI_shade", "Shaded")]
+    fig, axes = plt.subplots(1, len(panels), figsize=(5.4 * len(panels), 0.45 * len(groups) + 1.6), sharey=True,
+                             squeeze=False)
+    axes = axes[0]
+    for ax, (col, title) in zip(axes, panels):
         for i, g in enumerate(groups):
             sub = df[df["input"] == g].sort_values("value")
             lo, hi = sub.iloc[0], sub.iloc[-1]
             ax.barh(i, lo[col], color=plotstyle.LOW, height=0.6)
             ax.barh(i, hi[col], color=plotstyle.HIGH, height=0.6)
         ax.axvline(0, color="0.3", lw=0.8)
-        ax.set_title(f"{title} ground, {hour:02d}:00")
+        ax.set_title(f"{title} ground, {hour:02d}:00" + (" (after sunset)" if no_sun else ""))
         ax.set_xlabel("Change in mean UTCI (°C)")
         ax.grid(axis="x", alpha=0.3)
     axes[0].set_yticks(range(len(groups)), [plotstyle.input_label(g) for g in groups])
-    axes[1].legend(handles=[plt.Rectangle((0, 0), 1, 1, color=c) for c in (plotstyle.LOW, plotstyle.HIGH)],
+    axes[-1].legend(handles=[plt.Rectangle((0, 0), 1, 1, color=c) for c in (plotstyle.LOW, plotstyle.HIGH)],
                    labels=["low end of range", "high end of range"], loc="lower right", frameon=False)
     fig.savefig(path)
     plt.close(fig)

@@ -1,0 +1,37 @@
+region,input,mu_star,mu,sigma,mu_star_lo95,mu_star_hi95
+all,wall albedo,0.651,0.651,0.045,0.626,0.677
+all,wall emissivity,0.209,0.209,0.007,0.205,0.213
+all,body shortwave absorption,1.187,1.187,0.073,1.144,1.227
+all,paved albedo,0.900,0.900,0.090,0.850,0.953
+all,paved emissivity,0.374,0.374,0.013,0.366,0.381
+all,air temperature,4.651,4.651,0.261,4.501,4.799
+all,relative humidity,2.877,2.877,0.282,2.734,3.067
+all,wind speed,0.164,-0.023,0.220,0.089,0.248
+all,global radiation,0.613,0.613,0.106,0.554,0.676
+sun,wall albedo,0.551,0.551,0.033,0.533,0.571
+sun,wall emissivity,0.136,0.136,0.006,0.133,0.139
+sun,body shortwave absorption,1.437,1.437,0.087,1.388,1.487
+sun,paved albedo,1.199,1.199,0.120,1.133,1.274
+sun,paved emissivity,0.476,0.476,0.018,0.465,0.486
+sun,air temperature,4.623,4.623,0.276,4.463,4.789
+sun,relative humidity,2.925,2.925,0.301,2.766,3.116
+sun,wind speed,0.178,-0.054,0.227,0.100,0.264
+sun,global radiation,0.959,0.959,0.139,0.880,1.043
+shade,wall albedo,0.896,0.896,0.081,0.849,0.944
+shade,wall emissivity,0.391,0.391,0.012,0.385,0.398
+shade,body shortwave absorption,0.564,0.564,0.067,0.525,0.607
+shade,paved albedo,0.156,0.156,0.017,0.146,0.166
+shade,paved emissivity,0.121,0.121,0.003,0.119,0.123
+shade,air temperature,4.718,4.718,0.228,4.587,4.849
+shade,relative humidity,2.760,2.760,0.254,2.631,2.920
+shade,wind speed,0.159,0.057,0.203,0.090,0.240
+shade,global radiation,0.246,-0.246,0.080,0.198,0.290
+area>=38C (pct points),wall albedo,3.382,3.382,3.062,,
+area>=38C (pct points),wall emissivity,2.115,2.115,2.108,,
+area>=38C (pct points),body shortwave absorption,4.094,4.094,2.541,,
+area>=38C (pct points),paved albedo,0.740,0.740,0.797,,
+area>=38C (pct points),paved emissivity,0.410,0.410,0.435,,
+area>=38C (pct points),air temperature,27.252,27.252,9.569,,
+area>=38C (pct points),relative humidity,15.931,15.931,6.872,,
+area>=38C (pct points),wind speed,0.776,-0.017,1.466,,
+area>=38C (pct points),global radiation,0.771,-0.357,1.211,,
