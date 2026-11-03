@@ -11,7 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 torch = pytest.importorskip("torch")
 up = pytest.importorskip("solweig_gpu.utci_process")
 
-from solweig_sens.compact_masks import FINGERPRINTS, LazyDiffsh, PackedMask, compact_mask, compact_masks, patched_sources  # noqa: E402
+from solweig_sens.compact_masks import (FINGERPRINTS, LazyDiffsh, MaskFile, PackedMask, compact_mask,  # noqa: E402
+                                        compact_masks, patched_sources)
 
 
 def _masks(seed=0, shape=(17, 23, 153)):
@@ -142,6 +143,88 @@ def test_patches_apply_and_restore():
             assert getattr(up, n).__globals__ is vars(up)
     for n, f in originals.items():
         assert getattr(up, n) is f
-    assert "_compact_mask" not in vars(up) and "_LazyDiffsh" not in vars(up)
+    assert "_compact_mask" not in vars(up) and "_LazyDiffsh" not in vars(up) and "_MaskFile" not in vars(up)
     import solweig_gpu.shadow as sh
     assert up.svf_calculator is sh.svf_calculator and "_MaskBuilder" not in vars(sh)
+
+
+KEYS = ("shadowmat", "vegshadowmat", "vbshmat")
+
+
+def _cache_file(path, masks):
+    np.savez_compressed(path, **dict(zip(KEYS, masks)))  # as SOLWEIG-GPU writes it: float32 0/1
+    return path
+
+
+def _loaded(path, mode, packed_cache=False):
+    with MaskFile(path, mode, packed_cache) as f:
+        return [compact_mask(f[k], "cpu", mode) for k in KEYS]
+
+
+@pytest.mark.parametrize("mode", ["uint8", "bits"])
+def test_mask_file_loads_what_np_load_loads(tmp_path, mode):
+    masks = _masks(3)
+    path = _cache_file(tmp_path / "shadowmats_0_0.npz", masks)
+    for got, ref in zip(_loaded(path, mode), masks):
+        expected = compact_mask(ref, "cpu", mode)
+        if mode == "bits":
+            assert torch.equal(got.packed, expected.packed) and got.n == expected.n
+        else:
+            assert torch.equal(got, expected)
+    assert not (tmp_path / "shadowmats_0_0.bits.npz").exists()  # no copy unless asked for
+
+
+def test_packed_cache_is_written_then_read_and_gives_the_same_bits(tmp_path, monkeypatch):
+    masks = _masks(4)
+    path = _cache_file(tmp_path / "shadowmats_0_0.npz", masks)
+    first = _loaded(path, "bits", packed_cache=True)
+    assert (tmp_path / "shadowmats_0_0.bits.npz").exists()
+    monkeypatch.setattr(MaskFile, "_load", lambda self, key: pytest.fail("decompressed the float32 file"))
+    second = _loaded(path, "bits", packed_cache=True)
+    for a, b, ref in zip(first, second, masks):
+        assert torch.equal(a.packed, b.packed) and a.n == b.n == 153
+        assert torch.equal(b[:, :, :], torch.from_numpy(ref))
+
+
+def test_packed_cache_is_rebuilt_when_the_source_changes(tmp_path):
+    path = _cache_file(tmp_path / "shadowmats_0_0.npz", _masks(5))
+    _loaded(path, "bits", packed_cache=True)
+    new = _masks(6)
+    _cache_file(path, new)  # e.g. the sky view factor was recomputed
+    for got, ref in zip(_loaded(path, "bits", packed_cache=True), new):
+        assert torch.equal(got[:, :, :], torch.from_numpy(ref))
+
+
+def test_non_binary_masks_are_not_packed_or_cached(tmp_path):
+    masks = _masks(7)
+    masks[1][2, 3, 4] = 0.5
+    path = _cache_file(tmp_path / "shadowmats_0_0.npz", masks)
+    with pytest.warns(RuntimeWarning, match="other than 0 and 1"):
+        got = _loaded(path, "bits", packed_cache=True)
+    assert isinstance(got[1], torch.Tensor) and got[1][2, 3, 4] == 0.5
+    assert isinstance(got[0], PackedMask)
+    assert not (tmp_path / "shadowmats_0_0.bits.npz").exists()
+
+
+@pytest.mark.parametrize("mode", ["uint8", "bits"])
+def test_mask_file_decompresses_in_parallel_only_when_memory_allows(tmp_path, monkeypatch, mode):
+    import solweig_sens.compact_masks as cm
+
+    masks = _masks(8)
+    path = _cache_file(tmp_path / "shadowmats_0_0.npz", masks)
+    one_mask = masks[0].nbytes
+    results = {}
+    for available, workers in [(10 * one_mask, 3), (4 * one_mask, 1), (None, 1)]:
+        monkeypatch.setattr(cm, "_available_bytes", lambda a=available: a)
+        with MaskFile(path, mode) as f:
+            assert f.workers == workers
+            results[available] = [compact_mask(f[k], "cpu", mode) for k in KEYS]
+    first, *others = results.values()
+    for other in others:  # same masks whichever way they were decompressed
+        for a, b in zip(first, other):
+            assert torch.equal(a.packed, b.packed) if mode == "bits" else torch.equal(a, b)
+
+
+def test_load_patch_opens_the_cache_through_mask_file():
+    assert '_MaskFile(npz_path, "bits", True)' in patched_sources("bits", packed_cache=True)["load_cached_svf_outputs"]
+    assert '_MaskFile(npz_path, "bits", False)' in patched_sources("bits")["load_cached_svf_outputs"]

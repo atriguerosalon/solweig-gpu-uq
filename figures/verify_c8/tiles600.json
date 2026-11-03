@@ -1,0 +1,66 @@
+{
+  "src": "~/verify_c7_tiles600/tight_kept/processed_inputs",
+  "runs": [
+    {
+      "config": "hoist",
+      "repeat": 0,
+      "seconds": 56.0974690059993
+    },
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 77.74657706899961
+    },
+    {
+      "config": "par",
+      "repeat": 0,
+      "seconds": 78.66859919199851
+    },
+    {
+      "config": "cached",
+      "repeat": 0,
+      "seconds": 56.83222237999871
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 75.34690435499942
+    },
+    {
+      "config": "par",
+      "repeat": 1,
+      "seconds": 61.161589831997844
+    },
+    {
+      "config": "cached",
+      "repeat": 1,
+      "seconds": 42.12017328700313
+    },
+    {
+      "config": "hoist",
+      "repeat": 1,
+      "seconds": 44.71059417200013
+    }
+  ],
+  "median_seconds": {
+    "base": 76.54674071199952,
+    "par": 69.91509451199818,
+    "hoist": 50.404031588999715,
+    "cached": 42.12017328700313
+  },
+  "cached_cold_seconds": 56.83222237999871,
+  "comparisons": {
+    "par_vs_base": {
+      "files": 12,
+      "differ": 0
+    },
+    "hoist_vs_base": {
+      "files": 12,
+      "differ": 0
+    },
+    "cached_vs_base": {
+      "files": 12,
+      "differ": 0
+    }
+  }
+}

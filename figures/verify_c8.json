@@ -1,0 +1,126 @@
+{
+  "src": "~/solweig_bench/processed_inputs",
+  "runs": [
+    {
+      "config": "hoist",
+      "repeat": 0,
+      "seconds": 24.82497859200157
+    },
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 27.027628321999146
+    },
+    {
+      "config": "par",
+      "repeat": 0,
+      "seconds": 25.168018340000344
+    },
+    {
+      "config": "cached",
+      "repeat": 0,
+      "seconds": 23.754701477999333
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 24.504126215000724
+    },
+    {
+      "config": "par",
+      "repeat": 1,
+      "seconds": 22.744921567000347
+    },
+    {
+      "config": "cached",
+      "repeat": 1,
+      "seconds": 16.46950188200026
+    },
+    {
+      "config": "hoist",
+      "repeat": 1,
+      "seconds": 19.68541748899952
+    },
+    {
+      "config": "base",
+      "repeat": 2,
+      "seconds": 23.995955494001464
+    },
+    {
+      "config": "hoist",
+      "repeat": 2,
+      "seconds": 18.784639842000615
+    },
+    {
+      "config": "par",
+      "repeat": 2,
+      "seconds": 23.250323853000737
+    },
+    {
+      "config": "cached",
+      "repeat": 2,
+      "seconds": 17.81465989500066
+    },
+    {
+      "config": "par",
+      "repeat": 3,
+      "seconds": 23.363532652001595
+    },
+    {
+      "config": "base",
+      "repeat": 3,
+      "seconds": 24.585924619999787
+    },
+    {
+      "config": "cached",
+      "repeat": 3,
+      "seconds": 17.613487964999877
+    },
+    {
+      "config": "hoist",
+      "repeat": 3,
+      "seconds": 20.474449740999262
+    },
+    {
+      "config": "hoist",
+      "repeat": 4,
+      "seconds": 19.835778921000383
+    },
+    {
+      "config": "base",
+      "repeat": 4,
+      "seconds": 25.083077613999194
+    },
+    {
+      "config": "cached",
+      "repeat": 4,
+      "seconds": 17.494050303999757
+    },
+    {
+      "config": "par",
+      "repeat": 4,
+      "seconds": 24.017824053000368
+    }
+  ],
+  "median_seconds": {
+    "base": 24.585924619999787,
+    "par": 23.363532652001595,
+    "hoist": 19.835778921000383,
+    "cached": 17.553769134499817
+  },
+  "cached_cold_seconds": 23.754701477999333,
+  "comparisons": {
+    "par_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "hoist_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "cached_vs_base": {
+      "files": 3,
+      "differ": 0
+    }
+  }
+}

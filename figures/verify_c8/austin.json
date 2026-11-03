@@ -1,0 +1,66 @@
+{
+  "src": "~/verify_c7_austin/tight_kept/processed_inputs",
+  "runs": [
+    {
+      "config": "hoist",
+      "repeat": 0,
+      "seconds": 26.153237528000318
+    },
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 28.174658463001833
+    },
+    {
+      "config": "par",
+      "repeat": 0,
+      "seconds": 26.40534328099966
+    },
+    {
+      "config": "cached",
+      "repeat": 0,
+      "seconds": 26.911619758000597
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 28.543574962001003
+    },
+    {
+      "config": "par",
+      "repeat": 1,
+      "seconds": 27.329386071000044
+    },
+    {
+      "config": "cached",
+      "repeat": 1,
+      "seconds": 18.272408420998545
+    },
+    {
+      "config": "hoist",
+      "repeat": 1,
+      "seconds": 23.877622151998366
+    }
+  ],
+  "median_seconds": {
+    "base": 28.359116712501418,
+    "par": 26.867364675999852,
+    "hoist": 25.015429839999342,
+    "cached": 18.272408420998545
+  },
+  "cached_cold_seconds": 26.911619758000597,
+  "comparisons": {
+    "par_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "hoist_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "cached_vs_base": {
+      "files": 3,
+      "differ": 0
+    }
+  }
+}

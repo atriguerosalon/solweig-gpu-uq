@@ -1,12 +1,14 @@
 --- solweig_gpu v2.0.0: load_cached_svf_outputs (original)
 +++ solweig-sensitivity C4: load_cached_svf_outputs (load cached sky-patch masks compactly)
-@@ -33,9 +33,9 @@
+@@ -32,10 +32,10 @@
+ 
      svftotal = _load_raster_to_tensor_from_path(svftotal_path)
  
-     with np.load(npz_path) as npz:
+-    with np.load(npz_path) as npz:
 -        shmat = torch.tensor(npz["shadowmat"].astype(np.float32), device=device)
 -        vegshmat = torch.tensor(npz["vegshadowmat"].astype(np.float32), device=device)
 -        vbshvegshmat = torch.tensor(npz["vbshmat"].astype(np.float32), device=device)
++    with _MaskFile(npz_path, "bits", False) as npz:
 +        shmat = _compact_mask(npz["shadowmat"], device, "bits")
 +        vegshmat = _compact_mask(npz["vegshadowmat"], device, "bits")
 +        vbshvegshmat = _compact_mask(npz["vbshmat"], device, "bits")

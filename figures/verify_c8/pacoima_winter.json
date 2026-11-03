@@ -1,0 +1,66 @@
+{
+  "src": "~/verify_c7_pacoima_winter/tight_kept/processed_inputs",
+  "runs": [
+    {
+      "config": "hoist",
+      "repeat": 0,
+      "seconds": 25.17100544799905
+    },
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 27.13707148300091
+    },
+    {
+      "config": "par",
+      "repeat": 0,
+      "seconds": 25.527650132000417
+    },
+    {
+      "config": "cached",
+      "repeat": 0,
+      "seconds": 22.677634177998698
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 37.70805271499921
+    },
+    {
+      "config": "par",
+      "repeat": 1,
+      "seconds": 38.68785960600144
+    },
+    {
+      "config": "cached",
+      "repeat": 1,
+      "seconds": 21.926646538999194
+    },
+    {
+      "config": "hoist",
+      "repeat": 1,
+      "seconds": 20.918685636999726
+    }
+  ],
+  "median_seconds": {
+    "base": 32.42256209900006,
+    "par": 32.10775486900093,
+    "hoist": 23.044845542499388,
+    "cached": 21.926646538999194
+  },
+  "cached_cold_seconds": 22.677634177998698,
+  "comparisons": {
+    "par_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "hoist_vs_base": {
+      "files": 3,
+      "differ": 0
+    },
+    "cached_vs_base": {
+      "files": 3,
+      "differ": 0
+    }
+  }
+}

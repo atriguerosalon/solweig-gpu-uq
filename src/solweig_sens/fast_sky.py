@@ -24,9 +24,11 @@ from typing import Iterator
 import numpy as np
 import torch
 
-# Patches per chunk. Measured 30 Oct on a 1000 x 1000 tile (scripts/profile_memory.py): chunk 8 is as
-# fast as 64 (25.9 s against 24.5 s per tile-day, within noise) but adds only 0.10 GiB to the original's
-# 2.90 GiB peak, against 0.62 GiB for 64 and 1.47 GiB for all 153 at once.
+# Patches per chunk. Measured 30 Oct on a 1000 x 1000 tile (scripts/profile_memory.py): chunk 8 adds only
+# 0.10 GiB to the original's 2.90 GiB peak, against 0.62 GiB for 64 and 1.47 GiB for all 153 at once.
+# It is not quite as fast: single runs on 30 Oct (25.9 against 24.5 s per tile-day) looked like noise, but
+# repeated, interleaved runs on 2 Nov (scripts/bench_steps.py) put chunk 8 2-3 s per tile-day slower in
+# both sessions. A deliberate trade: about 10% more time for 0.9 GiB less reserved memory.
 CHUNK = 8
 
 

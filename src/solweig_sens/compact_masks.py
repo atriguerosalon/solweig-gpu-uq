@@ -18,6 +18,14 @@ the original float32 arithmetic when it is indexed, so values are the same bits.
 If a mask file holds any value other than 0 or 1, the loader keeps that mask as float32
 (the original behaviour) rather than corrupting it.
 
+Loading the cache: SOLWEIG-GPU stores the three masks as compressed float32 (1.8 GB of 0/1 values
+at 1000 x 1000, 7 GB at 2000 x 2000), and decompressing them is most of each run's start-up
+(3.6 of 4.2 s at 1000 px, scripts/where_time_goes.py). The three are now decompressed in parallel
+threads (about 2x) when they fit in memory (see MaskFile), each packed as soon as it is decompressed. With ``packed_cache=True`` (bits mode only) the first load also writes a
+bit-packed copy next to SOLWEIG's file, ``shadowmats_<n>.bits.npz``, tagged with the SHA-256 of
+the file it came from; later loads read that copy (about 30x less to decompress) as long as the
+tag matches, and rebuild it otherwise. SOLWEIG's own cache file is never changed.
+
 Applied by compiling edited copies of ``load_cached_svf_outputs`` and ``compute_utci`` into
 the live ``solweig_gpu.utci_process`` namespace and restoring the originals afterwards.
 Both are fingerprint-pinned. Verification: tests/test_compact_masks.py and
@@ -29,9 +37,11 @@ from __future__ import annotations
 import contextlib
 import hashlib
 import inspect
+import os
 import textwrap
 import warnings
-from typing import Iterator
+from concurrent.futures import ThreadPoolExecutor
+from typing import Iterator, NamedTuple
 
 import numpy as np
 import torch
@@ -60,6 +70,7 @@ _DIFFSH_OLD = (
 )
 _DIFFSH_NEW = "    diffsh = _LazyDiffsh(shmat, vegshmat, transVeg)\n"
 _LOAD_KEYS = ("shadowmat", "vegshadowmat", "vbshmat")
+_LOAD_OPEN = "np.load(npz_path)"
 
 
 class PackedMask:
@@ -191,9 +202,138 @@ class MaskBuilder:
         return self.data.cpu()
 
 
-def compact_mask(arr: np.ndarray, device, mode: str):
+class Packed(NamedTuple):
+    """A 0/1 mask already packed on the CPU: bits as in PackedMask, n patches."""
+    packed: np.ndarray
+    n: int
+
+
+def _is_binary(arr: np.ndarray) -> bool:
+    return bool(np.isin(arr, (0.0, 1.0)).all())
+
+
+def _pack(arr: np.ndarray) -> Packed:
+    return Packed(np.packbits(arr.astype(np.uint8), axis=2, bitorder="little"), arr.shape[2])
+
+
+def _sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 22), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def _available_bytes():
+    """Memory available to this process (Linux: MemAvailable), or None if unknown."""
+    try:
+        with open("/proc/meminfo") as f:
+            for line in f:
+                if line.startswith("MemAvailable:"):
+                    return int(line.split()[1]) * 1024
+    except OSError:
+        pass
+    try:
+        return os.sysconf("SC_AVPHYS_PAGES") * os.sysconf("SC_PAGE_SIZE")
+    except (ValueError, OSError, AttributeError):
+        return None
+
+
+class MaskFile:
+    """Stands in for ``np.load(npz_path)`` on SOLWEIG's mask cache (only ``[key]`` is used).
+
+    Decompresses the three masks in parallel when they fit in memory, and packs each one as soon
+    as it is decompressed, so at most one float32 mask per thread is held at a time (as the
+    original loader, which converts them one after another). In bits mode, binary masks come
+    back as ``Packed`` (compact_mask turns them into a PackedMask without repacking), in uint8
+    mode as uint8 arrays; with ``packed_cache``, a bit-packed copy is read if its source tag
+    matches, or written after a full load.
+
+    Memory guard: three float32 masks are 1.8 GB at 1000 x 1000 and 7.3 GB at 2000 x 2000. They
+    are decompressed in parallel only if three of them, plus the packing temporaries, take at most
+    half of the available memory; otherwise one after another.
+    """
+
+    PEAK_PER_ARRAY = 1.25  # the float32 array plus its uint8 copy while packing
+    MEMORY_SHARE = 0.5
+
+    def __init__(self, path, mode: str, packed_cache: bool = False):
+        self.path, self.mode = str(path), mode
+        self.packed_cache = packed_cache and mode == "bits"
+        stem = self.path[: -len(".npz")] if self.path.endswith(".npz") else self.path
+        self.sidecar = stem + ".bits.npz"
+        self.arrays = None
+        self.workers = None
+
+    def _load(self, key: str):
+        with np.load(self.path) as npz:  # one handle per thread
+            a = npz[key]
+        if not _is_binary(a):
+            return a  # compact_mask keeps it as float32, with a warning
+        if self.mode == "bits":
+            return _pack(a)
+        return a.astype(np.uint8) if self.mode == "uint8" else a
+
+    def _parallel_workers(self) -> int:
+        """3 if three decompressed masks fit in half of the available memory, else 1."""
+        import zipfile
+
+        with zipfile.ZipFile(self.path) as z:
+            sizes = [z.getinfo(f"{k}.npy").file_size for k in _LOAD_KEYS]
+        available = _available_bytes()
+        n = len(_LOAD_KEYS)
+        if available is None or n * self.PEAK_PER_ARRAY * max(sizes) > self.MEMORY_SHARE * available:
+            return 1
+        return n
+
+    def _read_sidecar(self, digest: str):
+        try:
+            with np.load(self.sidecar) as z:
+                if str(z["source_sha256"]) != digest:
+                    return None
+                return {k: Packed(z[k], int(z[k + "_n"])) for k in _LOAD_KEYS}
+        except (OSError, ValueError, KeyError):
+            return None
+
+    def _write_sidecar(self, digest: str) -> None:
+        tmp = self.sidecar + ".tmp"
+        try:
+            with open(tmp, "wb") as f:
+                np.savez_compressed(f, source_sha256=np.array(digest),
+                                    **{k: v.packed for k, v in self.arrays.items()},
+                                    **{k + "_n": np.array(v.n) for k, v in self.arrays.items()})
+            os.replace(tmp, self.sidecar)
+        except OSError as e:
+            warnings.warn(f"could not write the packed mask cache {self.sidecar}: {e}", RuntimeWarning, stacklevel=2)
+            with contextlib.suppress(OSError):
+                os.remove(tmp)
+
+    def __enter__(self):
+        digest = _sha256(self.path) if self.packed_cache else None
+        if self.packed_cache and os.path.exists(self.sidecar):
+            self.arrays = self._read_sidecar(digest)
+            if self.arrays is not None:
+                return self
+        self.workers = self._parallel_workers()
+        with ThreadPoolExecutor(self.workers) as ex:  # zlib releases the GIL while it inflates
+            self.arrays = dict(zip(_LOAD_KEYS, ex.map(self._load, _LOAD_KEYS)))
+        if self.packed_cache and all(isinstance(v, Packed) for v in self.arrays.values()):
+            self._write_sidecar(digest)
+        return self
+
+    def __getitem__(self, key: str):
+        return self.arrays[key]
+
+    def __exit__(self, *exc):
+        self.arrays = None
+        return False
+
+
+def compact_mask(arr, device, mode: str):
     """Convert one mask from the SVF cache; falls back to float32 if it is not purely 0/1."""
-    if not np.isin(arr, (0.0, 1.0)).all():
+    if isinstance(arr, Packed):  # already checked and packed by MaskFile
+        return PackedMask(torch.from_numpy(arr.packed).to(device), arr.n)
+    if not _is_binary(arr):
         warnings.warn("cached sky-patch mask holds values other than 0 and 1; loading it as float32 "
                       "(original representation, more memory)", RuntimeWarning, stacklevel=2)
         return torch.tensor(arr.astype(np.float32), device=device)
@@ -212,7 +352,7 @@ def _check(name: str) -> None:
         raise RuntimeError(f"solweig_gpu.utci_process.{name} differs from the verified version; re-verify first")
 
 
-def patched_sources(mode: str) -> dict:
+def patched_sources(mode: str, packed_cache: bool = False) -> dict:
     import solweig_gpu.utci_process as up
 
     for name in FINGERPRINTS:
@@ -223,6 +363,9 @@ def patched_sources(mode: str) -> dict:
         if load.count(old) != 1:
             raise RuntimeError("cannot patch load_cached_svf_outputs")
         load = load.replace(old, f'_compact_mask(npz["{key}"], device, "{mode}")')
+    if load.count(_LOAD_OPEN) != 1:
+        raise RuntimeError("cannot patch load_cached_svf_outputs")
+    load = load.replace(_LOAD_OPEN, f'_MaskFile(npz_path, "{mode}", {bool(packed_cache)})')
     comp = textwrap.dedent(inspect.getsource(up.compute_utci))
     if comp.count(_DIFFSH_OLD) != 1:
         raise RuntimeError("cannot patch compute_utci")
@@ -244,23 +387,24 @@ def patched_svf_source(mode: str) -> str:
 
 
 @contextlib.contextmanager
-def compact_masks(mode: str = "bits", svf: bool = True) -> Iterator[None]:
+def compact_masks(mode: str = "bits", svf: bool = True, packed_cache: bool = False) -> Iterator[None]:
     """Run SOLWEIG-GPU with compact masks (``"uint8"`` or ``"bits"``) and on-the-fly diffsh.
 
     With ``svf=True`` (default) the sky view factor computation also builds the masks compactly,
     so computing a new tile's geometry no longer needs the float32 masks either. The cache file
-    it writes is unchanged.
+    it writes is unchanged. With ``packed_cache=True`` (bits only) loading keeps a bit-packed copy
+    of the mask cache next to it and reads that on later runs (see the module docstring).
     """
     import solweig_gpu.shadow as shadow_mod
     import solweig_gpu.utci_process as up
 
-    sources = patched_sources(mode)
+    sources = patched_sources(mode, packed_cache)
     svf_src = patched_svf_source(mode) if svf else None
     ns = vars(up)  # compile into the live namespace so the patched functions see current globals
     originals = {name: getattr(up, name) for name in sources}
     original_svf = shadow_mod.svf_calculator
     original_up_svf = up.svf_calculator
-    ns["_compact_mask"], ns["_LazyDiffsh"] = compact_mask, LazyDiffsh
+    ns["_compact_mask"], ns["_LazyDiffsh"], ns["_MaskFile"] = compact_mask, LazyDiffsh, MaskFile
     sns = vars(shadow_mod)
     try:
         for src in sources.values():
@@ -277,4 +421,5 @@ def compact_masks(mode: str = "bits", svf: bool = True) -> Iterator[None]:
         up.svf_calculator = original_up_svf
         ns.pop("_compact_mask", None)
         ns.pop("_LazyDiffsh", None)
+        ns.pop("_MaskFile", None)
         sns.pop("_MaskBuilder", None)
