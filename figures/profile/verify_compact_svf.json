@@ -1,0 +1,34 @@
+{
+  "original": {
+    "seconds": 313.27720140899874,
+    "peak_allocated_gib": 1.8727903366088867,
+    "peak_reserved_gib": 1.890625
+  },
+  "bits": {
+    "seconds": 303.83074362499974,
+    "peak_allocated_gib": 0.22044658660888672,
+    "peak_reserved_gib": 0.23828125
+  },
+  "identical": {
+    "SkyViewFactor_0_0.tif": true,
+    "shadowmats_0_0.npz:shadowmat": true,
+    "shadowmats_0_0.npz:vegshadowmat": true,
+    "shadowmats_0_0.npz:vbshmat": true,
+    "svfs_0_0.zip:svf.tif": true,
+    "svfs_0_0.zip:svfE.tif": true,
+    "svfs_0_0.zip:svfS.tif": true,
+    "svfs_0_0.zip:svfW.tif": true,
+    "svfs_0_0.zip:svfN.tif": true,
+    "svfs_0_0.zip:svfveg.tif": true,
+    "svfs_0_0.zip:svfEveg.tif": true,
+    "svfs_0_0.zip:svfSveg.tif": true,
+    "svfs_0_0.zip:svfWveg.tif": true,
+    "svfs_0_0.zip:svfNveg.tif": true,
+    "svfs_0_0.zip:svfaveg.tif": true,
+    "svfs_0_0.zip:svfEaveg.tif": true,
+    "svfs_0_0.zip:svfSaveg.tif": true,
+    "svfs_0_0.zip:svfWaveg.tif": true,
+    "svfs_0_0.zip:svfNaveg.tif": true
+  },
+  "all_identical": true
+}

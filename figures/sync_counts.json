@@ -1,0 +1,641 @@
+{
+  "size_px": 250,
+  "configs": {
+    "v200": {
+      "svf": {
+        "total": 488019,
+        "top": [
+          [
+            "shadow.py:shadow:245  while (amaxvalue >= dz and torch.abs(dx) < sizex and torch.abs(dy) < s",
+            89837
+          ],
+          [
+            "shadow.py:shadow:246  if (pibyfour <= azimuth < threetimespibyfour or fivetimespibyfour <= a",
+            87488
+          ],
+          [
+            "shadow.py:shadow:262  xc1 = int((dx + absdx) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:263  xc2 = int(sizex + (dx - absdx) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:264  yc1 = int((dy + absdy) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:265  yc2 = int(sizey + (dy - absdy) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:266  xp1 = int(-((dx - absdx) / 2.))",
+            29854
+          ],
+          [
+            "shadow.py:shadow:267  xp2 = int(sizex - (dx + absdx) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:268  yp1 = int(-((dy - absdy) / 2.))",
+            29854
+          ],
+          [
+            "shadow.py:shadow:269  yp2 = int(sizey - (dy + absdy) / 2.)",
+            29854
+          ],
+          [
+            "shadow.py:shadow:295  if bush.max() > 0. and torch.max(fabovea * bush) > 0.:",
+            29854
+          ],
+          [
+            "shadow.py:annulus_weight:342  n = torch.tensor(90.0, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:annulus_weight:343  altitude = torch.tensor(altitude, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:svf_calculator:559  if 0 <= azimuth < 180:",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:572  if 0 <= azimuth < 180:",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:565  if azimuth >= 270 or azimuth < 90:",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:581  if azimuth >= 270 or azimuth < 90:",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:561  if 90 <= azimuth < 270:",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:575  if 90 <= azimuth < 270:",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:563  if 180 <= azimuth < 360:",
+            2670
+          ],
+          [
+            "shadow.py:svf_calculator:578  if 180 <= azimuth < 360:",
+            2670
+          ],
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            306
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            306
+          ],
+          [
+            "shadow.py:svf_calculator:555  for k in range(annulino[i]+1, annulino[i+1]+1):",
+            306
+          ],
+          [
+            "shadow.py:shadow:196  if azimuth == 0.0:",
+            153
+          ]
+        ]
+      },
+      "day": {
+        "total": 191410,
+        "top": [
+          [
+            "solweig.py:sunonsurface_2018a:188  tempbu[xp1:xp2, yp1:yp2] = buildings[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:189  tempsh[xp1:xp2, yp1:yp2] = shadow[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:190  tempLupsh[xp1:xp2, yp1:yp2] = Lup[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:191  tempalbsh[xp1:xp2, yp1:yp2] = albshadow[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:192  tempalbnosh[xp1:xp2, yp1:yp2] = alb[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:207  tempwallsun[xp1:xp2, yp1:yp2] = sunwall[xc1:xc2, yc1:yc2]",
+            12672
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1530  if ((azimuth_difference > 90) and (azimuth_difference < 270) and (sola",
+            4767
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:168  if (pibyfour <= azimuth and azimuth < threetimespibyfour) or (fivetime",
+            4752
+          ],
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            4590
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            4590
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1670  if skyalt_c[skyalt == patch_altitude[i]] > 1:",
+            4590
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1508  if (patch_azimuth[idx] > 360) or (patch_azimuth[idx] < 180):",
+            4590
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1587  if (patch_azimuth[idx] > 360) or (patch_azimuth[idx] < 180):",
+            4590
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1517  if (patch_azimuth[idx] > 270) or (patch_azimuth[idx] < 90):",
+            4050
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1593  if (patch_azimuth[idx] > 270) or (patch_azimuth[idx] < 90):",
+            4050
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1511  if (patch_azimuth[idx] > 90) and (patch_azimuth[idx] < 270):",
+            3975
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1589  if (patch_azimuth[idx] > 90) and (patch_azimuth[idx] < 270):",
+            3975
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:1114  while (amaxvalue >= dz) and (torch.abs(dx) < sizex) and (torch.abs(dy)",
+            3764
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1514  if (patch_azimuth[idx] > 180) and (patch_azimuth[idx] < 360):",
+            3405
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1591  if (patch_azimuth[idx] > 180) and (patch_azimuth[idx] < 360):",
+            3405
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1566  if (patch_azimuth[idx] > 360) or (patch_azimuth[idx] < 180):",
+            3360
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1572  if (patch_azimuth[idx] > 270) or (patch_azimuth[idx] < 90):",
+            3088
+          ],
+          [
+            "solweig.py:define_patch_characteristics:1568  if (patch_azimuth[idx] > 90) and (patch_azimuth[idx] < 270):",
+            2850
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:1115  if ((pibyfour <= azimuth) and (azimuth < threetimespibyfour)) or ((fiv",
+            2600
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:1148  sh = torch.where(f > a, torch.tensor(1.0, device=device), torch.tensor",
+            2500
+          ]
+        ]
+      }
+    },
+    "ours": {
+      "svf": {
+        "total": 132277,
+        "top": [
+          [
+            "shadow.py:shadow:245  while (amaxvalue >= dz and torch.abs(dx) < sizex and torch.abs(dy) < s",
+            18196
+          ],
+          [
+            "shadow.py:shadow:246  if (pibyfour <= azimuth < threetimespibyfour or fivetimespibyfour <= a",
+            17489
+          ],
+          [
+            "shadow.py:annulus_weight:342  n = torch.tensor(90.0, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:annulus_weight:343  altitude = torch.tensor(altitude, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:shadow:262  xc1 = int((dx + absdx) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:263  xc2 = int(sizex + (dx - absdx) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:264  yc1 = int((dy + absdy) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:265  yc2 = int(sizey + (dy - absdy) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:266  xp1 = int(-((dx - absdx) / 2.))",
+            6014
+          ],
+          [
+            "shadow.py:shadow:267  xp2 = int(sizex - (dx + absdx) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:268  yp1 = int(-((dy - absdy) / 2.))",
+            6014
+          ],
+          [
+            "shadow.py:shadow:269  yp2 = int(sizey - (dy + absdy) / 2.)",
+            6014
+          ],
+          [
+            "shadow.py:shadow:295  if bush.max() > 0. and torch.max(fabovea * bush) > 0.:",
+            6014
+          ],
+          [
+            "shadow.py:svf_calculator:151  for tif_path in temporary_tifs:",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:164  )",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:157  save_raster_like_gdal(gdal_dsm, svftotal_path, svftotal)",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:173  Args:",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:153  ",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:167  \"\"\"",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:155  os.remove(tif_path)",
+            2670
+          ],
+          [
+            "shadow.py:svf_calculator:170  This function performs GPU-accelerated shadow calculations by tracing ",
+            2670
+          ],
+          [
+            "compact_masks.py:__setitem__:164  if self.float_data is None and not bool(((value == 0) | (value == 1)).",
+            459
+          ],
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            306
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            306
+          ],
+          [
+            "shadow.py:svf_calculator:147  save_raster_like_gdal(gdal_dsm, tif_path, data)",
+            306
+          ]
+        ]
+      },
+      "day": {
+        "total": 28879,
+        "top": [
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            4590
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            4590
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1670  if skyalt_c[skyalt == patch_altitude[i]] > 1:",
+            4590
+          ],
+          [
+            "solweig.py:Kside_veg_v2022a:684  if skyalt_c[skyalt == patch_altitude[i]] > 1:",
+            2448
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1671  steradian[i] = ((360 / skyalt_c[skyalt == patch_altitude[i]]) * deg2ra",
+            2280
+          ],
+          [
+            "solweig.py:Kside_veg_v2022a:685  steradian[i] = ((360 / skyalt_c[skyalt == patch_altitude[i]]) * deg2ra",
+            1216
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:74  ",
+            542
+          ],
+          [
+            "solweig.py:gvf_2018a:370  if 270 <= azimuthA[j] or azimuthA[j] < 90:",
+            512
+          ],
+          [
+            "solweig.py:gvf_2018a:355  if 0 <= azimuthA[j] < 180:",
+            432
+          ],
+          [
+            "solweig.py:gvf_2018a:360  if 90 <= azimuthA[j] < 270:",
+            392
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1693  Ldown[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta + 2",
+            360
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1694  Lside[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta + 2",
+            360
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1695  Lnormal[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta +",
+            360
+          ],
+          [
+            "solweig.py:gvf_2018a:365  if 180 <= azimuthA[j] < 360:",
+            360
+          ],
+          [
+            "fast_sky.py:define_patch_characteristics:101  off = torch.nonzero(~f).flatten()",
+            300
+          ],
+          [
+            "fast_sky.py:define_patch_characteristics:102  on = torch.nonzero(f).flatten()",
+            300
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:84  azimuthA (float): Solar azimuth angle (degrees)",
+            271
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:85  scale (float): Grid scale (pixels per meter)",
+            271
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:88  sunwall (torch.Tensor): Sunlit wall mask",
+            271
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:148  weightsumLwall = torch.zeros((sizex, sizey), device=device)",
+            248
+          ],
+          [
+            "solweig.py:gvf_2018a:346  azimuthA[j], scale, buildings, shadow, sunwall, first, second, dirwall",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:39  torch.Tensor: Input as tensor on device",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:40  \"\"\"",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:41  if device is None:",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:42  device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")",
+            144
+          ]
+        ]
+      }
+    },
+    "ours_c7": {
+      "svf": {
+        "total": 43690,
+        "top": [
+          [
+            "shadow.py:annulus_weight:342  n = torch.tensor(90.0, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:annulus_weight:343  altitude = torch.tensor(altitude, device=device)",
+            7320
+          ],
+          [
+            "shadow.py:svf_calculator:151  for tif_path in temporary_tifs:",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:164  )",
+            3660
+          ],
+          [
+            "shadow.py:svf_calculator:157  save_raster_like_gdal(gdal_dsm, svftotal_path, svftotal)",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:173  Args:",
+            3276
+          ],
+          [
+            "shadow.py:svf_calculator:153  ",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:167  \"\"\"",
+            3126
+          ],
+          [
+            "shadow.py:svf_calculator:155  os.remove(tif_path)",
+            2670
+          ],
+          [
+            "shadow.py:svf_calculator:170  This function performs GPU-accelerated shadow calculations by tracing ",
+            2670
+          ],
+          [
+            "fast_shadow.py:_shadow_steps:44  t, d, amax = float(tanaltbyscale), float(ds), float(amaxvalue)",
+            459
+          ],
+          [
+            "compact_masks.py:__setitem__:164  if self.float_data is None and not bool(((value == 0) | (value == 1)).",
+            459
+          ],
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            306
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            306
+          ],
+          [
+            "fast_shadow.py:_shadow_steps:72  ok_cpu, bounds_cpu = ok.cpu().tolist(), bounds.cpu().tolist()",
+            306
+          ],
+          [
+            "shadow.py:svf_calculator:147  save_raster_like_gdal(gdal_dsm, tif_path, data)",
+            306
+          ],
+          [
+            "shadow.py:shadow:31  gdal.UseExceptions()",
+            153
+          ],
+          [
+            "shadow.py:shadow:46  \"\"\"",
+            153
+          ],
+          [
+            "shadow.py:shadow:47  Convert input to PyTorch tensor on specified device.",
+            153
+          ],
+          [
+            "shadow.py:shadow:48  ",
+            153
+          ],
+          [
+            "shadow.py:shadow:80  ",
+            153
+          ],
+          [
+            "fast_shadow.py:_shadow_steps:37  cond = bool((((p4 <= azimuth) & (azimuth < p34)) | ((p54 <= azimuth) &",
+            153
+          ],
+          [
+            "fast_shadow.py:_shadow_steps:74  if not (amaxvalue >= 0):  # loop test fails before the first step",
+            153
+          ],
+          [
+            "shadow.py:shadow:127  \"svfE.tif\": svfE,",
+            153
+          ],
+          [
+            "shadow.py:svf_calculator:130  \"svfN.tif\": svfN,",
+            149
+          ]
+        ]
+      },
+      "day": {
+        "total": 28879,
+        "top": [
+          [
+            "shadow.py:create_patches:403  skyvaultalt = torch.cat((skyvaultalt, torch.tensor([skyvaultaltint[j]]",
+            4590
+          ],
+          [
+            "shadow.py:create_patches:404  skyvaultazi = torch.cat((skyvaultazi, torch.tensor([k * skyvaultaziint",
+            4590
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1670  if skyalt_c[skyalt == patch_altitude[i]] > 1:",
+            4590
+          ],
+          [
+            "solweig.py:Kside_veg_v2022a:684  if skyalt_c[skyalt == patch_altitude[i]] > 1:",
+            2448
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1671  steradian[i] = ((360 / skyalt_c[skyalt == patch_altitude[i]]) * deg2ra",
+            2280
+          ],
+          [
+            "solweig.py:Kside_veg_v2022a:685  steradian[i] = ((360 / skyalt_c[skyalt == patch_altitude[i]]) * deg2ra",
+            1216
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:74  ",
+            542
+          ],
+          [
+            "solweig.py:gvf_2018a:370  if 270 <= azimuthA[j] or azimuthA[j] < 90:",
+            512
+          ],
+          [
+            "solweig.py:gvf_2018a:355  if 0 <= azimuthA[j] < 180:",
+            432
+          ],
+          [
+            "solweig.py:gvf_2018a:360  if 90 <= azimuthA[j] < 270:",
+            392
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1693  Ldown[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta + 2",
+            360
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1694  Lside[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta + 2",
+            360
+          ],
+          [
+            "solweig.py:Lcyl_v2022a:1695  Lnormal[patch_altitude == altitude] = ((temp_emissivity * SBC * ((Ta +",
+            360
+          ],
+          [
+            "solweig.py:gvf_2018a:365  if 180 <= azimuthA[j] < 360:",
+            360
+          ],
+          [
+            "fast_sky.py:define_patch_characteristics:101  off = torch.nonzero(~f).flatten()",
+            300
+          ],
+          [
+            "fast_sky.py:define_patch_characteristics:102  on = torch.nonzero(f).flatten()",
+            300
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:84  azimuthA (float): Solar azimuth angle (degrees)",
+            271
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:85  scale (float): Grid scale (pixels per meter)",
+            271
+          ],
+          [
+            "solweig.py:shadowingfunction_wallheight_23:88  sunwall (torch.Tensor): Sunlit wall mask",
+            271
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:148  weightsumLwall = torch.zeros((sizex, sizey), device=device)",
+            248
+          ],
+          [
+            "solweig.py:gvf_2018a:346  azimuthA[j], scale, buildings, shadow, sunwall, first, second, dirwall",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:39  torch.Tensor: Input as tensor on device",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:40  \"\"\"",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:41  if device is None:",
+            144
+          ],
+          [
+            "solweig.py:sunonsurface_2018a:42  device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")",
+            144
+          ]
+        ]
+      }
+    }
+  }
+}

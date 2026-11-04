@@ -1,0 +1,160 @@
+{
+  "configs": {
+    "pacoima_summer": {
+      "function_calls": {
+        "define_patch_characteristics": {
+          "calls": 24,
+          "identical_calls": 0,
+          "max_abs": 0.0015869140625,
+          "max_rel": 2.5369983149257194e-06,
+          "errors": []
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 14,
+          "identical_calls": 14,
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "errors": []
+        },
+        "sunonsurface_2018a": {
+          "calls": 252,
+          "identical_calls": 252,
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "errors": []
+        }
+      },
+      "end_to_end": {
+        "UTCI": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 8.392333984375e-05
+        },
+        "TMRT": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 9.1552734375e-05
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 0.00042724609375
+        }
+      },
+      "seconds": {
+        "shadow_mode": 79.03985935699893,
+        "fast": 28.266887044001123
+      },
+      "fast_repeat_identical": true
+    },
+    "austin": {
+      "function_calls": {
+        "define_patch_characteristics": {
+          "calls": 24,
+          "identical_calls": 0,
+          "max_abs": 0.00164794921875,
+          "max_rel": 2.5943689701940637e-06,
+          "errors": []
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 13,
+          "identical_calls": 13,
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "errors": []
+        },
+        "sunonsurface_2018a": {
+          "calls": 234,
+          "identical_calls": 234,
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "errors": []
+        }
+      },
+      "end_to_end": {
+        "UTCI": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 8.0108642578125e-05
+        },
+        "TMRT": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 9.1552734375e-05
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": false,
+          "nan_pattern_same": true,
+          "max_abs": 0.000579833984375
+        }
+      },
+      "seconds": {
+        "shadow_mode": 67.43329953500142,
+        "fast": 27.487472078999417
+      }
+    }
+  },
+  "sun_sweep": {
+    "shadowingfunction_wallheight_23": {
+      "calls": 72,
+      "identical_calls": 72,
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "errors": []
+    },
+    "define_patch_characteristics": {
+      "calls": 84,
+      "identical_calls": 0,
+      "max_abs": 0.00067138671875,
+      "max_rel": 2.1655093781664278e-06,
+      "errors": []
+    },
+    "sunonsurface_2018a": {
+      "calls": 12,
+      "identical_calls": 12,
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "errors": []
+    }
+  }
+}

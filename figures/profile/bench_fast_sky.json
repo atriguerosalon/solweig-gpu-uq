@@ -1,0 +1,119 @@
+{
+  "seconds": {
+    "B": 49.64624378099688,
+    "E": 24.71211146800124,
+    "F": 23.21121773300183
+  },
+  "B_vs_A": {
+    "UTCI": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    }
+  },
+  "C_vs_B": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 8.392333984375e-05,
+      "p99_99": 5.340576171875e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 9.1552734375e-05,
+      "p99_99": 6.103515625e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "D_vs_C": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 7.62939453125e-05,
+      "p99_99": 4.9591064453125e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 6.103515625e-05,
+      "p99_99": 3.0517578125e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "D_vs_B": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 8.392333984375e-05,
+      "p99_99": 5.340576171875e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 9.1552734375e-05,
+      "p99_99": 6.103515625e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "E_vs_D": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 7.62939453125e-05,
+      "p99_99": 4.9591064453125e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 6.103515625e-05,
+      "p99_99": 3.0517578125e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "E_vs_B": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 8.392333984375e-05,
+      "p99_99": 5.340576171875e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 9.1552734375e-05,
+      "p99_99": 6.103515625e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "F_vs_E": {
+    "UTCI": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    }
+  },
+  "F_vs_B": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 8.392333984375e-05,
+      "p99_99": 5.340576171875e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 9.1552734375e-05,
+      "p99_99": 6.103515625e-05,
+      "n_above_0.01": 0
+    }
+  }
+}

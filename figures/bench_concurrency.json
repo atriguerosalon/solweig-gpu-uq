@@ -1,0 +1,47 @@
+{
+  "1": {
+    "wall_s": 39.906482732000086,
+    "jobs_per_hour": 90.21090693901829,
+    "failed": 0,
+    "gpu_util_mean_pct": 16.9,
+    "power_mean_w": 13.306250000000002,
+    "mem_max_mib": 341.0,
+    "samples": 40
+  },
+  "2": {
+    "wall_s": 53.46031404799987,
+    "jobs_per_hour": 134.67934351330987,
+    "failed": 0,
+    "gpu_util_mean_pct": 58.7037037037037,
+    "power_mean_w": 27.278148148148148,
+    "mem_max_mib": 682.0,
+    "samples": 54
+  },
+  "3": {
+    "wall_s": 73.18648228200004,
+    "jobs_per_hour": 147.56823477846294,
+    "failed": 0,
+    "gpu_util_mean_pct": 68.61643835616438,
+    "power_mean_w": 30.513698630136975,
+    "mem_max_mib": 1023.0,
+    "samples": 73
+  },
+  "4": {
+    "wall_s": 93.96102459200006,
+    "jobs_per_hour": 153.2550338028778,
+    "failed": 0,
+    "gpu_util_mean_pct": 72.61702127659575,
+    "power_mean_w": 32.38244680851064,
+    "mem_max_mib": 1363.0,
+    "samples": 94
+  },
+  "6": {
+    "wall_s": 152.01588888600008,
+    "jobs_per_hour": 142.0904101425759,
+    "failed": 0,
+    "gpu_util_mean_pct": 73.43835616438356,
+    "power_mean_w": 29.750410958904105,
+    "mem_max_mib": 2170.0,
+    "samples": 146
+  }
+}

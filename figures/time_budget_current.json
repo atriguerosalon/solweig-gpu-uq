@@ -1,0 +1,585 @@
+{
+  "machine": {
+    "launch_s": 7.028942400029336e-06,
+    "launch_s_median": 7.086374499886005e-06,
+    "bandwidth_Bps": 229777671735.58362
+  },
+  "sizes": {
+    "125": {
+      "warmup_s": 4.059337779999623,
+      "clean_s": [
+        3.297706109999126,
+        3.372943647998909
+      ],
+      "timed_s": 3.310532367002452,
+      "counted_s": 9.824729015999765,
+      "functions": {
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 0.2954478100036795,
+          "self_s": 0.2954478100036795,
+          "launches": 20003,
+          "bytes": 8348435893,
+          "syncs": 0
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 0.4392914509990078,
+          "self_s": 0.14384364099532831,
+          "launches": 5595,
+          "bytes": 2177580,
+          "syncs": 0
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.15095479201045237,
+          "self_s": 0.15095479201045237,
+          "launches": 15600,
+          "bytes": 2425781250,
+          "syncs": 0
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 1.0727688440019847,
+          "self_s": 0.10956421196533483,
+          "launches": 3256,
+          "bytes": 353508528,
+          "syncs": 1840
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.0004107690001546871,
+          "self_s": 0.0004107690001546871,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 33203890,
+          "syncs": 1
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.0013558020036725793,
+          "self_s": 0.0013558020036725793,
+          "launches": 105,
+          "bytes": 45600,
+          "syncs": 0
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.08614216500791372,
+          "self_s": 0.08614216500791372,
+          "launches": 7303,
+          "bytes": 917263827,
+          "syncs": 171
+        },
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 1.108953532002488,
+          "self_s": 1.108953532002488,
+          "launches": 97176,
+          "bytes": 6241255688,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.14170885100247688,
+          "self_s": 0.14170885100247688,
+          "launches": 10189,
+          "bytes": 1185811515,
+          "syncs": 59
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.018021833002421772,
+          "self_s": 0.018021833002421772,
+          "launches": 632,
+          "bytes": 70256320,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.006511798994324636,
+          "self_s": 0.006511798994324636,
+          "launches": 608,
+          "bytes": 77502304,
+          "syncs": 0
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.01695080799618154,
+          "self_s": 0.016241114994045347,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 0.9632046320366499,
+          "self_s": 0.9632046320366499,
+          "launches": 86896,
+          "bytes": 11297809976,
+          "syncs": 856
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 0.009383862001413945,
+          "self_s": 0.009383862001413945,
+          "launches": 19,
+          "bytes": 1937500,
+          "syncs": 0
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 3.112446312996326,
+          "self_s": 0.22145092098799068,
+          "launches": 16020,
+          "bytes": 1404669708,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 33203890,
+        "syncs": 1
+      }
+    },
+    "500": {
+      "warmup_s": 4.601480444001936,
+      "clean_s": [
+        3.8670150469988585,
+        3.9954130590012937
+      ],
+      "timed_s": 3.880660740996973,
+      "counted_s": 10.358726990001742,
+      "functions": {
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 0.5212951859975874,
+          "self_s": 0.5212951859975874,
+          "launches": 20003,
+          "bytes": 133523904643,
+          "syncs": 0
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 0.6596667649973824,
+          "self_s": 0.13837157899979502,
+          "launches": 5595,
+          "bytes": 2177580,
+          "syncs": 0
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.15296148700508638,
+          "self_s": 0.15296148700508638,
+          "launches": 15600,
+          "bytes": 38812500000,
+          "syncs": 0
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 1.0899502069951268,
+          "self_s": 0.11451475000285427,
+          "launches": 3256,
+          "bytes": 5656008528,
+          "syncs": 1840
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.005718306998460321,
+          "self_s": 0.005718306998460321,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 534014485,
+          "syncs": 1
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.0014665489943581633,
+          "self_s": 0.0014665489943581633,
+          "launches": 105,
+          "bytes": 45600,
+          "syncs": 0
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.0912655330139387,
+          "self_s": 0.0912655330139387,
+          "launches": 7303,
+          "bytes": 14676013827,
+          "syncs": 171
+        },
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 1.1316633259957598,
+          "self_s": 1.1316633259957598,
+          "launches": 97176,
+          "bytes": 99854380688,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.219516561999626,
+          "self_s": 0.219516561999626,
+          "launches": 14128,
+          "bytes": 28501987219,
+          "syncs": 59
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.017087722997530364,
+          "self_s": 0.017087722997530364,
+          "launches": 632,
+          "bytes": 1151583104,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.0061959059930813964,
+          "self_s": 0.0061959059930813964,
+          "launches": 608,
+          "bytes": 1240002304,
+          "syncs": 0
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.018007785009103827,
+          "self_s": 0.01720587101590354,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 0.9754354569922725,
+          "self_s": 0.9754354569922725,
+          "launches": 86896,
+          "bytes": 181965133976,
+          "syncs": 856
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 0.07896869999967748,
+          "self_s": 0.07896869999967748,
+          "launches": 19,
+          "bytes": 31000000,
+          "syncs": 0
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 3.4569832930028497,
+          "self_s": 0.22296485100014252,
+          "launches": 16020,
+          "bytes": 22471700958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 534014485,
+        "syncs": 1
+      }
+    },
+    "1000": {
+      "warmup_s": 11.350143658000889,
+      "clean_s": [
+        8.164209605001815,
+        8.376444405002985
+      ],
+      "timed_s": 8.241019201999734,
+      "counted_s": 13.895117929001572,
+      "functions": {
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 2.263902736005548,
+          "self_s": 2.263902736005548,
+          "launches": 20003,
+          "bytes": 534085404643,
+          "syncs": 0
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 2.423643724014255,
+          "self_s": 0.15974098800870706,
+          "launches": 5595,
+          "bytes": 2177580,
+          "syncs": 0
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.19152059700354584,
+          "self_s": 0.19152059700354584,
+          "launches": 15600,
+          "bytes": 155250000000,
+          "syncs": 0
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 2.010188072003075,
+          "self_s": 0.17241478399955668,
+          "launches": 3256,
+          "bytes": 22624008528,
+          "syncs": 1840
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.019634563999716192,
+          "self_s": 0.019634563999716192,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 2137709245,
+          "syncs": 1
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.0016678819993103389,
+          "self_s": 0.0016678819993103389,
+          "launches": 105,
+          "bytes": 45600,
+          "syncs": 0
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.11882631300250068,
+          "self_s": 0.11882631300250068,
+          "launches": 7303,
+          "bytes": 58704013827,
+          "syncs": 171
+        },
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 1.4967159059960977,
+          "self_s": 1.4967159059960977,
+          "launches": 97176,
+          "bytes": 399416380688,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.6756474300091213,
+          "self_s": 0.6756474300091213,
+          "launches": 35032,
+          "bytes": 287726278211,
+          "syncs": 59
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.022396537999156862,
+          "self_s": 0.022396537999156862,
+          "launches": 632,
+          "bytes": 4597413696,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.008729821998713305,
+          "self_s": 0.008729821998713305,
+          "launches": 608,
+          "bytes": 4960002304,
+          "syncs": 0
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.01816014200085192,
+          "self_s": 0.017339010002615396,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 1.8377732880035182,
+          "self_s": 1.8377732880035182,
+          "launches": 86896,
+          "bytes": 728679565976,
+          "syncs": 856
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 0.289024325000355,
+          "self_s": 0.289024325000355,
+          "launches": 19,
+          "bytes": 124000000,
+          "syncs": 0
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 7.2090681589979795,
+          "self_s": 0.43391346197313396,
+          "launches": 16020,
+          "bytes": 89886200958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 2137709245,
+        "syncs": 1
+      }
+    },
+    "2000": {
+      "warmup_s": 61.796866914999555,
+      "clean_s": [
+        46.242578208999475,
+        46.3409385499981
+      ],
+      "timed_s": 46.424870295999426,
+      "counted_s": 47.45266206499946,
+      "functions": {
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 10.110767338996084,
+          "self_s": 10.110767338996084,
+          "launches": 20003,
+          "bytes": 2136331404643,
+          "syncs": 0
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 10.276487033002923,
+          "self_s": 0.16571969400683884,
+          "launches": 5595,
+          "bytes": 2177580,
+          "syncs": 0
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 2.2143590149971715,
+          "self_s": 2.2143590149971715,
+          "launches": 15600,
+          "bytes": 621000000000,
+          "syncs": 0
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 10.468864502006909,
+          "self_s": 0.5294216109905392,
+          "launches": 3256,
+          "bytes": 90496008528,
+          "syncs": 1840
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.08887724200030789,
+          "self_s": 0.08887724200030789,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 8568572605,
+          "syncs": 1
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.0019157110109517816,
+          "self_s": 0.0019157110109517816,
+          "launches": 105,
+          "bytes": 45600,
+          "syncs": 0
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.728019927002606,
+          "self_s": 0.728019927002606,
+          "launches": 7303,
+          "bytes": 234816013827,
+          "syncs": 171
+        },
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 6.480087637999532,
+          "self_s": 6.480087637999532,
+          "launches": 97176,
+          "bytes": 1597664380688,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 10.592607019996649,
+          "self_s": 10.592607019996649,
+          "launches": 106948,
+          "bytes": 3450845625879,
+          "syncs": 59
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.15676637600699905,
+          "self_s": 0.15676637600699905,
+          "launches": 632,
+          "bytes": 18373486080,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.06651840099220863,
+          "self_s": 0.06651840099220863,
+          "launches": 608,
+          "bytes": 19840002304,
+          "syncs": 0
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.020043536002049223,
+          "self_s": 0.019037532994843787,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 9.93944289101637,
+          "self_s": 9.93944289101637,
+          "launches": 86896,
+          "bytes": 2916364429976,
+          "syncs": 856
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 1.267392669000401,
+          "self_s": 1.267392669000401,
+          "launches": 19,
+          "bytes": 496000000,
+          "syncs": 0
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 40.699845491992164,
+          "self_s": 1.909541350978543,
+          "launches": 16020,
+          "bytes": 359544200958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 8568572605,
+        "syncs": 1
+      }
+    }
+  }
+}

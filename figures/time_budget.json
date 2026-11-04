@@ -1,0 +1,585 @@
+{
+  "machine": {
+    "launch_s": 9.019665300002089e-06,
+    "launch_s_median": 9.741528700033086e-06,
+    "bandwidth_Bps": 227657463717.42975
+  },
+  "sizes": {
+    "125": {
+      "warmup_s": 8.396381820000897,
+      "clean_s": [
+        8.480512433001422,
+        8.60804793099851
+      ],
+      "timed_s": 8.27546740300022,
+      "counted_s": 23.720926493999286,
+      "functions": {
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 2.4727030900012323,
+          "self_s": 2.4727030900012323,
+          "launches": 117968,
+          "bytes": 6241707248,
+          "syncs": 1224
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.23372399800246058,
+          "self_s": 0.23372399800246058,
+          "launches": 15600,
+          "bytes": 2425781250,
+          "syncs": 0
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.039946232000147575,
+          "self_s": 0.039946232000147575,
+          "launches": 632,
+          "bytes": 70256320,
+          "syncs": 0
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.0006957630012038862,
+          "self_s": 0.0006957630012038862,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 0.058949971000402,
+          "self_s": 0.058949971000402,
+          "launches": 19,
+          "bytes": 1937500,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.009714048001114861,
+          "self_s": 0.009714048001114861,
+          "launches": 608,
+          "bytes": 77502304,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 33203890,
+          "syncs": 1
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.14068269600102212,
+          "self_s": 0.14068269600102212,
+          "launches": 7303,
+          "bytes": 917263827,
+          "syncs": 171
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.7418664439974236,
+          "self_s": 0.7418664439974236,
+          "launches": 9210,
+          "bytes": 2894100,
+          "syncs": 120
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 1.6128918009981135,
+          "self_s": 1.6128918009981135,
+          "launches": 86896,
+          "bytes": 11297809976,
+          "syncs": 856
+        },
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 0.5130122960035806,
+          "self_s": 0.5130122960035806,
+          "launches": 20003,
+          "bytes": 8348435893,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.2507827269982954,
+          "self_s": 0.2507827269982954,
+          "launches": 10189,
+          "bytes": 1185811515,
+          "syncs": 59
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 1.837794279001173,
+          "self_s": 0.2249024780030595,
+          "launches": 3256,
+          "bytes": 353508528,
+          "syncs": 1840
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 2.0382305630009796,
+          "self_s": 1.525218266997399,
+          "launches": 44580,
+          "bytes": 3051795,
+          "syncs": 2295
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.4089610020018881,
+          "self_s": 0.032857682002941146,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 7.911609820999729,
+          "self_s": 0.3470320599953993,
+          "launches": 16020,
+          "bytes": 1404669708,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 33203890,
+        "syncs": 1
+      }
+    },
+    "500": {
+      "warmup_s": 10.271088086999953,
+      "clean_s": [
+        9.6047479810004,
+        9.815655245000016
+      ],
+      "timed_s": 9.759563965999405,
+      "counted_s": 27.012074624999514,
+      "functions": {
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 2.447180697001386,
+          "self_s": 2.447180697001386,
+          "launches": 117968,
+          "bytes": 99854832248,
+          "syncs": 1224
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.23686377800549963,
+          "self_s": 0.23686377800549963,
+          "launches": 15600,
+          "bytes": 38812500000,
+          "syncs": 0
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.02719638400412805,
+          "self_s": 0.02719638400412805,
+          "launches": 632,
+          "bytes": 1151583104,
+          "syncs": 0
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.008384245000343071,
+          "self_s": 0.008384245000343071,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 1.0053532460005954,
+          "self_s": 1.0053532460005954,
+          "launches": 19,
+          "bytes": 31000000,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.009684851998827071,
+          "self_s": 0.009684851998827071,
+          "launches": 608,
+          "bytes": 1240002304,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 534014485,
+          "syncs": 1
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.15349832600077207,
+          "self_s": 0.15349832600077207,
+          "launches": 7303,
+          "bytes": 14676013827,
+          "syncs": 171
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.7095985500018287,
+          "self_s": 0.7095985500018287,
+          "launches": 9210,
+          "bytes": 2894100,
+          "syncs": 120
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 1.6257979410002008,
+          "self_s": 1.6257979410002008,
+          "launches": 86896,
+          "bytes": 181965133976,
+          "syncs": 856
+        },
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 0.7605336509986955,
+          "self_s": 0.7605336509986955,
+          "launches": 20003,
+          "bytes": 133523904643,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.35207401200023014,
+          "self_s": 0.35207401200023014,
+          "launches": 14128,
+          "bytes": 28501987219,
+          "syncs": 59
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 1.814062389998071,
+          "self_s": 0.1882644489978702,
+          "launches": 3256,
+          "bytes": 5656008528,
+          "syncs": 1840
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 2.293144837001819,
+          "self_s": 1.5326111860031233,
+          "launches": 44580,
+          "bytes": 3051795,
+          "syncs": 2295
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.4144082900002104,
+          "self_s": 0.03116789600062475,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 8.194204882996928,
+          "self_s": 0.3565969389892416,
+          "launches": 16020,
+          "bytes": 22471700958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 534014485,
+        "syncs": 1
+      }
+    },
+    "1000": {
+      "warmup_s": 17.554838710000695,
+      "clean_s": [
+        17.295419930000207,
+        18.14775510400068
+      ],
+      "timed_s": 17.704176997000104,
+      "counted_s": 30.215627195000707,
+      "functions": {
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 2.692907054997704,
+          "self_s": 2.692907054997704,
+          "launches": 117968,
+          "bytes": 399416832248,
+          "syncs": 1224
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 0.26216743199984194,
+          "self_s": 0.26216743199984194,
+          "launches": 15600,
+          "bytes": 155250000000,
+          "syncs": 0
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.035866335998434806,
+          "self_s": 0.035866335998434806,
+          "launches": 632,
+          "bytes": 4597413696,
+          "syncs": 0
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.03167199800009257,
+          "self_s": 0.03167199800009257,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 4.191251558000658,
+          "self_s": 4.191251558000658,
+          "launches": 19,
+          "bytes": 124000000,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.01268033800079138,
+          "self_s": 0.01268033800079138,
+          "launches": 608,
+          "bytes": 4960002304,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 2137709245,
+          "syncs": 1
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.16233756899964646,
+          "self_s": 0.16233756899964646,
+          "launches": 7303,
+          "bytes": 58704013827,
+          "syncs": 171
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.7270430899952771,
+          "self_s": 0.7270430899952771,
+          "launches": 9210,
+          "bytes": 2894100,
+          "syncs": 120
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 2.3582107790043665,
+          "self_s": 2.3582107790043665,
+          "launches": 86896,
+          "bytes": 728679565976,
+          "syncs": 856
+        },
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 2.7537730449985247,
+          "self_s": 2.7537730449985247,
+          "launches": 20003,
+          "bytes": 534085404643,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 0.9701199860010092,
+          "self_s": 0.9701199860010092,
+          "launches": 35032,
+          "bytes": 287726278211,
+          "syncs": 59
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 2.609091176002039,
+          "self_s": 0.2508803969976725,
+          "launches": 3256,
+          "bytes": 22624008528,
+          "syncs": 1840
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 4.331009263998567,
+          "self_s": 1.5772362190000422,
+          "launches": 44580,
+          "bytes": 3051795,
+          "syncs": 2295
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.4443037489963899,
+          "self_s": 0.03326804699827335,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 12.117352246999872,
+          "self_s": 0.5430293860081292,
+          "launches": 16020,
+          "bytes": 89886200958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 2137709245,
+        "syncs": 1
+      }
+    },
+    "2000": {
+      "warmup_s": 66.37812673699955,
+      "clean_s": [
+        70.33750404300008,
+        72.64585161799914
+      ],
+      "timed_s": 74.65947077900091,
+      "counted_s": 80.65836565799873,
+      "functions": {
+        "Kside_veg_v2022a": {
+          "calls": 8,
+          "incl_s": 8.182367131003048,
+          "self_s": 8.182367131003048,
+          "launches": 117968,
+          "bytes": 1597664832248,
+          "syncs": 1224
+        },
+        "utci_calculator": {
+          "calls": 15,
+          "incl_s": 2.5572043060001306,
+          "self_s": 2.5572043060001306,
+          "launches": 15600,
+          "bytes": 621000000000,
+          "syncs": 0
+        },
+        "cylindric_wedge": {
+          "calls": 8,
+          "incl_s": 0.1841372440012492,
+          "self_s": 0.1841372440012492,
+          "launches": 632,
+          "bytes": 18373486080,
+          "syncs": 0
+        },
+        "Tgmaps_v1": {
+          "calls": 1,
+          "incl_s": 0.18185287300002528,
+          "self_s": 0.18185287300002528,
+          "launches": 0,
+          "bytes": 0,
+          "syncs": 0
+        },
+        "load_cached_svf_outputs": {
+          "calls": 1,
+          "incl_s": 17.63793727600023,
+          "self_s": 17.63793727600023,
+          "launches": 19,
+          "bytes": 496000000,
+          "syncs": 0
+        },
+        "Kup_veg_2015a": {
+          "calls": 8,
+          "incl_s": 0.08036428200284718,
+          "self_s": 0.08036428200284718,
+          "launches": 608,
+          "bytes": 19840002304,
+          "syncs": 0
+        },
+        "outside listed functions": {
+          "calls": 0,
+          "incl_s": 0,
+          "self_s": 0,
+          "launches": 407,
+          "bytes": 8568572605,
+          "syncs": 1
+        },
+        "Lside_veg_v2022a": {
+          "calls": 15,
+          "incl_s": 0.8731024429998797,
+          "self_s": 0.8731024429998797,
+          "launches": 7303,
+          "bytes": 234816013827,
+          "syncs": 171
+        },
+        "create_patches": {
+          "calls": 15,
+          "incl_s": 0.7657039480036474,
+          "self_s": 0.7657039480036474,
+          "launches": 9210,
+          "bytes": 2894100,
+          "syncs": 120
+        },
+        "sunonsurface_2018a": {
+          "calls": 144,
+          "incl_s": 11.652487002993439,
+          "self_s": 11.652487002993439,
+          "launches": 86896,
+          "bytes": 2916364429976,
+          "syncs": 856
+        },
+        "define_patch_characteristics": {
+          "calls": 15,
+          "incl_s": 11.147579091999432,
+          "self_s": 11.147579091999432,
+          "launches": 20003,
+          "bytes": 2136331404643,
+          "syncs": 0
+        },
+        "shadowingfunction_wallheight_23": {
+          "calls": 8,
+          "incl_s": 12.999195609001617,
+          "self_s": 12.999195609001617,
+          "launches": 106948,
+          "bytes": 3450845625879,
+          "syncs": 59
+        },
+        "gvf_2018a": {
+          "calls": 8,
+          "incl_s": 12.307782969002801,
+          "self_s": 0.655295966009362,
+          "launches": 3256,
+          "bytes": 90496008528,
+          "syncs": 1840
+        },
+        "Lcyl_v2022a": {
+          "calls": 15,
+          "incl_s": 12.835189449999234,
+          "self_s": 1.6876103579998016,
+          "launches": 44580,
+          "bytes": 3051795,
+          "syncs": 2295
+        },
+        "Perez_v3": {
+          "calls": 8,
+          "incl_s": 0.45632631899934495,
+          "self_s": 0.03672906899555528,
+          "launches": 768,
+          "bytes": 368024,
+          "syncs": 44
+        },
+        "Solweig_2022a_calc": {
+          "calls": 15,
+          "incl_s": 50.51440443499814,
+          "self_s": 2.2498322899882623,
+          "launches": 16020,
+          "bytes": 359544200958,
+          "syncs": 332
+        }
+      },
+      "outside": {
+        "launches": 407,
+        "bytes": 8568572605,
+        "syncs": 1
+      }
+    }
+  }
+}

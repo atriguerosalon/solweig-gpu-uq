@@ -1,0 +1,81 @@
+{
+  "tile": "2000 x 2000",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "gpu_total_gib": 7.99560546875,
+  "preprocess_seconds": 272.986001827001,
+  "svf_compact": {
+    "status": "ok",
+    "seconds": 1076.2301862900003,
+    "peak_allocated_gib": 0.8717880249023438,
+    "peak_reserved_gib": 0.890625
+  },
+  "day_fast_bits": {
+    "status": "ok",
+    "seconds": 113.3175619829999,
+    "peak_allocated_gib": 3.2003378868103027,
+    "peak_reserved_gib": 3.78515625
+  },
+  "day_original": {
+    "status": "ok",
+    "seconds": 3645.907014884,
+    "peak_allocated_gib": 11.560977458953857,
+    "peak_reserved_gib": 11.67578125
+  },
+  "svf_original": {
+    "status": "ok",
+    "seconds": 1152.090455947,
+    "peak_allocated_gib": 7.4862751960754395,
+    "peak_reserved_gib": 7.517578125
+  },
+  "svf_current": {
+    "status": "ok",
+    "seconds": 199.24204178200307,
+    "peak_allocated_gib": 0.8717947006225586,
+    "peak_reserved_gib": 0.890625
+  },
+  "day_current_first": {
+    "status": "ok",
+    "seconds": 97.65052106000076,
+    "peak_allocated_gib": 3.4681291580200195,
+    "peak_reserved_gib": 4.234375
+  },
+  "day_current": {
+    "status": "ok",
+    "seconds": 81.26733431200046,
+    "peak_allocated_gib": 3.4580230712890625,
+    "peak_reserved_gib": 4.234375
+  },
+  "current_measured": "2026-11-04 06:18",
+  "day_steps": {
+    "F": {
+      "status": "ok",
+      "seconds": 111.02048178100085,
+      "peak_allocated_gib": 3.4681220054626465,
+      "peak_reserved_gib": 4.265625
+    },
+    "G": {
+      "status": "ok",
+      "seconds": 95.12411498100118,
+      "peak_allocated_gib": 3.4580159187316895,
+      "peak_reserved_gib": 4.234375
+    },
+    "G2": {
+      "status": "ok",
+      "seconds": 93.59658116199716,
+      "peak_allocated_gib": 3.4580159187316895,
+      "peak_reserved_gib": 4.234375
+    },
+    "H": {
+      "status": "ok",
+      "seconds": 92.78150927100069,
+      "peak_allocated_gib": 3.4580230712890625,
+      "peak_reserved_gib": 4.234375
+    },
+    "I": {
+      "status": "ok",
+      "seconds": 82.24721763399793,
+      "peak_allocated_gib": 3.4580230712890625,
+      "peak_reserved_gib": 4.234375
+    }
+  }
+}

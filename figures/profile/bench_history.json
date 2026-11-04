@@ -1,0 +1,21 @@
+{
+  "_about": "All wall-time measurements of one Pacoima 1000 x 1000 tile-day from scripts/bench_fast_sky.py on 30 Oct 2026 (RTX 4070 Laptop GPU, WSL2, UTCI and Tmrt saved). bench_fast_sky.json only keeps the latest invocation, so all invocations are recorded here from the run logs. Invocations 1-4 used the fast sky with chunk 64; 5-6 with chunk 8. Invocations 5-6 ran after a ViT training job on the same GPU was paused.",
+  "runs": [
+    {"invocation": 1, "seconds": {"A": 103.3, "B": 45.3, "C": 29.2}},
+    {"invocation": 2, "seconds": {"C": 30.9, "D": 25.1}},
+    {"invocation": 3, "seconds": {"D": 25.5}},
+    {"invocation": 4, "seconds": {"B": 47.1, "E": 20.7}},
+    {"invocation": 5, "seconds": {"B": 65.6, "E8": 26.8, "F": 23.7}},
+    {"invocation": 6, "seconds": {"B": 49.6, "E8": 24.7, "F": 23.2}}
+  ],
+  "summary": {"A": 103.3, "B": 48.4, "C": 30.0, "D": 25.3, "E": 20.7, "E8": 25.8, "F": 23.5},
+  "legend": {
+    "A": "original, outputs on the Windows drive (/mnt/c)",
+    "B": "original, outputs on the WSL Linux file system (median of 45.3, 47.1, 65.6, 49.6)",
+    "C": "+ fast sky, chunk 64 (mean of 29.2, 30.9)",
+    "D": "+ fast ground view factors, chunk 64 (mean of 25.1, 25.5)",
+    "E": "+ fast shadow casting, chunk 64",
+    "E8": "all three fixes, chunk 8 (mean of 26.8, 24.7)",
+    "F": "all three fixes + bit-packed masks (mean of 23.7, 23.2)"
+  }
+}

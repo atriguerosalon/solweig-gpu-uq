@@ -1,0 +1,218 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "total_gib": 7.99560546875,
+  "peak": {
+    "original": {
+      "seconds": 116.5113560789996,
+      "peak_allocated_gib": 2.898871898651123,
+      "peak_reserved_gib": 2.916015625
+    },
+    "+ fast sky": {
+      "seconds": 34.17275286900076,
+      "peak_allocated_gib": 3.5248236656188965,
+      "peak_reserved_gib": 4.083984375
+    },
+    "+ fast sky + view factors": {
+      "seconds": 28.81504569000026,
+      "peak_allocated_gib": 3.517401695251465,
+      "peak_reserved_gib": 4.076171875
+    },
+    "all three": {
+      "seconds": 25.476692455000375,
+      "peak_allocated_gib": 3.517401695251465,
+      "peak_reserved_gib": 4.076171875
+    }
+  },
+  "components": {
+    "original": {
+      "Lcyl_v2022a": {
+        "calls": 24,
+        "seconds": 24.68263808499978,
+        "max_transient_gib": 0.08743047714233398,
+        "max_level_gib": 2.8501129150390625
+      },
+      "shadowingfunction_wallheight_23": {
+        "calls": 14,
+        "seconds": 10.244764766994194,
+        "max_transient_gib": 0.09199666976928711,
+        "max_level_gib": 2.6715493202209473
+      },
+      "gvf_2018a": {
+        "calls": 14,
+        "seconds": 10.288855915998283,
+        "max_transient_gib": 0.2965984344482422,
+        "max_level_gib": 2.9068655967712402
+      },
+      "Kside_veg_v2022a": {
+        "calls": 14,
+        "seconds": 4.690878610001164,
+        "max_transient_gib": 0.1637101173400879,
+        "max_level_gib": 2.8985042572021484
+      }
+    },
+    "+ fast sky": {
+      "Lcyl_v2022a": {
+        "calls": 24,
+        "seconds": 4.484460183995907,
+        "max_transient_gib": 0.7781682014465332,
+        "max_level_gib": 3.525336265563965
+      },
+      "shadowingfunction_wallheight_23": {
+        "calls": 14,
+        "seconds": 10.146226355003819,
+        "max_transient_gib": 0.08841705322265625,
+        "max_level_gib": 2.667069435119629
+      },
+      "gvf_2018a": {
+        "calls": 14,
+        "seconds": 10.347091849000208,
+        "max_transient_gib": 0.28676319122314453,
+        "max_level_gib": 2.8934168815612793
+      },
+      "Kside_veg_v2022a": {
+        "calls": 14,
+        "seconds": 4.670004240993876,
+        "max_transient_gib": 0.1592268943786621,
+        "max_level_gib": 2.8859591484069824
+      }
+    },
+    "+ fast sky + view factors": {
+      "Lcyl_v2022a": {
+        "calls": 24,
+        "seconds": 4.217959079996945,
+        "max_transient_gib": 0.7781682014465332,
+        "max_level_gib": 3.525336265563965
+      },
+      "shadowingfunction_wallheight_23": {
+        "calls": 14,
+        "seconds": 9.830237166004736,
+        "max_transient_gib": 0.08841705322265625,
+        "max_level_gib": 2.667069435119629
+      },
+      "gvf_2018a": {
+        "calls": 14,
+        "seconds": 3.6929029150032875,
+        "max_transient_gib": 0.2867569923400879,
+        "max_level_gib": 2.8934106826782227
+      },
+      "Kside_veg_v2022a": {
+        "calls": 14,
+        "seconds": 4.674788393000199,
+        "max_transient_gib": 0.1592268943786621,
+        "max_level_gib": 2.8859591484069824
+      }
+    },
+    "all three": {
+      "Lcyl_v2022a": {
+        "calls": 24,
+        "seconds": 4.453203713994299,
+        "max_transient_gib": 0.7781682014465332,
+        "max_level_gib": 3.525336265563965
+      },
+      "shadowingfunction_wallheight_23": {
+        "calls": 14,
+        "seconds": 4.354989878000197,
+        "max_transient_gib": 0.08841943740844727,
+        "max_level_gib": 2.66707181930542
+      },
+      "gvf_2018a": {
+        "calls": 14,
+        "seconds": 3.8032990170049743,
+        "max_transient_gib": 0.2867569923400879,
+        "max_level_gib": 2.8934106826782227
+      },
+      "Kside_veg_v2022a": {
+        "calls": 14,
+        "seconds": 4.650982422999732,
+        "max_transient_gib": 0.1592268943786621,
+        "max_level_gib": 2.8859591484069824
+      }
+    }
+  },
+  "chunk_sweep": {
+    "8": {
+      "seconds": 25.899900196998715,
+      "peak_allocated_gib": 3.003695487976074,
+      "peak_reserved_gib": 3.2109375
+    },
+    "16": {
+      "seconds": 26.541542138000295,
+      "peak_allocated_gib": 3.120377540588379,
+      "peak_reserved_gib": 3.37890625
+    },
+    "32": {
+      "seconds": 26.929093286998977,
+      "peak_allocated_gib": 3.20591402053833,
+      "peak_reserved_gib": 3.447265625
+    },
+    "64": {
+      "seconds": 24.466941074000715,
+      "peak_allocated_gib": 3.517401695251465,
+      "peak_reserved_gib": 4.076171875
+    },
+    "153": {
+      "seconds": 23.676278974000525,
+      "peak_allocated_gib": 4.368439197540283,
+      "peak_reserved_gib": 5.396484375
+    }
+  },
+  "scaling": {
+    "original": {
+      "seconds": 184.27562349899927,
+      "peak_allocated_gib": 1.1141033172607422,
+      "peak_reserved_gib": 1.140625
+    },
+    "all three": {
+      "seconds": 81.93144542899972,
+      "peak_allocated_gib": 1.354109287261963,
+      "peak_reserved_gib": 1.537109375
+    }
+  },
+  "traces": {
+    "original": {
+      "components": [
+        "geometry and state (before the hour)",
+        "shadow casting",
+        "ground view factors",
+        "sky longwave (patches)",
+        "shortwave and side fluxes",
+        "UTCI",
+        "other (in Solweig_2022a_calc)"
+      ],
+      "n_events": 132312,
+      "step": 33,
+      "peak_gib": 2.8821976631879807,
+      "start_gib": 2.5618205070495605
+    },
+    "+ fast sky": {
+      "components": [
+        "geometry and state (before the hour)",
+        "shadow casting",
+        "ground view factors",
+        "sky longwave (patches)",
+        "shortwave and side fluxes",
+        "UTCI",
+        "other (in Solweig_2022a_calc)"
+      ],
+      "n_events": 77372,
+      "step": 19,
+      "peak_gib": 3.496994406916201,
+      "start_gib": 2.560987949371338
+    },
+    "all three": {
+      "components": [
+        "geometry and state (before the hour)",
+        "shadow casting",
+        "ground view factors",
+        "sky longwave (patches)",
+        "shortwave and side fluxes",
+        "UTCI",
+        "other (in Solweig_2022a_calc)"
+      ],
+      "n_events": 57922,
+      "step": 14,
+      "peak_gib": 3.496994406916201,
+      "start_gib": 2.560987949371338
+    }
+  }
+}

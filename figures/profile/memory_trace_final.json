@@ -1,0 +1,32 @@
+{
+  "original": {
+    "components": [
+      "geometry and state (before the hour)",
+      "shadow casting",
+      "ground view factors",
+      "sky longwave (patches)",
+      "shortwave and side fluxes",
+      "UTCI",
+      "other (in Solweig_2022a_calc)"
+    ],
+    "n_events": 132312,
+    "step": 33,
+    "peak_gib": 2.8733008354902267,
+    "start_gib": 2.5529236793518066
+  },
+  "all fixes + bit-packed masks": {
+    "components": [
+      "geometry and state (before the hour)",
+      "shadow casting",
+      "ground view factors",
+      "sky longwave (patches)",
+      "shortwave and side fluxes",
+      "UTCI",
+      "other (in Solweig_2022a_calc)"
+    ],
+    "n_events": 69508,
+    "step": 17,
+    "peak_gib": 0.8640258284285665,
+    "start_gib": 0.3350076675415039
+  }
+}

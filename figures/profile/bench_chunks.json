@@ -1,0 +1,196 @@
+{
+  "environment": {
+    "gpu_driver": "NVIDIA GeForce RTX 4070 Laptop GPU, 555.97",
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "solweig_gpu": "2.0.0",
+    "python": "3.11.18",
+    "started": "2026-11-04 03:17"
+  },
+  "runs": [
+    {
+      "step": "K32",
+      "repeat": 0,
+      "seconds": 15.860845015999075,
+      "peak_allocated_gib": 1.3497323989868164,
+      "peak_reserved_gib": 1.576171875
+    },
+    {
+      "step": "K16",
+      "repeat": 0,
+      "seconds": 14.042598677999194,
+      "peak_allocated_gib": 1.0862255096435547,
+      "peak_reserved_gib": 1.390625
+    },
+    {
+      "step": "K8",
+      "repeat": 0,
+      "seconds": 14.413443151001047,
+      "peak_allocated_gib": 0.8783893585205078,
+      "peak_reserved_gib": 1.10546875
+    },
+    {
+      "step": "K153",
+      "repeat": 0,
+      "seconds": 13.573696388999451,
+      "peak_allocated_gib": 3.8646650314331055,
+      "peak_reserved_gib": 4.884765625
+    },
+    {
+      "step": "K64",
+      "repeat": 0,
+      "seconds": 13.785533586000383,
+      "peak_allocated_gib": 2.0170059204101562,
+      "peak_reserved_gib": 2.599609375
+    },
+    {
+      "step": "K8",
+      "repeat": 1,
+      "seconds": 14.51418757799911,
+      "peak_allocated_gib": 0.8783893585205078,
+      "peak_reserved_gib": 1.10546875
+    },
+    {
+      "step": "K32",
+      "repeat": 1,
+      "seconds": 13.850776385001154,
+      "peak_allocated_gib": 1.3487958908081055,
+      "peak_reserved_gib": 1.6875
+    },
+    {
+      "step": "K16",
+      "repeat": 1,
+      "seconds": 14.189862498000366,
+      "peak_allocated_gib": 1.0862255096435547,
+      "peak_reserved_gib": 1.390625
+    },
+    {
+      "step": "K64",
+      "repeat": 1,
+      "seconds": 14.211531762999584,
+      "peak_allocated_gib": 2.0170059204101562,
+      "peak_reserved_gib": 2.599609375
+    },
+    {
+      "step": "K153",
+      "repeat": 1,
+      "seconds": 14.209068299000137,
+      "peak_allocated_gib": 3.8646650314331055,
+      "peak_reserved_gib": 4.884765625
+    },
+    {
+      "step": "K16",
+      "repeat": 2,
+      "seconds": 14.09195441799966,
+      "peak_allocated_gib": 1.0862255096435547,
+      "peak_reserved_gib": 1.390625
+    },
+    {
+      "step": "K8",
+      "repeat": 2,
+      "seconds": 14.543751376999353,
+      "peak_allocated_gib": 0.8783893585205078,
+      "peak_reserved_gib": 1.10546875
+    },
+    {
+      "step": "K153",
+      "repeat": 2,
+      "seconds": 13.78460233199985,
+      "peak_allocated_gib": 3.8646650314331055,
+      "peak_reserved_gib": 4.884765625
+    },
+    {
+      "step": "K32",
+      "repeat": 2,
+      "seconds": 14.324465075000262,
+      "peak_allocated_gib": 1.3487958908081055,
+      "peak_reserved_gib": 1.6875
+    },
+    {
+      "step": "K64",
+      "repeat": 2,
+      "seconds": 13.895411465999132,
+      "peak_allocated_gib": 2.0170059204101562,
+      "peak_reserved_gib": 2.599609375
+    },
+    {
+      "step": "K32",
+      "repeat": 3,
+      "seconds": 13.837234343000091,
+      "peak_allocated_gib": 1.3487958908081055,
+      "peak_reserved_gib": 1.6875
+    },
+    {
+      "step": "K8",
+      "repeat": 3,
+      "seconds": 14.616142422000848,
+      "peak_allocated_gib": 0.8783893585205078,
+      "peak_reserved_gib": 1.10546875
+    },
+    {
+      "step": "K64",
+      "repeat": 3,
+      "seconds": 13.685022802001185,
+      "peak_allocated_gib": 2.0170059204101562,
+      "peak_reserved_gib": 2.599609375
+    },
+    {
+      "step": "K16",
+      "repeat": 3,
+      "seconds": 14.250521987996763,
+      "peak_allocated_gib": 1.0862255096435547,
+      "peak_reserved_gib": 1.390625
+    },
+    {
+      "step": "K153",
+      "repeat": 3,
+      "seconds": 13.622471147999022,
+      "peak_allocated_gib": 3.8646650314331055,
+      "peak_reserved_gib": 4.884765625
+    },
+    {
+      "step": "K16",
+      "repeat": 4,
+      "seconds": 14.155520170999807,
+      "peak_allocated_gib": 1.0862255096435547,
+      "peak_reserved_gib": 1.390625
+    },
+    {
+      "step": "K153",
+      "repeat": 4,
+      "seconds": 13.547880440997687,
+      "peak_allocated_gib": 3.8646650314331055,
+      "peak_reserved_gib": 4.884765625
+    },
+    {
+      "step": "K64",
+      "repeat": 4,
+      "seconds": 13.761991855000815,
+      "peak_allocated_gib": 2.0170059204101562,
+      "peak_reserved_gib": 2.599609375
+    },
+    {
+      "step": "K32",
+      "repeat": 4,
+      "seconds": 13.726227449002181,
+      "peak_allocated_gib": 1.3487958908081055,
+      "peak_reserved_gib": 1.6875
+    },
+    {
+      "step": "K8",
+      "repeat": 4,
+      "seconds": 14.322875309000665,
+      "peak_allocated_gib": 0.8783893585205078,
+      "peak_reserved_gib": 1.10546875
+    }
+  ],
+  "median_seconds": {
+    "K8": 14.51418757799911,
+    "K16": 14.155520170999807,
+    "K32": 13.850776385001154,
+    "K64": 13.785533586000383,
+    "K153": 13.622471147999022
+  },
+  "comparisons": {},
+  "finished": "2026-11-04 03:23"
+}

@@ -1,0 +1,30 @@
+{
+  "original_vs_current": {
+    "UTCI": {
+      "identical": false,
+      "max_abs": 8.392333984375e-05,
+      "p99_99": 5.340576171875e-05,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": false,
+      "max_abs": 9.1552734375e-05,
+      "p99_99": 6.103515625e-05,
+      "n_above_0.01": 0
+    }
+  },
+  "current_vs_steps_I": {
+    "UTCI": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    },
+    "TMRT": {
+      "identical": true,
+      "max_abs": 0.0,
+      "p99_99": 0.0,
+      "n_above_0.01": 0
+    }
+  }
+}

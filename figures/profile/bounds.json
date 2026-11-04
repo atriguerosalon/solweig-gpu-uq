@@ -1,0 +1,308 @@
+{
+  "machine": {
+    "launch_s": 7.028942400029336e-06,
+    "launch_s_median": 7.086374499886005e-06,
+    "bandwidth_Bps": 229777671735.58362
+  },
+  "day": {
+    "1000": {
+      "rows": [
+        {
+          "function": "define_patch_characteristics",
+          "label": "sky patches, longwave",
+          "self_s": 2.263902736005548,
+          "self_s_runs": [
+            2.263902736005548
+          ],
+          "bandwidth_s": 2.3243572824499594,
+          "launch_s": 0.14059993482778682,
+          "syncs": 0,
+          "bytes": 534085404643,
+          "launches": 20003
+        },
+        {
+          "function": "sunonsurface_2018a",
+          "label": "ground view factors (C2)",
+          "self_s": 1.8377732880035182,
+          "self_s_runs": [
+            1.8377732880035182
+          ],
+          "bandwidth_s": 3.1712374856619103,
+          "launch_s": 0.6107869787929492,
+          "syncs": 856,
+          "bytes": 728679565976,
+          "launches": 86896
+        },
+        {
+          "function": "Kside_veg_v2022a",
+          "label": "shortwave on a person",
+          "self_s": 1.4967159059960977,
+          "self_s_runs": [
+            1.4967159059960977
+          ],
+          "bandwidth_s": 1.7382732520139204,
+          "launch_s": 0.6830445066652507,
+          "syncs": 0,
+          "bytes": 399416380688,
+          "launches": 97176
+        },
+        {
+          "function": "shadowingfunction_wallheight_23",
+          "label": "hourly shadows (C3)",
+          "self_s": 0.6756474300091213,
+          "self_s_runs": [
+            0.6756474300091213
+          ],
+          "bandwidth_s": 1.2521942451488528,
+          "launch_s": 0.2462379101578277,
+          "syncs": 59,
+          "bytes": 287726278211,
+          "launches": 35032
+        },
+        {
+          "function": "Solweig_2022a_calc",
+          "label": "SOLWEIG step, rest",
+          "self_s": 0.43391346197313396,
+          "self_s_runs": [
+            0.43391346197313396
+          ],
+          "bandwidth_s": 0.3911877088798969,
+          "launch_s": 0.11260365724846996,
+          "syncs": 332,
+          "bytes": 89886200958,
+          "launches": 16020
+        },
+        {
+          "function": "load_cached_svf_outputs",
+          "label": "load sky view cache",
+          "self_s": 0.289024325000355,
+          "self_s_runs": [
+            0.289024325000355
+          ],
+          "bandwidth_s": 0.0005396520865730281,
+          "launch_s": 0.00013354990560055739,
+          "syncs": 0,
+          "bytes": 124000000,
+          "launches": 19
+        },
+        {
+          "function": "utci_calculator",
+          "label": "UTCI",
+          "self_s": 0.19152059700354584,
+          "self_s_runs": [
+            0.19152059700354584
+          ],
+          "bandwidth_s": 0.6756531164553436,
+          "launch_s": 0.10965150144045764,
+          "syncs": 0,
+          "bytes": 155250000000,
+          "launches": 15600
+        },
+        {
+          "function": "gvf_2018a",
+          "label": "ground view, rest",
+          "self_s": 0.17241478399955668,
+          "self_s_runs": [
+            0.17241478399955668
+          ],
+          "bandwidth_s": 0.09846043071597728,
+          "launch_s": 0.02288623645449552,
+          "syncs": 1840,
+          "bytes": 22624008528,
+          "launches": 3256
+        },
+        {
+          "function": "Lcyl_v2022a",
+          "label": "longwave, cylinder",
+          "self_s": 0.15974098800870706,
+          "self_s_runs": [
+            0.15974098800870706
+          ],
+          "bandwidth_s": 9.476899924836247e-06,
+          "launch_s": 0.039326932728164135,
+          "syncs": 0,
+          "bytes": 2177580,
+          "launches": 5595
+        },
+        {
+          "function": "rest",
+          "label": "7 others",
+          "self_s": 0.18859412900201278,
+          "bandwidth_s": 0.30638117343713106,
+          "launch_s": 0.06904530119548817,
+          "syncs": 216,
+          "bytes": 70399552696,
+          "launches": 9823,
+          "self_s_runs": [
+            0.18859412900201278
+          ]
+        }
+      ],
+      "totals": {
+        "self_s": 7.7092476450015965,
+        "bandwidth_s": 9.958293823749491,
+        "launch_s": 2.0343165094164903,
+        "clean_s": 8.2703270050024,
+        "clean_n": 2,
+        "clean_runs": [
+          8.164209605001815,
+          8.376444405002985
+        ],
+        "timed_n": 1
+      }
+    },
+    "2000": {
+      "rows": [
+        {
+          "function": "shadowingfunction_wallheight_23",
+          "label": "hourly shadows (C3)",
+          "self_s": 10.592607019996649,
+          "self_s_runs": [
+            10.592607019996649
+          ],
+          "bandwidth_s": 15.018193890701689,
+          "launch_s": 0.7517313317983375,
+          "syncs": 59,
+          "bytes": 3450845625879,
+          "launches": 106948
+        },
+        {
+          "function": "define_patch_characteristics",
+          "label": "sky patches, longwave",
+          "self_s": 10.110767338996084,
+          "self_s_runs": [
+            10.110767338996084
+          ],
+          "bandwidth_s": 9.297384678444217,
+          "launch_s": 0.14059993482778682,
+          "syncs": 0,
+          "bytes": 2136331404643,
+          "launches": 20003
+        },
+        {
+          "function": "sunonsurface_2018a",
+          "label": "ground view factors (C2)",
+          "self_s": 9.93944289101637,
+          "self_s_runs": [
+            9.93944289101637
+          ],
+          "bandwidth_s": 12.69211411164442,
+          "launch_s": 0.6107869787929492,
+          "syncs": 856,
+          "bytes": 2916364429976,
+          "launches": 86896
+        },
+        {
+          "function": "Kside_veg_v2022a",
+          "label": "shortwave on a person",
+          "self_s": 6.480087637999532,
+          "self_s_runs": [
+            6.480087637999532
+          ],
+          "bandwidth_s": 6.953088037755515,
+          "launch_s": 0.6830445066652507,
+          "syncs": 0,
+          "bytes": 1597664380688,
+          "launches": 97176
+        },
+        {
+          "function": "utci_calculator",
+          "label": "UTCI",
+          "self_s": 2.2143590149971715,
+          "self_s_runs": [
+            2.2143590149971715
+          ],
+          "bandwidth_s": 2.7026124658213746,
+          "launch_s": 0.10965150144045764,
+          "syncs": 0,
+          "bytes": 621000000000,
+          "launches": 15600
+        },
+        {
+          "function": "Solweig_2022a_calc",
+          "label": "SOLWEIG step, rest",
+          "self_s": 1.909541350978543,
+          "self_s_runs": [
+            1.909541350978543
+          ],
+          "bandwidth_s": 1.5647482117920712,
+          "launch_s": 0.11260365724846996,
+          "syncs": 332,
+          "bytes": 359544200958,
+          "launches": 16020
+        },
+        {
+          "function": "load_cached_svf_outputs",
+          "label": "load sky view cache",
+          "self_s": 1.267392669000401,
+          "self_s_runs": [
+            1.267392669000401
+          ],
+          "bandwidth_s": 0.0021586083462921124,
+          "launch_s": 0.00013354990560055739,
+          "syncs": 0,
+          "bytes": 496000000,
+          "launches": 19
+        },
+        {
+          "function": "Lside_veg_v2022a",
+          "label": "longwave on a person",
+          "self_s": 0.728019927002606,
+          "self_s_runs": [
+            0.728019927002606
+          ],
+          "bandwidth_s": 1.0219270308266255,
+          "launch_s": 0.05133236634741424,
+          "syncs": 171,
+          "bytes": 234816013827,
+          "launches": 7303
+        },
+        {
+          "function": "gvf_2018a",
+          "label": "ground view, rest",
+          "self_s": 0.5294216109905392,
+          "self_s_runs": [
+            0.5294216109905392
+          ],
+          "bandwidth_s": 0.39384161152149794,
+          "launch_s": 0.02288623645449552,
+          "syncs": 1840,
+          "bytes": 90496008528,
+          "launches": 3256
+        },
+        {
+          "function": "rest",
+          "label": "7 others",
+          "self_s": 0.49883495701214997,
+          "bandwidth_s": 0.20360834818988585,
+          "launch_s": 0.05703986757623806,
+          "syncs": 45,
+          "bytes": 46784652193,
+          "launches": 8115,
+          "self_s_runs": [
+            0.49883495701214997
+          ]
+        }
+      ],
+      "totals": {
+        "self_s": 44.270474417990044,
+        "bandwidth_s": 49.84967699504359,
+        "launch_s": 2.539809931057,
+        "clean_s": 46.29175837949879,
+        "clean_n": 2,
+        "clean_runs": [
+          46.242578208999475,
+          46.3409385499981
+        ],
+        "timed_n": 1
+      }
+    }
+  },
+  "shadow_step_2000": {
+    "eager_ms": 7.405919600084114,
+    "compiled_ms": 0.8548418833621932,
+    "captured_graph_ms": 0.8399859166578001,
+    "bandwidth_fused_ms": 0.8355903275969467,
+    "estimate_state_on_chip_ms": 0.20889758189923668
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "pacoima_summer": {
+    "runs": {
+      "original": {
+        "seconds": 69.097765530998,
+        "peak_allocated_gib": 2.898871898651123,
+        "peak_reserved_gib": 2.916015625
+      },
+      "original + uint8 masks": {
+        "seconds": 63.8504637799997,
+        "peak_allocated_gib": 1.045356273651123,
+        "peak_reserved_gib": 1.0625
+      },
+      "original + bit masks": {
+        "seconds": 59.4027157399978,
+        "peak_allocated_gib": 0.676215648651123,
+        "peak_reserved_gib": 0.693359375
+      },
+      "fast": {
+        "seconds": 30.37512243400124,
+        "peak_allocated_gib": 3.010185718536377,
+        "peak_reserved_gib": 3.2265625
+      },
+      "fast + uint8 masks": {
+        "seconds": 30.081206639999436,
+        "peak_allocated_gib": 1.1501798629760742,
+        "peak_reserved_gib": 1.359375
+      },
+      "fast + bit masks": {
+        "seconds": 31.14223642500292,
+        "peak_allocated_gib": 0.8704462051391602,
+        "peak_reserved_gib": 1.08984375
+      }
+    },
+    "comparisons": {
+      "original + uint8 masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "original + bit masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + uint8 masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + bit masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  },
+  "austin": {
+    "runs": {
+      "original": {
+        "seconds": 59.02858908300186,
+        "peak_allocated_gib": 2.898928165435791,
+        "peak_reserved_gib": 2.927734375
+      },
+      "original + uint8 masks": {
+        "seconds": 58.90300811099951,
+        "peak_allocated_gib": 1.045412540435791,
+        "peak_reserved_gib": 1.07421875
+      },
+      "original + bit masks": {
+        "seconds": 57.352722387997346,
+        "peak_allocated_gib": 0.676271915435791,
+        "peak_reserved_gib": 0.705078125
+      },
+      "fast": {
+        "seconds": 28.76505789699877,
+        "peak_allocated_gib": 3.002791404724121,
+        "peak_reserved_gib": 3.2109375
+      },
+      "fast + uint8 masks": {
+        "seconds": 29.791570655001124,
+        "peak_allocated_gib": 1.1501784324645996,
+        "peak_reserved_gib": 1.359375
+      },
+      "fast + bit masks": {
+        "seconds": 27.350635871000122,
+        "peak_allocated_gib": 0.8704447746276855,
+        "peak_reserved_gib": 1.09765625
+      }
+    },
+    "comparisons": {
+      "original + uint8 masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "original + bit masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + uint8 masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + bit masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  }
+}

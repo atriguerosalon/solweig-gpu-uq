@@ -1,0 +1,554 @@
+{
+  "pacoima_summer": {
+    "runs": {
+      "original": {
+        "seconds": 57.107898567999655,
+        "peak_allocated_gib": 2.898871898651123,
+        "peak_reserved_gib": 2.916015625
+      },
+      "original + uint8 masks": {
+        "seconds": 55.36639777200071,
+        "peak_allocated_gib": 1.045356273651123,
+        "peak_reserved_gib": 1.0625
+      },
+      "original + bit masks": {
+        "seconds": 56.22912844599887,
+        "peak_allocated_gib": 0.676215648651123,
+        "peak_reserved_gib": 0.693359375
+      },
+      "fast": {
+        "seconds": 29.09191375299997,
+        "peak_allocated_gib": 3.010185718536377,
+        "peak_reserved_gib": 3.2265625
+      },
+      "fast + uint8 masks": {
+        "seconds": 30.447442467000656,
+        "peak_allocated_gib": 1.1501798629760742,
+        "peak_reserved_gib": 1.359375
+      },
+      "fast + bit masks": {
+        "seconds": 29.24571850099892,
+        "peak_allocated_gib": 0.8042960166931152,
+        "peak_reserved_gib": 0.994140625
+      }
+    },
+    "comparisons": {
+      "original + uint8 masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "original + bit masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + uint8 masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + bit masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  },
+  "austin": {
+    "runs": {
+      "original": {
+        "seconds": 54.67935157700049,
+        "peak_allocated_gib": 2.898928165435791,
+        "peak_reserved_gib": 2.927734375
+      },
+      "original + uint8 masks": {
+        "seconds": 54.11300349800149,
+        "peak_allocated_gib": 1.045412540435791,
+        "peak_reserved_gib": 1.07421875
+      },
+      "original + bit masks": {
+        "seconds": 53.39546705599969,
+        "peak_allocated_gib": 0.676271915435791,
+        "peak_reserved_gib": 0.705078125
+      },
+      "fast": {
+        "seconds": 28.182134278999,
+        "peak_allocated_gib": 3.002791404724121,
+        "peak_reserved_gib": 3.2109375
+      },
+      "fast + uint8 masks": {
+        "seconds": 28.350369268999202,
+        "peak_allocated_gib": 1.1501784324645996,
+        "peak_reserved_gib": 1.359375
+      },
+      "fast + bit masks": {
+        "seconds": 28.75986040099997,
+        "peak_allocated_gib": 0.8042945861816406,
+        "peak_reserved_gib": 0.994140625
+      }
+    },
+    "comparisons": {
+      "original + uint8 masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "original + bit masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + uint8 masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + bit masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  },
+  "tiles600": {
+    "runs": {
+      "original": {
+        "seconds": 202.97502619700026,
+        "peak_allocated_gib": 1.1141033172607422,
+        "peak_reserved_gib": 1.140625
+      },
+      "original + uint8 masks": {
+        "seconds": 210.59488746699935,
+        "peak_allocated_gib": 0.40355491638183594,
+        "peak_reserved_gib": 0.427734375
+      },
+      "original + bit masks": {
+        "seconds": 206.1653882899991,
+        "peak_allocated_gib": 0.2603263854980469,
+        "peak_reserved_gib": 0.27734375
+      },
+      "fast": {
+        "seconds": 61.38761413500106,
+        "peak_allocated_gib": 1.1587767601013184,
+        "peak_reserved_gib": 1.26171875
+      },
+      "fast + uint8 masks": {
+        "seconds": 67.20115675700072,
+        "peak_allocated_gib": 0.4464116096496582,
+        "peak_reserved_gib": 0.525390625
+      },
+      "fast + bit masks": {
+        "seconds": 57.29686955000034,
+        "peak_allocated_gib": 0.3155546188354492,
+        "peak_reserved_gib": 0.390625
+      }
+    },
+    "comparisons": {
+      "original + uint8 masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "original + bit masks vs original": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + uint8 masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      },
+      "fast + bit masks vs fast": {
+        "UTCI": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "TMRT": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Shadow": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Kdown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Lup": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        },
+        "Ldown": {
+          "identical": true,
+          "nan_pattern_same": true,
+          "max_abs": 0.0
+        }
+      }
+    }
+  }
+}
