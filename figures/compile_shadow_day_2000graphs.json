@@ -1,0 +1,42 @@
+{
+  "tag": "2000graphs",
+  "pre": "~/verify_c7_la2000/tight_kept/processed_inputs",
+  "runs": [
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 103.21374089100209
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 78.21822532200167
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 84.66036398700089
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 76.54958735800028
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 76.63811493899993
+    },
+    {
+      "config": "base",
+      "repeat": 2,
+      "seconds": 84.71632146699994
+    }
+  ],
+  "files_compared": 3,
+  "files_differ": 0,
+  "base_first_s": 103.21374089100209,
+  "base_median_after_first_s": 84.68834272700042,
+  "compiled_first_s": 78.21822532200167,
+  "compiled_median_after_first_s": 76.59385114850011
+}

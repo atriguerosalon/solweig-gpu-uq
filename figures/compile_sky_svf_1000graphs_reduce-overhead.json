@@ -1,0 +1,45 @@
+{
+  "tag": "1000graphs",
+  "mode": "reduce-overhead",
+  "src": "~/solweig_verify/pacoima_summer",
+  "runs": [
+    {
+      "config": "c7",
+      "repeat": 0,
+      "seconds": 21.59419698200145
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 26.289369128000544
+    },
+    {
+      "config": "c7",
+      "repeat": 1,
+      "seconds": 21.284220289002405
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 25.062097940997774
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 25.291852885999106
+    },
+    {
+      "config": "c7",
+      "repeat": 2,
+      "seconds": 21.118614626000635
+    }
+  ],
+  "files": 2,
+  "files_differ": 0,
+  "zip_members": 15,
+  "zip_members_differ": 0,
+  "c7_first_s": 21.59419698200145,
+  "c7_median_after_first_s": 21.20141745750152,
+  "compiled_first_s": 26.289369128000544,
+  "compiled_median_after_first_s": 25.17697541349844
+}

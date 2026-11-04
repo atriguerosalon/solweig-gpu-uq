@@ -1,0 +1,45 @@
+{
+  "tag": "1000",
+  "mode": "default",
+  "src": "~/solweig_verify/pacoima_summer",
+  "runs": [
+    {
+      "config": "c7",
+      "repeat": 0,
+      "seconds": 21.63410238600045
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 18.692204756000137
+    },
+    {
+      "config": "c7",
+      "repeat": 1,
+      "seconds": 21.172671238000476
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 17.429648826997436
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 17.45968453900059
+    },
+    {
+      "config": "c7",
+      "repeat": 2,
+      "seconds": 21.140139638999244
+    }
+  ],
+  "files": 2,
+  "files_differ": 0,
+  "zip_members": 15,
+  "zip_members_differ": 0,
+  "c7_first_s": 21.63410238600045,
+  "c7_median_after_first_s": 21.15640543849986,
+  "compiled_first_s": 18.692204756000137,
+  "compiled_median_after_first_s": 17.444666682999014
+}

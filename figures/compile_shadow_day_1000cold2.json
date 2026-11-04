@@ -1,0 +1,32 @@
+{
+  "tag": "1000cold2",
+  "pre": "~/solweig_bench/processed_inputs",
+  "runs": [
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 16.157356889998482
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 19.297960946001695
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 14.757957398000144
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 13.76957391200267
+    }
+  ],
+  "files_compared": 3,
+  "files_differ": 0,
+  "base_first_s": 16.157356889998482,
+  "base_median_after_first_s": 14.757957398000144,
+  "compiled_first_s": 19.297960946001695,
+  "compiled_median_after_first_s": 13.76957391200267
+}

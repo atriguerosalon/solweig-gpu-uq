@@ -1,0 +1,87 @@
+{
+  "tag": "1000",
+  "mode": "reduce-overhead",
+  "calls": [
+    {
+      "call": "call_000",
+      "altitude": 6.0,
+      "c7_s": 0.1437584249979409,
+      "compiled_s": 0.22106696699847816,
+      "first_s": 1.8088698489991657,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_019",
+      "altitude": 6.0,
+      "c7_s": 0.10939490899909288,
+      "compiled_s": 0.16635494399815798,
+      "first_s": 0.16777062799883424,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_038",
+      "altitude": 18.0,
+      "c7_s": 0.04953481099801138,
+      "compiled_s": 0.07317571000021417,
+      "first_s": 0.07441022399871144,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_057",
+      "altitude": 18.0,
+      "c7_s": 0.03552593999847886,
+      "compiled_s": 0.05353173000185052,
+      "first_s": 0.0547138410001935,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_076",
+      "altitude": 30.0,
+      "c7_s": 0.02660110299984808,
+      "compiled_s": 0.03811554499770864,
+      "first_s": 0.0387727069974062,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_095",
+      "altitude": 42.0,
+      "c7_s": 0.016614272000879282,
+      "compiled_s": 0.023358636997727444,
+      "first_s": 0.023303000001760665,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_114",
+      "altitude": 54.0,
+      "c7_s": 0.012933582998812199,
+      "compiled_s": 0.017350791000353638,
+      "first_s": 0.017767419998563128,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_133",
+      "altitude": 66.0,
+      "c7_s": 0.009133474999543978,
+      "compiled_s": 0.012559784001496155,
+      "first_s": 0.012965166999492794,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_152",
+      "altitude": 90.0,
+      "c7_s": 0.3494377919996623,
+      "compiled_s": 0.5197197779998532,
+      "first_s": 0.5219131510020816,
+      "bit_identical": true,
+      "graphs_so_far": 2
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "tag": "1000",
+  "pre": "~/solweig_bench/processed_inputs",
+  "runs": [
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 19.126087055003154
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 18.754992874997697
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 17.08936130499933
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 15.985207645000628
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 15.940164595001988
+    },
+    {
+      "config": "base",
+      "repeat": 2,
+      "seconds": 17.375347832999978
+    },
+    {
+      "config": "base",
+      "repeat": 3,
+      "seconds": 17.220126250998874
+    },
+    {
+      "config": "compiled",
+      "repeat": 3,
+      "seconds": 15.845523007999873
+    }
+  ],
+  "files_compared": 3,
+  "files_differ": 0,
+  "base_first_s": 19.126087055003154,
+  "base_median_after_first_s": 17.220126250998874,
+  "compiled_first_s": 18.754992874997697,
+  "compiled_median_after_first_s": 15.940164595001988
+}

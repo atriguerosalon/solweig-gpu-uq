@@ -1,0 +1,83 @@
+{
+  "tag": "1000",
+  "variant": "fixed",
+  "torch": "2.5.1+cu121",
+  "calls": [
+    {
+      "call": "call_00",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 2.664829937999457,
+      "eager_step_s": 2.2856801050002105,
+      "compiled_s": 0.32899675899898284,
+      "compiled_first_s": 7.899761601001956,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_03",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.6200380709997262,
+      "eager_step_s": 0.8196183589971042,
+      "compiled_s": 0.1121644880004169,
+      "compiled_first_s": 0.09284226399904583,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_06",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.13798551299987594,
+      "eager_step_s": 0.1899077509988274,
+      "compiled_s": 0.03796421500010183,
+      "compiled_first_s": 0.029619010998430895,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_09",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.3553037689998746,
+      "eager_step_s": 0.5312764080008492,
+      "compiled_s": 0.06373923499995726,
+      "compiled_first_s": 0.06557547100237571,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 2
+    },
+    {
+      "call": "call_12",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 1.4159437410016835,
+      "eager_step_s": 2.3636813769990113,
+      "compiled_s": 0.29339775599873974,
+      "compiled_first_s": 0.29737169000145514,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 2
+    }
+  ],
+  "recompiles": {}
+}

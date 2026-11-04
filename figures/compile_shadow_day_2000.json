@@ -1,0 +1,62 @@
+{
+  "tag": "2000",
+  "pre": "~/verify_c7_la2000/tight_kept/processed_inputs",
+  "runs": [
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 99.83293238899932
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 69.20320322099724
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 84.66837037399819
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 66.68822867700146
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 66.390884233002
+    },
+    {
+      "config": "base",
+      "repeat": 2,
+      "seconds": 82.42692140399959
+    },
+    {
+      "config": "base",
+      "repeat": 3,
+      "seconds": 84.1323206690031
+    },
+    {
+      "config": "compiled",
+      "repeat": 3,
+      "seconds": 67.32307026499984
+    },
+    {
+      "config": "base",
+      "repeat": 4,
+      "seconds": 84.18405941899982
+    },
+    {
+      "config": "compiled",
+      "repeat": 4,
+      "seconds": 66.68633221100026
+    }
+  ],
+  "files_compared": 3,
+  "files_differ": 0,
+  "base_first_s": 99.83293238899932,
+  "base_median_after_first_s": 84.15819004400146,
+  "compiled_first_s": 69.20320322099724,
+  "compiled_median_after_first_s": 66.68728044400086
+}

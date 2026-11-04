@@ -1,0 +1,52 @@
+{
+  "tag": "1000graphs",
+  "pre": "~/solweig_bench/processed_inputs",
+  "runs": [
+    {
+      "config": "base",
+      "repeat": 0,
+      "seconds": 16.084288896003272
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 15.807394701998419
+    },
+    {
+      "config": "base",
+      "repeat": 1,
+      "seconds": 14.788047070000175
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 14.57895170899792
+    },
+    {
+      "config": "compiled",
+      "repeat": 2,
+      "seconds": 14.333666646001802
+    },
+    {
+      "config": "base",
+      "repeat": 2,
+      "seconds": 14.666939823000575
+    },
+    {
+      "config": "base",
+      "repeat": 3,
+      "seconds": 14.598052749999624
+    },
+    {
+      "config": "compiled",
+      "repeat": 3,
+      "seconds": 14.467987744999846
+    }
+  ],
+  "files_compared": 3,
+  "files_differ": 0,
+  "base_first_s": 16.084288896003272,
+  "base_median_after_first_s": 14.666939823000575,
+  "compiled_first_s": 15.807394701998419,
+  "compiled_median_after_first_s": 14.467987744999846
+}

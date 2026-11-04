@@ -1,0 +1,82 @@
+{
+  "tag": "1000",
+  "torch": "2.5.1+cu121",
+  "calls": [
+    {
+      "call": "call_00",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 1.2419227499995031,
+      "eager_step_s": 1.034421394000674,
+      "compiled_s": 0.18952611200074898,
+      "compiled_first_s": 16.022697055999743,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 5
+    },
+    {
+      "call": "call_03",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.24924803500107373,
+      "eager_step_s": 0.24211394800295238,
+      "compiled_s": 0.054689906999556115,
+      "compiled_first_s": 2.351414364999073,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 6
+    },
+    {
+      "call": "call_06",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.060049851999792736,
+      "eager_step_s": 0.059646562000125414,
+      "compiled_s": 0.015586793000693433,
+      "compiled_first_s": 1.7685516689998622,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 7
+    },
+    {
+      "call": "call_09",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.14898289700067835,
+      "eager_step_s": 0.1415247660006571,
+      "compiled_s": 0.033974556001339806,
+      "compiled_first_s": 3.9796472740017634,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 9
+    },
+    {
+      "call": "call_12",
+      "shape": [
+        1000,
+        1000
+      ],
+      "c3_s": 0.6671571880033298,
+      "eager_step_s": 0.6877317769976798,
+      "compiled_s": 0.13898206100202515,
+      "compiled_first_s": 2.6426033259995165,
+      "bit_identical_eager": true,
+      "bit_identical_compiled": true,
+      "max_abs_diff": 0.0,
+      "graphs_so_far": 10
+    }
+  ],
+  "recompiles": {}
+}

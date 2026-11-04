@@ -1,0 +1,35 @@
+{
+  "tag": "2000",
+  "mode": "default",
+  "src": "~/solweig_verify/la2000/shared/processed_inputs",
+  "runs": [
+    {
+      "config": "c7",
+      "repeat": 0,
+      "seconds": 201.15242127300007
+    },
+    {
+      "config": "compiled",
+      "repeat": 0,
+      "seconds": 96.74612091000017
+    },
+    {
+      "config": "c7",
+      "repeat": 1,
+      "seconds": 198.85931391300255
+    },
+    {
+      "config": "compiled",
+      "repeat": 1,
+      "seconds": 94.08690547399965
+    }
+  ],
+  "files": 2,
+  "files_differ": 0,
+  "zip_members": 15,
+  "zip_members_differ": 0,
+  "c7_first_s": 201.15242127300007,
+  "c7_median_after_first_s": 198.85931391300255,
+  "compiled_first_s": 96.74612091000017,
+  "compiled_median_after_first_s": 94.08690547399965
+}
