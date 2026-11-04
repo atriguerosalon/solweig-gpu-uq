@@ -1,0 +1,95 @@
+{
+  "tree": 5,
+  "site_px": [
+    157,
+    167
+  ],
+  "core_m": 40.0,
+  "domain_px": 400,
+  "full": {
+    "svf_s": 51.493221576999986,
+    "day_s": 11.26647935599999
+  },
+  "halos": {
+    "25": {
+      "window_px": [
+        65,
+        65
+      ],
+      "svf_s": 10.115135635000115,
+      "day_s": 9.569636742999819,
+      "svf": {
+        "identical": false,
+        "max_abs": 0.022064924240112305
+      },
+      "Shadow": {
+        "identical": false,
+        "max_abs": 1.0
+      },
+      "TMRT": {
+        "identical": false,
+        "max_abs": 15.867584228515625
+      }
+    },
+    "50": {
+      "window_px": [
+        91,
+        91
+      ],
+      "svf_s": 13.040786002999994,
+      "day_s": 10.776802354999973,
+      "svf": {
+        "identical": false,
+        "max_abs": 0.004225015640258789
+      },
+      "Shadow": {
+        "identical": false,
+        "max_abs": 1.0
+      },
+      "TMRT": {
+        "identical": false,
+        "max_abs": 3.71124267578125
+      }
+    },
+    "100": {
+      "window_px": [
+        141,
+        141
+      ],
+      "svf_s": 13.841350318999957,
+      "day_s": 9.522676160999936,
+      "svf": {
+        "identical": false,
+        "max_abs": 0.0013526082038879395
+      },
+      "Shadow": {
+        "identical": false,
+        "max_abs": 1.0
+      },
+      "TMRT": {
+        "identical": false,
+        "max_abs": 3.463653564453125
+      }
+    },
+    "150": {
+      "window_px": [
+        191,
+        191
+      ],
+      "svf_s": 16.01159910499996,
+      "day_s": 9.801780573000087,
+      "svf": {
+        "identical": true,
+        "max_abs": 0.0
+      },
+      "Shadow": {
+        "identical": false,
+        "max_abs": 1.0
+      },
+      "TMRT": {
+        "identical": false,
+        "max_abs": 3.463653564453125
+      }
+    }
+  }
+}

@@ -124,7 +124,9 @@ def main() -> None:
     ap.add_argument("--res", type=float, default=2.0)
     ap.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
-    out, raw = args.out, args.out.parent / "raw"
+    # Downloads are cached per domain: a shared folder made a second domain reuse the first one's DEM and
+    # buildings (found 3 Nov building Exposition Park after Pacoima; Pacoima's own cache is data/la/raw).
+    out, raw = args.out, args.out.parent / "raw" / args.out.name
     out.mkdir(parents=True, exist_ok=True)
     raw.mkdir(parents=True, exist_ok=True)
     bounds = grid(args.lat, args.lon, args.size, args.res)

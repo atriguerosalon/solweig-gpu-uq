@@ -1,0 +1,5988 @@
+{
+ "design": {
+  "sites": [
+   [
+    100,
+    100
+   ],
+   [
+    90,
+    109
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    90,
+    91
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    98,
+    117
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    92,
+    102
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    87,
+    105
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    86,
+    105
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    96,
+    89
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    89,
+    106
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    98,
+    96
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    96,
+    108
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    94,
+    108
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    99,
+    94
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    99,
+    90
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    81,
+    102
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    93,
+    93
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    98,
+    81
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    100,
+    94
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    96,
+    84
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    97,
+    98
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    84,
+    99
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    91,
+    102
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    88,
+    114
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    84,
+    97
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    82,
+    108
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    97,
+    90
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    97,
+    101
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    93,
+    118
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    99,
+    89
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    82,
+    99
+   ],
+   [
+    100,
+    100
+   ],
+   [
+    90,
+    85
+   ]
+  ],
+  "cases": {
+   "base": [],
+   "single_00": [
+    0
+   ],
+   "single_01": [
+    1
+   ],
+   "pair_00": [
+    0,
+    1
+   ],
+   "single_02": [
+    2
+   ],
+   "single_03": [
+    3
+   ],
+   "pair_01": [
+    2,
+    3
+   ],
+   "single_04": [
+    4
+   ],
+   "single_05": [
+    5
+   ],
+   "pair_02": [
+    4,
+    5
+   ],
+   "single_06": [
+    6
+   ],
+   "single_07": [
+    7
+   ],
+   "pair_03": [
+    6,
+    7
+   ],
+   "single_08": [
+    8
+   ],
+   "single_09": [
+    9
+   ],
+   "pair_04": [
+    8,
+    9
+   ],
+   "single_10": [
+    10
+   ],
+   "single_11": [
+    11
+   ],
+   "pair_05": [
+    10,
+    11
+   ],
+   "single_12": [
+    12
+   ],
+   "single_13": [
+    13
+   ],
+   "pair_06": [
+    12,
+    13
+   ],
+   "single_14": [
+    14
+   ],
+   "single_15": [
+    15
+   ],
+   "pair_07": [
+    14,
+    15
+   ],
+   "single_16": [
+    16
+   ],
+   "single_17": [
+    17
+   ],
+   "pair_08": [
+    16,
+    17
+   ],
+   "single_18": [
+    18
+   ],
+   "single_19": [
+    19
+   ],
+   "pair_09": [
+    18,
+    19
+   ],
+   "single_20": [
+    20
+   ],
+   "single_21": [
+    21
+   ],
+   "pair_10": [
+    20,
+    21
+   ],
+   "single_22": [
+    22
+   ],
+   "single_23": [
+    23
+   ],
+   "pair_11": [
+    22,
+    23
+   ],
+   "single_24": [
+    24
+   ],
+   "single_25": [
+    25
+   ],
+   "pair_12": [
+    24,
+    25
+   ],
+   "single_26": [
+    26
+   ],
+   "single_27": [
+    27
+   ],
+   "pair_13": [
+    26,
+    27
+   ],
+   "single_28": [
+    28
+   ],
+   "single_29": [
+    29
+   ],
+   "pair_14": [
+    28,
+    29
+   ],
+   "single_30": [
+    30
+   ],
+   "single_31": [
+    31
+   ],
+   "pair_15": [
+    30,
+    31
+   ],
+   "single_32": [
+    32
+   ],
+   "single_33": [
+    33
+   ],
+   "pair_16": [
+    32,
+    33
+   ],
+   "single_34": [
+    34
+   ],
+   "single_35": [
+    35
+   ],
+   "pair_17": [
+    34,
+    35
+   ],
+   "single_36": [
+    36
+   ],
+   "single_37": [
+    37
+   ],
+   "pair_18": [
+    36,
+    37
+   ],
+   "single_38": [
+    38
+   ],
+   "single_39": [
+    39
+   ],
+   "pair_19": [
+    38,
+    39
+   ],
+   "single_40": [
+    40
+   ],
+   "single_41": [
+    41
+   ],
+   "pair_20": [
+    40,
+    41
+   ],
+   "single_42": [
+    42
+   ],
+   "single_43": [
+    43
+   ],
+   "pair_21": [
+    42,
+    43
+   ],
+   "single_44": [
+    44
+   ],
+   "single_45": [
+    45
+   ],
+   "pair_22": [
+    44,
+    45
+   ],
+   "single_46": [
+    46
+   ],
+   "single_47": [
+    47
+   ],
+   "pair_23": [
+    46,
+    47
+   ],
+   "single_48": [
+    48
+   ],
+   "single_49": [
+    49
+   ],
+   "pair_24": [
+    48,
+    49
+   ],
+   "single_50": [
+    50
+   ],
+   "single_51": [
+    51
+   ],
+   "pair_25": [
+    50,
+    51
+   ],
+   "single_52": [
+    52
+   ],
+   "single_53": [
+    53
+   ],
+   "pair_26": [
+    52,
+    53
+   ],
+   "single_54": [
+    54
+   ],
+   "single_55": [
+    55
+   ],
+   "pair_27": [
+    54,
+    55
+   ],
+   "single_56": [
+    56
+   ],
+   "single_57": [
+    57
+   ],
+   "pair_28": [
+    56,
+    57
+   ],
+   "single_58": [
+    58
+   ],
+   "single_59": [
+    59
+   ],
+   "pair_29": [
+    58,
+    59
+   ]
+  },
+  "height_m": [
+   6.4,
+   6.2,
+   11.4,
+   15.4,
+   13.3,
+   7.8,
+   6.3,
+   7.2,
+   16.0,
+   15.8,
+   7.4,
+   13.2,
+   15.3,
+   9.6,
+   9.9,
+   14.9,
+   13.9,
+   8.4,
+   10.5,
+   14.0,
+   6.9,
+   11.8,
+   9.7,
+   7.1,
+   11.0,
+   10.3,
+   13.6,
+   11.0,
+   13.1,
+   15.3,
+   6.1,
+   14.6,
+   14.9,
+   14.2,
+   8.7,
+   11.4,
+   12.1,
+   6.3,
+   15.3,
+   6.7,
+   15.7,
+   11.6,
+   7.2,
+   8.9,
+   8.9,
+   10.1,
+   11.5,
+   11.9,
+   6.4,
+   14.2,
+   6.8,
+   12.5,
+   14.6,
+   6.6,
+   13.8,
+   9.1,
+   9.4,
+   15.9,
+   12.7,
+   15.6
+  ],
+  "crown_radius_px": [
+   4.03,
+   4.28,
+   4.04,
+   2.01,
+   4.16,
+   3.35,
+   3.68,
+   3.62,
+   3.71,
+   3.63,
+   3.31,
+   2.78,
+   3.43,
+   2.8,
+   2.57,
+   3.56,
+   4.19,
+   2.15,
+   2.58,
+   2.13,
+   2.75,
+   3.68,
+   3.57,
+   4.32,
+   3.55,
+   4.49,
+   3.32,
+   3.96,
+   2.29,
+   3.82,
+   4.45,
+   4.39,
+   3.2,
+   2.58,
+   3.11,
+   4.33,
+   3.8,
+   2.04,
+   4.1,
+   2.17,
+   2.65,
+   2.6,
+   3.47,
+   3.39,
+   4.05,
+   3.57,
+   4.12,
+   2.36,
+   3.04,
+   4.07,
+   2.68,
+   3.76,
+   2.95,
+   3.07,
+   2.67,
+   4.16,
+   2.79,
+   2.46,
+   4.31,
+   3.87
+  ],
+  "met": "data/la/met_pacoima_20190730.txt",
+  "date": "2019-07-30",
+  "seed": 0
+ },
+ "cases": {
+  "pair_00": {
+   "trees": [
+    0,
+    1
+   ],
+   "closest_pair_m": 26.90724809414742,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 308.8333333333333,
+      "rmse": 0.038584429770708084,
+      "max_abs": 0.114044189453125,
+      "pct_off_1K": 0.0,
+      "area_truth": 542.0991821289062,
+      "area_pred": 553.0029296875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 307.5,
+      "rmse": 0.10240862518548965,
+      "max_abs": 0.4552001953125,
+      "pct_off_1K": 0.0,
+      "area_truth": 542.0991821289062,
+      "area_pred": 521.6484985351562,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 308.8333333333333,
+      "rmse": 0.038584429770708084,
+      "max_abs": 0.114044189453125,
+      "pct_off_1K": 0.0,
+      "area_truth": 542.0991821289062,
+      "area_pred": 553.0029296875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 308.8333333333333,
+      "rmse": 0.042605847120285034,
+      "max_abs": 0.4552001953125,
+      "pct_off_1K": 0.0,
+      "area_truth": 542.0991821289062,
+      "area_pred": 552.75048828125,
+      "error_share_in_overlap": 0.02036115899682045,
+      "overlap_px_per_hour": 0.5
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1016.0,
+      "rmse": 0.6146851181983948,
+      "max_abs": 4.7769775390625,
+      "pct_off_1K": 1.6404199475065617,
+      "area_truth": -4486.78125,
+      "area_pred": -4611.66064453125,
+      "error_share_in_overlap": 0.47115451097488403,
+      "overlap_px_per_hour": 20.666666666666668
+     },
+     "strongest": {
+      "affected_px_per_hour": 1000.0,
+      "rmse": 0.4056537449359894,
+      "max_abs": 2.49114990234375,
+      "pct_off_1K": 3.4666666666666663,
+      "area_truth": -4486.78125,
+      "area_pred": -4154.5498046875,
+      "error_share_in_overlap": 0.030598584562540054,
+      "overlap_px_per_hour": 20.666666666666668
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1016.0,
+      "rmse": 0.13904298841953278,
+      "max_abs": 1.430694580078125,
+      "pct_off_1K": 0.03280839895013123,
+      "area_truth": -4486.78125,
+      "area_pred": -4527.6015625,
+      "error_share_in_overlap": 0.10647065192461014,
+      "overlap_px_per_hour": 20.666666666666668
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1018.6666666666666,
+      "rmse": 0.361303448677063,
+      "max_abs": 2.49114990234375,
+      "pct_off_1K": 3.4031413612565444,
+      "area_truth": -4486.78125,
+      "area_pred": -4395.4765625,
+      "error_share_in_overlap": 0.6872241497039795,
+      "overlap_px_per_hour": 191.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 868.2,
+      "rmse": 0.09186891466379166,
+      "max_abs": 0.48486328125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4889.8193359375,
+      "area_pred": -4909.095703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 841.0,
+      "rmse": 0.4419478178024292,
+      "max_abs": 1.674957275390625,
+      "pct_off_1K": 6.2782401902497025,
+      "area_truth": -4889.8193359375,
+      "area_pred": -4525.13330078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 868.2,
+      "rmse": 0.09186891466379166,
+      "max_abs": 0.48486328125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4889.8193359375,
+      "area_pred": -4909.095703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 868.2,
+      "rmse": 0.39184415340423584,
+      "max_abs": 1.674957275390625,
+      "pct_off_1K": 6.08154803040774,
+      "area_truth": -4889.8193359375,
+      "area_pred": -4791.7978515625,
+      "error_share_in_overlap": 0.6901912093162537,
+      "overlap_px_per_hour": 144.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 954.6666666666666,
+      "rmse": 0.10107001662254333,
+      "max_abs": 0.546173095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6835.92919921875,
+      "area_pred": -6838.607421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 923.6666666666666,
+      "rmse": 0.4589623808860779,
+      "max_abs": 1.8475341796875,
+      "pct_off_1K": 6.098881270299531,
+      "area_truth": -6835.92919921875,
+      "area_pred": -6461.73291015625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 954.6666666666666,
+      "rmse": 0.10107001662254333,
+      "max_abs": 0.546173095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6835.92919921875,
+      "area_pred": -6838.607421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 954.6666666666666,
+      "rmse": 0.40163761377334595,
+      "max_abs": 1.8475341796875,
+      "pct_off_1K": 5.900837988826815,
+      "area_truth": -6835.92919921875,
+      "area_pred": -6712.50341796875,
+      "error_share_in_overlap": 0.7247961759567261,
+      "overlap_px_per_hour": 158.33333333333334
+     }
+    }
+   }
+  },
+  "pair_01": {
+   "trees": [
+    2,
+    3
+   ],
+   "closest_pair_m": 26.90724809414742,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 344.6666666666667,
+      "rmse": 0.0260862335562706,
+      "max_abs": 0.092437744140625,
+      "pct_off_1K": 0.0,
+      "area_truth": 561.50341796875,
+      "area_pred": 573.47998046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 338.3333333333333,
+      "rmse": 0.13781636953353882,
+      "max_abs": 0.438079833984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 561.50341796875,
+      "area_pred": 493.9796447753906,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 344.6666666666667,
+      "rmse": 0.0260862335562706,
+      "max_abs": 0.092437744140625,
+      "pct_off_1K": 0.0,
+      "area_truth": 561.50341796875,
+      "area_pred": 573.47998046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 344.6666666666667,
+      "rmse": 0.0260862335562706,
+      "max_abs": 0.092437744140625,
+      "pct_off_1K": 0.0,
+      "area_truth": 561.50341796875,
+      "area_pred": 573.47998046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1340.6666666666667,
+      "rmse": 0.021175676956772804,
+      "max_abs": 0.221343994140625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5415.28857421875,
+      "area_pred": -5433.40673828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1335.6666666666667,
+      "rmse": 0.2049630731344223,
+      "max_abs": 1.23486328125,
+      "pct_off_1K": 0.3493885700024956,
+      "area_truth": -5415.28857421875,
+      "area_pred": -5073.86572265625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1340.6666666666667,
+      "rmse": 0.021175676956772804,
+      "max_abs": 0.221343994140625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5415.28857421875,
+      "area_pred": -5433.40673828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1340.6666666666667,
+      "rmse": 0.12320422381162643,
+      "max_abs": 1.23486328125,
+      "pct_off_1K": 0.34808552958727,
+      "area_truth": -5415.28857421875,
+      "area_pred": -5410.28369140625,
+      "error_share_in_overlap": 0.36315757036209106,
+      "overlap_px_per_hour": 32.666666666666664
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 662.6,
+      "rmse": 0.03673939034342766,
+      "max_abs": 0.25152587890625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4104.619140625,
+      "area_pred": -4145.24951171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 658.4,
+      "rmse": 0.2701182961463928,
+      "max_abs": 1.054290771484375,
+      "pct_off_1K": 0.09113001215066828,
+      "area_truth": -4104.619140625,
+      "area_pred": -3719.20068359375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 662.6,
+      "rmse": 0.03673939034342766,
+      "max_abs": 0.25152587890625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4104.619140625,
+      "area_pred": -4145.24951171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 662.6,
+      "rmse": 0.1811392605304718,
+      "max_abs": 1.054290771484375,
+      "pct_off_1K": 0.09055236945366738,
+      "area_truth": -4104.619140625,
+      "area_pred": -4117.67822265625,
+      "error_share_in_overlap": 0.32754436135292053,
+      "overlap_px_per_hour": 43.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 792.6666666666666,
+      "rmse": 0.08728402107954025,
+      "max_abs": 0.474029541015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -7001.02880859375,
+      "area_pred": -7023.3046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 784.6666666666666,
+      "rmse": 0.487768292427063,
+      "max_abs": 2.621307373046875,
+      "pct_off_1K": 5.989804587935429,
+      "area_truth": -7001.02880859375,
+      "area_pred": -6547.24169921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 792.6666666666666,
+      "rmse": 0.08728402107954025,
+      "max_abs": 0.474029541015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -7001.02880859375,
+      "area_pred": -7023.3046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 792.6666666666666,
+      "rmse": 0.44153210520744324,
+      "max_abs": 2.621307373046875,
+      "pct_off_1K": 5.929352396972246,
+      "area_truth": -7001.02880859375,
+      "area_pred": -6904.39892578125,
+      "error_share_in_overlap": 0.6718593239784241,
+      "overlap_px_per_hour": 142.33333333333334
+     }
+    }
+   }
+  },
+  "pair_02": {
+   "trees": [
+    4,
+    5
+   ],
+   "closest_pair_m": 34.23448553724738,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 414.3333333333333,
+      "rmse": 0.030840136110782623,
+      "max_abs": 0.116973876953125,
+      "pct_off_1K": 0.0,
+      "area_truth": 677.5018310546875,
+      "area_pred": 689.0768432617188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 411.3333333333333,
+      "rmse": 0.08901897817850113,
+      "max_abs": 0.327392578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 677.5018310546875,
+      "area_pred": 640.1063842773438,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 414.3333333333333,
+      "rmse": 0.030840136110782623,
+      "max_abs": 0.116973876953125,
+      "pct_off_1K": 0.0,
+      "area_truth": 677.5018310546875,
+      "area_pred": 689.0768432617188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 414.3333333333333,
+      "rmse": 0.030840136110782623,
+      "max_abs": 0.116973876953125,
+      "pct_off_1K": 0.0,
+      "area_truth": 677.5018310546875,
+      "area_pred": 689.0768432617188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1348.6666666666667,
+      "rmse": 0.6853671669960022,
+      "max_abs": 4.979949951171875,
+      "pct_off_1K": 1.9278299555116163,
+      "area_truth": -5953.86083984375,
+      "area_pred": -6148.70703125,
+      "error_share_in_overlap": 0.5566294193267822,
+      "overlap_px_per_hour": 42.333333333333336
+     },
+     "strongest": {
+      "affected_px_per_hour": 1332.6666666666667,
+      "rmse": 0.29758989810943604,
+      "max_abs": 2.267059326171875,
+      "pct_off_1K": 1.2006003001500751,
+      "area_truth": -5953.86083984375,
+      "area_pred": -5626.32763671875,
+      "error_share_in_overlap": 0.06273483484983444,
+      "overlap_px_per_hour": 42.333333333333336
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1348.6666666666667,
+      "rmse": 0.18037161231040955,
+      "max_abs": 2.267059326171875,
+      "pct_off_1K": 0.42016806722689076,
+      "area_truth": -5953.86083984375,
+      "area_pred": -6014.15625,
+      "error_share_in_overlap": 0.18972566723823547,
+      "overlap_px_per_hour": 42.333333333333336
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1352.3333333333333,
+      "rmse": 0.25848388671875,
+      "max_abs": 2.267059326171875,
+      "pct_off_1K": 1.1831402514173033,
+      "area_truth": -5953.86083984375,
+      "area_pred": -5924.85498046875,
+      "error_share_in_overlap": 0.5684463381767273,
+      "overlap_px_per_hour": 180.33333333333334
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 912.0,
+      "rmse": 0.04031561315059662,
+      "max_abs": 0.255889892578125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5129.6669921875,
+      "area_pred": -5160.4072265625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 893.2,
+      "rmse": 0.25782510638237,
+      "max_abs": 0.935821533203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5129.6669921875,
+      "area_pred": -4748.0927734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 912.0,
+      "rmse": 0.04031561315059662,
+      "max_abs": 0.255889892578125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5129.6669921875,
+      "area_pred": -5160.4072265625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 912.0,
+      "rmse": 0.16812413930892944,
+      "max_abs": 0.935821533203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5129.6669921875,
+      "area_pred": -5124.69287109375,
+      "error_share_in_overlap": 0.3934635519981384,
+      "overlap_px_per_hour": 57.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 924.3333333333334,
+      "rmse": 1.7985954284667969,
+      "max_abs": 23.287933349609375,
+      "pct_off_1K": 0.9376126938333935,
+      "area_truth": -7948.458984375,
+      "area_pred": -8192.6806640625,
+      "error_share_in_overlap": 0.5605387687683105,
+      "overlap_px_per_hour": 14.333333333333334
+     },
+     "strongest": {
+      "affected_px_per_hour": 885.6666666666666,
+      "rmse": 0.5046822428703308,
+      "max_abs": 3.66802978515625,
+      "pct_off_1K": 6.021829130598419,
+      "area_truth": -7948.458984375,
+      "area_pred": -7485.76220703125,
+      "error_share_in_overlap": 0.049677323549985886,
+      "overlap_px_per_hour": 14.333333333333334
+     },
+     "hybrid": {
+      "affected_px_per_hour": 924.3333333333334,
+      "rmse": 0.25902077555656433,
+      "max_abs": 3.66802978515625,
+      "pct_off_1K": 1.153984853948792,
+      "area_truth": -7948.458984375,
+      "area_pred": -8015.85302734375,
+      "error_share_in_overlap": 0.15928694605827332,
+      "overlap_px_per_hour": 14.333333333333334
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 924.3333333333334,
+      "rmse": 0.46182888746261597,
+      "max_abs": 3.66802978515625,
+      "pct_off_1K": 5.76992426974396,
+      "area_truth": -7948.458984375,
+      "area_pred": -7872.70703125,
+      "error_share_in_overlap": 0.5967881083488464,
+      "overlap_px_per_hour": 168.33333333333334
+     }
+    }
+   }
+  },
+  "pair_03": {
+   "trees": [
+    6,
+    7
+   ],
+   "closest_pair_m": 16.492422502470642,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 247.66666666666666,
+      "rmse": 0.15523558855056763,
+      "max_abs": 0.466461181640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 458.08544921875,
+      "area_pred": 490.5530700683594,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 244.66666666666666,
+      "rmse": 0.23292385041713715,
+      "max_abs": 0.974884033203125,
+      "pct_off_1K": 0.0,
+      "area_truth": 458.08544921875,
+      "area_pred": 419.6561584472656,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 247.66666666666666,
+      "rmse": 0.15523558855056763,
+      "max_abs": 0.466461181640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 458.08544921875,
+      "area_pred": 490.5530700683594,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 247.66666666666666,
+      "rmse": 0.2429550588130951,
+      "max_abs": 0.974884033203125,
+      "pct_off_1K": 0.0,
+      "area_truth": 458.08544921875,
+      "area_pred": 465.1910095214844,
+      "error_share_in_overlap": 0.41694268584251404,
+      "overlap_px_per_hour": 35.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 955.6666666666666,
+      "rmse": 0.5085310339927673,
+      "max_abs": 8.01214599609375,
+      "pct_off_1K": 1.1161492849668644,
+      "area_truth": -3965.9130859375,
+      "area_pred": -4072.736083984375,
+      "error_share_in_overlap": 0.31797802448272705,
+      "overlap_px_per_hour": 10.666666666666666
+     },
+     "strongest": {
+      "affected_px_per_hour": 922.3333333333334,
+      "rmse": 0.49716782569885254,
+      "max_abs": 3.236602783203125,
+      "pct_off_1K": 5.63787495482472,
+      "area_truth": -3965.9130859375,
+      "area_pred": -3598.563232421875,
+      "error_share_in_overlap": 0.01718342863023281,
+      "overlap_px_per_hour": 10.666666666666666
+     },
+     "hybrid": {
+      "affected_px_per_hour": 955.6666666666666,
+      "rmse": 0.13037395477294922,
+      "max_abs": 1.186920166015625,
+      "pct_off_1K": 0.03487966515521451,
+      "area_truth": -3965.9130859375,
+      "area_pred": -4016.709228515625,
+      "error_share_in_overlap": 0.056620705872774124,
+      "overlap_px_per_hour": 10.666666666666666
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 955.6666666666666,
+      "rmse": 0.4487191438674927,
+      "max_abs": 3.236602783203125,
+      "pct_off_1K": 5.441227764213464,
+      "area_truth": -3965.9130859375,
+      "area_pred": -3870.203857421875,
+      "error_share_in_overlap": 0.6651852130889893,
+      "overlap_px_per_hour": 183.33333333333334
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 711.8,
+      "rmse": 0.15665702521800995,
+      "max_abs": 0.95257568359375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4176.9033203125,
+      "area_pred": -4234.125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 674.2,
+      "rmse": 0.687539279460907,
+      "max_abs": 3.423004150390625,
+      "pct_off_1K": 13.497478493028774,
+      "area_truth": -4176.9033203125,
+      "area_pred": -3747.90869140625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 711.8,
+      "rmse": 0.15665702521800995,
+      "max_abs": 0.95257568359375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4176.9033203125,
+      "area_pred": -4234.125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 711.8,
+      "rmse": 0.6470896601676941,
+      "max_abs": 3.423004150390625,
+      "pct_off_1K": 12.784490025288003,
+      "area_truth": -4176.9033203125,
+      "area_pred": -4035.021484375,
+      "error_share_in_overlap": 0.7111574411392212,
+      "overlap_px_per_hour": 224.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 776.0,
+      "rmse": 0.17391477525234222,
+      "max_abs": 0.919769287109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5761.11328125,
+      "area_pred": -5769.05712890625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 743.6666666666666,
+      "rmse": 0.7201782464981079,
+      "max_abs": 4.188690185546875,
+      "pct_off_1K": 15.06051098162259,
+      "area_truth": -5761.11328125,
+      "area_pred": -5304.3955078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 776.0,
+      "rmse": 0.17391477525234222,
+      "max_abs": 0.919769287109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5761.11328125,
+      "area_pred": -5769.05712890625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 776.0,
+      "rmse": 0.672504723072052,
+      "max_abs": 4.188690185546875,
+      "pct_off_1K": 14.347079037800686,
+      "area_truth": -5761.11328125,
+      "area_pred": -5573.56103515625,
+      "error_share_in_overlap": 0.7632575035095215,
+      "overlap_px_per_hour": 207.0
+     }
+    }
+   }
+  },
+  "pair_04": {
+   "trees": [
+    8,
+    9
+   ],
+   "closest_pair_m": 27.85677655436824,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 501.1666666666667,
+      "rmse": 0.04852312058210373,
+      "max_abs": 0.19012451171875,
+      "pct_off_1K": 0.0,
+      "area_truth": 839.779541015625,
+      "area_pred": 870.5485229492188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 489.8333333333333,
+      "rmse": 0.19731570780277252,
+      "max_abs": 0.631561279296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 839.779541015625,
+      "area_pred": 713.4933471679688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 501.1666666666667,
+      "rmse": 0.04852312058210373,
+      "max_abs": 0.19012451171875,
+      "pct_off_1K": 0.0,
+      "area_truth": 839.779541015625,
+      "area_pred": 870.5485229492188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 501.1666666666667,
+      "rmse": 0.11697274446487427,
+      "max_abs": 0.631561279296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 839.779541015625,
+      "area_pred": 858.2864379882812,
+      "error_share_in_overlap": 0.2719113230705261,
+      "overlap_px_per_hour": 21.333333333333332
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1878.0,
+      "rmse": 0.03270846977829933,
+      "max_abs": 0.23846435546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -7798.61572265625,
+      "area_pred": -7840.97265625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1861.3333333333333,
+      "rmse": 0.3059217631816864,
+      "max_abs": 1.648162841796875,
+      "pct_off_1K": 1.3073065902578795,
+      "area_truth": -7798.61572265625,
+      "area_pred": -7101.45458984375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1878.0,
+      "rmse": 0.03270846977829933,
+      "max_abs": 0.23846435546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -7798.61572265625,
+      "area_pred": -7840.97265625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1878.0,
+      "rmse": 0.22696836292743683,
+      "max_abs": 1.648162841796875,
+      "pct_off_1K": 1.2957046503372383,
+      "area_truth": -7798.61572265625,
+      "area_pred": -7736.671875,
+      "error_share_in_overlap": 0.5273345112800598,
+      "overlap_px_per_hour": 140.33333333333334
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 826.8,
+      "rmse": 0.05853390693664551,
+      "max_abs": 0.32696533203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6124.3017578125,
+      "area_pred": -6218.79345703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 821.2,
+      "rmse": 0.37055373191833496,
+      "max_abs": 1.40667724609375,
+      "pct_off_1K": 2.50852411105699,
+      "area_truth": -6124.3017578125,
+      "area_pred": -5409.595703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 826.8,
+      "rmse": 0.05853390693664551,
+      "max_abs": 0.32696533203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6124.3017578125,
+      "area_pred": -6218.79345703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 826.8,
+      "rmse": 0.2983524203300476,
+      "max_abs": 1.40667724609375,
+      "pct_off_1K": 2.491533623609095,
+      "area_truth": -6124.3017578125,
+      "area_pred": -6143.1572265625,
+      "error_share_in_overlap": 0.3771350383758545,
+      "overlap_px_per_hour": 100.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 1056.3333333333333,
+      "rmse": 0.058109719306230545,
+      "max_abs": 0.28265380859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -9772.8408203125,
+      "area_pred": -9812.5986328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1054.3333333333333,
+      "rmse": 0.41117048263549805,
+      "max_abs": 1.50335693359375,
+      "pct_off_1K": 4.110022130888398,
+      "area_truth": -9772.8408203125,
+      "area_pred": -9058.0625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1056.3333333333333,
+      "rmse": 0.058109719306230545,
+      "max_abs": 0.28265380859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -9772.8408203125,
+      "area_pred": -9812.5986328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1056.3333333333333,
+      "rmse": 0.35933971405029297,
+      "max_abs": 1.50335693359375,
+      "pct_off_1K": 4.102240454402019,
+      "area_truth": -9772.8408203125,
+      "area_pred": -9677.8486328125,
+      "error_share_in_overlap": 0.5747995376586914,
+      "overlap_px_per_hour": 167.0
+     }
+    }
+   }
+  },
+  "pair_05": {
+   "trees": [
+    10,
+    11
+   ],
+   "closest_pair_m": 29.732137494637012,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 270.3333333333333,
+      "rmse": 0.027986645698547363,
+      "max_abs": 0.090087890625,
+      "pct_off_1K": 0.0,
+      "area_truth": 446.6490783691406,
+      "area_pred": 454.4727478027344,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 265.3333333333333,
+      "rmse": 0.09504174441099167,
+      "max_abs": 0.3348388671875,
+      "pct_off_1K": 0.0,
+      "area_truth": 446.6490783691406,
+      "area_pred": 415.5663757324219,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 270.3333333333333,
+      "rmse": 0.027986645698547363,
+      "max_abs": 0.090087890625,
+      "pct_off_1K": 0.0,
+      "area_truth": 446.6490783691406,
+      "area_pred": 454.4727478027344,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 270.3333333333333,
+      "rmse": 0.027986645698547363,
+      "max_abs": 0.090087890625,
+      "pct_off_1K": 0.0,
+      "area_truth": 446.6490783691406,
+      "area_pred": 454.4727478027344,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1068.0,
+      "rmse": 0.020829305052757263,
+      "max_abs": 0.1356201171875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4082.928955078125,
+      "area_pred": -4091.274658203125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1064.0,
+      "rmse": 0.2129278928041458,
+      "max_abs": 0.99407958984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4082.928955078125,
+      "area_pred": -3816.580078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1068.0,
+      "rmse": 0.020829305052757263,
+      "max_abs": 0.1356201171875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4082.928955078125,
+      "area_pred": -4091.274658203125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1068.0,
+      "rmse": 0.1170690730214119,
+      "max_abs": 0.99407958984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4082.928955078125,
+      "area_pred": -4070.688720703125,
+      "error_share_in_overlap": 0.43340224027633667,
+      "overlap_px_per_hour": 32.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 666.2,
+      "rmse": 0.026532268151640892,
+      "max_abs": 0.148834228515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3344.54541015625,
+      "area_pred": -3362.88525390625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 661.6,
+      "rmse": 0.21697115898132324,
+      "max_abs": 0.735687255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3344.54541015625,
+      "area_pred": -3073.727294921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 666.2,
+      "rmse": 0.026532268151640892,
+      "max_abs": 0.148834228515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3344.54541015625,
+      "area_pred": -3362.88525390625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 666.2,
+      "rmse": 0.11198560148477554,
+      "max_abs": 0.735687255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3344.54541015625,
+      "area_pred": -3349.82958984375,
+      "error_share_in_overlap": 0.28710824251174927,
+      "overlap_px_per_hour": 23.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 0.022820966318249702,
+      "max_abs": 0.1190185546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5333.33056640625,
+      "area_pred": -5339.14892578125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 771.0,
+      "rmse": 0.22552473843097687,
+      "max_abs": 0.855072021484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5333.33056640625,
+      "area_pred": -5096.490234375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 0.022820966318249702,
+      "max_abs": 0.1190185546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5333.33056640625,
+      "area_pred": -5339.14892578125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 0.14616036415100098,
+      "max_abs": 0.855072021484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5333.33056640625,
+      "area_pred": -5314.61669921875,
+      "error_share_in_overlap": 0.478713721036911,
+      "overlap_px_per_hour": 39.333333333333336
+     }
+    }
+   }
+  },
+  "pair_06": {
+   "trees": [
+    12,
+    13
+   ],
+   "closest_pair_m": 23.40939982143925,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 319.8333333333333,
+      "rmse": 0.04081711545586586,
+      "max_abs": 0.139404296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 535.4417114257812,
+      "area_pred": 550.845703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 315.5,
+      "rmse": 0.1702355146408081,
+      "max_abs": 0.518707275390625,
+      "pct_off_1K": 0.0,
+      "area_truth": 535.4417114257812,
+      "area_pred": 469.6717224121094,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 319.8333333333333,
+      "rmse": 0.04081711545586586,
+      "max_abs": 0.139404296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 535.4417114257812,
+      "area_pred": 550.845703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 319.8333333333333,
+      "rmse": 0.07567552477121353,
+      "max_abs": 0.518707275390625,
+      "pct_off_1K": 0.0,
+      "area_truth": 535.4417114257812,
+      "area_pred": 548.0159301757812,
+      "error_share_in_overlap": 0.14626170694828033,
+      "overlap_px_per_hour": 5.166666666666667
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1174.0,
+      "rmse": 0.6160868406295776,
+      "max_abs": 17.87109375,
+      "pct_off_1K": 0.1419647927314026,
+      "area_truth": -5000.53369140625,
+      "area_pred": -5072.51171875,
+      "error_share_in_overlap": 0.24744567275047302,
+      "overlap_px_per_hour": 2.6666666666666665
+     },
+     "strongest": {
+      "affected_px_per_hour": 1154.6666666666667,
+      "rmse": 0.35476887226104736,
+      "max_abs": 2.545623779296875,
+      "pct_off_1K": 1.9630484988452657,
+      "area_truth": -5000.53369140625,
+      "area_pred": -4579.30029296875,
+      "error_share_in_overlap": 0.00946697685867548,
+      "overlap_px_per_hour": 2.6666666666666665
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1174.0,
+      "rmse": 0.11053779721260071,
+      "max_abs": 2.302703857421875,
+      "pct_off_1K": 0.17035775127768313,
+      "area_truth": -5000.53369140625,
+      "area_pred": -5042.43603515625,
+      "error_share_in_overlap": 0.048228856176137924,
+      "overlap_px_per_hour": 2.6666666666666665
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1174.0,
+      "rmse": 0.28853097558021545,
+      "max_abs": 2.545623779296875,
+      "pct_off_1K": 1.9307211811470757,
+      "area_truth": -5000.53369140625,
+      "area_pred": -4937.94970703125,
+      "error_share_in_overlap": 0.6115113496780396,
+      "overlap_px_per_hour": 132.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 615.0,
+      "rmse": 0.07032203674316406,
+      "max_abs": 0.809173583984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3880.153564453125,
+      "area_pred": -3924.063232421875,
+      "error_share_in_overlap": 0.0009902825113385916,
+      "overlap_px_per_hour": 0.2
+     },
+     "strongest": {
+      "affected_px_per_hour": 602.4,
+      "rmse": 0.3787769377231598,
+      "max_abs": 3.594268798828125,
+      "pct_off_1K": 1.5272244355909694,
+      "area_truth": -3880.153564453125,
+      "area_pred": -3484.953857421875,
+      "error_share_in_overlap": 0.0005875101196579635,
+      "overlap_px_per_hour": 0.2
+     },
+     "hybrid": {
+      "affected_px_per_hour": 615.0,
+      "rmse": 0.07307392358779907,
+      "max_abs": 1.160919189453125,
+      "pct_off_1K": 0.03252032520325203,
+      "area_truth": -3880.153564453125,
+      "area_pred": -3923.90380859375,
+      "error_share_in_overlap": 0.0031302059069275856,
+      "overlap_px_per_hour": 0.2
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 615.0,
+      "rmse": 0.29355737566947937,
+      "max_abs": 3.594268798828125,
+      "pct_off_1K": 1.4959349593495934,
+      "area_truth": -3880.153564453125,
+      "area_pred": -3871.82177734375,
+      "error_share_in_overlap": 0.44658881425857544,
+      "overlap_px_per_hour": 71.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 1.5456455945968628,
+      "max_abs": 18.92059326171875,
+      "pct_off_1K": 0.6896551724137931,
+      "area_truth": -6218.38525390625,
+      "area_pred": -6373.90380859375,
+      "error_share_in_overlap": 0.5292227268218994,
+      "overlap_px_per_hour": 16.333333333333332
+     },
+     "strongest": {
+      "affected_px_per_hour": 748.6666666666666,
+      "rmse": 0.44469356536865234,
+      "max_abs": 4.024383544921875,
+      "pct_off_1K": 3.1611754229741766,
+      "area_truth": -6218.38525390625,
+      "area_pred": -5907.72314453125,
+      "error_share_in_overlap": 0.05715259164571762,
+      "overlap_px_per_hour": 16.333333333333332
+     },
+     "hybrid": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 0.2507365643978119,
+      "max_abs": 4.024383544921875,
+      "pct_off_1K": 1.0344827586206897,
+      "area_truth": -6218.38525390625,
+      "area_pred": -6259.68896484375,
+      "error_share_in_overlap": 0.1768408864736557,
+      "overlap_px_per_hour": 16.333333333333332
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 773.3333333333334,
+      "rmse": 0.4121151566505432,
+      "max_abs": 4.024383544921875,
+      "pct_off_1K": 3.060344827586207,
+      "area_truth": -6218.38525390625,
+      "area_pred": -6190.998046875,
+      "error_share_in_overlap": 0.5148289203643799,
+      "overlap_px_per_hour": 90.0
+     }
+    }
+   }
+  },
+  "pair_07": {
+   "trees": [
+    14,
+    15
+   ],
+   "closest_pair_m": 25.059928172283335,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 321.5,
+      "rmse": 0.03908540681004524,
+      "max_abs": 0.1605224609375,
+      "pct_off_1K": 0.0,
+      "area_truth": 533.34228515625,
+      "area_pred": 547.64013671875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 316.6666666666667,
+      "rmse": 0.15961776673793793,
+      "max_abs": 0.486419677734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 533.34228515625,
+      "area_pred": 470.515625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 321.5,
+      "rmse": 0.03908540681004524,
+      "max_abs": 0.1605224609375,
+      "pct_off_1K": 0.0,
+      "area_truth": 533.34228515625,
+      "area_pred": 547.64013671875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 321.5,
+      "rmse": 0.05428246781229973,
+      "max_abs": 0.486419677734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 533.34228515625,
+      "area_pred": 546.5991821289062,
+      "error_share_in_overlap": 0.06317789852619171,
+      "overlap_px_per_hour": 2.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1207.0,
+      "rmse": 0.03346572443842888,
+      "max_abs": 0.220977783203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4976.89990234375,
+      "area_pred": -4993.23046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1193.6666666666667,
+      "rmse": 0.2891789376735687,
+      "max_abs": 1.364166259765625,
+      "pct_off_1K": 0.9773806199385646,
+      "area_truth": -4976.89990234375,
+      "area_pred": -4582.63427734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1207.0,
+      "rmse": 0.03346572443842888,
+      "max_abs": 0.220977783203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4976.89990234375,
+      "area_pred": -4993.23046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1207.0,
+      "rmse": 0.2020181268453598,
+      "max_abs": 1.364166259765625,
+      "pct_off_1K": 0.9665838166252416,
+      "area_truth": -4976.89990234375,
+      "area_pred": -4937.62109375,
+      "error_share_in_overlap": 0.5468963980674744,
+      "overlap_px_per_hour": 77.66666666666667
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 606.2,
+      "rmse": 0.043849002569913864,
+      "max_abs": 0.2103271484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3836.229736328125,
+      "area_pred": -3870.407470703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 600.8,
+      "rmse": 0.2989419400691986,
+      "max_abs": 1.02691650390625,
+      "pct_off_1K": 0.033288948069241014,
+      "area_truth": -3836.229736328125,
+      "area_pred": -3462.159423828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 606.2,
+      "rmse": 0.043849002569913864,
+      "max_abs": 0.2103271484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3836.229736328125,
+      "area_pred": -3870.407470703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 606.2,
+      "rmse": 0.18684056401252747,
+      "max_abs": 1.02691650390625,
+      "pct_off_1K": 0.03299241174529858,
+      "area_truth": -3836.229736328125,
+      "area_pred": -3841.41796875,
+      "error_share_in_overlap": 0.33753132820129395,
+      "overlap_px_per_hour": 47.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 786.3333333333334,
+      "rmse": 0.04579050838947296,
+      "max_abs": 0.235443115234375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6284.03759765625,
+      "area_pred": -6294.63720703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 783.0,
+      "rmse": 0.31852415204048157,
+      "max_abs": 1.19256591796875,
+      "pct_off_1K": 0.6385696040868455,
+      "area_truth": -6284.03759765625,
+      "area_pred": -5935.09228515625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 786.3333333333334,
+      "rmse": 0.04579050838947296,
+      "max_abs": 0.235443115234375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6284.03759765625,
+      "area_pred": -6294.63720703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 786.3333333333334,
+      "rmse": 0.2533387541770935,
+      "max_abs": 1.19256591796875,
+      "pct_off_1K": 0.6358626536668079,
+      "area_truth": -6284.03759765625,
+      "area_pred": -6234.361328125,
+      "error_share_in_overlap": 0.5656763315200806,
+      "overlap_px_per_hour": 86.0
+     }
+    }
+   }
+  },
+  "pair_08": {
+   "trees": [
+    16,
+    17
+   ],
+   "closest_pair_m": 8.94427190999916,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 296.0,
+      "rmse": 0.30015385150909424,
+      "max_abs": 1.02874755859375,
+      "pct_off_1K": 0.33783783783783783,
+      "area_truth": 507.368896484375,
+      "area_pred": 590.20654296875,
+      "error_share_in_overlap": 0.044560253620147705,
+      "overlap_px_per_hour": 5.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 263.0,
+      "rmse": 0.16754159331321716,
+      "max_abs": 0.78912353515625,
+      "pct_off_1K": 0.0,
+      "area_truth": 507.368896484375,
+      "area_pred": 475.1118469238281,
+      "error_share_in_overlap": 0.09278944134712219,
+      "overlap_px_per_hour": 5.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 296.0,
+      "rmse": 0.29502058029174805,
+      "max_abs": 1.02874755859375,
+      "pct_off_1K": 0.33783783783783783,
+      "area_truth": 507.368896484375,
+      "area_pred": 583.4940795898438,
+      "error_share_in_overlap": 0.03676879033446312,
+      "overlap_px_per_hour": 5.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 296.0,
+      "rmse": 0.20303592085838318,
+      "max_abs": 0.78912353515625,
+      "pct_off_1K": 0.0,
+      "area_truth": 507.368896484375,
+      "area_pred": 538.6495971679688,
+      "error_share_in_overlap": 0.26101577281951904,
+      "overlap_px_per_hour": 64.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1138.0,
+      "rmse": 2.6840689182281494,
+      "max_abs": 21.399627685546875,
+      "pct_off_1K": 9.021675454012888,
+      "area_truth": -4396.55712890625,
+      "area_pred": -5408.20263671875,
+      "error_share_in_overlap": 0.6621817350387573,
+      "overlap_px_per_hour": 89.66666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 1000.0,
+      "rmse": 0.22291135787963867,
+      "max_abs": 4.39459228515625,
+      "pct_off_1K": 0.3,
+      "area_truth": -4396.55712890625,
+      "area_pred": -4291.509765625,
+      "error_share_in_overlap": 0.13783888518810272,
+      "overlap_px_per_hour": 89.66666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1138.0,
+      "rmse": 0.36836549639701843,
+      "max_abs": 4.70855712890625,
+      "pct_off_1K": 1.845342706502636,
+      "area_truth": -4396.55712890625,
+      "area_pred": -4708.38623046875,
+      "error_share_in_overlap": 0.04821299761533737,
+      "overlap_px_per_hour": 89.66666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1138.0,
+      "rmse": 0.26377615332603455,
+      "max_abs": 4.70855712890625,
+      "pct_off_1K": 0.26362038664323373,
+      "area_truth": -4396.55712890625,
+      "area_pred": -4586.41162109375,
+      "error_share_in_overlap": 0.13918812572956085,
+      "overlap_px_per_hour": 236.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 581.4,
+      "rmse": 3.5854084491729736,
+      "max_abs": 26.442657470703125,
+      "pct_off_1K": 4.506363949088407,
+      "area_truth": -3655.31640625,
+      "area_pred": -4262.71923828125,
+      "error_share_in_overlap": 0.5291986465454102,
+      "overlap_px_per_hour": 17.6
+     },
+     "strongest": {
+      "affected_px_per_hour": 507.8,
+      "rmse": 0.3431965410709381,
+      "max_abs": 4.4305419921875,
+      "pct_off_1K": 2.3631350925561243,
+      "area_truth": -3655.31640625,
+      "area_pred": -3500.6328125,
+      "error_share_in_overlap": 0.08165782690048218,
+      "overlap_px_per_hour": 17.6
+     },
+     "hybrid": {
+      "affected_px_per_hour": 581.4,
+      "rmse": 0.3923271596431732,
+      "max_abs": 2.6263427734375,
+      "pct_off_1K": 2.7519779841761265,
+      "area_truth": -3655.31640625,
+      "area_pred": -3928.38427734375,
+      "error_share_in_overlap": 0.04227139428257942,
+      "overlap_px_per_hour": 17.6
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 581.4,
+      "rmse": 0.3426910638809204,
+      "max_abs": 4.4305419921875,
+      "pct_off_1K": 2.063983488132095,
+      "area_truth": -3655.31640625,
+      "area_pred": -3838.301513671875,
+      "error_share_in_overlap": 0.1710875928401947,
+      "overlap_px_per_hour": 106.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 729.3333333333334,
+      "rmse": 4.753733158111572,
+      "max_abs": 27.225433349609375,
+      "pct_off_1K": 5.987202925045704,
+      "area_truth": -6033.1328125,
+      "area_pred": -7046.58203125,
+      "error_share_in_overlap": 0.7136144042015076,
+      "overlap_px_per_hour": 46.666666666666664
+     },
+     "strongest": {
+      "affected_px_per_hour": 643.6666666666666,
+      "rmse": 0.9802209138870239,
+      "max_abs": 23.691192626953125,
+      "pct_off_1K": 1.3982392542723976,
+      "area_truth": -6033.1328125,
+      "area_pred": -5930.77978515625,
+      "error_share_in_overlap": 0.30095139145851135,
+      "overlap_px_per_hour": 46.666666666666664
+     },
+     "hybrid": {
+      "affected_px_per_hour": 729.3333333333334,
+      "rmse": 0.9485327005386353,
+      "max_abs": 23.691192626953125,
+      "pct_off_1K": 1.7824497257769651,
+      "area_truth": -6033.1328125,
+      "area_pred": -6320.89306640625,
+      "error_share_in_overlap": 0.157579705119133,
+      "overlap_px_per_hour": 46.666666666666664
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 729.3333333333334,
+      "rmse": 0.9317554235458374,
+      "max_abs": 23.691192626953125,
+      "pct_off_1K": 1.23400365630713,
+      "area_truth": -6033.1328125,
+      "area_pred": -6202.67822265625,
+      "error_share_in_overlap": 0.3125373125076294,
+      "overlap_px_per_hour": 181.66666666666666
+     }
+    }
+   }
+  },
+  "pair_09": {
+   "trees": [
+    18,
+    19
+   ],
+   "closest_pair_m": 17.88854381999832,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 213.5,
+      "rmse": 0.044074565172195435,
+      "max_abs": 0.13397216796875,
+      "pct_off_1K": 0.0,
+      "area_truth": 361.5979309082031,
+      "area_pred": 375.1681213378906,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 207.83333333333334,
+      "rmse": 0.2121371626853943,
+      "max_abs": 0.586029052734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 361.5979309082031,
+      "area_pred": 295.8689880371094,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 213.5,
+      "rmse": 0.044074565172195435,
+      "max_abs": 0.13397216796875,
+      "pct_off_1K": 0.0,
+      "area_truth": 361.5979309082031,
+      "area_pred": 375.1681213378906,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 213.5,
+      "rmse": 0.10231678932905197,
+      "max_abs": 0.586029052734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 361.5979309082031,
+      "area_pred": 371.1860046386719,
+      "error_share_in_overlap": 0.21506886184215546,
+      "overlap_px_per_hour": 7.166666666666667
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 811.6666666666666,
+      "rmse": 2.1696040630340576,
+      "max_abs": 18.48309326171875,
+      "pct_off_1K": 11.04722792607803,
+      "area_truth": -2905.689453125,
+      "area_pred": -3660.6953125,
+      "error_share_in_overlap": 0.6835442185401917,
+      "overlap_px_per_hour": 92.66666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 621.3333333333334,
+      "rmse": 0.36185958981513977,
+      "max_abs": 2.542236328125,
+      "pct_off_1K": 2.628755364806867,
+      "area_truth": -2905.689453125,
+      "area_pred": -2645.784912109375,
+      "error_share_in_overlap": 0.08339684456586838,
+      "overlap_px_per_hour": 92.66666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 811.6666666666666,
+      "rmse": 0.32983794808387756,
+      "max_abs": 2.437286376953125,
+      "pct_off_1K": 0.9856262833675565,
+      "area_truth": -2905.689453125,
+      "area_pred": -3115.681640625,
+      "error_share_in_overlap": 0.08614048361778259,
+      "overlap_px_per_hour": 92.66666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 811.6666666666666,
+      "rmse": 0.3376592695713043,
+      "max_abs": 2.542236328125,
+      "pct_off_1K": 2.0123203285420943,
+      "area_truth": -2905.689453125,
+      "area_pred": -2982.578369140625,
+      "error_share_in_overlap": 0.33050987124443054,
+      "overlap_px_per_hour": 264.6666666666667
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 412.0,
+      "rmse": 0.062046077102422714,
+      "max_abs": 0.548675537109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -2516.987548828125,
+      "area_pred": -2560.594482421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 402.6,
+      "rmse": 0.38739749789237976,
+      "max_abs": 2.462066650390625,
+      "pct_off_1K": 1.5399900645802287,
+      "area_truth": -2516.987548828125,
+      "area_pred": -2200.81884765625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 412.0,
+      "rmse": 0.062046077102422714,
+      "max_abs": 0.548675537109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -2516.987548828125,
+      "area_pred": -2560.594482421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 412.0,
+      "rmse": 0.28649282455444336,
+      "max_abs": 2.462066650390625,
+      "pct_off_1K": 1.5048543689320388,
+      "area_truth": -2516.987548828125,
+      "area_pred": -2526.923583984375,
+      "error_share_in_overlap": 0.37703973054885864,
+      "overlap_px_per_hour": 46.8
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 578.6666666666666,
+      "rmse": 0.08068113774061203,
+      "max_abs": 0.411651611328125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4543.65380859375,
+      "area_pred": -4574.7958984375,
+      "error_share_in_overlap": 0.004096159245818853,
+      "overlap_px_per_hour": 1.3333333333333333
+     },
+     "strongest": {
+      "affected_px_per_hour": 568.0,
+      "rmse": 0.4744156301021576,
+      "max_abs": 1.877716064453125,
+      "pct_off_1K": 6.161971830985916,
+      "area_truth": -4543.65380859375,
+      "area_pred": -4227.99169921875,
+      "error_share_in_overlap": 0.0029618842527270317,
+      "overlap_px_per_hour": 1.3333333333333333
+     },
+     "hybrid": {
+      "affected_px_per_hour": 578.6666666666666,
+      "rmse": 0.08891674131155014,
+      "max_abs": 1.294158935546875,
+      "pct_off_1K": 0.0576036866359447,
+      "area_truth": -4543.65380859375,
+      "area_pred": -4574.12744140625,
+      "error_share_in_overlap": 0.013045393861830235,
+      "overlap_px_per_hour": 1.3333333333333333
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 578.6666666666666,
+      "rmse": 0.4229787290096283,
+      "max_abs": 1.877716064453125,
+      "pct_off_1K": 6.048387096774194,
+      "area_truth": -4543.65380859375,
+      "area_pred": -4483.45166015625,
+      "error_share_in_overlap": 0.6185137033462524,
+      "overlap_px_per_hour": 112.33333333333333
+     }
+    }
+   }
+  },
+  "pair_10": {
+   "trees": [
+    20,
+    21
+   ],
+   "closest_pair_m": 20.0,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 274.3333333333333,
+      "rmse": 0.06497656553983688,
+      "max_abs": 0.210968017578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 476.2618408203125,
+      "area_pred": 493.6522216796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 270.3333333333333,
+      "rmse": 0.18673449754714966,
+      "max_abs": 0.6494140625,
+      "pct_off_1K": 0.0,
+      "area_truth": 476.2618408203125,
+      "area_pred": 430.2896423339844,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 274.3333333333333,
+      "rmse": 0.06497656553983688,
+      "max_abs": 0.210968017578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 476.2618408203125,
+      "area_pred": 493.6522216796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 274.3333333333333,
+      "rmse": 0.1365838199853897,
+      "max_abs": 0.6494140625,
+      "pct_off_1K": 0.0,
+      "area_truth": 476.2618408203125,
+      "area_pred": 485.0938415527344,
+      "error_share_in_overlap": 0.3140428364276886,
+      "overlap_px_per_hour": 14.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 976.6666666666666,
+      "rmse": 1.5068320035934448,
+      "max_abs": 17.5565185546875,
+      "pct_off_1K": 5.7679180887372015,
+      "area_truth": -3886.944091796875,
+      "area_pred": -4360.28173828125,
+      "error_share_in_overlap": 0.6502212285995483,
+      "overlap_px_per_hour": 58.333333333333336
+     },
+     "strongest": {
+      "affected_px_per_hour": 886.6666666666666,
+      "rmse": 0.38799402117729187,
+      "max_abs": 3.246368408203125,
+      "pct_off_1K": 3.1578947368421053,
+      "area_truth": -3886.944091796875,
+      "area_pred": -3600.266357421875,
+      "error_share_in_overlap": 0.07568556815385818,
+      "overlap_px_per_hour": 58.333333333333336
+     },
+     "hybrid": {
+      "affected_px_per_hour": 976.6666666666666,
+      "rmse": 0.2770911157131195,
+      "max_abs": 3.246368408203125,
+      "pct_off_1K": 0.5460750853242321,
+      "area_truth": -3886.944091796875,
+      "area_pred": -4018.524658203125,
+      "error_share_in_overlap": 0.11437086015939713,
+      "overlap_px_per_hour": 58.333333333333336
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 976.6666666666666,
+      "rmse": 0.3592248558998108,
+      "max_abs": 3.246368408203125,
+      "pct_off_1K": 2.8668941979522184,
+      "area_truth": -3886.944091796875,
+      "area_pred": -3871.38671875,
+      "error_share_in_overlap": 0.5052050948143005,
+      "overlap_px_per_hour": 231.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 648.4,
+      "rmse": 0.08022894710302353,
+      "max_abs": 0.515899658203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3646.71630859375,
+      "area_pred": -3677.534423828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 624.4,
+      "rmse": 0.4173985421657562,
+      "max_abs": 1.895538330078125,
+      "pct_off_1K": 2.626521460602178,
+      "area_truth": -3646.71630859375,
+      "area_pred": -3313.368408203125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 648.4,
+      "rmse": 0.08022894710302353,
+      "max_abs": 0.515899658203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3646.71630859375,
+      "area_pred": -3677.534423828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 648.4,
+      "rmse": 0.3393705487251282,
+      "max_abs": 1.895538330078125,
+      "pct_off_1K": 2.5293028994447875,
+      "area_truth": -3646.71630859375,
+      "area_pred": -3601.90869140625,
+      "error_share_in_overlap": 0.5891099572181702,
+      "overlap_px_per_hour": 108.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 712.0,
+      "rmse": 0.09059874713420868,
+      "max_abs": 0.4383544921875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5710.26025390625,
+      "area_pred": -5719.31591796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 696.6666666666666,
+      "rmse": 0.415050208568573,
+      "max_abs": 1.98095703125,
+      "pct_off_1K": 4.449760765550239,
+      "area_truth": -5710.26025390625,
+      "area_pred": -5409.328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 712.0,
+      "rmse": 0.09059874713420868,
+      "max_abs": 0.4383544921875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5710.26025390625,
+      "area_pred": -5719.31591796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 712.0,
+      "rmse": 0.35191065073013306,
+      "max_abs": 1.98095703125,
+      "pct_off_1K": 4.353932584269663,
+      "area_truth": -5710.26025390625,
+      "area_pred": -5646.046875,
+      "error_share_in_overlap": 0.5974218249320984,
+      "overlap_px_per_hour": 93.66666666666667
+     }
+    }
+   }
+  },
+  "pair_11": {
+   "trees": [
+    22,
+    23
+   ],
+   "closest_pair_m": 12.165525060596439,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 281.6666666666667,
+      "rmse": 0.3783729076385498,
+      "max_abs": 1.3272705078125,
+      "pct_off_1K": 1.9526627218934909,
+      "area_truth": 494.9305419921875,
+      "area_pred": 589.5996704101562,
+      "error_share_in_overlap": 0.07051730901002884,
+      "overlap_px_per_hour": 6.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 260.0,
+      "rmse": 0.20384052395820618,
+      "max_abs": 0.86029052734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 494.9305419921875,
+      "area_pred": 452.0907287597656,
+      "error_share_in_overlap": 0.08103898912668228,
+      "overlap_px_per_hour": 6.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 281.6666666666667,
+      "rmse": 0.352883517742157,
+      "max_abs": 1.062042236328125,
+      "pct_off_1K": 0.5325443786982248,
+      "area_truth": 494.9305419921875,
+      "area_pred": 579.360107421875,
+      "error_share_in_overlap": 0.038923293352127075,
+      "overlap_px_per_hour": 6.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 281.6666666666667,
+      "rmse": 0.24864844977855682,
+      "max_abs": 0.86029052734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 494.9305419921875,
+      "area_pred": 525.0385131835938,
+      "error_share_in_overlap": 0.28652364015579224,
+      "overlap_px_per_hour": 73.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1024.0,
+      "rmse": 3.3434934616088867,
+      "max_abs": 21.95257568359375,
+      "pct_off_1K": 14.908854166666666,
+      "area_truth": -3642.391845703125,
+      "area_pred": -5013.806640625,
+      "error_share_in_overlap": 0.7000944018363953,
+      "overlap_px_per_hour": 129.33333333333334
+     },
+     "strongest": {
+      "affected_px_per_hour": 842.3333333333334,
+      "rmse": 0.3043813705444336,
+      "max_abs": 4.34490966796875,
+      "pct_off_1K": 1.5037593984962405,
+      "area_truth": -3642.391845703125,
+      "area_pred": -3420.252685546875,
+      "error_share_in_overlap": 0.18999816477298737,
+      "overlap_px_per_hour": 129.33333333333334
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1024.0,
+      "rmse": 0.47718873620033264,
+      "max_abs": 4.748077392578125,
+      "pct_off_1K": 4.329427083333334,
+      "area_truth": -3642.391845703125,
+      "area_pred": -3995.9765625,
+      "error_share_in_overlap": 0.09610410034656525,
+      "overlap_px_per_hour": 129.33333333333334
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1024.0,
+      "rmse": 0.3207801282405853,
+      "max_abs": 4.748077392578125,
+      "pct_off_1K": 1.2369791666666665,
+      "area_truth": -3642.391845703125,
+      "area_pred": -3759.296142578125,
+      "error_share_in_overlap": 0.3079296946525574,
+      "overlap_px_per_hour": 405.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 710.0,
+      "rmse": 3.1008059978485107,
+      "max_abs": 26.33453369140625,
+      "pct_off_1K": 3.323943661971831,
+      "area_truth": -4178.9326171875,
+      "area_pred": -4766.7119140625,
+      "error_share_in_overlap": 0.49807271361351013,
+      "overlap_px_per_hour": 17.2
+     },
+     "strongest": {
+      "affected_px_per_hour": 642.4,
+      "rmse": 0.6432657837867737,
+      "max_abs": 4.900604248046875,
+      "pct_off_1K": 9.028642590286426,
+      "area_truth": -4178.9326171875,
+      "area_pred": -3804.012451171875,
+      "error_share_in_overlap": 0.0939052477478981,
+      "overlap_px_per_hour": 17.2
+     },
+     "hybrid": {
+      "affected_px_per_hour": 710.0,
+      "rmse": 0.4765375256538391,
+      "max_abs": 4.900604248046875,
+      "pct_off_1K": 3.4366197183098595,
+      "area_truth": -4178.9326171875,
+      "area_pred": -4437.2783203125,
+      "error_share_in_overlap": 0.10576315969228745,
+      "overlap_px_per_hour": 17.2
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 710.0,
+      "rmse": 0.6102985143661499,
+      "max_abs": 4.900604248046875,
+      "pct_off_1K": 8.169014084507042,
+      "area_truth": -4178.9326171875,
+      "area_pred": -4173.2216796875,
+      "error_share_in_overlap": 0.5064886808395386,
+      "overlap_px_per_hour": 290.6
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 821.6666666666666,
+      "rmse": 4.896358966827393,
+      "max_abs": 27.779632568359375,
+      "pct_off_1K": 6.044624746450304,
+      "area_truth": -5814.49365234375,
+      "area_pred": -6972.57568359375,
+      "error_share_in_overlap": 0.7252535223960876,
+      "overlap_px_per_hour": 57.333333333333336
+     },
+     "strongest": {
+      "affected_px_per_hour": 701.6666666666666,
+      "rmse": 0.5485178232192993,
+      "max_abs": 3.856414794921875,
+      "pct_off_1K": 7.8384798099762465,
+      "area_truth": -5814.49365234375,
+      "area_pred": -5532.04150390625,
+      "error_share_in_overlap": 0.21726571023464203,
+      "overlap_px_per_hour": 57.333333333333336
+     },
+     "hybrid": {
+      "affected_px_per_hour": 821.6666666666666,
+      "rmse": 0.48668885231018066,
+      "max_abs": 3.2449951171875,
+      "pct_off_1K": 4.503042596348885,
+      "area_truth": -5814.49365234375,
+      "area_pred": -6067.71630859375,
+      "error_share_in_overlap": 0.16353739798069,
+      "overlap_px_per_hour": 57.333333333333336
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 821.6666666666666,
+      "rmse": 0.5244450569152832,
+      "max_abs": 3.856414794921875,
+      "pct_off_1K": 6.693711967545639,
+      "area_truth": -5814.49365234375,
+      "area_pred": -5863.28125,
+      "error_share_in_overlap": 0.4252302050590515,
+      "overlap_px_per_hour": 254.66666666666666
+     }
+    }
+   }
+  },
+  "pair_12": {
+   "trees": [
+    24,
+    25
+   ],
+   "closest_pair_m": 20.09975124224178,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 399.0,
+      "rmse": 0.11000243574380875,
+      "max_abs": 0.2947998046875,
+      "pct_off_1K": 0.0,
+      "area_truth": 690.73828125,
+      "area_pred": 733.3095703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 386.6666666666667,
+      "rmse": 0.24452151358127594,
+      "max_abs": 0.8826904296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 690.73828125,
+      "area_pred": 605.7351684570312,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 399.0,
+      "rmse": 0.11000243574380875,
+      "max_abs": 0.2947998046875,
+      "pct_off_1K": 0.0,
+      "area_truth": 690.73828125,
+      "area_pred": 733.3095703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 399.0,
+      "rmse": 0.21856385469436646,
+      "max_abs": 0.8826904296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 690.73828125,
+      "area_pred": 702.4622192382812,
+      "error_share_in_overlap": 0.4049089252948761,
+      "overlap_px_per_hour": 44.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1307.3333333333333,
+      "rmse": 2.304436206817627,
+      "max_abs": 20.170867919921875,
+      "pct_off_1K": 8.669046404895461,
+      "area_truth": -5299.84716796875,
+      "area_pred": -6340.9921875,
+      "error_share_in_overlap": 0.6714820861816406,
+      "overlap_px_per_hour": 117.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1173.3333333333333,
+      "rmse": 0.388543963432312,
+      "max_abs": 3.066162109375,
+      "pct_off_1K": 2.9829545454545454,
+      "area_truth": -5299.84716796875,
+      "area_pred": -4856.66064453125,
+      "error_share_in_overlap": 0.15778951346874237,
+      "overlap_px_per_hour": 117.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1307.3333333333333,
+      "rmse": 0.3870716691017151,
+      "max_abs": 3.066162109375,
+      "pct_off_1K": 2.779194288628251,
+      "area_truth": -5299.84716796875,
+      "area_pred": -5554.89111328125,
+      "error_share_in_overlap": 0.1716092824935913,
+      "overlap_px_per_hour": 117.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1307.3333333333333,
+      "rmse": 0.3724288046360016,
+      "max_abs": 3.066162109375,
+      "pct_off_1K": 2.6772055073941865,
+      "area_truth": -5299.84716796875,
+      "area_pred": -5333.88818359375,
+      "error_share_in_overlap": 0.42926540970802307,
+      "overlap_px_per_hour": 388.3333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 852.8,
+      "rmse": 0.5883713364601135,
+      "max_abs": 21.52734375,
+      "pct_off_1K": 0.3048780487804878,
+      "area_truth": -5676.60400390625,
+      "area_pred": -5807.19287109375,
+      "error_share_in_overlap": 0.07185456156730652,
+      "overlap_px_per_hour": 2.4
+     },
+     "strongest": {
+      "affected_px_per_hour": 820.4,
+      "rmse": 0.6517671942710876,
+      "max_abs": 4.465728759765625,
+      "pct_off_1K": 9.434422233057045,
+      "area_truth": -5676.60400390625,
+      "area_pred": -5058.3671875,
+      "error_share_in_overlap": 0.012907602824270725,
+      "overlap_px_per_hour": 2.4
+     },
+     "hybrid": {
+      "affected_px_per_hour": 852.8,
+      "rmse": 0.2315293550491333,
+      "max_abs": 4.404541015625,
+      "pct_off_1K": 0.44559099437148214,
+      "area_truth": -5676.60400390625,
+      "area_pred": -5787.765625,
+      "error_share_in_overlap": 0.04139574617147446,
+      "overlap_px_per_hour": 2.4
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 852.8,
+      "rmse": 0.606594443321228,
+      "max_abs": 4.465728759765625,
+      "pct_off_1K": 9.075984990619137,
+      "area_truth": -5676.60400390625,
+      "area_pred": -5589.3212890625,
+      "error_share_in_overlap": 0.6030815243721008,
+      "overlap_px_per_hour": 222.6
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 916.6666666666666,
+      "rmse": 4.212113857269287,
+      "max_abs": 26.034454345703125,
+      "pct_off_1K": 4.909090909090909,
+      "area_truth": -7562.357421875,
+      "area_pred": -8586.5029296875,
+      "error_share_in_overlap": 0.7226566672325134,
+      "overlap_px_per_hour": 55.333333333333336
+     },
+     "strongest": {
+      "affected_px_per_hour": 842.0,
+      "rmse": 0.6025874614715576,
+      "max_abs": 4.1888427734375,
+      "pct_off_1K": 7.600950118764846,
+      "area_truth": -7562.357421875,
+      "area_pred": -7089.94775390625,
+      "error_share_in_overlap": 0.15061300992965698,
+      "overlap_px_per_hour": 55.333333333333336
+     },
+     "hybrid": {
+      "affected_px_per_hour": 916.6666666666666,
+      "rmse": 0.48860979080200195,
+      "max_abs": 4.1888427734375,
+      "pct_off_1K": 3.963636363636364,
+      "area_truth": -7562.357421875,
+      "area_pred": -7763.5859375,
+      "error_share_in_overlap": 0.20181027054786682,
+      "overlap_px_per_hour": 55.333333333333336
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 916.6666666666666,
+      "rmse": 0.5779943466186523,
+      "max_abs": 4.1888427734375,
+      "pct_off_1K": 6.981818181818182,
+      "area_truth": -7562.357421875,
+      "area_pred": -7554.3984375,
+      "error_share_in_overlap": 0.4888232946395874,
+      "overlap_px_per_hour": 258.0
+     }
+    }
+   }
+  },
+  "pair_13": {
+   "trees": [
+    26,
+    27
+   ],
+   "closest_pair_m": 38.2099463490856,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 408.3333333333333,
+      "rmse": 0.02023126929998398,
+      "max_abs": 0.07421875,
+      "pct_off_1K": 0.0,
+      "area_truth": 670.7807006835938,
+      "area_pred": 679.7335815429688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 403.8333333333333,
+      "rmse": 0.07691115140914917,
+      "max_abs": 0.29437255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": 670.7807006835938,
+      "area_pred": 625.076416015625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 408.3333333333333,
+      "rmse": 0.02023126929998398,
+      "max_abs": 0.07421875,
+      "pct_off_1K": 0.0,
+      "area_truth": 670.7807006835938,
+      "area_pred": 679.7335815429688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 408.3333333333333,
+      "rmse": 0.02023126929998398,
+      "max_abs": 0.07421875,
+      "pct_off_1K": 0.0,
+      "area_truth": 670.7807006835938,
+      "area_pred": 679.7335815429688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1590.0,
+      "rmse": 0.013231500051915646,
+      "max_abs": 0.103790283203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6017.92041015625,
+      "area_pred": -6030.7734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1589.0,
+      "rmse": 0.1452781856060028,
+      "max_abs": 0.779815673828125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6017.92041015625,
+      "area_pred": -5665.47900390625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1590.0,
+      "rmse": 0.013231500051915646,
+      "max_abs": 0.103790283203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6017.92041015625,
+      "area_pred": -6030.7734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1590.0,
+      "rmse": 0.06463411450386047,
+      "max_abs": 0.779815673828125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6017.92041015625,
+      "area_pred": -6020.48681640625,
+      "error_share_in_overlap": 0.2222665399312973,
+      "overlap_px_per_hour": 17.333333333333332
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 872.6,
+      "rmse": 0.0292800385504961,
+      "max_abs": 0.12353515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4876.14208984375,
+      "area_pred": -4909.93505859375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 865.8,
+      "rmse": 0.20120517909526825,
+      "max_abs": 0.645538330078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4876.14208984375,
+      "area_pred": -4411.69873046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 872.6,
+      "rmse": 0.0292800385504961,
+      "max_abs": 0.12353515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4876.14208984375,
+      "area_pred": -4909.93505859375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 872.6,
+      "rmse": 0.06370913982391357,
+      "max_abs": 0.645538330078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4876.14208984375,
+      "area_pred": -4905.02294921875,
+      "error_share_in_overlap": 0.07943979650735855,
+      "overlap_px_per_hour": 9.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 1008.6666666666666,
+      "rmse": 0.0221090167760849,
+      "max_abs": 0.108673095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -7877.27197265625,
+      "area_pred": -7891.59375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1006.6666666666666,
+      "rmse": 0.19256827235221863,
+      "max_abs": 0.84906005859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -7877.27197265625,
+      "area_pred": -7474.35498046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1008.6666666666666,
+      "rmse": 0.0221090167760849,
+      "max_abs": 0.108673095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -7877.27197265625,
+      "area_pred": -7891.59375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1008.6666666666666,
+      "rmse": 0.11295214295387268,
+      "max_abs": 0.84906005859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -7877.27197265625,
+      "area_pred": -7871.69384765625,
+      "error_share_in_overlap": 0.3147437870502472,
+      "overlap_px_per_hour": 33.333333333333336
+     }
+    }
+   }
+  },
+  "pair_14": {
+   "trees": [
+    28,
+    29
+   ],
+   "closest_pair_m": 19.79898987322333,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 367.8333333333333,
+      "rmse": 0.06412321329116821,
+      "max_abs": 0.17498779296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 621.74658203125,
+      "area_pred": 651.6511840820312,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 355.6666666666667,
+      "rmse": 0.22525352239608765,
+      "max_abs": 0.681488037109375,
+      "pct_off_1K": 0.0,
+      "area_truth": 621.74658203125,
+      "area_pred": 520.4718627929688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 367.8333333333333,
+      "rmse": 0.06412321329116821,
+      "max_abs": 0.17498779296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 621.74658203125,
+      "area_pred": 651.6511840820312,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 367.8333333333333,
+      "rmse": 0.15773217380046844,
+      "max_abs": 0.681488037109375,
+      "pct_off_1K": 0.0,
+      "area_truth": 621.74658203125,
+      "area_pred": 634.8460083007812,
+      "error_share_in_overlap": 0.3463525176048279,
+      "overlap_px_per_hour": 28.333333333333332
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1410.6666666666667,
+      "rmse": 0.04472798854112625,
+      "max_abs": 0.34332275390625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5833.63037109375,
+      "area_pred": -5882.71484375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1399.0,
+      "rmse": 0.30968818068504333,
+      "max_abs": 1.810791015625,
+      "pct_off_1K": 1.6440314510364546,
+      "area_truth": -5833.63037109375,
+      "area_pred": -5357.52734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1410.6666666666667,
+      "rmse": 0.04472798854112625,
+      "max_abs": 0.34332275390625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5833.63037109375,
+      "area_pred": -5882.71484375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1410.6666666666667,
+      "rmse": 0.2301510125398636,
+      "max_abs": 1.810791015625,
+      "pct_off_1K": 1.6304347826086956,
+      "area_truth": -5833.63037109375,
+      "area_pred": -5809.71826171875,
+      "error_share_in_overlap": 0.46211346983909607,
+      "overlap_px_per_hour": 95.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 611.0,
+      "rmse": 0.07891363650560379,
+      "max_abs": 0.487152099609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4469.7607421875,
+      "area_pred": -4561.5419921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 599.6,
+      "rmse": 0.43544623255729675,
+      "max_abs": 1.873931884765625,
+      "pct_off_1K": 4.636424282855237,
+      "area_truth": -4469.7607421875,
+      "area_pred": -3991.090576171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 611.0,
+      "rmse": 0.07891363650560379,
+      "max_abs": 0.487152099609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4469.7607421875,
+      "area_pred": -4561.5419921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 611.0,
+      "rmse": 0.36907148361206055,
+      "max_abs": 1.873931884765625,
+      "pct_off_1K": 4.5499181669394435,
+      "area_truth": -4469.7607421875,
+      "area_pred": -4487.412109375,
+      "error_share_in_overlap": 0.41056862473487854,
+      "overlap_px_per_hour": 96.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 766.0,
+      "rmse": 1.4450281858444214,
+      "max_abs": 18.64141845703125,
+      "pct_off_1K": 0.6092254134029591,
+      "area_truth": -7192.20947265625,
+      "area_pred": -7364.98779296875,
+      "error_share_in_overlap": 0.341641902923584,
+      "overlap_px_per_hour": 5.666666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 750.3333333333334,
+      "rmse": 0.7498457431793213,
+      "max_abs": 4.25360107421875,
+      "pct_off_1K": 13.149711239449132,
+      "area_truth": -7192.20947265625,
+      "area_pred": -6618.61865234375,
+      "error_share_in_overlap": 0.01818087138235569,
+      "overlap_px_per_hour": 5.666666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 766.0,
+      "rmse": 0.2200259268283844,
+      "max_abs": 2.64251708984375,
+      "pct_off_1K": 0.6092254134029591,
+      "area_truth": -7192.20947265625,
+      "area_pred": -7268.53759765625,
+      "error_share_in_overlap": 0.06027683615684509,
+      "overlap_px_per_hour": 5.666666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 766.0,
+      "rmse": 0.7190921306610107,
+      "max_abs": 4.25360107421875,
+      "pct_off_1K": 12.88076588337685,
+      "area_truth": -7192.20947265625,
+      "area_pred": -7038.111328125,
+      "error_share_in_overlap": 0.6601271033287048,
+      "overlap_px_per_hour": 229.66666666666666
+     }
+    }
+   }
+  },
+  "pair_15": {
+   "trees": [
+    30,
+    31
+   ],
+   "closest_pair_m": 38.2099463490856,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 469.0,
+      "rmse": 0.03296194598078728,
+      "max_abs": 0.1224365234375,
+      "pct_off_1K": 0.0,
+      "area_truth": 795.251220703125,
+      "area_pred": 808.688232421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 464.5,
+      "rmse": 0.07284660637378693,
+      "max_abs": 0.325103759765625,
+      "pct_off_1K": 0.0,
+      "area_truth": 795.251220703125,
+      "area_pred": 766.40771484375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 469.0,
+      "rmse": 0.03296194598078728,
+      "max_abs": 0.1224365234375,
+      "pct_off_1K": 0.0,
+      "area_truth": 795.251220703125,
+      "area_pred": 808.688232421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 469.0,
+      "rmse": 0.03296194598078728,
+      "max_abs": 0.1224365234375,
+      "pct_off_1K": 0.0,
+      "area_truth": 795.251220703125,
+      "area_pred": 808.688232421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1478.0,
+      "rmse": 0.0987493097782135,
+      "max_abs": 4.43634033203125,
+      "pct_off_1K": 0.04510599909788002,
+      "area_truth": -6633.84521484375,
+      "area_pred": -6637.04833984375,
+      "error_share_in_overlap": 0.07967796921730042,
+      "overlap_px_per_hour": 1.6666666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 1499.6666666666667,
+      "rmse": 0.225838303565979,
+      "max_abs": 0.993194580078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6633.84521484375,
+      "area_pred": -6354.53125,
+      "error_share_in_overlap": 0.0030746334232389927,
+      "overlap_px_per_hour": 1.6666666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1478.0,
+      "rmse": 0.03567395731806755,
+      "max_abs": 0.66851806640625,
+      "pct_off_1K": 0.0,
+      "area_truth": -6633.84521484375,
+      "area_pred": -6634.42333984375,
+      "error_share_in_overlap": 0.027790755033493042,
+      "overlap_px_per_hour": 1.6666666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1484.0,
+      "rmse": 0.14846856892108917,
+      "max_abs": 0.993194580078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6633.84521484375,
+      "area_pred": -6590.69140625,
+      "error_share_in_overlap": 0.598112940788269,
+      "overlap_px_per_hour": 77.33333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 1032.2,
+      "rmse": 0.0434022918343544,
+      "max_abs": 0.23504638671875,
+      "pct_off_1K": 0.0,
+      "area_truth": -6369.7685546875,
+      "area_pred": -6386.6845703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1023.2,
+      "rmse": 0.23168405890464783,
+      "max_abs": 1.0679931640625,
+      "pct_off_1K": 0.039093041438623924,
+      "area_truth": -6369.7685546875,
+      "area_pred": -6038.10693359375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1032.2,
+      "rmse": 0.0434022918343544,
+      "max_abs": 0.23504638671875,
+      "pct_off_1K": 0.0,
+      "area_truth": -6369.7685546875,
+      "area_pred": -6386.6845703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1032.2,
+      "rmse": 0.14219708740711212,
+      "max_abs": 1.0679931640625,
+      "pct_off_1K": 0.038752179810114314,
+      "area_truth": -6369.7685546875,
+      "area_pred": -6359.5029296875,
+      "error_share_in_overlap": 0.3701632618904114,
+      "overlap_px_per_hour": 42.6
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 1019.3333333333334,
+      "rmse": 3.409142017364502,
+      "max_abs": 23.747314453125,
+      "pct_off_1K": 3.6298234139960757,
+      "area_truth": -8696.3056640625,
+      "area_pred": -9411.7783203125,
+      "error_share_in_overlap": 0.777950644493103,
+      "overlap_px_per_hour": 40.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 953.0,
+      "rmse": 0.5166579484939575,
+      "max_abs": 4.449737548828125,
+      "pct_off_1K": 6.051066806575726,
+      "area_truth": -8696.3056640625,
+      "area_pred": -8249.3798828125,
+      "error_share_in_overlap": 0.10334885120391846,
+      "overlap_px_per_hour": 40.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1019.3333333333334,
+      "rmse": 0.37757351994514465,
+      "max_abs": 4.449737548828125,
+      "pct_off_1K": 2.5179856115107913,
+      "area_truth": -8696.3056640625,
+      "area_pred": -8782.5908203125,
+      "error_share_in_overlap": 0.21726492047309875,
+      "overlap_px_per_hour": 40.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1019.3333333333334,
+      "rmse": 0.486027330160141,
+      "max_abs": 4.449737548828125,
+      "pct_off_1K": 5.657292347939831,
+      "area_truth": -8696.3056640625,
+      "area_pred": -8578.1513671875,
+      "error_share_in_overlap": 0.6666924357414246,
+      "overlap_px_per_hour": 278.0
+     }
+    }
+   }
+  },
+  "pair_16": {
+   "trees": [
+    32,
+    33
+   ],
+   "closest_pair_m": 12.0,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 325.5,
+      "rmse": 0.17402920126914978,
+      "max_abs": 0.507415771484375,
+      "pct_off_1K": 0.0,
+      "area_truth": 532.3984375,
+      "area_pred": 608.1300659179688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 285.3333333333333,
+      "rmse": 0.28702670335769653,
+      "max_abs": 0.906341552734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 532.3984375,
+      "area_pred": 429.4908142089844,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 325.5,
+      "rmse": 0.17402920126914978,
+      "max_abs": 0.507415771484375,
+      "pct_off_1K": 0.0,
+      "area_truth": 532.3984375,
+      "area_pred": 608.1300659179688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 325.5,
+      "rmse": 0.26066625118255615,
+      "max_abs": 0.906341552734375,
+      "pct_off_1K": 0.0,
+      "area_truth": 532.3984375,
+      "area_pred": 563.7791137695312,
+      "error_share_in_overlap": 0.3280241787433624,
+      "overlap_px_per_hour": 63.5
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1168.3333333333333,
+      "rmse": 3.094130277633667,
+      "max_abs": 20.70452880859375,
+      "pct_off_1K": 14.636233951497859,
+      "area_truth": -4008.649658203125,
+      "area_pred": -5590.14501953125,
+      "error_share_in_overlap": 0.6795886754989624,
+      "overlap_px_per_hour": 160.66666666666666
+     },
+     "strongest": {
+      "affected_px_per_hour": 913.6666666666666,
+      "rmse": 0.2039252370595932,
+      "max_abs": 1.24212646484375,
+      "pct_off_1K": 0.1459321415541773,
+      "area_truth": -4008.649658203125,
+      "area_pred": -3777.2021484375,
+      "error_share_in_overlap": 0.13160814344882965,
+      "overlap_px_per_hour": 160.66666666666666
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1168.3333333333333,
+      "rmse": 0.3781752586364746,
+      "max_abs": 1.729461669921875,
+      "pct_off_1K": 1.9400855920114122,
+      "area_truth": -4008.649658203125,
+      "area_pred": -4465.92626953125,
+      "error_share_in_overlap": 0.060892753303050995,
+      "overlap_px_per_hour": 160.66666666666666
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1168.3333333333333,
+      "rmse": 0.23684531450271606,
+      "max_abs": 1.24212646484375,
+      "pct_off_1K": 0.11412268188302425,
+      "area_truth": -4008.649658203125,
+      "area_pred": -4249.40185546875,
+      "error_share_in_overlap": 0.19117040932178497,
+      "overlap_px_per_hour": 433.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 522.0,
+      "rmse": 2.4747114181518555,
+      "max_abs": 24.47235107421875,
+      "pct_off_1K": 2.6436781609195403,
+      "area_truth": -3737.19140625,
+      "area_pred": -4147.39453125,
+      "error_share_in_overlap": 0.34168919920921326,
+      "overlap_px_per_hour": 9.8
+     },
+     "strongest": {
+      "affected_px_per_hour": 482.0,
+      "rmse": 0.6441742181777954,
+      "max_abs": 4.498565673828125,
+      "pct_off_1K": 9.211618257261412,
+      "area_truth": -3737.19140625,
+      "area_pred": -3355.54345703125,
+      "error_share_in_overlap": 0.0466151125729084,
+      "overlap_px_per_hour": 9.8
+     },
+     "hybrid": {
+      "affected_px_per_hour": 522.0,
+      "rmse": 0.362025648355484,
+      "max_abs": 4.02227783203125,
+      "pct_off_1K": 2.9885057471264367,
+      "area_truth": -3737.19140625,
+      "area_pred": -3985.58447265625,
+      "error_share_in_overlap": 0.059949442744255066,
+      "overlap_px_per_hour": 9.8
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 522.0,
+      "rmse": 0.597743034362793,
+      "max_abs": 4.498565673828125,
+      "pct_off_1K": 8.505747126436782,
+      "area_truth": -3737.19140625,
+      "area_pred": -3833.86328125,
+      "error_share_in_overlap": 0.3697330057621002,
+      "overlap_px_per_hour": 161.6
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 695.0,
+      "rmse": 6.286294937133789,
+      "max_abs": 27.5614013671875,
+      "pct_off_1K": 11.846522781774581,
+      "area_truth": -5321.99169921875,
+      "area_pred": -6965.14111328125,
+      "error_share_in_overlap": 0.7215015292167664,
+      "overlap_px_per_hour": 72.33333333333333
+     },
+     "strongest": {
+      "affected_px_per_hour": 602.6666666666666,
+      "rmse": 0.30856508016586304,
+      "max_abs": 2.60650634765625,
+      "pct_off_1K": 1.4380530973451326,
+      "area_truth": -5321.99169921875,
+      "area_pred": -5124.18408203125,
+      "error_share_in_overlap": 0.14827945828437805,
+      "overlap_px_per_hour": 72.33333333333333
+     },
+     "hybrid": {
+      "affected_px_per_hour": 695.0,
+      "rmse": 0.5192885994911194,
+      "max_abs": 2.99432373046875,
+      "pct_off_1K": 4.556354916067146,
+      "area_truth": -5321.99169921875,
+      "area_pred": -5741.39794921875,
+      "error_share_in_overlap": 0.07068640738725662,
+      "overlap_px_per_hour": 72.33333333333333
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 695.0,
+      "rmse": 0.32597970962524414,
+      "max_abs": 2.60650634765625,
+      "pct_off_1K": 1.2470023980815348,
+      "area_truth": -5321.99169921875,
+      "area_pred": -5535.935546875,
+      "error_share_in_overlap": 0.22303815186023712,
+      "overlap_px_per_hour": 281.3333333333333
+     }
+    }
+   }
+  },
+  "pair_17": {
+   "trees": [
+    34,
+    35
+   ],
+   "closest_pair_m": 32.984845004941285,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 384.0,
+      "rmse": 0.026287619024515152,
+      "max_abs": 0.08782958984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 632.9135131835938,
+      "area_pred": 643.0331420898438,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 382.5,
+      "rmse": 0.08797439932823181,
+      "max_abs": 0.31378173828125,
+      "pct_off_1K": 0.0,
+      "area_truth": 632.9135131835938,
+      "area_pred": 595.568359375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 384.0,
+      "rmse": 0.026287619024515152,
+      "max_abs": 0.08782958984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 632.9135131835938,
+      "area_pred": 643.0331420898438,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 384.0,
+      "rmse": 0.026287619024515152,
+      "max_abs": 0.08782958984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 632.9135131835938,
+      "area_pred": 643.0331420898438,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1332.3333333333333,
+      "rmse": 0.0549757145345211,
+      "max_abs": 0.381195068359375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5669.748046875,
+      "area_pred": -5690.20703125,
+      "error_share_in_overlap": 0.00098968087695539,
+      "overlap_px_per_hour": 0.3333333333333333
+     },
+     "strongest": {
+      "affected_px_per_hour": 1325.0,
+      "rmse": 0.26395097374916077,
+      "max_abs": 1.526824951171875,
+      "pct_off_1K": 0.5283018867924528,
+      "area_truth": -5669.748046875,
+      "area_pred": -5284.66943359375,
+      "error_share_in_overlap": 0.0010222160490229726,
+      "overlap_px_per_hour": 0.3333333333333333
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1332.3333333333333,
+      "rmse": 0.05822496488690376,
+      "max_abs": 1.22479248046875,
+      "pct_off_1K": 0.02501876407305479,
+      "area_truth": -5669.748046875,
+      "area_pred": -5689.85693359375,
+      "error_share_in_overlap": 0.006962156854569912,
+      "overlap_px_per_hour": 0.3333333333333333
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1332.3333333333333,
+      "rmse": 0.17772740125656128,
+      "max_abs": 1.526824951171875,
+      "pct_off_1K": 0.5253940455341506,
+      "area_truth": -5669.748046875,
+      "area_pred": -5642.18505859375,
+      "error_share_in_overlap": 0.4802473783493042,
+      "overlap_px_per_hour": 73.33333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 917.2,
+      "rmse": 0.042549893260002136,
+      "max_abs": 0.2418212890625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4975.84375,
+      "area_pred": -5010.5927734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 898.2,
+      "rmse": 0.26460766792297363,
+      "max_abs": 0.8992919921875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4975.84375,
+      "area_pred": -4565.3955078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 917.2,
+      "rmse": 0.042549893260002136,
+      "max_abs": 0.2418212890625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4975.84375,
+      "area_pred": -5010.5927734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 917.2,
+      "rmse": 0.16727568209171295,
+      "max_abs": 0.8992919921875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4975.84375,
+      "area_pred": -4974.8154296875,
+      "error_share_in_overlap": 0.3683641850948334,
+      "overlap_px_per_hour": 58.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 912.3333333333334,
+      "rmse": 2.3177671432495117,
+      "max_abs": 19.59906005859375,
+      "pct_off_1K": 1.4979905005480454,
+      "area_truth": -7294.75341796875,
+      "area_pred": -7661.091796875,
+      "error_share_in_overlap": 0.632605791091919,
+      "overlap_px_per_hour": 22.666666666666668
+     },
+     "strongest": {
+      "affected_px_per_hour": 868.3333333333334,
+      "rmse": 0.46083688735961914,
+      "max_abs": 3.307769775390625,
+      "pct_off_1K": 4.107485604606526,
+      "area_truth": -7294.75341796875,
+      "area_pred": -6863.93359375,
+      "error_share_in_overlap": 0.07450191676616669,
+      "overlap_px_per_hour": 22.666666666666668
+     },
+     "hybrid": {
+      "affected_px_per_hour": 912.3333333333334,
+      "rmse": 0.3087969422340393,
+      "max_abs": 3.007720947265625,
+      "pct_off_1K": 1.8633540372670807,
+      "area_truth": -7294.75341796875,
+      "area_pred": -7375.345703125,
+      "error_share_in_overlap": 0.17906391620635986,
+      "overlap_px_per_hour": 22.666666666666668
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 912.3333333333334,
+      "rmse": 0.4230775535106659,
+      "max_abs": 3.307769775390625,
+      "pct_off_1K": 3.9093898428936793,
+      "area_truth": -7294.75341796875,
+      "area_pred": -7272.52099609375,
+      "error_share_in_overlap": 0.487541526556015,
+      "overlap_px_per_hour": 138.33333333333334
+     }
+    }
+   }
+  },
+  "pair_18": {
+   "trees": [
+    36,
+    37
+   ],
+   "closest_pair_m": 7.211102550927978,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 229.0,
+      "rmse": 0.3644372224807739,
+      "max_abs": 1.390594482421875,
+      "pct_off_1K": 2.6200873362445414,
+      "area_truth": 388.3744201660156,
+      "area_pred": 456.6261291503906,
+      "error_share_in_overlap": 0.11316768079996109,
+      "overlap_px_per_hour": 7.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 199.0,
+      "rmse": 0.1368444263935089,
+      "max_abs": 0.50762939453125,
+      "pct_off_1K": 0.0,
+      "area_truth": 388.3744201660156,
+      "area_pred": 368.2434997558594,
+      "error_share_in_overlap": 0.1291615515947342,
+      "overlap_px_per_hour": 7.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 229.0,
+      "rmse": 0.31478366255760193,
+      "max_abs": 1.10272216796875,
+      "pct_off_1K": 0.8733624454148471,
+      "area_truth": 388.3744201660156,
+      "area_pred": 446.243408203125,
+      "error_share_in_overlap": 0.04207947850227356,
+      "overlap_px_per_hour": 7.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 229.0,
+      "rmse": 0.18578803539276123,
+      "max_abs": 0.50762939453125,
+      "pct_off_1K": 0.0,
+      "area_truth": 388.3744201660156,
+      "area_pred": 410.3123779296875,
+      "error_share_in_overlap": 0.2570401728153229,
+      "overlap_px_per_hour": 54.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 915.0,
+      "rmse": 2.116469144821167,
+      "max_abs": 20.701171875,
+      "pct_off_1K": 6.120218579234972,
+      "area_truth": -3555.017578125,
+      "area_pred": -4121.13037109375,
+      "error_share_in_overlap": 0.5751934051513672,
+      "overlap_px_per_hour": 46.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 817.0,
+      "rmse": 0.46404996514320374,
+      "max_abs": 7.304412841796875,
+      "pct_off_1K": 1.4279885760913913,
+      "area_truth": -3555.017578125,
+      "area_pred": -3450.628173828125,
+      "error_share_in_overlap": 0.11307180672883987,
+      "overlap_px_per_hour": 46.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 915.0,
+      "rmse": 0.48363205790519714,
+      "max_abs": 7.304412841796875,
+      "pct_off_1K": 2.0036429872495445,
+      "area_truth": -3555.017578125,
+      "area_pred": -3774.287109375,
+      "error_share_in_overlap": 0.07282150536775589,
+      "overlap_px_per_hour": 46.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 915.0,
+      "rmse": 0.4619045555591583,
+      "max_abs": 7.304412841796875,
+      "pct_off_1K": 1.2750455373406193,
+      "area_truth": -3555.017578125,
+      "area_pred": -3664.640625,
+      "error_share_in_overlap": 0.261517733335495,
+      "overlap_px_per_hour": 173.33333333333334
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 521.4,
+      "rmse": 3.605525016784668,
+      "max_abs": 26.070037841796875,
+      "pct_off_1K": 4.2961258151131565,
+      "area_truth": -2830.809814453125,
+      "area_pred": -3360.203125,
+      "error_share_in_overlap": 0.5607194900512695,
+      "overlap_px_per_hour": 17.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 444.6,
+      "rmse": 0.2729368209838867,
+      "max_abs": 3.728851318359375,
+      "pct_off_1K": 1.9343229869545657,
+      "area_truth": -2830.809814453125,
+      "area_pred": -2718.220458984375,
+      "error_share_in_overlap": 0.11197035759687424,
+      "overlap_px_per_hour": 17.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 521.4,
+      "rmse": 0.38278406858444214,
+      "max_abs": 2.4437255859375,
+      "pct_off_1K": 2.4165707710011506,
+      "area_truth": -2830.809814453125,
+      "area_pred": -3050.686279296875,
+      "error_share_in_overlap": 0.05141124129295349,
+      "overlap_px_per_hour": 17.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 521.4,
+      "rmse": 0.2938266396522522,
+      "max_abs": 3.728851318359375,
+      "pct_off_1K": 1.6494054468738015,
+      "area_truth": -2830.809814453125,
+      "area_pred": -2975.79443359375,
+      "error_share_in_overlap": 0.16999264061450958,
+      "overlap_px_per_hour": 98.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 612.6666666666666,
+      "rmse": 4.37970495223999,
+      "max_abs": 27.452301025390625,
+      "pct_off_1K": 4.896626768226333,
+      "area_truth": -4672.61279296875,
+      "area_pred": -5387.41650390625,
+      "error_share_in_overlap": 0.7045708894729614,
+      "overlap_px_per_hour": 29.333333333333332
+     },
+     "strongest": {
+      "affected_px_per_hour": 542.3333333333334,
+      "rmse": 1.3731147050857544,
+      "max_abs": 24.66998291015625,
+      "pct_off_1K": 2.8272894898586354,
+      "area_truth": -4672.61279296875,
+      "area_pred": -4584.61572265625,
+      "error_share_in_overlap": 0.33257535099983215,
+      "overlap_px_per_hour": 29.333333333333332
+     },
+     "hybrid": {
+      "affected_px_per_hour": 613.0,
+      "rmse": 1.2850309610366821,
+      "max_abs": 24.66998291015625,
+      "pct_off_1K": 2.1750951604132682,
+      "area_truth": -4672.61279296875,
+      "area_pred": -4910.58056640625,
+      "error_share_in_overlap": 0.2394452542066574,
+      "overlap_px_per_hour": 29.333333333333332
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 612.6666666666666,
+      "rmse": 1.2962572574615479,
+      "max_abs": 24.66998291015625,
+      "pct_off_1K": 2.50272034820457,
+      "area_truth": -4672.61279296875,
+      "area_pred": -4793.54541015625,
+      "error_share_in_overlap": 0.4440925717353821,
+      "overlap_px_per_hour": 153.33333333333334
+     }
+    }
+   }
+  },
+  "pair_19": {
+   "trees": [
+    38,
+    39
+   ],
+   "closest_pair_m": 32.0624390837628,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 331.3333333333333,
+      "rmse": 0.020027389749884605,
+      "max_abs": 0.109954833984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 552.14599609375,
+      "area_pred": 559.6746826171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 325.1666666666667,
+      "rmse": 0.07311805337667465,
+      "max_abs": 0.2945556640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 552.14599609375,
+      "area_pred": 523.4094848632812,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 331.3333333333333,
+      "rmse": 0.020027389749884605,
+      "max_abs": 0.109954833984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 552.14599609375,
+      "area_pred": 559.6746826171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 331.3333333333333,
+      "rmse": 0.020027389749884605,
+      "max_abs": 0.109954833984375,
+      "pct_off_1K": 0.0,
+      "area_truth": 552.14599609375,
+      "area_pred": 559.6746826171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1270.3333333333333,
+      "rmse": 0.01244757417589426,
+      "max_abs": 0.141845703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5267.9228515625,
+      "area_pred": -5272.08544921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1269.0,
+      "rmse": 0.13848739862442017,
+      "max_abs": 0.730224609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5267.9228515625,
+      "area_pred": -5078.77099609375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1270.3333333333333,
+      "rmse": 0.01244757417589426,
+      "max_abs": 0.141845703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5267.9228515625,
+      "area_pred": -5272.08544921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1270.3333333333333,
+      "rmse": 0.05932307988405228,
+      "max_abs": 0.730224609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5267.9228515625,
+      "area_pred": -5264.94873046875,
+      "error_share_in_overlap": 0.28071129322052,
+      "overlap_px_per_hour": 12.333333333333334
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 678.8,
+      "rmse": 0.03363815322518349,
+      "max_abs": 0.18048095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4068.514892578125,
+      "area_pred": -4084.407470703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 661.2,
+      "rmse": 0.2047836184501648,
+      "max_abs": 0.618011474609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4068.514892578125,
+      "area_pred": -3827.44677734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 678.8,
+      "rmse": 0.03363815322518349,
+      "max_abs": 0.18048095703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4068.514892578125,
+      "area_pred": -4084.407470703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 678.8,
+      "rmse": 0.05586281046271324,
+      "max_abs": 0.618011474609375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4068.514892578125,
+      "area_pred": -4081.963623046875,
+      "error_share_in_overlap": 0.07575305551290512,
+      "overlap_px_per_hour": 4.6
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 840.3333333333334,
+      "rmse": 0.016181033104658127,
+      "max_abs": 0.10137939453125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6788.95947265625,
+      "area_pred": -6792.22412109375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 838.6666666666666,
+      "rmse": 0.17309369146823883,
+      "max_abs": 0.64263916015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -6788.95947265625,
+      "area_pred": -6596.912109375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 840.3333333333334,
+      "rmse": 0.016181033104658127,
+      "max_abs": 0.10137939453125,
+      "pct_off_1K": 0.0,
+      "area_truth": -6788.95947265625,
+      "area_pred": -6792.22412109375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 840.3333333333334,
+      "rmse": 0.08111914992332458,
+      "max_abs": 0.64263916015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -6788.95947265625,
+      "area_pred": -6782.95849609375,
+      "error_share_in_overlap": 0.31121402978897095,
+      "overlap_px_per_hour": 16.666666666666668
+     }
+    }
+   }
+  },
+  "pair_20": {
+   "trees": [
+    40,
+    41
+   ],
+   "closest_pair_m": 18.439088914585774,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 268.0,
+      "rmse": 0.057170625776052475,
+      "max_abs": 0.17999267578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 444.3283996582031,
+      "area_pred": 464.5088195800781,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 255.66666666666666,
+      "rmse": 0.22230695188045502,
+      "max_abs": 0.57708740234375,
+      "pct_off_1K": 0.0,
+      "area_truth": 444.3283996582031,
+      "area_pred": 363.2749328613281,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 268.0,
+      "rmse": 0.057170625776052475,
+      "max_abs": 0.17999267578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 444.3283996582031,
+      "area_pred": 464.5088195800781,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 268.0,
+      "rmse": 0.1307317018508911,
+      "max_abs": 0.57708740234375,
+      "pct_off_1K": 0.0,
+      "area_truth": 444.3283996582031,
+      "area_pred": 456.5233154296875,
+      "error_share_in_overlap": 0.27118435502052307,
+      "overlap_px_per_hour": 14.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1071.6666666666667,
+      "rmse": 0.0343458317220211,
+      "max_abs": 0.24908447265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4397.77880859375,
+      "area_pred": -4416.796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1062.6666666666667,
+      "rmse": 0.3129535913467407,
+      "max_abs": 1.578857421875,
+      "pct_off_1K": 1.411543287327478,
+      "area_truth": -4397.77880859375,
+      "area_pred": -4009.270751953125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1071.6666666666667,
+      "rmse": 0.0343458317220211,
+      "max_abs": 0.24908447265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4397.77880859375,
+      "area_pred": -4416.796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1071.6666666666667,
+      "rmse": 0.22475704550743103,
+      "max_abs": 1.578857421875,
+      "pct_off_1K": 1.3996889580093312,
+      "area_truth": -4397.77880859375,
+      "area_pred": -4360.08203125,
+      "error_share_in_overlap": 0.5391372442245483,
+      "overlap_px_per_hour": 76.33333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 490.8,
+      "rmse": 0.06481048464775085,
+      "max_abs": 0.335357666015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3135.34716796875,
+      "area_pred": -3188.778076171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 481.0,
+      "rmse": 0.4007415473461151,
+      "max_abs": 1.361328125,
+      "pct_off_1K": 2.2869022869022873,
+      "area_truth": -3135.34716796875,
+      "area_pred": -2756.525390625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 490.8,
+      "rmse": 0.06481048464775085,
+      "max_abs": 0.335357666015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3135.34716796875,
+      "area_pred": -3188.778076171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 490.8,
+      "rmse": 0.31294259428977966,
+      "max_abs": 1.361328125,
+      "pct_off_1K": 2.2412387938060307,
+      "area_truth": -3135.34716796875,
+      "area_pred": -3137.44189453125,
+      "error_share_in_overlap": 0.4318302273750305,
+      "overlap_px_per_hour": 74.8
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 663.0,
+      "rmse": 0.0765727087855339,
+      "max_abs": 0.318145751953125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5453.00927734375,
+      "area_pred": -5463.724609375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 661.6666666666666,
+      "rmse": 0.4763583838939667,
+      "max_abs": 1.509185791015625,
+      "pct_off_1K": 5.44080604534005,
+      "area_truth": -5453.00927734375,
+      "area_pred": -5032.2490234375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 663.0,
+      "rmse": 0.0765727087855339,
+      "max_abs": 0.318145751953125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5453.00927734375,
+      "area_pred": -5463.724609375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 663.0,
+      "rmse": 0.4163692891597748,
+      "max_abs": 1.509185791015625,
+      "pct_off_1K": 5.429864253393665,
+      "area_truth": -5453.00927734375,
+      "area_pred": -5353.54296875,
+      "error_share_in_overlap": 0.6848357319831848,
+      "overlap_px_per_hour": 143.66666666666666
+     }
+    }
+   }
+  },
+  "pair_21": {
+   "trees": [
+    42,
+    43
+   ],
+   "closest_pair_m": 36.87817782917155,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 262.8333333333333,
+      "rmse": 0.011396140791475773,
+      "max_abs": 0.028961181640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 468.3136291503906,
+      "area_pred": 472.4547424316406,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 262.3333333333333,
+      "rmse": 0.02225283719599247,
+      "max_abs": 0.07635498046875,
+      "pct_off_1K": 0.0,
+      "area_truth": 468.3136291503906,
+      "area_pred": 454.669189453125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 262.8333333333333,
+      "rmse": 0.011396140791475773,
+      "max_abs": 0.028961181640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 468.3136291503906,
+      "area_pred": 472.4547424316406,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 262.8333333333333,
+      "rmse": 0.011396140791475773,
+      "max_abs": 0.028961181640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 468.3136291503906,
+      "area_pred": 472.4547424316406,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 988.0,
+      "rmse": 0.3644423186779022,
+      "max_abs": 4.5101318359375,
+      "pct_off_1K": 0.641025641025641,
+      "area_truth": -4089.945556640625,
+      "area_pred": -4138.14208984375,
+      "error_share_in_overlap": 0.4219909608364105,
+      "overlap_px_per_hour": 6.666666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 984.0,
+      "rmse": 0.29737910628318787,
+      "max_abs": 1.164794921875,
+      "pct_off_1K": 0.23712737127371272,
+      "area_truth": -4089.945556640625,
+      "area_pred": -3765.770263671875,
+      "error_share_in_overlap": 0.011443478986620903,
+      "overlap_px_per_hour": 6.666666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 988.0,
+      "rmse": 0.07550527155399323,
+      "max_abs": 0.6278076171875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4089.945556640625,
+      "area_pred": -4106.26220703125,
+      "error_share_in_overlap": 0.08926403522491455,
+      "overlap_px_per_hour": 6.666666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 989.0,
+      "rmse": 0.21447740495204926,
+      "max_abs": 1.164794921875,
+      "pct_off_1K": 0.23592854735422988,
+      "area_truth": -4089.945556640625,
+      "area_pred": -4041.635986328125,
+      "error_share_in_overlap": 0.6683980822563171,
+      "overlap_px_per_hour": 106.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 841.0,
+      "rmse": 0.028511522337794304,
+      "max_abs": 0.133056640625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3839.90234375,
+      "area_pred": -3851.123046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 827.0,
+      "rmse": 0.20817023515701294,
+      "max_abs": 0.765533447265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3839.90234375,
+      "area_pred": -3563.089111328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 841.0,
+      "rmse": 0.028511522337794304,
+      "max_abs": 0.133056640625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3839.90234375,
+      "area_pred": -3851.123046875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 841.0,
+      "rmse": 0.12411290407180786,
+      "max_abs": 0.765533447265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -3839.90234375,
+      "area_pred": -3830.642578125,
+      "error_share_in_overlap": 0.43484434485435486,
+      "overlap_px_per_hour": 35.8
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 834.6666666666666,
+      "rmse": 0.034444235265254974,
+      "max_abs": 0.14642333984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5682.14697265625,
+      "area_pred": -5686.49462890625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 827.0,
+      "rmse": 0.20262067019939423,
+      "max_abs": 0.7867431640625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5682.14697265625,
+      "area_pred": -5440.97314453125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 834.6666666666666,
+      "rmse": 0.034444235265254974,
+      "max_abs": 0.14642333984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5682.14697265625,
+      "area_pred": -5686.49462890625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 834.6666666666666,
+      "rmse": 0.09712190926074982,
+      "max_abs": 0.7867431640625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5682.14697265625,
+      "area_pred": -5674.88525390625,
+      "error_share_in_overlap": 0.2985674738883972,
+      "overlap_px_per_hour": 20.333333333333332
+     }
+    }
+   }
+  },
+  "pair_22": {
+   "trees": [
+    44,
+    45
+   ],
+   "closest_pair_m": 32.55764119219941,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 357.6666666666667,
+      "rmse": 0.02319861575961113,
+      "max_abs": 0.076873779296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 582.2257690429688,
+      "area_pred": 591.036865234375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 354.6666666666667,
+      "rmse": 0.08353058248758316,
+      "max_abs": 0.31561279296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 582.2257690429688,
+      "area_pred": 549.235595703125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 357.6666666666667,
+      "rmse": 0.02319861575961113,
+      "max_abs": 0.076873779296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 582.2257690429688,
+      "area_pred": 591.036865234375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 357.6666666666667,
+      "rmse": 0.02319861575961113,
+      "max_abs": 0.076873779296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 582.2257690429688,
+      "area_pred": 591.036865234375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1395.6666666666667,
+      "rmse": 0.01914353109896183,
+      "max_abs": 0.126190185546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5175.2919921875,
+      "area_pred": -5187.529296875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1389.3333333333333,
+      "rmse": 0.18341192603111267,
+      "max_abs": 1.0120849609375,
+      "pct_off_1K": 0.04798464491362764,
+      "area_truth": -5175.2919921875,
+      "area_pred": -4866.35986328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1395.6666666666667,
+      "rmse": 0.01914353109896183,
+      "max_abs": 0.126190185546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5175.2919921875,
+      "area_pred": -5187.529296875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1395.6666666666667,
+      "rmse": 0.10093123465776443,
+      "max_abs": 1.0120849609375,
+      "pct_off_1K": 0.04776689754000478,
+      "area_truth": -5175.2919921875,
+      "area_pred": -5168.05908203125,
+      "error_share_in_overlap": 0.3470174968242645,
+      "overlap_px_per_hour": 30.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 907.0,
+      "rmse": 0.039943940937519073,
+      "max_abs": 0.1812744140625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4685.32470703125,
+      "area_pred": -4716.005859375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 888.4,
+      "rmse": 0.2628988027572632,
+      "max_abs": 0.947174072265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4685.32470703125,
+      "area_pred": -4285.07177734375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 907.0,
+      "rmse": 0.039943940937519073,
+      "max_abs": 0.1812744140625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4685.32470703125,
+      "area_pred": -4716.005859375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 907.0,
+      "rmse": 0.1691049486398697,
+      "max_abs": 0.947174072265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4685.32470703125,
+      "area_pred": -4679.80859375,
+      "error_share_in_overlap": 0.3875143527984619,
+      "overlap_px_per_hour": 58.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 921.6666666666666,
+      "rmse": 0.036048419773578644,
+      "max_abs": 0.178314208984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -7048.37353515625,
+      "area_pred": -7060.875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 915.6666666666666,
+      "rmse": 0.2915553152561188,
+      "max_abs": 1.18585205078125,
+      "pct_off_1K": 0.691663633054241,
+      "area_truth": -7048.37353515625,
+      "area_pred": -6658.69921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 921.6666666666666,
+      "rmse": 0.036048419773578644,
+      "max_abs": 0.178314208984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -7048.37353515625,
+      "area_pred": -7060.875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 921.6666666666666,
+      "rmse": 0.22485719621181488,
+      "max_abs": 1.18585205078125,
+      "pct_off_1K": 0.6871609403254972,
+      "area_truth": -7048.37353515625,
+      "area_pred": -7001.91943359375,
+      "error_share_in_overlap": 0.5570718050003052,
+      "overlap_px_per_hour": 84.0
+     }
+    }
+   }
+  },
+  "pair_23": {
+   "trees": [
+    46,
+    47
+   ],
+   "closest_pair_m": 39.395431207184416,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 340.3333333333333,
+      "rmse": 0.013011562637984753,
+      "max_abs": 0.0479736328125,
+      "pct_off_1K": 0.0,
+      "area_truth": 579.020751953125,
+      "area_pred": 584.6683959960938,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 334.8333333333333,
+      "rmse": 0.0449703186750412,
+      "max_abs": 0.22601318359375,
+      "pct_off_1K": 0.0,
+      "area_truth": 579.020751953125,
+      "area_pred": 545.5283813476562,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 340.3333333333333,
+      "rmse": 0.013011562637984753,
+      "max_abs": 0.0479736328125,
+      "pct_off_1K": 0.0,
+      "area_truth": 579.020751953125,
+      "area_pred": 584.6683959960938,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 340.3333333333333,
+      "rmse": 0.013011562637984753,
+      "max_abs": 0.0479736328125,
+      "pct_off_1K": 0.0,
+      "area_truth": 579.020751953125,
+      "area_pred": 584.6683959960938,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1395.0,
+      "rmse": 0.013206906616687775,
+      "max_abs": 0.084381103515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5300.79443359375,
+      "area_pred": -5310.216796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1391.6666666666667,
+      "rmse": 0.1599096804857254,
+      "max_abs": 0.80267333984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5300.79443359375,
+      "area_pred": -4968.74169921875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1395.0,
+      "rmse": 0.013206906616687775,
+      "max_abs": 0.084381103515625,
+      "pct_off_1K": 0.0,
+      "area_truth": -5300.79443359375,
+      "area_pred": -5310.216796875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1395.0,
+      "rmse": 0.058451708406209946,
+      "max_abs": 0.80267333984375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5300.79443359375,
+      "area_pred": -5302.79541015625,
+      "error_share_in_overlap": 0.21101613342761993,
+      "overlap_px_per_hour": 12.666666666666666
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 768.0,
+      "rmse": 0.020200489088892937,
+      "max_abs": 0.100860595703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4245.40087890625,
+      "area_pred": -4267.5185546875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 765.4,
+      "rmse": 0.16936762630939484,
+      "max_abs": 0.620025634765625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4245.40087890625,
+      "area_pred": -3872.00830078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 768.0,
+      "rmse": 0.020200489088892937,
+      "max_abs": 0.100860595703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4245.40087890625,
+      "area_pred": -4267.5185546875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 768.0,
+      "rmse": 0.032939426600933075,
+      "max_abs": 0.620025634765625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4245.40087890625,
+      "area_pred": -4266.5732421875,
+      "error_share_in_overlap": 0.02400263398885727,
+      "overlap_px_per_hour": 1.8
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 915.3333333333334,
+      "rmse": 0.017304593697190285,
+      "max_abs": 0.108978271484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6954.15869140625,
+      "area_pred": -6964.8125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 914.6666666666666,
+      "rmse": 0.16384951770305634,
+      "max_abs": 0.68951416015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -6954.15869140625,
+      "area_pred": -6626.34765625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 915.3333333333334,
+      "rmse": 0.017304593697190285,
+      "max_abs": 0.108978271484375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6954.15869140625,
+      "area_pred": -6964.8125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 915.3333333333334,
+      "rmse": 0.07332993298768997,
+      "max_abs": 0.68951416015625,
+      "pct_off_1K": 0.0,
+      "area_truth": -6954.15869140625,
+      "area_pred": -6956.77099609375,
+      "error_share_in_overlap": 0.20448404550552368,
+      "overlap_px_per_hour": 14.333333333333334
+     }
+    }
+   }
+  },
+  "pair_24": {
+   "trees": [
+    48,
+    49
+   ],
+   "closest_pair_m": 20.8806130178211,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 332.0,
+      "rmse": 0.08667778968811035,
+      "max_abs": 0.32110595703125,
+      "pct_off_1K": 0.0,
+      "area_truth": 585.108642578125,
+      "area_pred": 610.2556762695312,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 326.1666666666667,
+      "rmse": 0.19211404025554657,
+      "max_abs": 0.703948974609375,
+      "pct_off_1K": 0.0,
+      "area_truth": 585.108642578125,
+      "area_pred": 534.4323120117188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 332.0,
+      "rmse": 0.08667778968811035,
+      "max_abs": 0.32110595703125,
+      "pct_off_1K": 0.0,
+      "area_truth": 585.108642578125,
+      "area_pred": 610.2556762695312,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 332.0,
+      "rmse": 0.16180698573589325,
+      "max_abs": 0.703948974609375,
+      "pct_off_1K": 0.0,
+      "area_truth": 585.108642578125,
+      "area_pred": 596.6448364257812,
+      "error_share_in_overlap": 0.3350865840911865,
+      "overlap_px_per_hour": 22.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1241.6666666666667,
+      "rmse": 0.35157278180122375,
+      "max_abs": 8.00238037109375,
+      "pct_off_1K": 0.5100671140939597,
+      "area_truth": -5447.68701171875,
+      "area_pred": -5506.56298828125,
+      "error_share_in_overlap": 0.3081674575805664,
+      "overlap_px_per_hour": 13.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1223.3333333333333,
+      "rmse": 0.31387144327163696,
+      "max_abs": 2.598541259765625,
+      "pct_off_1K": 1.6076294277929157,
+      "area_truth": -5447.68701171875,
+      "area_pred": -5147.1962890625,
+      "error_share_in_overlap": 0.03192918002605438,
+      "overlap_px_per_hour": 13.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1241.6666666666667,
+      "rmse": 0.11894461512565613,
+      "max_abs": 1.834259033203125,
+      "pct_off_1K": 0.348993288590604,
+      "area_truth": -5447.68701171875,
+      "area_pred": -5467.95751953125,
+      "error_share_in_overlap": 0.1284639686346054,
+      "overlap_px_per_hour": 13.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1241.6666666666667,
+      "rmse": 0.260055810213089,
+      "max_abs": 2.598541259765625,
+      "pct_off_1K": 1.5838926174496646,
+      "area_truth": -5447.68701171875,
+      "area_pred": -5392.54638671875,
+      "error_share_in_overlap": 0.5869998335838318,
+      "overlap_px_per_hour": 116.33333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 728.0,
+      "rmse": 0.0915282741189003,
+      "max_abs": 0.689697265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4449.8466796875,
+      "area_pred": -4481.45361328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 700.6,
+      "rmse": 0.44245675206184387,
+      "max_abs": 2.322113037109375,
+      "pct_off_1K": 5.109905795032829,
+      "area_truth": -4449.8466796875,
+      "area_pred": -4089.684326171875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 728.0,
+      "rmse": 0.0915282741189003,
+      "max_abs": 0.689697265625,
+      "pct_off_1K": 0.0,
+      "area_truth": -4449.8466796875,
+      "area_pred": -4481.45361328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 728.0,
+      "rmse": 0.38527756929397583,
+      "max_abs": 2.322113037109375,
+      "pct_off_1K": 4.917582417582418,
+      "area_truth": -4449.8466796875,
+      "area_pred": -4385.4228515625,
+      "error_share_in_overlap": 0.6251787543296814,
+      "overlap_px_per_hour": 125.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 748.6666666666666,
+      "rmse": 5.691256999969482,
+      "max_abs": 27.43017578125,
+      "pct_off_1K": 9.973285841495994,
+      "area_truth": -6061.85546875,
+      "area_pred": -7355.98583984375,
+      "error_share_in_overlap": 0.8157332539558411,
+      "overlap_px_per_hour": 57.666666666666664
+     },
+     "strongest": {
+      "affected_px_per_hour": 673.0,
+      "rmse": 0.5014236569404602,
+      "max_abs": 3.666656494140625,
+      "pct_off_1K": 5.745418524021793,
+      "area_truth": -6061.85546875,
+      "area_pred": -5740.58447265625,
+      "error_share_in_overlap": 0.16467520594596863,
+      "overlap_px_per_hour": 57.666666666666664
+     },
+     "hybrid": {
+      "affected_px_per_hour": 748.6666666666666,
+      "rmse": 0.5177825689315796,
+      "max_abs": 3.446563720703125,
+      "pct_off_1K": 6.544968833481746,
+      "area_truth": -6061.85546875,
+      "area_pred": -6241.67578125,
+      "error_share_in_overlap": 0.18646781146526337,
+      "overlap_px_per_hour": 57.666666666666664
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 748.6666666666666,
+      "rmse": 0.4785250425338745,
+      "max_abs": 3.666656494140625,
+      "pct_off_1K": 5.1647373107747105,
+      "area_truth": -6061.85546875,
+      "area_pred": -6020.71337890625,
+      "error_share_in_overlap": 0.5672216415405273,
+      "overlap_px_per_hour": 294.0
+     }
+    }
+   }
+  },
+  "pair_25": {
+   "trees": [
+    50,
+    51
+   ],
+   "closest_pair_m": 6.324555320336759,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 240.16666666666666,
+      "rmse": 0.5054945349693298,
+      "max_abs": 1.850830078125,
+      "pct_off_1K": 6.800832755031229,
+      "area_truth": 402.0569763183594,
+      "area_pred": 505.2654724121094,
+      "error_share_in_overlap": 0.16876637935638428,
+      "overlap_px_per_hour": 12.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 203.0,
+      "rmse": 0.13305199146270752,
+      "max_abs": 0.4842529296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 402.0569763183594,
+      "area_pred": 381.6768493652344,
+      "error_share_in_overlap": 0.1581224799156189,
+      "overlap_px_per_hour": 12.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 240.16666666666666,
+      "rmse": 0.3903404474258423,
+      "max_abs": 1.26190185546875,
+      "pct_off_1K": 1.8043025676613464,
+      "area_truth": 402.0569763183594,
+      "area_pred": 484.5357666015625,
+      "error_share_in_overlap": 0.03716573864221573,
+      "overlap_px_per_hour": 12.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 240.16666666666666,
+      "rmse": 0.2051962912082672,
+      "max_abs": 0.4842529296875,
+      "pct_off_1K": 0.0,
+      "area_truth": 402.0569763183594,
+      "area_pred": 436.3019104003906,
+      "error_share_in_overlap": 0.207660973072052,
+      "overlap_px_per_hour": 72.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 971.6666666666666,
+      "rmse": 2.6581389904022217,
+      "max_abs": 21.141571044921875,
+      "pct_off_1K": 9.296740994854202,
+      "area_truth": -3575.341552734375,
+      "area_pred": -4470.28466796875,
+      "error_share_in_overlap": 0.6224509477615356,
+      "overlap_px_per_hour": 78.33333333333333
+     },
+     "strongest": {
+      "affected_px_per_hour": 819.6666666666666,
+      "rmse": 0.48491179943084717,
+      "max_abs": 8.233154296875,
+      "pct_off_1K": 1.0980073200488003,
+      "area_truth": -3575.341552734375,
+      "area_pred": -3490.7529296875,
+      "error_share_in_overlap": 0.15868571400642395,
+      "overlap_px_per_hour": 78.33333333333333
+     },
+     "hybrid": {
+      "affected_px_per_hour": 971.6666666666666,
+      "rmse": 0.5552943348884583,
+      "max_abs": 9.250213623046875,
+      "pct_off_1K": 2.435677530017153,
+      "area_truth": -3575.341552734375,
+      "area_pred": -3884.076416015625,
+      "error_share_in_overlap": 0.06700950115919113,
+      "overlap_px_per_hour": 78.33333333333333
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 971.6666666666666,
+      "rmse": 0.47856590151786804,
+      "max_abs": 8.233154296875,
+      "pct_off_1K": 0.9262435677530018,
+      "area_truth": -3575.341552734375,
+      "area_pred": -3745.815185546875,
+      "error_share_in_overlap": 0.21980400383472443,
+      "overlap_px_per_hour": 247.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 572.6,
+      "rmse": 3.6881539821624756,
+      "max_abs": 26.0992431640625,
+      "pct_off_1K": 3.946908836884387,
+      "area_truth": -3090.49560546875,
+      "area_pred": -3718.649169921875,
+      "error_share_in_overlap": 0.5386844277381897,
+      "overlap_px_per_hour": 19.8
+     },
+     "strongest": {
+      "affected_px_per_hour": 465.8,
+      "rmse": 0.5787847638130188,
+      "max_abs": 21.62548828125,
+      "pct_off_1K": 3.5208243881494203,
+      "area_truth": -3090.49560546875,
+      "area_pred": -2934.838623046875,
+      "error_share_in_overlap": 0.15709234774112701,
+      "overlap_px_per_hour": 19.8
+     },
+     "hybrid": {
+      "affected_px_per_hour": 572.6,
+      "rmse": 0.5630600452423096,
+      "max_abs": 21.62548828125,
+      "pct_off_1K": 3.3880544882989874,
+      "area_truth": -3090.49560546875,
+      "area_pred": -3362.74609375,
+      "error_share_in_overlap": 0.0828464925289154,
+      "overlap_px_per_hour": 19.8
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 572.6,
+      "rmse": 0.5351381301879883,
+      "max_abs": 21.62548828125,
+      "pct_off_1K": 2.8641285365001745,
+      "area_truth": -3090.49560546875,
+      "area_pred": -3224.32470703125,
+      "error_share_in_overlap": 0.29462528228759766,
+      "overlap_px_per_hour": 188.4
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 648.3333333333334,
+      "rmse": 5.16380500793457,
+      "max_abs": 28.304290771484375,
+      "pct_off_1K": 6.580976863753213,
+      "area_truth": -4898.0,
+      "area_pred": -5904.44287109375,
+      "error_share_in_overlap": 0.7104552984237671,
+      "overlap_px_per_hour": 36.666666666666664
+     },
+     "strongest": {
+      "affected_px_per_hour": 554.0,
+      "rmse": 1.385486364364624,
+      "max_abs": 25.234832763671875,
+      "pct_off_1K": 2.9482551143200966,
+      "area_truth": -4898.0,
+      "area_pred": -4786.43505859375,
+      "error_share_in_overlap": 0.32231828570365906,
+      "overlap_px_per_hour": 36.666666666666664
+     },
+     "hybrid": {
+      "affected_px_per_hour": 648.3333333333334,
+      "rmse": 1.3024251461029053,
+      "max_abs": 25.234832763671875,
+      "pct_off_1K": 3.033419023136247,
+      "area_truth": -4898.0,
+      "area_pred": -5211.45458984375,
+      "error_share_in_overlap": 0.20153996348381042,
+      "overlap_px_per_hour": 36.666666666666664
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 648.3333333333334,
+      "rmse": 1.2864766120910645,
+      "max_abs": 25.234832763671875,
+      "pct_off_1K": 2.519280205655527,
+      "area_truth": -4898.0,
+      "area_pred": -5034.45166015625,
+      "error_share_in_overlap": 0.4370332360267639,
+      "overlap_px_per_hour": 216.66666666666666
+     }
+    }
+   }
+  },
+  "pair_26": {
+   "trees": [
+    52,
+    53
+   ],
+   "closest_pair_m": 38.62641583165593,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 242.33333333333334,
+      "rmse": 0.0178424920886755,
+      "max_abs": 0.078155517578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 457.9779052734375,
+      "area_pred": 462.4994812011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 240.66666666666666,
+      "rmse": 0.026600539684295654,
+      "max_abs": 0.124908447265625,
+      "pct_off_1K": 0.0,
+      "area_truth": 457.9779052734375,
+      "area_pred": 439.444580078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 242.33333333333334,
+      "rmse": 0.0178424920886755,
+      "max_abs": 0.078155517578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 457.9779052734375,
+      "area_pred": 462.4994812011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 242.33333333333334,
+      "rmse": 0.0178424920886755,
+      "max_abs": 0.078155517578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 457.9779052734375,
+      "area_pred": 462.4994812011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 992.6666666666666,
+      "rmse": 0.4154930114746094,
+      "max_abs": 4.74041748046875,
+      "pct_off_1K": 0.7723304231027535,
+      "area_truth": -4183.06298828125,
+      "area_pred": -4234.13330078125,
+      "error_share_in_overlap": 0.5283607840538025,
+      "overlap_px_per_hour": 16.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 987.6666666666666,
+      "rmse": 0.2373879998922348,
+      "max_abs": 0.954437255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4183.06298828125,
+      "area_pred": -4012.1728515625,
+      "error_share_in_overlap": 0.027738533914089203,
+      "overlap_px_per_hour": 16.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 992.6666666666666,
+      "rmse": 0.08252360671758652,
+      "max_abs": 0.796112060546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -4183.06298828125,
+      "area_pred": -4201.85498046875,
+      "error_share_in_overlap": 0.16962949931621552,
+      "overlap_px_per_hour": 16.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 992.6666666666666,
+      "rmse": 0.1901576966047287,
+      "max_abs": 0.954437255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -4183.06298828125,
+      "area_pred": -4156.28076171875,
+      "error_share_in_overlap": 0.6662741899490356,
+      "overlap_px_per_hour": 84.0
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 693.0,
+      "rmse": 0.021914487704634666,
+      "max_abs": 0.140716552734375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3332.372314453125,
+      "area_pred": -3341.36328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 688.6,
+      "rmse": 0.15432840585708618,
+      "max_abs": 0.607513427734375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3332.372314453125,
+      "area_pred": -3113.232421875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 693.0,
+      "rmse": 0.021914487704634666,
+      "max_abs": 0.140716552734375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3332.372314453125,
+      "area_pred": -3341.36328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 693.0,
+      "rmse": 0.03771242871880531,
+      "max_abs": 0.607513427734375,
+      "pct_off_1K": 0.0,
+      "area_truth": -3332.372314453125,
+      "area_pred": -3340.18359375,
+      "error_share_in_overlap": 0.05640333145856857,
+      "overlap_px_per_hour": 2.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 768.6666666666666,
+      "rmse": 0.056388162076473236,
+      "max_abs": 0.3087158203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5421.63623046875,
+      "area_pred": -5433.04931640625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 754.6666666666666,
+      "rmse": 0.316547155380249,
+      "max_abs": 1.387542724609375,
+      "pct_off_1K": 0.9717314487632509,
+      "area_truth": -5421.63623046875,
+      "area_pred": -5139.55126953125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 768.6666666666666,
+      "rmse": 0.056388162076473236,
+      "max_abs": 0.3087158203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -5421.63623046875,
+      "area_pred": -5433.04931640625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 768.6666666666666,
+      "rmse": 0.2396916151046753,
+      "max_abs": 1.387542724609375,
+      "pct_off_1K": 0.9540329575021683,
+      "area_truth": -5421.63623046875,
+      "area_pred": -5382.54052734375,
+      "error_share_in_overlap": 0.6008467674255371,
+      "overlap_px_per_hour": 75.33333333333333
+     }
+    }
+   }
+  },
+  "pair_27": {
+   "trees": [
+    54,
+    55
+   ],
+   "closest_pair_m": 22.090722034374522,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 333.5,
+      "rmse": 0.06040831655263901,
+      "max_abs": 0.241851806640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 565.6973266601562,
+      "area_pred": 587.1793823242188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 325.5,
+      "rmse": 0.1865653693675995,
+      "max_abs": 0.589202880859375,
+      "pct_off_1K": 0.0,
+      "area_truth": 565.6973266601562,
+      "area_pred": 499.2810974121094,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 333.5,
+      "rmse": 0.06040831655263901,
+      "max_abs": 0.241851806640625,
+      "pct_off_1K": 0.0,
+      "area_truth": 565.6973266601562,
+      "area_pred": 587.1793823242188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 333.5,
+      "rmse": 0.12216967344284058,
+      "max_abs": 0.589202880859375,
+      "pct_off_1K": 0.0,
+      "area_truth": 565.6973266601562,
+      "area_pred": 578.8412475585938,
+      "error_share_in_overlap": 0.26443472504615784,
+      "overlap_px_per_hour": 14.333333333333334
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1134.6666666666667,
+      "rmse": 2.133370876312256,
+      "max_abs": 19.471893310546875,
+      "pct_off_1K": 7.050528789659224,
+      "area_truth": -4535.962890625,
+      "area_pred": -5282.82177734375,
+      "error_share_in_overlap": 0.6809374094009399,
+      "overlap_px_per_hour": 80.66666666666667
+     },
+     "strongest": {
+      "affected_px_per_hour": 1042.0,
+      "rmse": 0.3189106285572052,
+      "max_abs": 3.307647705078125,
+      "pct_off_1K": 1.471529110684581,
+      "area_truth": -4535.962890625,
+      "area_pred": -4171.1591796875,
+      "error_share_in_overlap": 0.10766663402318954,
+      "overlap_px_per_hour": 80.66666666666667
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1134.6666666666667,
+      "rmse": 0.3192838132381439,
+      "max_abs": 3.307647705078125,
+      "pct_off_1K": 1.8213866039952997,
+      "area_truth": -4535.962890625,
+      "area_pred": -4726.201171875,
+      "error_share_in_overlap": 0.14293724298477173,
+      "overlap_px_per_hour": 80.66666666666667
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1134.6666666666667,
+      "rmse": 0.29724082350730896,
+      "max_abs": 3.307647705078125,
+      "pct_off_1K": 1.3513513513513513,
+      "area_truth": -4535.962890625,
+      "area_pred": -4568.259765625,
+      "error_share_in_overlap": 0.41827642917633057,
+      "overlap_px_per_hour": 283.3333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 706.0,
+      "rmse": 0.09878223389387131,
+      "max_abs": 0.98876953125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4330.02978515625,
+      "area_pred": -4395.5048828125,
+      "error_share_in_overlap": 0.0035586333833634853,
+      "overlap_px_per_hour": 0.6
+     },
+     "strongest": {
+      "affected_px_per_hour": 693.0,
+      "rmse": 0.44253018498420715,
+      "max_abs": 3.407806396484375,
+      "pct_off_1K": 4.3001443001443,
+      "area_truth": -4330.02978515625,
+      "area_pred": -3906.92822265625,
+      "error_share_in_overlap": 0.003120194189250469,
+      "overlap_px_per_hour": 0.6
+     },
+     "hybrid": {
+      "affected_px_per_hour": 706.0,
+      "rmse": 0.11665449291467667,
+      "max_abs": 2.448333740234375,
+      "pct_off_1K": 0.08498583569405099,
+      "area_truth": -4330.02978515625,
+      "area_pred": -4394.548828125,
+      "error_share_in_overlap": 0.012785433791577816,
+      "overlap_px_per_hour": 0.6
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 706.0,
+      "rmse": 0.38545599579811096,
+      "max_abs": 3.407806396484375,
+      "pct_off_1K": 4.220963172804533,
+      "area_truth": -4330.02978515625,
+      "area_pred": -4305.017578125,
+      "error_share_in_overlap": 0.5286760926246643,
+      "overlap_px_per_hour": 115.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 860.0,
+      "rmse": 2.0971553325653076,
+      "max_abs": 23.22454833984375,
+      "pct_off_1K": 1.2790697674418605,
+      "area_truth": -6719.39990234375,
+      "area_pred": -7007.44921875,
+      "error_share_in_overlap": 0.6028222441673279,
+      "overlap_px_per_hour": 24.333333333333332
+     },
+     "strongest": {
+      "affected_px_per_hour": 807.3333333333334,
+      "rmse": 0.5356846451759338,
+      "max_abs": 3.857208251953125,
+      "pct_off_1K": 5.573905862923204,
+      "area_truth": -6719.39990234375,
+      "area_pred": -6342.90478515625,
+      "error_share_in_overlap": 0.08107961714267731,
+      "overlap_px_per_hour": 24.333333333333332
+     },
+     "hybrid": {
+      "affected_px_per_hour": 860.0,
+      "rmse": 0.3057608902454376,
+      "max_abs": 3.857208251953125,
+      "pct_off_1K": 1.5891472868217054,
+      "area_truth": -6719.39990234375,
+      "area_pred": -6785.6328125,
+      "error_share_in_overlap": 0.19588853418827057,
+      "overlap_px_per_hour": 24.333333333333332
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 860.0,
+      "rmse": 0.5004770755767822,
+      "max_abs": 3.857208251953125,
+      "pct_off_1K": 5.232558139534884,
+      "area_truth": -6719.39990234375,
+      "area_pred": -6663.36181640625,
+      "error_share_in_overlap": 0.5630543231964111,
+      "overlap_px_per_hour": 148.33333333333334
+     }
+    }
+   }
+  },
+  "pair_28": {
+   "trees": [
+    56,
+    57
+   ],
+   "closest_pair_m": 36.05551275463989,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 228.33333333333334,
+      "rmse": 0.015328161418437958,
+      "max_abs": 0.061767578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 433.384521484375,
+      "area_pred": 437.6635437011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 226.33333333333334,
+      "rmse": 0.04292416572570801,
+      "max_abs": 0.1883544921875,
+      "pct_off_1K": 0.0,
+      "area_truth": 433.384521484375,
+      "area_pred": 401.6426086425781,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 228.33333333333334,
+      "rmse": 0.015328161418437958,
+      "max_abs": 0.061767578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 433.384521484375,
+      "area_pred": 437.6635437011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 228.33333333333334,
+      "rmse": 0.015328161418437958,
+      "max_abs": 0.061767578125,
+      "pct_off_1K": 0.0,
+      "area_truth": 433.384521484375,
+      "area_pred": 437.6635437011719,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1025.3333333333333,
+      "rmse": 0.008440027944743633,
+      "max_abs": 0.057861328125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4103.00634765625,
+      "area_pred": -4108.88330078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1023.6666666666666,
+      "rmse": 0.1014048308134079,
+      "max_abs": 0.535430908203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4103.00634765625,
+      "area_pred": -3904.089111328125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1025.3333333333333,
+      "rmse": 0.008440027944743633,
+      "max_abs": 0.057861328125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4103.00634765625,
+      "area_pred": -4108.88330078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1025.3333333333333,
+      "rmse": 0.020566245540976524,
+      "max_abs": 0.535430908203125,
+      "pct_off_1K": 0.0,
+      "area_truth": -4103.00634765625,
+      "area_pred": -4108.19580078125,
+      "error_share_in_overlap": 0.042047273367643356,
+      "overlap_px_per_hour": 1.3333333333333333
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 558.2,
+      "rmse": 0.013113927096128464,
+      "max_abs": 0.0704345703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3030.51953125,
+      "area_pred": -3044.632080078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 556.4,
+      "rmse": 0.13497333228588104,
+      "max_abs": 0.498809814453125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3030.51953125,
+      "area_pred": -2781.051513671875,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 558.2,
+      "rmse": 0.013113927096128464,
+      "max_abs": 0.0704345703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3030.51953125,
+      "area_pred": -3044.632080078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 558.2,
+      "rmse": 0.013113927096128464,
+      "max_abs": 0.0704345703125,
+      "pct_off_1K": 0.0,
+      "area_truth": -3030.51953125,
+      "area_pred": -3044.632080078125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 753.3333333333334,
+      "rmse": 0.011058411560952663,
+      "max_abs": 0.0687255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5103.68115234375,
+      "area_pred": -5109.84814453125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 752.3333333333334,
+      "rmse": 0.15376907587051392,
+      "max_abs": 0.717987060546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5103.68115234375,
+      "area_pred": -4878.1083984375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 753.3333333333334,
+      "rmse": 0.011058411560952663,
+      "max_abs": 0.0687255859375,
+      "pct_off_1K": 0.0,
+      "area_truth": -5103.68115234375,
+      "area_pred": -5109.84814453125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 753.3333333333334,
+      "rmse": 0.060117073357105255,
+      "max_abs": 0.717987060546875,
+      "pct_off_1K": 0.0,
+      "area_truth": -5103.68115234375,
+      "area_pred": -5105.32470703125,
+      "error_share_in_overlap": 0.19851142168045044,
+      "overlap_px_per_hour": 8.0
+     }
+    }
+   }
+  },
+  "pair_29": {
+   "trees": [
+    58,
+    59
+   ],
+   "closest_pair_m": 36.05551275463989,
+   "by_hours": {
+    "night (00-05)": {
+     "sum": {
+      "affected_px_per_hour": 538.6666666666666,
+      "rmse": 0.031064258888363838,
+      "max_abs": 0.07940673828125,
+      "pct_off_1K": 0.0,
+      "area_truth": 876.9912719726562,
+      "area_pred": 895.0934448242188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 530.3333333333334,
+      "rmse": 0.12253908812999725,
+      "max_abs": 0.423828125,
+      "pct_off_1K": 0.0,
+      "area_truth": 876.9912719726562,
+      "area_pred": 796.4894409179688,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 538.6666666666666,
+      "rmse": 0.031064258888363838,
+      "max_abs": 0.07940673828125,
+      "pct_off_1K": 0.0,
+      "area_truth": 876.9912719726562,
+      "area_pred": 895.0934448242188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 538.6666666666666,
+      "rmse": 0.031064258888363838,
+      "max_abs": 0.07940673828125,
+      "pct_off_1K": 0.0,
+      "area_truth": 876.9912719726562,
+      "area_pred": 895.0934448242188,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     }
+    },
+    "morning (07-09)": {
+     "sum": {
+      "affected_px_per_hour": 1877.6666666666667,
+      "rmse": 0.0317661426961422,
+      "max_abs": 0.262725830078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -7649.15869140625,
+      "area_pred": -7685.65869140625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1866.3333333333333,
+      "rmse": 0.2104104459285736,
+      "max_abs": 1.34228515625,
+      "pct_off_1K": 0.42864797285229506,
+      "area_truth": -7649.15869140625,
+      "area_pred": -7133.92724609375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1877.6666666666667,
+      "rmse": 0.0317661426961422,
+      "max_abs": 0.262725830078125,
+      "pct_off_1K": 0.0,
+      "area_truth": -7649.15869140625,
+      "area_pred": -7685.65869140625,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1877.6666666666667,
+      "rmse": 0.13120806217193604,
+      "max_abs": 1.34228515625,
+      "pct_off_1K": 0.42606071365169534,
+      "area_truth": -7649.15869140625,
+      "area_pred": -7649.57568359375,
+      "error_share_in_overlap": 0.3296041488647461,
+      "overlap_px_per_hour": 51.666666666666664
+     }
+    },
+    "midday (11-15)": {
+     "sum": {
+      "affected_px_per_hour": 969.8,
+      "rmse": 0.04135036841034889,
+      "max_abs": 0.253753662109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6451.90234375,
+      "area_pred": -6518.04833984375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 960.4,
+      "rmse": 0.2627413272857666,
+      "max_abs": 1.067413330078125,
+      "pct_off_1K": 0.020824656393169515,
+      "area_truth": -6451.90234375,
+      "area_pred": -5833.7548828125,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 969.8,
+      "rmse": 0.04135036841034889,
+      "max_abs": 0.253753662109375,
+      "pct_off_1K": 0.0,
+      "area_truth": -6451.90234375,
+      "area_pred": -6518.04833984375,
+      "error_share_in_overlap": 0.0,
+      "overlap_px_per_hour": 0.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 969.8,
+      "rmse": 0.17470866441726685,
+      "max_abs": 1.067413330078125,
+      "pct_off_1K": 0.02062280882656218,
+      "area_truth": -6451.90234375,
+      "area_pred": -6480.30859375,
+      "error_share_in_overlap": 0.27805060148239136,
+      "overlap_px_per_hour": 58.2
+     }
+    },
+    "evening (17-19)": {
+     "sum": {
+      "affected_px_per_hour": 1099.3333333333333,
+      "rmse": 1.117326259613037,
+      "max_abs": 18.662811279296875,
+      "pct_off_1K": 0.3638568829593693,
+      "area_truth": -10057.59375,
+      "area_pred": -10219.3095703125,
+      "error_share_in_overlap": 0.3222801685333252,
+      "overlap_px_per_hour": 6.0
+     },
+     "strongest": {
+      "affected_px_per_hour": 1071.3333333333333,
+      "rmse": 0.5517088770866394,
+      "max_abs": 4.9759521484375,
+      "pct_off_1K": 5.880522713130056,
+      "area_truth": -10057.59375,
+      "area_pred": -9389.8447265625,
+      "error_share_in_overlap": 0.01760430447757244,
+      "overlap_px_per_hour": 6.0
+     },
+     "hybrid": {
+      "affected_px_per_hour": 1099.3333333333333,
+      "rmse": 0.19112636148929596,
+      "max_abs": 4.008270263671875,
+      "pct_off_1K": 0.4851425106124924,
+      "area_truth": -10057.59375,
+      "area_pred": -10134.3095703125,
+      "error_share_in_overlap": 0.07125212252140045,
+      "overlap_px_per_hour": 6.0
+     },
+     "hybrid_effect_threshold": {
+      "affected_px_per_hour": 1099.3333333333333,
+      "rmse": 0.5178077220916748,
+      "max_abs": 4.9759521484375,
+      "pct_off_1K": 5.730745906610067,
+      "area_truth": -10057.59375,
+      "area_pred": -9976.140625,
+      "error_share_in_overlap": 0.5656777620315552,
+      "overlap_px_per_hour": 164.66666666666666
+     }
+    }
+   }
+  }
+ }
+}

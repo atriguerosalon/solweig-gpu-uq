@@ -1,0 +1,130 @@
+{
+  "pixels": 111582,
+  "test": {
+    "2019-07-30": {
+      "spread_std_median_pixel": 2.136946354356473,
+      "tmrt_spread_std_median_pixel": 4.364485232466361,
+      "baseline only": {
+        "rmse_median_pixel": 2.2596123575109184,
+        "rmse_p99_pixel": 2.321686766270643,
+        "max_abs": 5.667583465576172,
+        "bias": -0.701554397437643,
+        "wrong_side_of_38C_pct": 33.46054023050313
+      },
+      "transferred from 2020-09-06": {
+        "rmse_median_pixel": 1.4237162640114156,
+        "rmse_p99_pixel": 1.867354367627668,
+        "max_abs": 5.583806094721247,
+        "bias": -0.43440511846384505,
+        "wrong_side_of_38C_pct": 16.89650660500798
+      },
+      "same day": {
+        "rmse_median_pixel": 0.39971788522293483,
+        "rmse_p99_pixel": 0.42174991040274734,
+        "max_abs": 1.1477733898030493,
+        "bias": 0.06033003312622946,
+        "wrong_side_of_38C_pct": 4.553583911383557
+      },
+      "Tmrt transferred from 2020-09-06, exact UTCI": {
+        "rmse_median_pixel": 0.2723939293102542,
+        "rmse_p99_pixel": 0.9069447617897752,
+        "max_abs": 2.998401641845703,
+        "bias": -0.10725275444519915,
+        "wrong_side_of_38C_pct": 3.0258106146152604
+      },
+      "Tmrt same day, exact UTCI": {
+        "rmse_median_pixel": 0.10969919915789039,
+        "rmse_p99_pixel": 0.16673559172285843,
+        "max_abs": 0.5503253936767578,
+        "bias": -0.05457166475346378,
+        "wrong_side_of_38C_pct": 0.8782778584359484
+      }
+    },
+    "2020-09-06": {
+      "spread_std_median_pixel": 2.0095394666009465,
+      "tmrt_spread_std_median_pixel": 3.7466177925356137,
+      "baseline only": {
+        "rmse_median_pixel": 2.305413231579398,
+        "rmse_p99_pixel": 2.4736848445031643,
+        "max_abs": 6.5171966552734375,
+        "bias": -1.1275745386813318,
+        "wrong_side_of_38C_pct": 0.0
+      },
+      "transferred from 2019-07-30": {
+        "rmse_median_pixel": 1.3413341245977803,
+        "rmse_p99_pixel": 1.7244152488324729,
+        "max_abs": 4.062965876650495,
+        "bias": -0.8461940653537737,
+        "wrong_side_of_38C_pct": 0.0
+      },
+      "same day": {
+        "rmse_median_pixel": 1.1608200736011525,
+        "rmse_p99_pixel": 1.2652354216627963,
+        "max_abs": 3.1558026893376407,
+        "bias": 0.45488881576525936,
+        "wrong_side_of_38C_pct": 0.0
+      },
+      "Tmrt transferred from 2019-07-30, exact UTCI": {
+        "rmse_median_pixel": 0.22786085111809234,
+        "rmse_p99_pixel": 0.7482068018335484,
+        "max_abs": 2.136371612548828,
+        "bias": 0.0617748303970731,
+        "wrong_side_of_38C_pct": 0.0
+      },
+      "Tmrt same day, exact UTCI": {
+        "rmse_median_pixel": 0.1086959140918182,
+        "rmse_p99_pixel": 0.16147851473644392,
+        "max_abs": 0.52197265625,
+        "bias": -0.029349623155663102,
+        "wrong_side_of_38C_pct": 0.0
+      }
+    }
+  },
+  "sensitivities": {
+    "wall albedo": {
+      "median 2019-07-30": 0.5688407176869223,
+      "median 2020-09-06": 0.07269593290919696,
+      "pixel correlation": 0.9496251318744279
+    },
+    "wall emissivity": {
+      "median 2019-07-30": 0.17687073568112405,
+      "median 2020-09-06": 0.2853421787894471,
+      "pixel correlation": 0.981461055213083
+    },
+    "body shortwave absorption": {
+      "median 2019-07-30": 1.5514830899397074,
+      "median 2020-09-06": 0.2374277070803864,
+      "pixel correlation": 0.8783485973160571
+    },
+    "paved albedo": {
+      "median 2019-07-30": 1.621132353424438,
+      "median 2020-09-06": 1.7235458987172758,
+      "pixel correlation": 0.9291947399154105
+    },
+    "paved emissivity": {
+      "median 2019-07-30": 0.6334313206960058,
+      "median 2020-09-06": 0.1635386877184235,
+      "pixel correlation": 0.9948547645011016
+    },
+    "air temperature": {
+      "median 2019-07-30": 5.246747168850332,
+      "median 2020-09-06": 6.782582566568209,
+      "pixel correlation": -0.709165594117045
+    },
+    "relative humidity": {
+      "median 2019-07-30": 1.732252217491776,
+      "median 2020-09-06": 2.4720174905981516,
+      "pixel correlation": -0.4089363037360286
+    },
+    "wind speed": {
+      "median 2019-07-30": -1.9708500579315866,
+      "median 2020-09-06": 0.9469544888704404,
+      "pixel correlation": 0.8393820973599926
+    },
+    "global radiation": {
+      "median 2019-07-30": 1.172822742127024,
+      "median 2020-09-06": 1.116864361642286,
+      "pixel correlation": 0.6749862026217649
+    }
+  }
+}
