@@ -1,0 +1,173 @@
+{
+  "tag": "expo",
+  "date": "2019-07-30",
+  "members": 20,
+  "errors": {
+    "ta_sd_K": 1.5,
+    "wind_log_sd": 0.3,
+    "kdown_fraction_sd": 0.1,
+    "rho": 0.9,
+    "seeds": {
+      "wind": 11,
+      "kdown": 12
+    }
+  },
+  "runs": {
+    "kdown_plus": {
+      "seconds": 16.20723720800015,
+      "peak_reserved_gib": 1.10546875
+    },
+    "met_m00": {
+      "seconds": 13.738373508000223,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m01": {
+      "seconds": 14.074194898999849,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m02": {
+      "seconds": 15.075130705998163,
+      "peak_reserved_gib": 1.10546875
+    },
+    "met_m03": {
+      "seconds": 13.836089450000145,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m04": {
+      "seconds": 13.883417353001278,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m05": {
+      "seconds": 13.7716836949985,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m06": {
+      "seconds": 13.822674823997659,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m07": {
+      "seconds": 13.763506528001017,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m08": {
+      "seconds": 14.074351965999085,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m09": {
+      "seconds": 14.094375266002316,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m10": {
+      "seconds": 13.996056435000355,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m11": {
+      "seconds": 13.98634903799757,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m12": {
+      "seconds": 14.06749105900235,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m13": {
+      "seconds": 14.050251075001142,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m14": {
+      "seconds": 13.980210361998616,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m15": {
+      "seconds": 14.026240683000651,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m16": {
+      "seconds": 14.137850769999204,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m17": {
+      "seconds": 14.050975197002117,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m18": {
+      "seconds": 14.028306762000284,
+      "peak_reserved_gib": 1.08984375
+    },
+    "met_m19": {
+      "seconds": 14.12880000000223,
+      "peak_reserved_gib": 1.08984375
+    }
+  },
+  "full_physics_products": {
+    "p_4h_above_32": 0.8358422613433352,
+    "p_above_38_at_15": 3.190226256394323e-06
+  },
+  "shortcuts": {
+    "b": {
+      "what": "1 physics run: unperturbed Tmrt, member Ta and wind in UTCI",
+      "member_utci_error": {
+        "mean_abs": 0.43785298690199853,
+        "p99_abs": 1.2879872351884842,
+        "max_abs": 3.203878402709961
+      },
+      "products_abs_diff": {
+        "p_4h_above_32": {
+          "mean": 0.019119858187507634,
+          "max": 0.40000000000000036,
+          "pixels_differing_pct": 23.507251522986277
+        },
+        "p_above_38_at_15": {
+          "mean": 7.3860673109999e-05,
+          "max": 0.05,
+          "pixels_differing_pct": 0.14772134621999802
+        }
+      }
+    },
+    "c": {
+      "what": "2 physics runs: + per-pixel dTmrt/dTa",
+      "member_utci_error": {
+        "mean_abs": 0.17870475910604,
+        "p99_abs": 1.1082201987504958,
+        "max_abs": 3.3041744232177734
+      },
+      "products_abs_diff": {
+        "p_4h_above_32": {
+          "mean": 0.010573588810350762,
+          "max": 0.35000000000000026,
+          "pixels_differing_pct": 14.888369822124082
+        },
+        "p_above_38_at_15": {
+          "mean": 0.0015814506374904295,
+          "max": 0.05,
+          "pixels_differing_pct": 3.1629012749808587
+        }
+      }
+    },
+    "d": {
+      "what": "3 physics runs: + per-pixel dTmrt/d(radiation fraction)",
+      "member_utci_error": {
+        "mean_abs": 0.045594499772414566,
+        "p99_abs": 0.5485265225172042,
+        "max_abs": 3.523609161376953
+      },
+      "products_abs_diff": {
+        "p_4h_above_32": {
+          "mean": 0.0029597670857421867,
+          "max": 0.30000000000000016,
+          "pixels_differing_pct": 5.352506130782632
+        },
+        "p_above_38_at_15": {
+          "mean": 2.843462532873201e-06,
+          "max": 0.05,
+          "pixels_differing_pct": 0.005686925065746402
+        }
+      }
+    }
+  },
+  "slope_dtmrt_dkfrac_at_13h": {
+    "p1": -8.67462158203125,
+    "median": 18.135986328125,
+    "p99": 27.86147766113281
+  },
+  "shortcut_seconds": 166.18158123299872
+}
