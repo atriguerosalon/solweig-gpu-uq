@@ -137,6 +137,8 @@ def main() -> None:
     ap.add_argument("--date", required=True)
     ap.add_argument("--tag", required=True)
     ap.add_argument("--errors", choices=["independent", "correlated"], default="independent")
+    ap.add_argument("--perez", choices=["coded", "published"], default="coded",
+                    help="published: the Perez sky clearness as published (perez_formula_effect.py)")
     ap.add_argument("--structure", choices=["default", "fitted"], default="default",
                     help="fitted: paved ground heating fitted to the Pacoima surface measurements and ground heat "
                          "storage (tau 4 h), as run_la_forecast_error.py; site-specific")
@@ -148,7 +150,7 @@ def main() -> None:
     dew = args.errors == "correlated"
     work = args.work / args.tag
     args.out.mkdir(parents=True, exist_ok=True)
-    sfx = "" if args.structure == "default" else "_fitted"
+    sfx = ("" if args.structure == "default" else "_fitted") + ("" if args.perez == "coded" else "_perez_published")
     out_json = args.out / f"shortcut_suite_{args.tag}_{args.errors}{sfx}.json"
     torch.zeros(1, device="cuda")
     setup = Setup(raster_dir=args.rasters.resolve(), met_file=args.met.resolve(), runs_dir=work / "prep", date=args.date,
@@ -188,6 +190,9 @@ def main() -> None:
             for c in day_patches("ours"):
                 st.enter_context(c)
             st.enter_context(met_errors(pre / "metfiles", ta_add, ws_, ks_, dew))
+            if args.perez == "published":
+                from perez_formula_effect import published_clearness
+                st.enter_context(published_clearness())
             if args.structure == "fitted":
                 st.enter_context(patched_landcover(work, PAVED_CLASSES, {"ts_deg": TS_FIT}))
                 st.enter_context(ground_heat_storage(4.0))
@@ -250,7 +255,7 @@ def main() -> None:
                     "pixels_off_one_member_pct": float((np.abs(p[q] - ref[q])[outdoor] > HALF_MEMBER).mean() * 100)}
                 for q in keys}
 
-    res = {"tag": args.tag, "errors": args.errors, "structure": args.structure, "date": args.date, "met": str(args.met), "members": MEMBERS,
+    res = {"tag": args.tag, "errors": args.errors, "structure": args.structure, "perez": args.perez, "date": args.date, "met": str(args.met), "members": MEMBERS,
            "event_frequency": {q: float(p_full["A"][q][outdoor].mean()) for q in keys},
            "noise_A_vs_B": score(p_full["B"], p_full["A"]), "shortcuts": {}}
     runs_needed = {"b": 1, "c": 2, "d": 3, "e": 4, "f": len(GRID) + 1}

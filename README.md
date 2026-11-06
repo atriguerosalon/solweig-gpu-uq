@@ -15,6 +15,8 @@ SOLWEIG has no uncertainty quantification. This repo asks the first question on 
 
 Perturbations are context managers that patch module constants, the land-cover table or the met file, and always restore them, so all cases run in one process and share the cached sky view factor.
 
+More in `docs/`: [SOLWEIG_MODIFICATIONS.md](docs/SOLWEIG_MODIFICATIONS.md) lists every change we make to SOLWEIG-GPU (including speed-ups that make a tile-day 3.3x faster, outputs equal to within 0.0001 °C) and how each was checked, [PERFORMANCE_LOG.md](docs/PERFORMANCE_LOG.md) has the measurements, and [FIGURES.md](docs/FIGURES.md) the captions of the main figures.
+
 ## Setup
 
 Linux or WSL with an NVIDIA GPU. GDAL is installed from conda-forge.

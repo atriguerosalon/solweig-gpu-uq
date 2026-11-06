@@ -12,6 +12,9 @@ and 16 h). Uncertainty: indices from 5 surrogates, each fitted without one fold,
 
 Usage:
     python scripts/sobol_surrogate.py --runs ~/sobol_la --out figures
+    python scripts/sobol_surrogate.py --runs ~/sobol_la --out figures --all-hours --quantities area_utci_above_32_pct \
+        area_utci_above_38_pct --tag _allhours
+    python scripts/sobol_surrogate.py --check-figure figures
 """
 
 from __future__ import annotations
@@ -19,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -122,5 +126,62 @@ def main() -> None:
     print(f"[gp] wrote {out}")
 
 
+def check_figure(out: Path) -> None:
+    """Can the surrogate be trusted? Its indices against the direct ones where those are resolved, and its held-out R^2."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import sys as _s
+
+    _s.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+    from solweig_sens import plotstyle
+
+    four = json.loads((out / "la_sobol_surrogate.json").read_text())["results"]
+    allh = json.loads((out / "la_sobol_surrogate_allhours.json").read_text())["results"]
+    plotstyle.use()
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.6))
+    ax = axes[0]
+    # resolved by the direct estimators: mean outdoor UTCI at every hour fitted, area above 38 C at 13 and 16 h
+    sets = [("mean outdoor UTCI (9, 13, 16, 19 h)", "utci_mean", (9, 13, 16, 19), "o", four, "#4c78a8"),
+            ("area with UTCI > 38 °C (13, 16 h)", "area_utci_above_38_pct", (13, 16), "s", allh, "#0e6a78")]
+    for lab, q, hours, mk, src, col in sets:
+        xs, ys, lo, hi = [], [], [], []
+        for h in hours:
+            r = src.get(f"{q}|{h}")
+            if not r:
+                continue
+            xs += r["direct_ST"]; ys += r["ST_mean"]; lo += r["direct_ST_lo"]; hi += r["direct_ST_hi"]
+        xs, ys, lo, hi = map(np.array, (xs, ys, lo, hi))
+        ax.errorbar(xs, ys, xerr=[xs - lo, hi - xs], fmt=mk, ms=5, lw=0.8, capsize=0, alpha=0.85, color=col, label=lab)
+    ax.plot([0, 1], [0, 1], color="0.4", lw=0.8, ls=":")
+    ax.set_xlim(-0.05, 1.1)
+    ax.set_ylim(-0.05, 1.1)
+    ax.set_xlabel("total Sobol index, direct estimator")
+    ax.set_ylabel("total Sobol index, surrogate")
+    ax.legend(frameon=False, fontsize=8, loc="upper left")
+    ax.grid(alpha=0.3)
+    ax = axes[1]
+    for q, lab, c in (("area_utci_above_32_pct", "area with UTCI > 32 °C", "#c4501b"), ("area_utci_above_38_pct", "area with UTCI > 38 °C", "#0e6a78")):
+        hs = sorted(int(k.split("|")[1]) for k in allh if k.startswith(q + "|"))
+        ax.plot(hs, [allh[f"{q}|{h}"]["cv_r2"] for h in hs], "o-", color=c, label=lab)
+    ax.axhline(0.9, color="0.4", lw=0.8, ls=":")
+    ax.set_xlim(0, 23)
+    ax.set_ylim(0.8, 1.005)
+    ax.set_xlabel("hour (PDT)")
+    ax.set_ylabel("held-out $R^2$")
+    ax.legend(frameon=False, fontsize=8, loc="lower left")
+    ax.grid(alpha=0.3)
+    for a_, letter in zip(axes, "ab"):
+        a_.text(-0.12, 1.02, letter, transform=a_.transAxes, fontsize=13, fontweight="bold", va="bottom")
+    fig.tight_layout()  # caption: docs/FIGURES.md
+    fig.savefig(out / "la_sobol_surrogate_check.png", bbox_inches="tight")
+    plt.close(fig)
+    print(f"[gp] wrote {out / 'la_sobol_surrogate_check.png'}")
+
+
 if __name__ == "__main__":
-    main()
+    if "--check-figure" in sys.argv:
+        check_figure(Path(sys.argv[sys.argv.index("--check-figure") + 1]))
+    else:
+        main()

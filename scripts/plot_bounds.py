@@ -2,7 +2,8 @@
 
 Two views, from measurements already on disk:
 
-1. The day, function by function (figures/time_budget_current.json, where_time_goes.py, our code C1-C9,
+1. The day, function by function (figures/time_budget_current_r5.json, 5 timed passes, or else
+   time_budget_current.json, one; where_time_goes.py, our code C1-C9,
    00-14 h, Pacoima crops of 1000 and 2000 px): measured self time (median of the timed passes, each
    run drawn as a dot) against two lower bounds, the bytes
    its operations read and write over the memory bandwidth (~230 GB/s measured) and its kernel launches
@@ -26,6 +27,12 @@ Usage:
 
 from __future__ import annotations
 
+import sys as _sys
+
+if __name__ == "__main__" and any(a in ("-h", "--help") for a in _sys.argv[1:]):
+    print(__doc__)
+    raise SystemExit(0)
+
 import json
 import statistics
 import sys
@@ -40,7 +47,7 @@ import numpy as np  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 P = ROOT / "figures" / "profile"
-INK, MUTED = "#1B232C", "#56616D"
+INK = "#1B232C"
 C_MEAS, C_BW, C_LAUNCH, C_EST = "#0E6A78", "#E8663D", "#7A5AA6", "#9AA6B2"
 
 NAMES = {"shadowingfunction_wallheight_23": "hourly shadows (C3)", "define_patch_characteristics": "sky patches, longwave",
@@ -79,8 +86,7 @@ def day_bounds(tb: dict, size: str, top: int = 9) -> tuple[list[dict], dict]:
 def draw_day(ax, rows, tot, size):
     y = np.arange(len(rows))
     ax.barh(y, [r["self_s"] for r in rows], color=C_MEAS, height=0.62, alpha=0.85,
-            label=("measured self time (one timed run)" if tot["timed_n"] == 1 else
-                   f"measured self time (median of {tot['timed_n']} timed runs; dots: each run)"))
+            label=("measured" if tot["timed_n"] == 1 else f"measured, median of {tot['timed_n']} runs (dots: each run)"))
     for yi, r in zip(y, rows):  # every timed run, spread a little vertically so they do not overlap
         pts = r["self_s_runs"]
         if len(pts) < 2:
@@ -93,11 +99,8 @@ def draw_day(ax, rows, tot, size):
                label="kernel launches x launch cost")
     ax.set_yticks(y, [r["label"] for r in rows], fontsize=8.5)
     ax.invert_yaxis()
-    ax.set_xlabel("seconds over the day (00-14 h)")
-    ax.set_title(f"Day on a {size} x {size} tile: {tot['clean_s']:.1f} s ({tot['clean_n']} clean runs, "
-                 f"{min(tot['clean_runs']):.2f}-{max(tot['clean_runs']):.2f} s)\n"
-                 f"bandwidth time of its operations "
-                 f"{tot['bandwidth_s']:.1f} s, launch time {tot['launch_s']:.1f} s", loc="left", fontsize=10, fontweight="bold")
+    ax.set_xlabel("time over the day, 00-14 h (s)")
+    ax.set_title(f"{size} x {size} px", loc="left", fontsize=10)
     ax.grid(axis="x", alpha=0.3)
 
 
@@ -120,10 +123,11 @@ def draw_step(ax, prof):
         ax.text(xi, v * 1.08, f"{v:.2f} ms", ha="center", va="bottom", fontsize=8.5, color=INK)
     ax.set_yscale("log")
     ax.set_ylim(0.1, 20)
+    ax.set_yticks([0.1, 0.2, 0.5, 1, 2, 5, 10], ["0.1", "0.2", "0.5", "1", "2", "5", "10"])
+    ax.minorticks_off()
     ax.set_xticks(x, [b[0] for b in bars], fontsize=7.5)
     ax.set_ylabel("one step of the shadow loop (ms)")
-    ax.set_title("One shadow-loop step, 2000 x 2000: compiled runs at\nthe bandwidth; lower needs fewer bytes",
-                 loc="left", fontsize=10, fontweight="bold")
+    ax.set_title("2000 x 2000 px", loc="left", fontsize=10)
     ax.grid(axis="y", alpha=0.3, which="both")
 
 
@@ -134,7 +138,9 @@ def main() -> None:
     global BW
     from solweig_sens import plotstyle
 
-    tb = json.loads((ROOT / "figures" / "time_budget_current.json").read_text())
+    # the 5-repeat run on a quiet machine (where_time_goes.py --repeats 5) when there is one, else the single-pass night run
+    tb_name = next(n for n in ("time_budget_current_r5.json", "time_budget_current.json") if (ROOT / "figures" / n).exists())
+    tb = json.loads((ROOT / "figures" / tb_name).read_text())
     prof = json.loads((ROOT / "figures" / "profile_compiled_steps.json").read_text())
     BW = tb["machine"]["bandwidth_Bps"]
     out = {"machine": tb["machine"], "day": {}, "shadow_step_2000": {}}
@@ -149,35 +155,28 @@ def main() -> None:
     (P / "bounds.json").write_text(json.dumps(out, indent=2))
 
     plotstyle.use()
-    m = tb["machine"]
-    note = (f"RTX 4070 Laptop GPU (8 GB, 32 MB L2), WSL2, our code C1-C9. Day: Pacoima crops, 00-14 h, time_budget_current.json "
-            f"(where_time_goes.py); bandwidth {m['bandwidth_Bps'] / 1e9:.0f} GB/s and launch cost {m['launch_s'] * 1e6:.1f} us "
-            "measured; byte and launch counts are exact (one counted pass). Bytes are counted per operation; the 32 MB L2 cache "
-            "serves part of them, so the orange line can lie beyond the bar.\nLaunches overlap with GPU work, so the purple line "
-            "is an upper bound on what launch costs add. Step: profile_compiled_steps.json, 5 repeats.")
-    fig, axes = plt.subplots(1, 3, figsize=(20, 5.8), gridspec_kw={"width_ratios": [1, 1, 0.9]})
+    # no title or caption in the image; the caption (machine, sources, what the lines mean) is in docs/FIGURES.md
+    fig, axes = plt.subplots(1, 3, figsize=(20, 5.4), gridspec_kw={"width_ratios": [1, 1, 0.9]})
     for ax, s in zip(axes[:2], ("1000", "2000")):
         draw_day(ax, out["day"][s]["rows"], out["day"][s]["totals"], s)
     axes[0].legend(frameon=False, fontsize=8, loc="lower right")
     draw_step(axes[2], prof)
-    fig.suptitle("SOLWEIG-GPU with C1-C9: memory-bound on large tiles (launches at most 2.5 of 46 s at 2000 px, up to "
-                 "2.0 of 8.3 s at 1000 px);\na compiled loop step runs at its bandwidth floor, so there only moving fewer "
-                 "bytes helps", x=0.01, ha="left", fontweight="bold", fontsize=12)
-    fig.text(0.01, 0.005, note, fontsize=7.5, color=MUTED)
-    fig.tight_layout(rect=(0, 0.05, 1, 0.92))
+    for ax, letter in zip(axes, "abc"):
+        ax.text(-0.02 if letter == "c" else -0.25, 1.03, letter, transform=ax.transAxes, fontsize=13,
+                fontweight="bold", va="bottom", ha="right" if letter == "c" else "left")
+    fig.tight_layout()
     fig.savefig(P / "bounds.png", dpi=150)
     plt.close(fig)
-    for name, draw in (("bounds_day.png", None), ("bounds_step.png", None)):
+    for name in ("bounds_day.png", "bounds_step.png"):
         if name == "bounds_day.png":
-            fig, axes2 = plt.subplots(1, 2, figsize=(14, 5.4))
+            fig, axes2 = plt.subplots(1, 2, figsize=(14, 5.2))
             for ax, s in zip(axes2, ("1000", "2000")):
                 draw_day(ax, out["day"][s]["rows"], out["day"][s]["totals"], s)
             axes2[0].legend(frameon=False, fontsize=8, loc="lower right")
         else:
-            fig, ax = plt.subplots(figsize=(7, 5.4))
+            fig, ax = plt.subplots(figsize=(7, 5.2))
             draw_step(ax, prof)
-        fig.text(0.01, 0.005, note, fontsize=6.5, color=MUTED, wrap=True)
-        fig.tight_layout(rect=(0, 0.04, 1, 1))
+        fig.tight_layout()
         fig.savefig(P / name, dpi=150)
         plt.close(fig)
     print(f"wrote {P / 'bounds.png'}, bounds_day.png, bounds_step.png, bounds.json")

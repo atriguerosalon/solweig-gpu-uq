@@ -18,6 +18,12 @@ Usage:
 
 from __future__ import annotations
 
+import sys as _sys
+
+if __name__ == "__main__" and any(a in ("-h", "--help") for a in _sys.argv[1:]):
+    print(__doc__)
+    raise SystemExit(0)
+
 import json
 import statistics
 from pathlib import Path
@@ -29,12 +35,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 
 P = Path(__file__).resolve().parents[1] / "figures" / "profile"
-INK, MUTED = "#1B232C", "#56616D"
+INK, MUTED = "#1B232C", "#56616D"  # no titles or captions in the images: docs/FIGURES.md
 C_ORIG, C_FAST, C_BEST, C_EXP = "#9AA6B2", "#4C78A8", "#0E6A78", "#B07AA1"
 SESSION_DOTS = (INK, "#E8663D")  # session 1, session 2
 SESSIONS = ("bench_steps.json", "bench_steps_b.json")
-NOTE = ("RTX 4070 Laptop GPU (8 GB), WSL2, quiet machine on AC, 3-4 Nov 2026. Bars: median of all runs; dots: each "
-        "run, session 1 dark, session 2 orange.")
 COLD = {"I", "J"}  # first run writes the packed cache / compiles: left out of the median and the dots
 
 # (step, label, colour). G2 and I are the two halves of C9; J is an experiment, not one of the patches.
@@ -87,14 +91,15 @@ def draw_time(ax, by):
     for xv in (0.75, x[-1] - 0.75):
         ax.axvline(xv, color=MUTED, lw=0.8, ls=":")
     ax.text(0, meds[0] / 2, "setup,\nnot\ncode", ha="center", va="center", fontsize=8, color="white")
-    ax.text(x[1] - 0.35, ymax * 0.97, "the patches (C1-C9), outputs on the Linux disk", ha="left", va="top",
+    ax.text(x[1] - 0.35, ymax * 0.97, "the patches C1-C9, outputs on the Linux disk", ha="left", va="top",
             fontsize=8, color=MUTED)
     ax.text(x[-1], ymax * 0.97, "experiment", ha="center", va="top", fontsize=8, color=C_EXP)
     ax.set_xticks(x, [lab for _, lab, _ in DAY], fontsize=8)
     ax.set_ylabel("one simulated day, 1000 x 1000 tile (s)")
     ax.set_ylim(0, ymax)
-    ax.set_title(f"Time per tile-day: {meds[1]:.0f} s → {meds[-2]:.1f} s with C1-C9 ({meds[1] / meds[-2]:.1f}x), "
-                 "same outputs", loc="left", fontweight="bold")
+    dots = [plt.Line2D([], [], ls="", marker="o", ms=4, color=c, label=f"each run, session {k + 1}")
+            for k, c in enumerate(SESSION_DOTS)]
+    ax.legend(handles=dots, frameon=False, fontsize=8, loc="upper left", bbox_to_anchor=(0.135, 0.93))
     ax.grid(axis="y", alpha=0.3)
 
 
@@ -112,8 +117,6 @@ def draw_memory(ax, by):
     ax.set_xticks(x, [lab for _, lab, _ in DAY], fontsize=7.5)
     ax.set_ylabel("GPU memory over the day (GiB)")
     ax.set_ylim(0, max(resv) * 1.2)
-    ax.set_title("Peak memory: chunk 64 traded memory for speed until profiled; compact masks cut it further",
-                 loc="left", fontweight="bold", fontsize=10.5)
     ax.legend(frameon=False, fontsize=8, loc="upper right")
     ax.grid(axis="y", alpha=0.3)
 
@@ -127,8 +130,6 @@ def draw_svf(ax, by, ident):
     ax.set_xticks(x, [lab for _, lab, _ in SVF], fontsize=8)
     ax.set_ylabel("sky view step, 1000 x 1000 tile (s)")
     ax.set_ylim(0, max(max(r[1] for r in by[s]) for s, _, _ in SVF) * 1.18)
-    ax.set_title(f"One-off sky view step: {meds[0]:.0f} s → {meds[-1]:.0f} s, {ident}", loc="left",
-                 fontweight="bold", fontsize=10.5)
     ax.grid(axis="y", alpha=0.3)
 
 
@@ -149,19 +150,15 @@ def draw_bigtile(ax, big, cmp):
             txt = "out of memory"
         else:
             m = r["seconds"] / 60
-            txt = f"{v:.1f} GiB, {m:.0f} min (n = 1)" if m >= 10 else f"{v:.1f} GiB, {m:.1f} min (n = 1)"
+            txt = f"{v:.1f} GiB, {m:.0f} min" if m >= 10 else f"{v:.1f} GiB, {m:.1f} min"
             if over:
-                txt += "\nover the GPU's 8 GB: spilled to system RAM\n(Windows driver allows it; Linux would fail)"
-        ax.text(v + 0.15, i, txt, va="center", fontsize=8.5)
-    ax.axvline(total, color=MUTED, ls="--", lw=0.9)
+                txt += "\nspilled to system RAM"
+        ax.text(v + 0.15, i, txt, va="center", fontsize=8.5, zorder=4, bbox=dict(fc="white", ec="none", pad=1.0))
+    ax.axvline(total, color=MUTED, ls="--", lw=0.9, zorder=1)
     ax.text(total, len(rows) - 0.45, f" {total:.0f} GiB GPU", fontsize=8, color=MUTED)
     ax.set_yticks(range(len(rows)), [r[0] for r in rows], fontsize=9)
-    ax.set_xlim(0, vmax * 1.75)
+    ax.set_xlim(0, vmax * 1.45)
     ax.set_xlabel("peak reserved GPU memory (GiB)")
-    title = f"A {big['tile']} tile (4 x 4 km) on the 8 GB laptop GPU"
-    if cmp:
-        title += f"\noutputs agree to {max(cmp['UTCI']['max_abs'], cmp['TMRT']['max_abs']):.0e} °C"
-    ax.set_title(title, loc="left", fontweight="bold", fontsize=10.5)
     ax.invert_yaxis()
     ax.grid(axis="x", alpha=0.3)
 
@@ -175,8 +172,8 @@ def main() -> None:
     big = load("bigtile_demo.json")
     current = big is not None and "day_current" in big
     cmp = (load("bigtile_compare_current.json") or {}).get("original_vs_current") if current else load("bigtile_compare.json")
-    big_note = ("Big tile: original 30 Oct (GPU alone), C1-C9 4 Nov, single runs" if current
-                else "Big tile: 30 Oct, code of that day, single runs")
+    if cmp:  # for the caption
+        print(f"big tile: outputs agree to {max(cmp['UTCI']['max_abs'], cmp['TMRT']['max_abs']):.1e} °C; sky view cache {ident}")
     singles = [("summary_time.png", (11, 4.8), lambda ax: draw_time(ax, by)),
                ("summary_memory.png", (11, 4.6), lambda ax: draw_memory(ax, by)),
                ("summary_svf.png", (6, 4.4), lambda ax: draw_svf(ax, by, ident))]
@@ -185,9 +182,7 @@ def main() -> None:
     for name, size, draw in singles:
         fig, ax = plt.subplots(figsize=size)
         draw(ax)
-        note = f"RTX 4070 Laptop GPU (8 GB), WSL2. {big_note}." if name == "summary_bigtile.png" else NOTE
-        fig.text(0.01, 0.005, note, fontsize=7, color=MUTED)
-        fig.tight_layout(rect=(0, 0.03, 1, 1))
+        fig.tight_layout()
         fig.savefig(P / name, dpi=150)
         plt.close(fig)
         print(P / name)
@@ -200,12 +195,10 @@ def main() -> None:
         draw_bigtile(axes[1, 1], big, cmp)
     else:
         axes[1, 1].set_axis_off()
-    fig.suptitle("SOLWEIG-GPU v2.0.0: speed and memory, same results (Pacoima tile)", x=0.01, ha="left",
-                 fontweight="bold", fontsize=13)
-    fig.text(0.01, 0.005, NOTE + " First runs of the packed cache copy and of torch.compile (cold) left out.\n"
-             f"Outputs bit-identical step to step except C1 and the chunk change (rounding, ≤0.0001 °C). {big_note}. "
-             "Sources: figures/profile/*.json", fontsize=8, color=MUTED)
-    fig.tight_layout(rect=(0, 0.035, 1, 0.96))
+    for ax, letter in ((axes[0, 0], "a"), (axes[0, 1], "b"), (axes[1, 0], "c"), (axes[1, 1], "d")):
+        ax.text(-0.06 if ax in (axes[0, 0], axes[1, 0]) else -0.12, 1.03, letter, transform=ax.transAxes, fontsize=13,
+                fontweight="bold", va="bottom")
+    fig.tight_layout()
     fig.savefig(P / "summary.png", dpi=150)
     plt.close(fig)
     print(P / "summary.png")

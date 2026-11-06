@@ -6,6 +6,12 @@ Usage:
 
 from __future__ import annotations
 
+import sys as _sys
+
+if __name__ == "__main__" and any(a in ("-h", "--help") for a in _sys.argv[1:]):
+    print(__doc__)
+    raise SystemExit(0)
+
 import sys
 
 import numpy as np

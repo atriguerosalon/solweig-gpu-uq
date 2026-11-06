@@ -22,6 +22,7 @@ too (in the JSON), but on these days it is too rare to be informative.
 
 Usage:
     python scripts/analyse_la_forecast_error.py --runs ~/forecast_error_la --out figures
+    python scripts/analyse_la_forecast_error.py --out figures --replot     (figure only, from the JSON)
 """
 
 from __future__ import annotations
@@ -63,12 +64,64 @@ def fss(pf: np.ndarray, po: np.ndarray, valid: np.ndarray) -> float:
     return float(1 - np.mean((a - b) ** 2) / den) if den > 0 else np.nan
 
 
+def plot_fss(report: dict, out: Path) -> None:
+    sigmas = report["design"]["sigmas"]
+    plotstyle.use()
+    fig, axes = plt.subplots(2, 2, figsize=(12, 8.6), gridspec_kw={"width_ratios": [1.9, 1]})
+    cmap = plt.get_cmap("viridis")
+    scales = np.array(report["scales_m"])
+    rows = ((lambda r: r, "UTCI > 32 °C for 4 h or more"),
+            (lambda r: r["event_top10"], f"hottest {100 * TOP_SHARE:.0f}% of outdoor pixels at 15:00"))
+    for row, (get, title) in enumerate(rows):
+        ax, ax2 = axes[row]
+        ev = [get(report["sigma"][str(s)]) for s in sigmas]
+        for k, (s, rec) in enumerate(zip(sigmas, ev)):
+            c = cmap(k / max(len(sigmas) - 1, 1))
+            lo, hi = np.array(rec["fss_member_p10_p90"]).T
+            ax.fill_between(scales, lo, hi, color=c, alpha=0.12, lw=0)
+            ax.plot(scales, rec["fss_member"], color=c, lw=1.4, ls="--")
+            ax.plot(scales, rec["fss_ensemble"], color=c, lw=2, label=f"{s:g} K")
+        ax.axhline(np.mean([r["useful_target"] for r in ev]), color="0.4", lw=0.8, ls=":")
+        ax.set_xscale("log")
+        ax.set_xlabel("neighbourhood size (m)")
+        ax.set_ylabel("fractions skill score")
+        fr = [round(100 * r["event_frequency"]) for r in ev]
+        share = f"{min(fr)}%" if min(fr) == max(fr) else f"{min(fr)}-{max(fr)}%"
+        ax.set_title(f"{title}, event at {share} of pixels", loc="left", fontsize=10)
+        ax.grid(alpha=0.3)
+        never = scales[-1] * 2.2  # where "not useful at any scale tested" is drawn, above the tested scales
+        for kind, ls, mk, lab in (("ensemble", "-", "o", "ensemble probability"), ("member", "--", "s", "single forecast")):
+            ys = [r[f"useful_scale_m_{kind}"] for r in ev]
+            ax2.plot([s for s, y in zip(sigmas, ys) if y], [y for y in ys if y], mk + ls, color="k", ms=5, label=lab)
+            miss = [s for s, y in zip(sigmas, ys) if not y]
+            if miss:
+                ax2.plot(miss, [never] * len(miss), "x", color="#c4501b", ms=9, mew=2)
+        ax2.set_yscale("log")
+        ax2.set_yticks(list(scales) + [never], [f"{v:g}" for v in scales] + ["none"])  # tested scales only
+        ax2.minorticks_off()
+        ax2.set_ylim(scales[0] * 0.8, never * 1.4)
+        ax2.set_xlabel("air-temperature error, standard deviation (K)")
+        ax2.set_ylabel("smallest useful scale (m)")
+        ax2.grid(alpha=0.3)
+    axes[0, 0].legend(frameon=False, fontsize=8, loc="lower right", title="error", title_fontsize=8)
+    for ax, letter in zip(axes.flat, "abcd"):
+        ax.text(-0.08 if letter in "ac" else -0.16, 1.02, letter, transform=ax.transAxes, fontsize=13,
+                fontweight="bold", va="bottom")
+    fig.tight_layout()  # caption: docs/FIGURES.md
+    axes[0, 1].legend(frameon=False, fontsize=8)
+    fig.savefig(out / "la_forecast_error_fss.png", bbox_inches="tight")
+    plt.close(fig)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--runs", type=Path, default=Path.home() / "forecast_error_la")
     ap.add_argument("--out", type=Path, default=Path("figures"))
-    ap.add_argument("--site", default="Pacoima", help="tile name for the caption")
+    ap.add_argument("--replot", action="store_true", help="redraw the figure from <out>/la_forecast_error.json")
     args = ap.parse_args()
+    if args.replot:
+        plot_fss(json.loads((args.out / "la_forecast_error.json").read_text()), args.out)
+        return
     design = json.loads((args.runs / "design.json").read_text())
     sigmas = design["sigmas"]
     report = {"design": {k: design[k] for k in ("sigmas", "members", "rho", "seed", "date")},
@@ -140,57 +193,7 @@ def main() -> None:
               f"{rec['utci_15h_pattern_spread_mean']:.3f} C, rank correlation >= {rec['utci_15h_rank_correlation_min']:.4f}")
     (args.out / "la_forecast_error.json").write_text(json.dumps(report, indent=2))
 
-    plotstyle.use()
-    fig, axes = plt.subplots(2, 2, figsize=(12, 8.6), gridspec_kw={"width_ratios": [1.4, 1]})
-    cmap = plt.get_cmap("viridis")
-    scales = np.array(report["scales_m"])
-    rows = ((lambda r: r, "UTCI above 32 C for 4 h or more", "32 C, 4 h"),
-            (lambda r: r["event_top10"], f"Hottest {100 * TOP_SHARE:.0f}% of outdoor pixels at 15:00", "hottest 10%"))
-    for row, (get, title, short) in enumerate(rows):
-        ax, ax2 = axes[row]
-        ev = [get(report["sigma"][str(s)]) for s in sigmas]
-        for k, (s, rec) in enumerate(zip(sigmas, ev)):
-            c = cmap(k / max(len(sigmas) - 1, 1))
-            lo, hi = np.array(rec["fss_member_p10_p90"]).T
-            ax.fill_between(scales, lo, hi, color=c, alpha=0.12, lw=0)
-            ax.plot(scales, rec["fss_member"], color=c, lw=1.4, ls="--")
-            ax.plot(scales, rec["fss_ensemble"], color=c, lw=2, label=f"error {s:g} K")
-        ax.axhline(np.mean([r["useful_target"] for r in ev]), color="0.4", lw=0.8, ls=":")
-        ax.set_xscale("log")
-        ax.set_xlabel("Neighbourhood size (m)")
-        ax.set_ylabel("Fractions skill score")
-        fr = [r["event_frequency"] for r in ev]
-        ax.set_title(f"{title} (event at {100 * min(fr):.0f}-{100 * max(fr):.0f}% of pixels)", loc="left", fontsize=10)
-        ax.grid(alpha=0.3)
-        for kind, ls, lab in (("ensemble", "-", "ensemble probability"), ("member", "--", "single forecast")):
-            ys = [r[f"useful_scale_m_{kind}"] for r in ev]
-            ax2.plot([s for s, y in zip(sigmas, ys) if y], [y for y in ys if y], "o" + ls, color="k", label=lab)
-        ax2.set_yscale("log")
-        ax2.set_yticks(scales, [f"{v:g}" for v in scales])  # the scales tested: the curve can only take these values
-        ax2.minorticks_off()
-        ax2.set_ylim(scales[0] * 0.8, scales[-1] * 1.25)
-        ax2.set_xlabel("Air-temperature forecast error, standard deviation (K)")
-        ax2.set_ylabel("Smallest useful scale tested (m)")
-        ax2.set_title(f"Skill front, {short}", loc="left", fontsize=10)
-        ax2.grid(alpha=0.3)
-    axes[0, 0].legend(frameon=False, fontsize=8, loc="lower right")
-    axes[0, 1].legend(frameon=False, fontsize=8)
-    structure = design.get("structure", "fitted")
-    struct_txt = ("ground heating fitted to measurements, heat kept after sunset" if structure == "fitted"
-                  else "SOLWEIG's own ground model")
-    fig.text(0.5, -0.08, f"{args.site}, 2 x 2 km at 2 m, {design['date']}, SOLWEIG-GPU ({struct_txt}). "
-             "Top: a fixed threshold, met by most pixels, so it measures the level of the map. Bottom: each map's own hottest "
-             "10% (Roberts & Lean 2008's percentile threshold), which removes the level and tests whether the hot spots are in the right "
-             "streets. (UTCI above 38 C for 4 h is too rare on these days to score; it is in the JSON.) "
-             "Right: the smallest of the tested scales (2, 10, 26 ... m) where FSS reaches the useful line; 2 m means useful "
-             "at the finest scale tested; a missing point, at no scale tested. "
-             f"{design['members']} members per error size, errors AR(1) in time (lag-1 correlation {design['rho']}); "
-             "each member in turn taken as the truth. Lines: mean over truths; band: 10th to 90th percentile "
-             "(single forecast). Dotted: useful skill (FSS = 0.5 + f/2, Roberts & Lean 2008, mean over error sizes). "
-             "Lead time for each error size: from HRRR verification, not shown here.", ha="center", fontsize=8,
-             color="0.35", wrap=True)
-    fig.savefig(args.out / "la_forecast_error_fss.png", bbox_inches="tight")
-    plt.close(fig)
+    plot_fss(report, args.out)
     print(f"wrote {args.out / 'la_forecast_error.json'} and la_forecast_error_fss.png")
 
 

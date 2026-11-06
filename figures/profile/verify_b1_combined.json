@@ -1,0 +1,78 @@
+{
+  "date": "2019-07-30",
+  "sample": 0,
+  "inputs": {
+    "ta_add": 1.752927335910499,
+    "rh_add": 5.176392059773207,
+    "wind_scale": 0.5539023132063448,
+    "kdown_scale": 0.9729100320488215,
+    "paved_emissivity": 0.9111956373602152,
+    "albedo_b": 0.3242810174822808,
+    "ewall": 0.8922534613870083,
+    "regular_albedo": 0.06778424929827452
+  },
+  "tile": "Pacoima, centred 500 x 500 at 2 m",
+  "model": "fitted ground heating (TS_FIT) + ground_heat_storage(4.0)",
+  "runs": {
+    "reference": {
+      "seconds": 62.4,
+      "gpu_free_mib_before": 3490,
+      "peak_reserved_gib": 0.824
+    },
+    "combined_cold": {
+      "seconds": 30.0,
+      "gpu_free_mib_before": 3304,
+      "peak_reserved_gib": 0.293
+    },
+    "combined_warm": {
+      "seconds": 29.0,
+      "gpu_free_mib_before": 3300,
+      "peak_reserved_gib": 0.293
+    }
+  },
+  "comparisons": {
+    "combined_cold|UTCI": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    },
+    "combined_cold|TMRT": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    },
+    "combined_cold|Shadow": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    },
+    "combined_warm|UTCI": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    },
+    "combined_warm|TMRT": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    },
+    "combined_warm|Shadow": {
+      "bit_identical": true,
+      "same_missing": true,
+      "max_abs": 0.0,
+      "pixels_hours": 6000000,
+      "night_max_abs": 0.0
+    }
+  },
+  "all_bit_identical": true
+}

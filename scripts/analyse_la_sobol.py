@@ -34,6 +34,9 @@ from solweig_sens import plotstyle  # noqa: E402
 LABELS = {"ta_add": "air temperature", "rh_add": "relative humidity", "wind_scale": "wind speed",
           "kdown_scale": "global radiation", "paved_emissivity": "paved emissivity", "albedo_b": "wall albedo",
           "ewall": "wall emissivity", "regular_albedo": "paved albedo"}
+TOP = 3  # inputs drawn per panel in the daily figure
+PANEL = {"utci_mean": "mean outdoor UTCI", "area_utci_above_32_pct": "outdoor area with UTCI > 32 °C",
+         "area_utci_above_38_pct": "outdoor area with UTCI > 38 °C"}
 QUANTITIES = {"utci_mean": "mean outdoor UTCI", "area_utci_above_32_pct": "area above 32 C UTCI",
               "area_utci_above_38_pct": "area above 38 C UTCI", "area_utci_above_46_pct": "area above 46 C UTCI",
               "tmrt_open_sunlit_median": "Tmrt, open sunlit ground"}
@@ -130,39 +133,38 @@ def main() -> None:
                 rec = sur.get(f"{q}|{h}")
                 if rec and rec["cv_r2"] >= 0.9:
                     sst[h], slo[h], shi[h], ss1[h] = rec["ST_mean"], rec["ST_min"], rec["ST_max"], rec["S1_sum"]
-            order = np.argsort(-np.nan_to_num(np.nanmax(sst, axis=0)))
-            for j in order[:5]:
+            order = np.argsort(-np.nan_to_num(np.nanmean(sst, axis=0)))  # by the average over the day
+            for j in order[:TOP]:  # the direct estimates are compared with these in la_sobol_surrogate_check.png
                 c = plotstyle.INPUT_COLORS.get(LABELS[names[j]], "0.5")
-                ax.plot(hrs, st[:, j], color=c, lw=0.8, alpha=0.35)  # direct estimate, unresolved here
                 ax.fill_between(hrs, slo[:, j], shi[:, j], color=c, alpha=0.25, lw=0)
-                ax.plot(hrs, sst[:, j], "o-", ms=3, color=c, lw=1.8, label=plotstyle.input_label(LABELS[names[j]]))
-            ax.plot(hrs, ss1, color="0.45", lw=1.2, ls="--", label="sum of first-order")
+                ax.plot(hrs, sst[:, j], "o-", ms=3, color=c, lw=1.8, label=LABELS[names[j]])
+            ax.plot(hrs, ss1, color="0.45", lw=1.2, ls="--", label="sum of first-order indices")
         else:
-            order = np.argsort(-np.nanmax(st, axis=0))
-            for j in order[:5]:
+            order = np.argsort(-np.nanmean(st, axis=0))
+            for j in order[:TOP]:
                 c = plotstyle.INPUT_COLORS.get(LABELS[names[j]], "0.5")
                 ax.fill_between(hrs, lo[:, j], hi[:, j], color=c, alpha=0.18, lw=0)
-                ax.plot(hrs, st[:, j], color=c, lw=1.6, label=plotstyle.input_label(LABELS[names[j]]))
-            ax.plot(hrs, s1sum, color="0.45", lw=1.2, ls="--", label="sum of first-order")
-        ax.set_title(QUANTITIES[q][0].upper() + QUANTITIES[q][1:] + (" (surrogate)" if use_sur else ""), loc="left")
-        ax.set_xlabel("Hour, 30 July 2019 (PDT)")
+                ax.plot(hrs, st[:, j], color=c, lw=1.6, label=LABELS[names[j]])
+            ax.plot(hrs, s1sum, color="0.45", lw=1.2, ls="--", label="sum of first-order indices")
+        ax.set_title(PANEL[q], loc="left", fontsize=10)
+        ax.set_xlabel("hour (PDT)")
         ax.set_xlim(0, 23)
         ax.set_ylim(-0.05, 1.15)
         ax.grid(alpha=0.3)
-    axes[0].set_ylabel("Total Sobol index (share of variance)")
+    for ax, letter in zip(axes, "abc"):
+        ax.text(-0.08, 1.06, letter, transform=ax.transAxes, fontsize=13, fontweight="bold", va="bottom")
+    axes[0].set_ylabel("total Sobol index")
     handles, labels = [], []
     for ax in axes:  # one legend for the inputs that appear in any panel
         for hnd, lab in zip(*ax.get_legend_handles_labels()):
             if lab not in labels:
                 handles.append(hnd)
                 labels.append(lab)
+    k = labels.index("sum of first-order indices")  # inputs first, the sum last
+    handles.append(handles.pop(k))
+    labels.append(labels.pop(k))
     fig.legend(handles, labels, frameon=False, loc="upper left", bbox_to_anchor=(0.995, 0.92), fontsize=9)
-    fig.text(0.5, -0.13, f"Pacoima, 1 x 1 km at 2 m, {n_runs} SOLWEIG-GPU runs (Sobol' design, N = {p['n_base']}, "
-             f"{d} inputs over literature ranges), ground heating fitted to measurements and heat kept after sunset. Left: "
-             "direct estimators (Saltelli 2010, Jansen), bands 95% bootstrap intervals. Middle and right: the direct estimators do "
-             "not resolve these threshold quantities at this N (faint lines); a Gaussian-process surrogate of the same runs does "
-             "(lines with dots; band: spread over 5 cross-validation fits; only hours with held-out R2 >= 0.9). Gaps: no index "
-             "(no area above the threshold, or the surrogate does not fit).", ha="center", fontsize=8, color="0.35", wrap=True)
+    # caption: docs/FIGURES.md (no title or caption in the image)
     fig.savefig(args.out / f"la_sobol_day{args.tag}.png", bbox_inches="tight")
     plt.close(fig)
 
