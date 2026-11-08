@@ -1,0 +1,116 @@
+{
+  "BUR": {
+    "name": "BURBANK/GLENDALE",
+    "lon": -118.3587,
+    "lat": 34.2007,
+    "elev_m": 236.0
+  },
+  "CCB": {
+    "name": "Cable",
+    "lon": -117.6874,
+    "lat": 34.1116,
+    "elev_m": 433.58063
+  },
+  "CMA": {
+    "name": "CAMARILLO (AWOS)",
+    "lon": -119.0944,
+    "lat": 34.2138,
+    "elev_m": 23.0
+  },
+  "CNO": {
+    "name": "CHINO AIRPORT",
+    "lon": -117.6361,
+    "lat": 33.9753,
+    "elev_m": 198.0
+  },
+  "CQT": {
+    "name": "LOS ANGELES DOWNTOWN/USC",
+    "lon": -118.2912,
+    "lat": 34.0235,
+    "elev_m": 56.0
+  },
+  "EMT": {
+    "name": "EL MONTE",
+    "lon": -118.035,
+    "lat": 34.086,
+    "elev_m": 90.0
+  },
+  "FUL": {
+    "name": "FULLERTON MUNICIPAL",
+    "lon": -117.98,
+    "lat": 33.87,
+    "elev_m": 29.0
+  },
+  "HHR": {
+    "name": "HAWTHORNE MUNICIPAL",
+    "lon": -118.3352,
+    "lat": 33.9228,
+    "elev_m": 19.0
+  },
+  "LAX": {
+    "name": "LOS ANGELES INTL",
+    "lon": -118.3865,
+    "lat": 33.9382,
+    "elev_m": 32.0
+  },
+  "LGB": {
+    "name": "LONG BEACH AIRPORT",
+    "lon": -118.1472,
+    "lat": 33.8118,
+    "elev_m": 12.0
+  },
+  "ONT": {
+    "name": "ONTARIO INTL ARPT",
+    "lon": -117.6012,
+    "lat": 34.056,
+    "elev_m": 287.0
+  },
+  "OXR": {
+    "name": "OXNARD",
+    "lon": -119.2072,
+    "lat": 34.2008,
+    "elev_m": 13.0
+  },
+  "POC": {
+    "name": "LA VERNE/BRACKETT",
+    "lon": -117.7818,
+    "lat": 34.0916,
+    "elev_m": 308.0
+  },
+  "RAL": {
+    "name": "RIVERSIDE MUNICIPAL",
+    "lon": -117.4451,
+    "lat": 33.9519,
+    "elev_m": 249.0
+  },
+  "SMO": {
+    "name": "SANTA MONICA MUNI",
+    "lon": -118.4471,
+    "lat": 34.021,
+    "elev_m": 53.0
+  },
+  "SNA": {
+    "name": "SANTA ANA/JON-WAYNE",
+    "lon": -117.8682,
+    "lat": 33.6757,
+    "elev_m": 16.0
+  },
+  "TOA": {
+    "name": "TORRANCE MUNICIPAL",
+    "lon": -118.3396,
+    "lat": 33.8034,
+    "elev_m": 31.0
+  },
+  "VNY": {
+    "name": "VAN NUYS AIRPORT",
+    "lon": -118.4892,
+    "lat": 34.2097,
+    "elev_m": 244.0
+  },
+  "WHP": {
+    "name": "LA / WHITEMAN",
+    "lon": -118.4134,
+    "lat": 34.2593,
+    "elev_m": 306.0
+  }
+}

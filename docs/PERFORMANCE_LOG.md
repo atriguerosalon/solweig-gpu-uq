@@ -87,6 +87,20 @@ Measured on a quiet machine, 3-4 Nov:
 - Our CUDA-graph version copied about 5 rasters into and 5 out of the graph's fixed buffers per step, which made it slower. Even a perfect version is bounded by the launch overhead in the last row.
 - Several tiles at once (`scripts/bench_concurrency.py`, 400 x 400 windows, C1-C9): 1, 2, 3, 4 and 6 jobs give 1.00, 1.57, 1.82, 1.96 and 2.14 times the throughput (with C1-C6 on 2 Nov: 1.00, 1.49, 1.64, 1.70, 1.58).
 
+## What a forecast costs (8 Nov)
+
+`scripts/forecast_cost.py`, `figures/forecast_cost.json`. One forecast cycle: a 48 h HRRR forecast (HRRR runs them four times a day) turned into hourly UTCI at 2 m on every 2 x 2 km tile of a domain, as 20 members. Measured: 14.7 s per tile-day (step I above; 12.8 s in the forecast demo), 0.32 s per member-day to build a member from slopes (UTCI only, GPU otherwise idle). Other GPUs: scaled by memory bandwidth x 0.8, an estimate, since the code is memory-bound (bounds above).
+
+| per 48 h cycle, 20 members | laptop 4070 | H100 (est.) |
+|---|---|---|
+| 1 venue tile, 4 physics runs + slopes | 2 min | under 1 min |
+| 30 venue tiles, same | 1 h 05 | 6 min |
+| City of Los Angeles (~330 tiles), same | 12 h | 1 h |
+| urban LA County (~1000 tiles), same | 36 h | 3 h |
+| urban LA County, full physics for every member | 164 h | 14 h |
+
+A venue set fits a laptop per cycle; a city needs a few data-centre GPUs. The slope shortcut (shortcut_suite.py) saves about 4.5x against running every member.
+
 ## Earlier measurements, 30 Oct
 
 Single runs unless stated. They show the order things happened in and what the memory profile caught; the numbers above replace them.

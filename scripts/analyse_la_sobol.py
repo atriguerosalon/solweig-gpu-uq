@@ -77,6 +77,14 @@ def main() -> None:
     ap.add_argument("--n", type=int, default=None,
                     help="use only the first n base samples (a power of 2): a complete smaller design")
     ap.add_argument("--tag", default="", help="suffix for the output files")
+    ap.add_argument("--json-only", action="store_true", help="indices and printout only; no per-pixel maps or figures "
+                    "(the maps load every field: about 3 GB per 1000 runs)")
+    ap.add_argument("--skip-base", type=int, default=0, help="leave out the first k base samples (k (d + 2) runs), e.g. the "
+                    "runs a surrogate was fitted to, for an out-of-sample check")
+    ap.add_argument("--no-maps", action="store_true", help="the daily figure but not the per-pixel maps (which load every field)")
+    ap.add_argument("--direct", action="store_true", help="daily figure from the direct estimators in every panel (enough "
+                    "runs to resolve the threshold areas, e.g. N = 512), instead of the surrogate for the areas")
+    ap.add_argument("--day-out", type=Path, default=None, help="file for the daily figure (default <out>/la_sobol_day<tag>.png)")
     args = ap.parse_args()
     p = json.loads((args.runs / "problem.json").read_text())
     names, d = p["names"], p["num_vars"]
@@ -88,7 +96,11 @@ def main() -> None:
     if len(recs) != n_runs:
         raise SystemExit(f"{len(recs)} of {n_runs} runs on disk; the estimators need the complete design")
 
-    report = {"design": {k: p[k] for k in ("n_base", "size_px", "date", "structure")} | {"runs": n_runs}, "names": names,
+    if args.skip_base:  # Saltelli blocks are whole base samples, so dropping the first k keeps a valid design
+        recs = recs[args.skip_base * (d + 2):]
+        n_runs = len(recs)
+        p["n_base"] -= args.skip_base
+    report = {"design": {k: p[k] for k in ("n_base", "size_px", "date", "structure")} | {"runs": n_runs, "skip_base": args.skip_base}, "names": names,
               "quantities": {}}
     for q in QUANTITIES:
         Y = np.array([r[q] for r in recs], dtype=np.float64)  # (runs, hours)
@@ -108,11 +120,8 @@ def main() -> None:
             print(f"{h:4d}  {QUANTITIES[q]:26s} {r['spread_sd'][h]:5.2f}  {np.nansum(r['S1'][h]):5.2f} | "
                   + ", ".join(f"{LABELS[names[j]]} {st[j]:.2f}" for j in top))
 
-    # per-pixel maps
-    fields = np.stack([np.load(args.runs / "fields" / f"{i:05d}.npy").astype(np.float32) for i in range(n_runs)])
-    hours = p["map_hours"]
-    s1m, stm, _ = indices(fields, d)  # (d, hours, rows, cols)
-
+    if args.json_only:
+        return
     plotstyle.use()
     # 1. indices through the day for the three heat-stress quantities. The threshold areas are not resolved by the
     # direct estimators at this N; where a Gaussian-process surrogate of the same runs exists (sobol_surrogate.py,
@@ -125,7 +134,10 @@ def main() -> None:
         r = report["quantities"][q]
         st, lo, hi = (np.array(r[k], dtype=float) for k in ("ST", "st_lo", "st_hi"))
         s1sum = np.array([np.nan if np.all(np.isnan(np.array(row, dtype=float))) else np.nansum(row) for row in r["S1"]])
-        use_sur = q != "utci_mean" and any(k.startswith(q + "|") for k in sur)
+        use_sur = q != "utci_mean" and not args.direct and any(k.startswith(q + "|") for k in sur)
+        if q != "utci_mean" and not use_sur:  # no index where the area hardly varies between runs (sd < 1 point)
+            flat = np.array(r["spread_sd"]) < 1.0
+            st[flat], lo[flat], hi[flat], s1sum[flat] = np.nan, np.nan, np.nan, np.nan
         if use_sur:  # surrogate indices, only where its held-out R^2 is at least 0.9; NaN (a gap) elsewhere
             sst, slo, shi = (np.full((len(hrs), d), np.nan) for _ in range(3))
             ss1 = np.full(len(hrs), np.nan)
@@ -144,7 +156,7 @@ def main() -> None:
             for j in order[:TOP]:
                 c = plotstyle.INPUT_COLORS.get(LABELS[names[j]], "0.5")
                 ax.fill_between(hrs, lo[:, j], hi[:, j], color=c, alpha=0.18, lw=0)
-                ax.plot(hrs, st[:, j], color=c, lw=1.6, label=LABELS[names[j]])
+                ax.plot(hrs, st[:, j], "o-", ms=3, color=c, lw=1.6, label=LABELS[names[j]])
             ax.plot(hrs, s1sum, color="0.45", lw=1.2, ls="--", label="sum of first-order indices")
         ax.set_title(PANEL[q], loc="left", fontsize=10)
         ax.set_xlabel("hour (PDT)")
@@ -165,8 +177,18 @@ def main() -> None:
     labels.append(labels.pop(k))
     fig.legend(handles, labels, frameon=False, loc="upper left", bbox_to_anchor=(0.995, 0.92), fontsize=9)
     # caption: docs/FIGURES.md (no title or caption in the image)
-    fig.savefig(args.out / f"la_sobol_day{args.tag}.png", bbox_inches="tight")
+    fig.savefig(args.day_out or args.out / f"la_sobol_day{args.tag}.png", bbox_inches="tight")
     plt.close(fig)
+    if args.no_maps:
+        print(f"wrote {args.out / f'la_sobol{args.tag}.json'} and {args.day_out or f'la_sobol_day{args.tag}.png'}")
+        return
+
+    # per-pixel maps
+    if args.skip_base:
+        raise SystemExit("per-pixel maps with --skip-base are not supported; use --no-maps or --json-only")
+    fields = np.stack([np.load(args.runs / "fields" / f"{i:05d}.npy").astype(np.float32) for i in range(n_runs)])
+    hours = p["map_hours"]
+    s1m, stm, _ = indices(fields, d)  # (d, hours, rows, cols)
 
     # 2. maps at 16 h: total index of the leading inputs, and how additive each pixel is
     k = hours.index(16) if 16 in hours else 0

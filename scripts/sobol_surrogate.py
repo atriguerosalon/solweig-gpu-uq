@@ -142,23 +142,47 @@ def check_figure(out: Path) -> None:
     plotstyle.use()
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.6))
     ax = axes[0]
-    # resolved by the direct estimators: mean outdoor UTCI at every hour fitted, area above 38 C at 13 and 16 h
-    sets = [("mean outdoor UTCI (9, 13, 16, 19 h)", "utci_mean", (9, 13, 16, 19), "o", four, "#4c78a8"),
-            ("area with UTCI > 38 °C (13, 16 h)", "area_utci_above_38_pct", (13, 16), "s", allh, "#0e6a78")]
-    for lab, q, hours, mk, src, col in sets:
-        xs, ys, lo, hi = [], [], [], []
-        for h in hours:
-            r = src.get(f"{q}|{h}")
-            if not r:
-                continue
-            xs += r["direct_ST"]; ys += r["ST_mean"]; lo += r["direct_ST_lo"]; hi += r["direct_ST_hi"]
-        xs, ys, lo, hi = map(np.array, (xs, ys, lo, hi))
-        ax.errorbar(xs, ys, xerr=[xs - lo, hi - xs], fmt=mk, ms=5, lw=0.8, capsize=0, alpha=0.85, color=col, label=lab)
+    big = out / "la_sobol_n512_new.json"
+    if big.exists():
+        # out of sample: against the direct estimators on the 3840 runs of the N = 512 design that the surrogate was
+        # not fitted to (analyse_la_sobol.py --n 512 --skip-base 128), every hour where the quantity varies
+        D = json.loads(big.read_text())["quantities"]
+        sets = [("mean outdoor UTCI", "utci_mean", "o", four, "#4c78a8"),
+                ("area with UTCI > 32 °C", "area_utci_above_32_pct", "^", allh, "#c4501b"),
+                ("area with UTCI > 38 °C", "area_utci_above_38_pct", "s", allh, "#0e6a78")]
+        for lab, q, mk, src, col in sets:
+            xs, ys, lo, hi = [], [], [], []
+            for key, r in src.items():
+                qq, h = key.split("|")
+                h = int(h)
+                if qq != q or r.get("cv_r2", 1.0) < 0.9 or (q != "utci_mean" and D[q]["spread_sd"][h] < 1.0):
+                    continue
+                xs += D[q]["ST"][h]; ys += r["ST_mean"]; lo += D[q]["st_lo"][h]; hi += D[q]["st_hi"][h]
+            xs, ys, lo, hi = (np.array(v, dtype=float) for v in (xs, ys, lo, hi))
+            ok = np.isfinite(xs) & np.isfinite(ys)
+            xs, ys, lo, hi = xs[ok], ys[ok], lo[ok], hi[ok]
+            ax.errorbar(xs, ys, xerr=[np.clip(xs - lo, 0, None), np.clip(hi - xs, 0, None)], fmt=mk, ms=5, lw=0.8,
+                        capsize=0, alpha=0.8, color=col, label=lab)
+        xlabel = "total Sobol index, direct estimator, 3840 other runs"
+    else:
+        # resolved by the direct estimators on the same runs: mean outdoor UTCI, area above 38 C at 13 and 16 h
+        sets = [("mean outdoor UTCI (9, 13, 16, 19 h)", "utci_mean", (9, 13, 16, 19), "o", four, "#4c78a8"),
+                ("area with UTCI > 38 °C (13, 16 h)", "area_utci_above_38_pct", (13, 16), "s", allh, "#0e6a78")]
+        for lab, q, hours, mk, src, col in sets:
+            xs, ys, lo, hi = [], [], [], []
+            for h in hours:
+                r = src.get(f"{q}|{h}")
+                if not r:
+                    continue
+                xs += r["direct_ST"]; ys += r["ST_mean"]; lo += r["direct_ST_lo"]; hi += r["direct_ST_hi"]
+            xs, ys, lo, hi = map(np.array, (xs, ys, lo, hi))
+            ax.errorbar(xs, ys, xerr=[xs - lo, hi - xs], fmt=mk, ms=5, lw=0.8, capsize=0, alpha=0.85, color=col, label=lab)
+        xlabel = "total Sobol index, direct estimator"
     ax.plot([0, 1], [0, 1], color="0.4", lw=0.8, ls=":")
     ax.set_xlim(-0.05, 1.1)
     ax.set_ylim(-0.05, 1.1)
-    ax.set_xlabel("total Sobol index, direct estimator")
-    ax.set_ylabel("total Sobol index, surrogate")
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel("total Sobol index, surrogate, 1280 runs")
     ax.legend(frameon=False, fontsize=8, loc="upper left")
     ax.grid(alpha=0.3)
     ax = axes[1]

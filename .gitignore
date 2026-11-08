@@ -12,3 +12,6 @@ figures/profile/*.npz
 figures/profile/cprofile_day.prof
 # raw profiler output (contains local paths)
 figures/profile/cprofile_day.txt
+
+# raw ASOS download for scripts/hrrr_errors.py (11 MB); the script fetches it again when missing
+figures/hrrr/asos_tmpf.csv

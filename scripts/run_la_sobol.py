@@ -21,10 +21,14 @@ and 21 h (float16) for maps of the indices. analyse_la_sobol.py computes the ind
     prepare   crop, preprocess and sky view factor once; write the design
     run       one worker (--worker i of --workers n), on its own copy of the inputs, since the
               met-file perturbation edits them in place; resumes, skipping finished runs
+    extend    grow the design to --n base samples with the same seed. The Sobol' sequence of a
+              smaller N is the start of a larger one (checked: the old design must be a prefix of
+              the new), so finished runs keep their numbers and only the new ones are run
 
 Usage:
     python scripts/run_la_sobol.py prepare --n 128
     python scripts/run_la_sobol.py run --worker 0 --workers 2
+    python scripts/run_la_sobol.py extend --n 512      (then run again; analyse with --n 128 for the pilot)
 """
 
 from __future__ import annotations
@@ -44,6 +48,11 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 WORK = Path.home() / "sobol_la"
+# --site: Pacoima with the fitted ground model (the default, the runs on disk), or the venue tile with SOLWEIG's own
+# ground model (the fitted one is Pacoima's measured asphalt and does not transfer)
+SITES = {"pacoima": {"work": Path.home() / "sobol_la", "rasters": "pacoima", "met": "met_pacoima_20190730.txt", "fitted": True},
+         "expo": {"work": Path.home() / "sobol_expo", "rasters": "expo_park", "met": "met_expo_20190730.txt", "fitted": False}}
+SITE = SITES["pacoima"]
 SIZE = 500
 DATE = "2019-07-30"
 MAP_HOURS = (13, 16, 21)
@@ -70,8 +79,8 @@ def prepare(args) -> None:
         from SALib.sample import saltelli as sampler
     WORK.mkdir(parents=True, exist_ok=True)
     raster = WORK / "rasters"
-    centred_crop((ROOT / "data" / "la" / "pacoima").resolve(), raster, SIZE)
-    setup = Setup(raster_dir=raster, met_file=(ROOT / "data" / "la" / "met_pacoima_20190730.txt").resolve(),
+    centred_crop((ROOT / "data" / "la" / SITE["rasters"]).resolve(), raster, SIZE)
+    setup = Setup(raster_dir=raster, met_file=(ROOT / "data" / "la" / SITE["met"]).resolve(),
                   runs_dir=WORK / "base", date=DATE, tile_size=SIZE)
     with compact_masks("bits", svf=True), fast_sky_shadow(), tight_bound():
         prepare_tile(setup)
@@ -79,10 +88,32 @@ def prepare(args) -> None:
     X = sampler.sample(p, args.n, calc_second_order=False, seed=args.seed)
     np.save(WORK / "X.npy", X)
     (WORK / "problem.json").write_text(json.dumps(p | {"n_base": args.n, "seed": args.seed, "runs": len(X),
-                                                       "size_px": SIZE, "date": DATE, "structure": "fitted, tau 4 h",
+                                                       "size_px": SIZE, "date": DATE, "site": SITE["rasters"],
+                                                       "structure": "fitted, tau 4 h" if SITE["fitted"] else "default",
                                                        "map_hours": MAP_HOURS, "thresholds": THRESHOLDS}, indent=2))
     (WORK / "preprocess_dir.txt").write_text(str(setup.preprocess_dir))
     print(f"[sobol] prepared: {len(X)} runs ({args.n} x ({p['num_vars']} + 2)), inputs {p['names']}", flush=True)
+
+
+def extend(args) -> None:
+    try:
+        from SALib.sample import sobol as sampler
+    except ImportError:  # older SALib
+        from SALib.sample import saltelli as sampler
+    p = json.loads((WORK / "problem.json").read_text())
+    X_old = np.load(WORK / "X.npy")
+    if args.n <= p["n_base"]:
+        raise SystemExit(f"design already has N = {p['n_base']}")
+    X = sampler.sample({k: p[k] for k in ("num_vars", "names", "bounds")}, args.n, calc_second_order=False, seed=p["seed"])
+    if not np.array_equal(X[:len(X_old)], X_old):
+        raise SystemExit("the old design is not a prefix of the new one; finished runs would not match")
+    for name in ("X.npy", "problem.json"):  # keep the smaller design's files
+        backup = WORK / f"{Path(name).stem}_n{p['n_base']}{Path(name).suffix}"
+        if not backup.exists():
+            backup.write_bytes((WORK / name).read_bytes())
+    np.save(WORK / "X.npy", X)
+    (WORK / "problem.json").write_text(json.dumps(p | {"n_base": args.n, "runs": len(X)}, indent=2))
+    print(f"[sobol] extended: N {p['n_base']} -> {args.n}, {len(X_old)} runs kept, {len(X) - len(X_old)} to run", flush=True)
 
 
 def masks(pre: Path, raster: Path):
@@ -122,7 +153,9 @@ def run(args) -> None:
     for n_done, i in enumerate(todo):
         v = dict(zip(p["names"], map(float, X[i])))
         sample = {k: v[k] for k in ("ta_add", "rh_add", "wind_scale", "kdown_scale", "albedo_b", "ewall")}
-        paved = {"albedo": v["regular_albedo"], "emissivity": v["paved_emissivity"], "ts_deg": TS_FIT}
+        paved = {"albedo": v["regular_albedo"], "emissivity": v["paved_emissivity"]}
+        if SITE["fitted"]:
+            paved["ts_deg"] = TS_FIT
         tmp = mine / "tmp"
         shutil.rmtree(tmp, ignore_errors=True)
         tmp.mkdir()
@@ -132,7 +165,8 @@ def run(args) -> None:
                 st.enter_context(c)
             st.enter_context(applied_many(sample, tmp, pre / "metfiles"))  # met, walls
             st.enter_context(patched_landcover(tmp, PAVED_CLASSES, paved))
-            st.enter_context(ground_heat_storage(4.0))
+            if SITE["fitted"]:
+                st.enter_context(ground_heat_storage(4.0))
             run_utci_tiles(base_path=str(tmp), preprocess_dir=str(pre), selected_date_str=DATE, save_tmrt=True,
                            save_shadow=True)
         utci, tmrt, shadow = (read_stack(tmp, var) for var in ("UTCI", "TMRT", "Shadow"))
@@ -155,6 +189,7 @@ def run(args) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--site", choices=list(SITES), default="pacoima")
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("prepare")
     a.add_argument("--n", type=int, default=128, help="base samples (a power of 2)")
@@ -162,8 +197,13 @@ def main() -> None:
     b = sub.add_parser("run")
     b.add_argument("--worker", type=int, default=0)
     b.add_argument("--workers", type=int, default=1)
+    c = sub.add_parser("extend")
+    c.add_argument("--n", type=int, required=True, help="new number of base samples (a power of 2)")
     args = ap.parse_args()
-    {"prepare": prepare, "run": run}[args.cmd](args)
+    global WORK, SITE
+    SITE = SITES[args.site]
+    WORK = SITE["work"]
+    {"prepare": prepare, "run": run, "extend": extend}[args.cmd](args)
 
 
 if __name__ == "__main__":

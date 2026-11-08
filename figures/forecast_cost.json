@@ -1,0 +1,500 @@
+{
+ "day_seconds_1000px": 14.716858573001446,
+ "day_runs": 8,
+ "utci_member_day_seconds": 0.3174180149944732,
+ "utci_measured": true,
+ "bandwidth_efficiency": 0.8,
+ "laptop_bandwidth": 227000000000.0,
+ "gpus_peak_bandwidth": {
+  "A100 80 GB (est.)": 2000000000000.0,
+  "H100 SXM (est.)": 3350000000000.0
+ },
+ "domains": {
+  "1 venue tile": 1,
+  "30 venue tiles": 30,
+  "City of Los Angeles, ~330 tiles": 330,
+  "urban LA County, ~1,000 tiles": 1000
+ },
+ "rows": [
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 29.4,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 130.4,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 424.8,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 588.7,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 883.0,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 3912.9,
+   "gpus_to_finish_in_1h": 2,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 12743.1,
+   "gpus_to_finish_in_1h": 4,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 17660.2,
+   "gpus_to_finish_in_1h": 5,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 9713.1,
+   "gpus_to_finish_in_1h": 3,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 43042.4,
+   "gpus_to_finish_in_1h": 12,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 140173.7,
+   "gpus_to_finish_in_1h": 39,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 194262.5,
+   "gpus_to_finish_in_1h": 54,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 29433.7,
+   "gpus_to_finish_in_1h": 9,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 130431.6,
+   "gpus_to_finish_in_1h": 37,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 424768.8,
+   "gpus_to_finish_in_1h": 118,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "RTX 4070 Laptop (measured)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 588674.3,
+   "gpus_to_finish_in_1h": 164,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 4.2,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 18.5,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 60.3,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 83.5,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 125.3,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 555.1,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 1807.9,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 2505.5,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 1378.0,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 6106.6,
+   "gpus_to_finish_in_1h": 2,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 19887.1,
+   "gpus_to_finish_in_1h": 6,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 27561.0,
+   "gpus_to_finish_in_1h": 8,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 4175.9,
+   "gpus_to_finish_in_1h": 2,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 18505.0,
+   "gpus_to_finish_in_1h": 6,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 60264.1,
+   "gpus_to_finish_in_1h": 17,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "A100 80 GB (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 83518.2,
+   "gpus_to_finish_in_1h": 24,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 2.5,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 11.0,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 36.0,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "1 venue tile",
+   "tiles": 1,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 49.9,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 74.8,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 331.4,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 1079.4,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "30 venue tiles",
+   "tiles": 30,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 1495.8,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 822.7,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 3645.8,
+   "gpus_to_finish_in_1h": 2,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 11872.9,
+   "gpus_to_finish_in_1h": 4,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "City of Los Angeles, ~330 tiles",
+   "tiles": 330,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 16454.3,
+   "gpus_to_finish_in_1h": 5,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "single",
+   "physics_runs_per_tile": 1,
+   "seconds_per_cycle_one_gpu": 2493.1,
+   "gpus_to_finish_in_1h": 1,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut4",
+   "physics_runs_per_tile": 4,
+   "seconds_per_cycle_one_gpu": 11047.8,
+   "gpus_to_finish_in_1h": 4,
+   "fits_6h_cycle_on_one_gpu": true
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "shortcut14",
+   "physics_runs_per_tile": 14,
+   "seconds_per_cycle_one_gpu": 35978.5,
+   "gpus_to_finish_in_1h": 10,
+   "fits_6h_cycle_on_one_gpu": false
+  },
+  {
+   "gpu": "H100 SXM (est.)",
+   "domain": "urban LA County, ~1,000 tiles",
+   "tiles": 1000,
+   "method": "full",
+   "physics_runs_per_tile": 20,
+   "seconds_per_cycle_one_gpu": 49861.6,
+   "gpus_to_finish_in_1h": 14,
+   "fits_6h_cycle_on_one_gpu": false
+  }
+ ]
+}

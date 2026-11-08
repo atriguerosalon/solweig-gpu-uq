@@ -1,0 +1,155 @@
+{
+  "tag": "expo_0615",
+  "errors": "independent",
+  "structure": "default",
+  "perez": "published",
+  "date": "2019-06-15",
+  "met": "data/la/met_expo_20190615.txt",
+  "members": 20,
+  "event_frequency": {
+    "p_4h_above_32": 0.4700596572309946,
+    "p_4h_above_38": 0.0,
+    "p_above_38_at_15": 4.74372773776895e-05,
+    "p_above_46_at_15": 0.0
+  },
+  "noise_A_vs_B": {
+    "p_4h_above_32": {
+      "mean_abs_dp": 0.13781333570057375,
+      "pixels_off_one_member_pct": 79.25062972292191
+    },
+    "p_4h_above_38": {
+      "mean_abs_dp": 0.0,
+      "pixels_off_one_member_pct": 0.0
+    },
+    "p_above_38_at_15": {
+      "mean_abs_dp": 9.293267790366072e-05,
+      "pixels_off_one_member_pct": 0.18586535580732141
+    },
+    "p_above_46_at_15": {
+      "mean_abs_dp": 0.0,
+      "pixels_off_one_member_pct": 0.0
+    }
+  },
+  "shortcuts": {
+    "b": {
+      "physics_runs": 1,
+      "member_utci_error": {
+        "mean_abs": 0.47258103638887405,
+        "p99_abs": 1.3489450752735137,
+        "max_abs": 3.1806468963623047
+      },
+      "p_4h_above_32": {
+        "mean_abs_dp": 0.12166919573009029,
+        "pixels_off_one_member_pct": 77.60266980326014
+      },
+      "p_4h_above_38": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      },
+      "p_above_38_at_15": {
+        "mean_abs_dp": 4.74372773776895e-05,
+        "pixels_off_one_member_pct": 0.07517837525937926
+      },
+      "p_above_46_at_15": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      }
+    },
+    "c": {
+      "physics_runs": 2,
+      "member_utci_error": {
+        "mean_abs": 0.20290950126945972,
+        "p99_abs": 1.1097860842943192,
+        "max_abs": 3.0967941284179688
+      },
+      "p_4h_above_32": {
+        "mean_abs_dp": 0.09778417980670011,
+        "pixels_off_one_member_pct": 73.66010497231439
+      },
+      "p_4h_above_38": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      },
+      "p_above_38_at_15": {
+        "mean_abs_dp": 4.74372773776895e-05,
+        "pixels_off_one_member_pct": 0.07517837525937926
+      },
+      "p_above_46_at_15": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      }
+    },
+    "d": {
+      "physics_runs": 3,
+      "member_utci_error": {
+        "mean_abs": 0.031679202383384106,
+        "p99_abs": 0.23430772721767426,
+        "max_abs": 2.214780807495117
+      },
+      "p_4h_above_32": {
+        "mean_abs_dp": 0.02407927296130673,
+        "pixels_off_one_member_pct": 39.918746324304536
+      },
+      "p_4h_above_38": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      },
+      "p_above_38_at_15": {
+        "mean_abs_dp": 1.3177021493802641e-05,
+        "pixels_off_one_member_pct": 0.026354042987605276
+      },
+      "p_above_46_at_15": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      }
+    },
+    "e": {
+      "physics_runs": 4,
+      "member_utci_error": {
+        "mean_abs": 0.024140225956216455,
+        "p99_abs": 0.20607758164405823,
+        "max_abs": 2.214780807495117
+      },
+      "p_4h_above_32": {
+        "mean_abs_dp": 0.011004477413198111,
+        "pixels_off_one_member_pct": 20.710116623575495
+      },
+      "p_4h_above_38": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      },
+      "p_above_38_at_15": {
+        "mean_abs_dp": 1.3177021493802641e-05,
+        "pixels_off_one_member_pct": 0.026354042987605276
+      },
+      "p_above_46_at_15": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      }
+    },
+    "f": {
+      "physics_runs": 14,
+      "member_utci_error": {
+        "mean_abs": 0.01660344796255231,
+        "p99_abs": 0.1028874397277832,
+        "max_abs": 0.44953155517578125
+      },
+      "p_4h_above_32": {
+        "mean_abs_dp": 0.009893307737547027,
+        "pixels_off_one_member_pct": 18.560458948723355
+      },
+      "p_4h_above_38": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      },
+      "p_above_38_at_15": {
+        "mean_abs_dp": 2.1499350858309567e-06,
+        "pixels_off_one_member_pct": 0.004299870171661914
+      },
+      "p_above_46_at_15": {
+        "mean_abs_dp": 0.0,
+        "pixels_off_one_member_pct": 0.0
+      }
+    }
+  }
+}

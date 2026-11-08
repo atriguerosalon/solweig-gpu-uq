@@ -45,7 +45,7 @@ Perfect-model ensembles on two 2 x 2 km tiles at 2 m, 30 July 2019: Pacoima (gro
 **a** Each member's UTCI change at 15:00 against the unperturbed run, split into the change of the tile mean (solid) and the standard deviation of the change across outdoor pixels (dashed), both averaged over members. Log scale. The tile mean moves by about 1.1 times the error standard deviation at Pacoima and 0.9 times at the venue. The part that differs between pixels is 3-5.5% of that. Each member's map keeps the ranking of the unperturbed map (Spearman correlation at least 0.999).
 **b** Share of outdoor area with UTCI above 32 °C at 15:00, mean over members, band ±1 standard deviation (clipped at 0 and 100%). At an error of 1.5 K the area varies by 17 points between members at Pacoima and by 30 at the venue. The mean falls as the error grows, so a cold error takes away more area than an equally large warm error adds, which is what you expect when most outdoor area is already above 32 °C.
 
-For scale: HRRR 2 m temperature errors over the western US in summer are about 1.5 K at analysis time and 2-2.7 K at 9-24 h lead (James et al. 2022, Wea. Forecasting 37, fig. 10c). The errors here are the same everywhere in the tile by construction, so part of the result is built in. A test with errors that vary in space is next.
+For scale: HRRR 2 m temperature errors over the western US in summer are about 1.5 K at analysis time and 2-2.7 K at 9-24 h lead (James et al. 2022, Wea. Forecasting 37, fig. 10c). The errors here are the same everywhere in the tile by construction, so part of the result is built in. spatial_error_fss.png tests errors that vary in space.
 
 Data: `figures/la_forecast_error.json`, `figures/expo/la_forecast_error.json` (`scripts/run_la_forecast_error.py`, `scripts/analyse_la_forecast_error.py`). Script: `scripts/plot_level_pattern.py`.
 
@@ -64,7 +64,7 @@ In each setting, 20 members carry errors in air temperature (1.5 K), wind (30%) 
 - 14 runs: + a table of Tmrt at 13 radiation scales per hour (0.7 to 1.3)
 
 **a** Mean absolute error of the shortcut's event probabilities against full physics, divided by the same measure between two independent 20-member full-physics ensembles. That second number is the sampling noise of the ensemble itself, so 1 means the shortcut is as far off as a second ensemble would be. One point per setting and probability; probabilities that are 0 or 1 everywhere on a day are left out. Black bars are medians: 0.94, 0.63, 0.16, 0.065, 0.05. With one radiation slope the shortcut error is under 1% to 33% of the noise.
-**b** Single-member UTCI error against full physics: the largest over all members, outdoor pixels and hours, and the 99th percentile over pixels and hours, averaged over members. With one radiation slope the 99th percentile is below 0.9 °C, while the largest errors stay at 2-5 °C in a few pixels. The heatwave day with SOLWEIG's Perez clearness expression as coded has errors of 14-17 °C for every shortcut. With the expression as published they drop to 1.4-3.3 °C (see the next figure).
+**b** Single-member UTCI error against full physics: the largest over all members, outdoor pixels and hours, and the 99th percentile over pixels and hours, averaged over members. With one radiation slope the 99th percentile is below 0.9 °C, while the largest errors stay at 2-5 °C in a few pixels. The heatwave day with SOLWEIG's Perez clearness expression as coded has errors of 14-17 °C for every shortcut. With the expression as published they drop to 1.4-3.3 °C (see the next figure). On the other three days run both ways (venue 15 Jun and 30 Jul, Pacoima 30 Jul) the published form changes the scores of the shortcuts with radiation runs by 0.02 of the noise or less, and of the air-temperature-only ones by up to 0.14 (`shortcut_suite_*_perez_published.json`). It matters on the low-sun heatwave morning.
 
 Settings: venue tile on 30 Jul 2019 (also with radiation errors correlated with the air-temperature errors), 15 Jun 2019 (morning cloud) and 6 Sep 2020 (heatwave); Pacoima on 30 Jul 2019, with SOLWEIG's own ground model and with the fitted one. All with C1-C9.
 
@@ -81,7 +81,7 @@ Venue tile, 30 July 2019, SOLWEIG's own ground model. In each run, global radiat
 Orange is the Perez sky clearness as coded in SOLWEIG-GPU and UMEP, ((Idh + Ibn)/(Idh + 1.041 z³))/(1 + 1.041 z³). Teal is the published definition (Perez et al. 1990, as pvlib implements it; checked against pvlib, not the paper itself), ((Idh + Ibn)/Idh + 1.041 z³)/(1 + 1.041 z³), with z the solar zenith angle in radians.
 
 **a** At 07:00 both forms jump when radiation is 3-7% below the forecast. That jump comes from the direct/diffuse split's break at clearness index 0.78, not from the Perez expression.
-**b** At 12:00 Tmrt is close to linear in the radiation error.
+**b** At 12:00 Tmrt is close to linear in the radiation error, with a mild kink at the forecast value where SOLWEIG caps its clearness indices.
 **c** At 17:00 the coded form jumps when radiation is 3-7% above the forecast, about 1.3 K more in the sunlit quarter than the published form. The coded clearness crosses the boundary of the first Perez category (1.065) where the published one does not. On the heatwave day the same switch moves Tmrt at 08:00 by 4.6 K on average and up to 28.6 K in single pixels.
 
 Data: `figures/radiation_sweep_expo.json`, `figures/radiation_sweep_expo_perez_published.json`. Script: `scripts/radiation_sweep.py --compare expo`.
@@ -101,20 +101,65 @@ Which inputs drive heat stress at Pacoima through the day.
 
 Each panel draws the three inputs with the largest total index averaged over the day. Dashed: the sum of first-order indices; 1 means the inputs act additively, and the gap below 1 is interactions (mostly air temperature with wind). The other inputs average below 0.1, but humidity and paved emissivity reach 0.22-0.23 for the 32 °C area at 20:00, and wall albedo reaches 0.49 for the 38 °C area at 10:00, when little area is above 38 °C.
 
+The surrogate's indices match the direct estimators on 3840 runs it was not fitted to (la_sobol_surrogate_check.png). The figure keeps the surrogate because the direct estimates, even on all 5120 runs, are too wide to read for the 32 °C area at the hours where it varies only 3-10 points between runs: the air-temperature index spans 0.60-1.56 at 11:00 and 0.43-1.25 at 14:00 (95%), and the first-order sum jumps between 0.20 and 1.02 from hour to hour. They agree with the surrogate within those intervals; the direct version is la_sobol_day_n512.png. The bands here are the spread over the surrogate's 5 cross-validation fits, not a full uncertainty. The interaction holds on the direct estimates too: from 14:00 to 18:00 the total indices of both areas add up to 1.2-1.5 and the first-order ones to less than 1, on all 5120 runs and on the 3840 alone, while mean UTCI adds up to 1.00. Its exact size is not resolved.
+
 Data: `figures/la_sobol.json`, `figures/la_sobol_surrogate_allhours.json` (`scripts/run_la_sobol.py`, `scripts/sobol_surrogate.py --all-hours`). Script: `scripts/analyse_la_sobol.py`.
 
 ### figures/la_sobol_surrogate_check.png
 
 ![](../figures/la_sobol_surrogate_check.png)
 
-Check of the surrogate behind la_sobol_day.png. A Gaussian process (Matérn 5/2, one length scale per input) is fitted to the 1280 runs, and its indices come from a Saltelli design of 8192 base samples on its mean.
+Check of the surrogate behind la_sobol_day.png. A Gaussian process (Matérn 5/2, one length scale per input) is fitted to the 1280 runs, and its indices come from a Saltelli design of 8192 base samples on its mean. The design was later grown to N = 512 (5120 runs, the first 1280 being the pilot's), so the surrogate can be checked against the direct estimators on the 3840 runs it was not fitted to.
 
-**a** Total index from the surrogate against the direct estimator, for every input, at the hours where the direct estimator is resolved. Bars are its 95% bootstrap intervals. Dotted: equal.
+**a** Total index from the surrogate against the direct estimator on those 3840 runs, for every input, at every hour where the quantity varies between runs (the areas: standard deviation of at least 1 point) and the surrogate predicts held-out runs with R² of 0.9 or more. Bars: 95% bootstrap intervals of the direct estimate. Dotted: equal. 169 of 184 surrogate indices fall inside the interval (mean UTCI 31 of 32, area above 32 °C 83 of 88, above 38 °C 55 of 64). Of the 15 outside, 9 are inputs with no effect at that hour, where both are 0.00 and the interval has no width; the other 6 differ by 0.04 or less. Median differences: 0.000, 0.004 and 0.005. For mean UTCI the two agree far closer than the intervals suggest: the runs follow a quasi-random Sobol' sequence, which converges much faster than random sampling for a smooth quantity, while the bootstrap treats the runs as random. The threshold areas are not smooth, so there the agreement is looser.
 **b** R² on held-out runs (5-fold cross-validation) at each hour where the area varies between runs. Dotted: 0.9, below which la_sobol_day.png leaves a gap.
 
-Data: `figures/la_sobol_surrogate.json`, `figures/la_sobol_surrogate_allhours.json`. Script: `scripts/sobol_surrogate.py --check-figure figures`.
+Data: `figures/la_sobol_surrogate.json`, `figures/la_sobol_surrogate_allhours.json`, `figures/la_sobol_n512_new.json` (`scripts/run_la_sobol.py extend --n 512`, `scripts/analyse_la_sobol.py --n 512 --skip-base 128 --tag _n512_new --json-only`). Script: `scripts/sobol_surrogate.py --check-figure figures`.
+
+### figures/hrrr/hrrr_errors.png
+
+![](../figures/hrrr/hrrr_errors.png)
+
+How large HRRR's 2 m temperature errors are around our tiles, and how far they reach. 19 airport stations in and around the Los Angeles basin, summers (June to September) 2021-2023, HRRR v4 forecasts valid at 15:00 PDT, value at the grid point nearest each station (no height correction). 4025 forecasts.
+
+**a** Error against lead time. RMSE over all stations goes from 1.15 K at analysis time to 1.6 K at 4 h, 1.8-1.9 K at 10-22 h and 2.1 K at 40-46 h, with a warm bias of up to 0.8 K at short leads. Grey lines: the two stations next to our tiles (Van Nuys for Pacoima, Downtown USC for the venue).
+**b** Correlation between the errors of two stations against their distance, each station's own mean bias removed first, with an exponential fit. A day ahead about two thirds of the error variance is shared over 100 km and more, which is the same over a 2 km tile; the rest is not shared even by stations 5-15 km apart. That local part is about 1 K at every lead. Part of it is where each station sits, not air temperature that varies between streets.
+
+Data: `figures/hrrr/hrrr_points.csv`, `hrrr_errors.json`. Script: `scripts/hrrr_errors.py`.
+
+### figures/spatial_error/spatial_error_fss.png
+
+![](../figures/spatial_error/spatial_error_fss.png)
+
+The same skill test as la_level_vs_pattern.png, with air-temperature errors that vary in space. SOLWEIG takes one air temperature per tile, so the error is applied pixel by pixel with the shortcut from the shortcut suite: each pixel's Tmrt changes by its own slope with air temperature (from a run with air temperature + 1 K), and UTCI follows from the local air temperature. That shortcut was within 0.01 °C of full physics. 20 members, errors AR(1) in time (lag-1 correlation 0.9) and exponentially correlated in space. Venue tile (own ground) and Pacoima (fitted ground), 30 July 2019.
+
+**a** Fractions skill score at 2 m (single forecast) against the error's correlation length, at an error of 2 K. Solid: venue, dashed: Pacoima. With a uniform error every event scores near 1. Once the error varies in space, the hottest 10% at 15:00 drops to 0.15-0.4: the top of the map is flat, so which sunlit pixels are hottest is decided by tenths of a degree. The coolest 10% (shade) and the hotter half keep 0.5-0.96. UTCI above 32 °C for 4 h stays at 0.90-0.97, about as with a uniform error, since local errors partly cancel over the tile.
+**b** Correlation between members' UTCI maps at 15:00 with the tile mean removed, venue: 0.33-0.98 depending on size and length.
+**c** With errors like HRRR's (from hrrr_errors.png): at each lead the measured size, a share uniform over the tile and the rest local. Line: local length 1 km; band: 250 m to 3 km, since stations cannot tell which. The scores hardly change from analysis to 46 h. The local part of the error is about 1 K at every lead, and that is what limits the pattern; lead time adds to the uniform part, which only moves the level.
+
+Data: `figures/spatial_error/*.json`. Scripts: `scripts/spatial_error_fss.py`, `scripts/plot_spatial_error.py`.
+
+### figures/forecast_demo/forecast_demo.png
+
+![](../figures/forecast_demo/forecast_demo.png)
+
+A street-scale UTCI forecast driven by real HRRR forecasts: the venue tile during the late August - September 2022 Los Angeles heatwave, 11 days (9 September left out, the station had 16 of 24 hours). SOLWEIG forced by HRRR at the tile centre (2 m temperature and humidity, 10 m wind, radiation, pressure) from the run of 06 UTC on the day (1-24 h ahead), 18 UTC the day before (13-36 h) and 06 UTC the day before (25-48 h). Reference: the same model forced by the Downtown USC station (air temperature, humidity, wind) with the HRRR analysis' radiation, so radiation enters the same way.
+
+**a** Air temperature at 15:00. The day-ahead runs miss the peaks: 33.0 °C forecast on 4 September against 37.8 °C measured.
+**b** Error of the tile-mean UTCI at 15:00 against the station-forced run. Same-day forecast: 1.2 °C on average; 13-36 h ahead: 2.8 °C, too cool by 2.6 °C on average and by 7.6 °C on 4 September. Even the analysis is off by about 1.2 °C, mostly through wind: HRRR's 10 m wind is 2-6 m/s above the station's on most days, and more wind means lower UTCI. Dashed: the 13-36 h forecast against the station's air temperature and humidity with HRRR's wind. Its error drops to 1.9 °C, too cool by 1.3 °C, so about half of the day-ahead miss is the sheltered station's wind against the model's 10 m wind, and the rest is the missed heat peaks (still 6 °C on 4 September).
+**c** Share of outdoor area with UTCI above 38 °C at 15:00. On 4 September the station-forced run has 98% of the area above 38 °C, the 13-36 h forecast 43%. Dashed: the station with HRRR's wind.
+
+The forcing is one value per tile, so this says nothing about the pattern; spatial_error_fss.png does. 11 days at one site.
+
+Data: `figures/forecast_demo/hrrr_point.csv`, `forecast_demo.json`. Script: `scripts/forecast_demo.py`.
 
 ## Supplementary
+
+### figures/la_sobol_day_n512.png
+
+![](../figures/la_sobol_day_n512.png)
+
+la_sobol_day.png from the direct estimators on all 5120 runs (N = 512) in every panel, instead of the surrogate for the areas; same inputs, ranges and runs. Bands: 95% bootstrap intervals. Gaps: hours where the area varies less than 1 point between runs. Mean UTCI (a) and the 38 °C area (c) look much as in the main figure. The 32 °C area (b) is readable at 9-10, 12-13 and 17-19 h but not at 11 and 14-16 h, where the air-temperature interval spans 0.4-1.6. Data: `figures/la_sobol_n512.json`. Script: `scripts/analyse_la_sobol.py --n 512 --tag _n512 --no-maps --direct --day-out figures/la_sobol_day_n512.png`.
 
 ### figures/la_forecast_error_fss.png and figures/expo/la_forecast_error_fss.png
 
@@ -125,7 +170,7 @@ Data: `figures/la_sobol_surrogate.json`, `figures/la_sobol_surrogate_allhours.js
 Fractions skill score (Roberts and Lean 2008) of the ensembles in la_level_vs_pattern.png, Pacoima first, then the venue. Each member in turn is the truth and the others are the forecast.
 
 **a** Event: UTCI above 32 °C for 4 h or more. Most pixels reach it, so this score mostly measures the level of the map. Solid: the probability from the other 19 members. Dashed: one other member, as a single forecast. Lines are the mean over truths, bands the 10th to 90th percentile of the single forecast. Dotted: useful skill, FSS = 0.5 + f/2 with f the event frequency.
-**c** Event: each map's own hottest 10% of outdoor pixels at 15:00. This removes the level and asks only whether the hot spots are in the right streets.
+**c** Event: each map's own hottest 10% of outdoor pixels at 15:00. This removes the level and asks only whether the hot spots are in the right streets. With an error that is the same over the whole tile that is nearly built in, and the top of the UTCI map is flat (41% of the venue's outdoor pixels lie within 0.5 °C of the 90th percentile), so with errors that vary in space this event falls apart: see spatial_error_fss.png.
 **b, d** The smallest neighbourhood at which the forecast is useful. The tested neighbourhoods are odd numbers of 2 m pixels (1, 5, 13 ... 501), hence 2, 10, 26 ... 1002 m. 2 m means useful at the single pixel. "none" (x) means not useful at any scale tested, up to 1 km.
 
 UTCI above 38 °C for 4 h or more is too rare on this day to score; it is in the JSON. Same data as la_level_vs_pattern.png. Script: `scripts/analyse_la_forecast_error.py` (`--replot` redraws from the JSON).
