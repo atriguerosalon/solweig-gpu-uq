@@ -16,8 +16,7 @@ here on the GPU when available (else the figure below). Other GPUs are an estima
 (bounds.png), so time is scaled by memory bandwidth, measured 227 GB/s on the laptop against the vendors'
 peak figures for the others, times 0.8 for what code reaches in practice. These are not measured.
 
-Domains: 1 venue tile; 30 venue tiles (an Olympic-size set of venues; LA28 lists about 40 venues, some sharing
-tiles); the City of Los Angeles (1,302 km2, about 330 tiles); the urbanised part of Los Angeles County (about
+Domains: 1 venue tile; 30 venue tiles (a set of event venues, some sharing a tile); the City of Los Angeles (1,302 km2, about 330 tiles); the urbanised part of Los Angeles County (about
 4,000 km2, about 1,000 tiles).
 
 Writes figures/forecast_cost.json and prints a table.

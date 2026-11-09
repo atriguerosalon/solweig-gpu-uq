@@ -74,7 +74,7 @@ Data: `figures/shortcuts/shortcut_suite_*.json` (`scripts/shortcut_suite.py`), m
 
 ![](../figures/radiation_sweep_expo_compare.png)
 
-Tmrt against an error in global radiation at one hour, and a bug in the Perez sky clearness inherited from UMEP.
+Tmrt against an error in global radiation at one hour, and what looks like a typo in the Perez sky clearness, carried over from UMEP.
 
 Venue tile, 30 July 2019, SOLWEIG's own ground model. In each run, global radiation at 07:00, 12:00 and 17:00 is scaled by the same factor (an error at one hour hardly carries into later hours); 13 factors from 0.8 to 1.2. Solid: tile mean. Dashed: median over the quarter of outdoor pixels with the highest Tmrt in the unperturbed run, which at these hours are the sunlit ones.
 
