@@ -1,0 +1,351 @@
+{
+  "levels": [
+    "hrrr",
+    "static",
+    "common",
+    "offset",
+    "kriged"
+  ],
+  "lapse_K_per_km": {
+    "15:00 PDT": -6.5,
+    "04:00 PDT": 0.0
+  },
+  "hours": {
+    "15:00 PDT": {
+      "qc": {
+        "stations_bad_height_or_moved": 9,
+        "reports_gross": 1093,
+        "stations_under_40_reports": 14,
+        "stations_noisy": 2,
+        "stations_used": 415,
+        "reports_used": 125067
+      },
+      "stations": 402,
+      "fits": [
+        {
+          "c0": 0.841,
+          "length_km": 7.48
+        },
+        {
+          "c0": 0.825,
+          "length_km": 7.94
+        },
+        {
+          "c0": 0.893,
+          "length_km": 7.78
+        },
+        {
+          "c0": 0.888,
+          "length_km": 7.48
+        },
+        {
+          "c0": 0.84,
+          "length_km": 6.9
+        }
+      ],
+      "hrrr": {
+        "rmse": 1.742,
+        "rmse_hot_days": 1.708,
+        "half_width_90": 2.727,
+        "coverage_90": 0.899,
+        "coverage_90_hot_days": 0.907,
+        "mondrian_network": {
+          "coverage_90": 0.896,
+          "coverage_90_hot_days": 0.904
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 100,
+            "rmse": 1.728,
+            "coverage_90": 0.892,
+            "coverage_90_mondrian": 0.9,
+            "half_width_90_mondrian": 2.83
+          },
+          "MesoWest": {
+            "n": 295,
+            "rmse": 1.713,
+            "coverage_90": 0.905,
+            "coverage_90_mondrian": 0.899,
+            "half_width_90_mondrian": 2.69
+          }
+        }
+      },
+      "static": {
+        "rmse": 1.556,
+        "rmse_hot_days": 1.604,
+        "half_width_90": 2.513,
+        "coverage_90": 0.901,
+        "coverage_90_hot_days": 0.897,
+        "mondrian_network": {
+          "coverage_90": 0.895,
+          "coverage_90_hot_days": 0.895
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 100,
+            "rmse": 1.863,
+            "coverage_90": 0.837,
+            "coverage_90_mondrian": 0.899,
+            "half_width_90_mondrian": 3.067
+          },
+          "MesoWest": {
+            "n": 295,
+            "rmse": 1.39,
+            "coverage_90": 0.93,
+            "coverage_90_mondrian": 0.899,
+            "half_width_90_mondrian": 2.246
+          }
+        }
+      },
+      "common": {
+        "rmse": 1.564,
+        "rmse_hot_days": 1.581,
+        "half_width_90": 2.5,
+        "coverage_90": 0.899,
+        "coverage_90_hot_days": 0.895,
+        "mondrian_network": {
+          "coverage_90": 0.896,
+          "coverage_90_hot_days": 0.89
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 100,
+            "rmse": 1.992,
+            "coverage_90": 0.793,
+            "coverage_90_mondrian": 0.9,
+            "half_width_90_mondrian": 3.259
+          },
+          "MesoWest": {
+            "n": 295,
+            "rmse": 1.358,
+            "coverage_90": 0.938,
+            "coverage_90_mondrian": 0.899,
+            "half_width_90_mondrian": 2.126
+          }
+        }
+      },
+      "offset": {
+        "rmse": 1.509,
+        "rmse_hot_days": 1.566,
+        "half_width_90": 2.422,
+        "coverage_90": 0.901,
+        "coverage_90_hot_days": 0.893,
+        "mondrian_network": {
+          "coverage_90": 0.895,
+          "coverage_90_hot_days": 0.884
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 100,
+            "rmse": 1.827,
+            "coverage_90": 0.831,
+            "coverage_90_mondrian": 0.899,
+            "half_width_90_mondrian": 3.022
+          },
+          "MesoWest": {
+            "n": 295,
+            "rmse": 1.335,
+            "coverage_90": 0.932,
+            "coverage_90_mondrian": 0.9,
+            "half_width_90_mondrian": 2.14
+          }
+        }
+      },
+      "kriged": {
+        "rmse": 1.372,
+        "rmse_hot_days": 1.412,
+        "half_width_90": 2.192,
+        "coverage_90": 0.903,
+        "coverage_90_hot_days": 0.9,
+        "mondrian_network": {
+          "coverage_90": 0.898,
+          "coverage_90_hot_days": 0.89
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 100,
+            "rmse": 1.709,
+            "coverage_90": 0.817,
+            "coverage_90_mondrian": 0.902,
+            "half_width_90_mondrian": 2.842
+          },
+          "MesoWest": {
+            "n": 295,
+            "rmse": 1.18,
+            "coverage_90": 0.941,
+            "coverage_90_mondrian": 0.904,
+            "half_width_90_mondrian": 1.88
+          }
+        }
+      }
+    },
+    "04:00 PDT": {
+      "qc": {
+        "stations_bad_height_or_moved": 9,
+        "reports_gross": 508,
+        "stations_under_40_reports": 14,
+        "stations_noisy": 0,
+        "stations_used": 417,
+        "reports_used": 125132
+      },
+      "stations": 404,
+      "fits": [
+        {
+          "c0": 0.506,
+          "length_km": 7.18
+        },
+        {
+          "c0": 0.528,
+          "length_km": 8.1
+        },
+        {
+          "c0": 0.542,
+          "length_km": 7.04
+        },
+        {
+          "c0": 0.566,
+          "length_km": 7.18
+        },
+        {
+          "c0": 0.524,
+          "length_km": 6.5
+        }
+      ],
+      "hrrr": {
+        "rmse": 1.846,
+        "rmse_hot_days": 2.222,
+        "half_width_90": 3.014,
+        "coverage_90": 0.9,
+        "coverage_90_hot_days": 0.843,
+        "mondrian_network": {
+          "coverage_90": 0.898,
+          "coverage_90_hot_days": 0.843
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 99,
+            "rmse": 1.542,
+            "coverage_90": 0.945,
+            "coverage_90_mondrian": 0.897,
+            "half_width_90_mondrian": 2.29
+          },
+          "MesoWest": {
+            "n": 298,
+            "rmse": 1.938,
+            "coverage_90": 0.885,
+            "coverage_90_mondrian": 0.9,
+            "half_width_90_mondrian": 3.183
+          }
+        }
+      },
+      "static": {
+        "rmse": 1.779,
+        "rmse_hot_days": 2.122,
+        "half_width_90": 2.899,
+        "coverage_90": 0.901,
+        "coverage_90_hot_days": 0.845,
+        "mondrian_network": {
+          "coverage_90": 0.899,
+          "coverage_90_hot_days": 0.844
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 99,
+            "rmse": 1.531,
+            "coverage_90": 0.941,
+            "coverage_90_mondrian": 0.895,
+            "half_width_90_mondrian": 2.341
+          },
+          "MesoWest": {
+            "n": 298,
+            "rmse": 1.854,
+            "coverage_90": 0.887,
+            "coverage_90_mondrian": 0.901,
+            "half_width_90_mondrian": 3.046
+          }
+        }
+      },
+      "common": {
+        "rmse": 1.814,
+        "rmse_hot_days": 2.19,
+        "half_width_90": 2.978,
+        "coverage_90": 0.9,
+        "coverage_90_hot_days": 0.84,
+        "mondrian_network": {
+          "coverage_90": 0.899,
+          "coverage_90_hot_days": 0.843
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 99,
+            "rmse": 1.518,
+            "coverage_90": 0.948,
+            "coverage_90_mondrian": 0.897,
+            "half_width_90_mondrian": 2.217
+          },
+          "MesoWest": {
+            "n": 298,
+            "rmse": 1.904,
+            "coverage_90": 0.884,
+            "coverage_90_mondrian": 0.9,
+            "half_width_90_mondrian": 3.154
+          }
+        }
+      },
+      "offset": {
+        "rmse": 1.752,
+        "rmse_hot_days": 2.088,
+        "half_width_90": 2.868,
+        "coverage_90": 0.9,
+        "coverage_90_hot_days": 0.838,
+        "mondrian_network": {
+          "coverage_90": 0.899,
+          "coverage_90_hot_days": 0.84
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 99,
+            "rmse": 1.511,
+            "coverage_90": 0.942,
+            "coverage_90_mondrian": 0.896,
+            "half_width_90_mondrian": 2.312
+          },
+          "MesoWest": {
+            "n": 298,
+            "rmse": 1.825,
+            "coverage_90": 0.887,
+            "coverage_90_mondrian": 0.901,
+            "half_width_90_mondrian": 3.012
+          }
+        }
+      },
+      "kriged": {
+        "rmse": 1.655,
+        "rmse_hot_days": 1.94,
+        "half_width_90": 2.743,
+        "coverage_90": 0.902,
+        "coverage_90_hot_days": 0.849,
+        "mondrian_network": {
+          "coverage_90": 0.901,
+          "coverage_90_hot_days": 0.85
+        },
+        "by_network": {
+          "APRSWXNET": {
+            "n": 99,
+            "rmse": 1.414,
+            "coverage_90": 0.947,
+            "coverage_90_mondrian": 0.897,
+            "half_width_90_mondrian": 2.192
+          },
+          "MesoWest": {
+            "n": 298,
+            "rmse": 1.727,
+            "coverage_90": 0.888,
+            "coverage_90_mondrian": 0.904,
+            "half_width_90_mondrian": 2.887
+          }
+        }
+      }
+    }
+  }
+}

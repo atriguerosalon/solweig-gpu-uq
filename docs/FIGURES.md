@@ -127,6 +127,29 @@ How large HRRR's 2 m temperature errors are around our tiles, and how far they r
 
 Data: `figures/hrrr/hrrr_points.csv`, `hrrr_errors.json`. Script: `scripts/hrrr_errors.py`.
 
+### figures/street_ta/street_ta.png
+
+![](../figures/street_ta/street_ta.png)
+
+Air temperature below HRRR's 3 km grid, from every public station in the basin. All stations with air temperature in the MADIS public archive in an 80 x 90 km box (MesoWest networks, citizen stations of the CWOP network, fire-weather stations), summers 2021-2023 at 15:00 and 04:00 PDT, against HRRR's 1 h forecast at the same place and hour (bilinear on the 3 km grid; moved to the station's height with -6.5 K/km at 15:00, not at 04:00, where night inversions make that correction wrong). After quality control 415 stations and about 125,000 reports per hour. The difference station minus HRRR is split into a basin-wide part per time, a lasting offset per station and a daily local part. Their sizes: 0.41, 1.25 and 1.00 K at 15:00; 0.34, 1.26 and 1.29 K at 04:00.
+
+**a** Lasting offset per station at 15:00. Citizen stations run 1.6 K warmer than the MesoWest ones by day and the same at night: sun on the sensor or warm siting. So part of the daytime offsets is how stations are sited.
+**b** How different the offsets of two stations are against their distance (square root of the semivariance; dotted: the value for unrelated stations). By day two stations 300 m apart differ about as much as two 2.5 km apart: the variation sits at the scale of the station's site. At night it builds up between 0.3 and 4 km, inside one HRRR grid cell. Land cover around the stations (ESA WorldCover 10 m within 100 and 500 m, distance to the ocean, heights) explains 4-12% of the daytime offsets and 14-32% of the night ones, with 5 km blocks of stations held out.
+**c** Correlation of the daily local parts of two stations against their distance, with an exponential fit: about 8 km at both hours, so inside a 2 km tile the daily local error is mostly the same everywhere. The fit overshoots the closest pairs (0.76 measured at 0.3 km by day, 26 pairs).
+
+Stations are not in streets, and fewer than 30 pairs are closer than 500 m: nothing here resolves street scale. Data: `figures/street_ta/street_ta.json` (with no height correction: `street_ta_nolapse.json`). The per-station table (`stations.csv`) is written locally and kept out of git, since citizen stations are mostly at private homes. Script: `scripts/street_ta_structure.py`.
+
+### figures/street_ta/street_ta_baseline.png
+
+![](../figures/street_ta/street_ta_baseline.png)
+
+A first air-temperature layer on top of HRRR, scored on stations it never saw (5 km blocks held out in turn, 402-404 stations, same data as street_ta.png).
+
+**a** RMSE at the held-out stations. Forecast (no reports at the valid time): HRRR plus each station's offset predicted from its surroundings and the mean bias, both learned beforehand. Nowcast (shaded, with live reports from the other stations at that hour): plus the basin-wide error at that hour, the learned offsets, and the local error interpolated from nearby stations (simple kriging with the fitted correlation). By day the error goes from 1.74 to 1.56 K (forecast) and 1.37 K (nowcast); at night from 1.85 to 1.78 and 1.66 K. Triangles: the hottest tenth of days or nights, where night errors are largest.
+**b** Coverage of conformal 90% intervals for the nowcast layer, calibrated on the training stations' own held-out errors. Overall 0.90. One interval for all stations covers citizen stations by day only 82% of the time and MesoWest stations 94%; calibrated per network (Mondrian) both reach 0.90. On the hottest tenth of nights coverage stays at 0.84-0.85 either way: the calibration from ordinary nights does not carry over to the hottest ones.
+
+Data: `figures/street_ta/street_ta_baseline.json` (no height correction: `street_ta_baseline_nolapse.json`). Script: `scripts/street_ta_structure.py`.
+
 ### figures/spatial_error/spatial_error_fss.png
 
 ![](../figures/spatial_error/spatial_error_fss.png)

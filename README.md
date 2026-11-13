@@ -10,6 +10,7 @@ Everything wraps SOLWEIG-GPU v2.0.0 at run time. The installed package is never 
 - **Sensitivity.** One at a time and Morris screening on the SOLWEIG-GPU sample (Austin); Sobol indices on a Los Angeles tile (Pacoima, 5120 runs, with a Gaussian-process surrogate checked out of sample) and a first Sobol pilot on a second tile (Exposition Park).
 - **Against measurements.** Pacoima built from public data, compared with the cool-pavement Tmrt measurements of Middel et al. (2020): input uncertainty against model bias, and an experimental patch that keeps ground heat after sunset.
 - **Forecast errors at street scale.** Perfect-model ensembles with air-temperature, wind and radiation errors; shortcuts that build a 20-member ensemble from 4-14 physics runs; HRRR's real errors at 19 Los Angeles stations; errors that vary in space; a street-scale forecast driven by real HRRR forecasts through the September 2022 heatwave; and what a forecast cycle costs.
+- **Air temperature below the forecast grid.** About 415 public stations in the Los Angeles basin against HRRR, summers 2021-2023: how large the error below HRRR's 3 km grid is, how far it stays correlated, how much the surroundings explain, and a first air-temperature layer on top of HRRR with calibrated intervals, scored on held-out stations.
 - **Notes on SOLWEIG-GPU v2.0.0.** A bracket in the Perez sky clearness that differs from the published formula (carried over from UMEP), the sky view step generating 149 of 153 patches, and what we measured about draft PR #137. In [docs/SOLWEIG_MODIFICATIONS.md](docs/SOLWEIG_MODIFICATIONS.md), section Upstream. The code is left as it is.
 
 The main figures, their captions and the scripts that draw them: [docs/FIGURES.md](docs/FIGURES.md).
@@ -23,7 +24,7 @@ bash scripts/setup_env.sh            # micromamba env "solweig": Python 3.11, GD
 micromamba run -n solweig pytest     # 75 tests, CPU only, no data or network needed
 ```
 
-The HRRR scripts (`hrrr_errors.py`, `forecast_demo.py hrrr`) need a second env with `herbie-data`, `cfgrib`, `eccodes`, `xarray`, `scipy` and `matplotlib` from conda-forge.
+The HRRR scripts (`hrrr_errors.py`, `forecast_demo.py hrrr`, `street_ta_structure.py`) need a second env with `herbie-data`, `cfgrib`, `eccodes`, `xarray`, `scipy`, `scikit-learn`, `pyproj` and `matplotlib` from conda-forge; the land-cover step of `street_ta_structure.py` (`predictors`) runs in the main env, which has GDAL.
 
 ## Using the speed-ups
 
@@ -42,7 +43,7 @@ For the sky view step, `compact_masks("bits", svf=True)`, `fast_sky_shadow()` an
 
 ## Data
 
-Not in git. The SOLWEIG-GPU v2.0 sample (Austin, Texas, 2 m) is on [Zenodo 21081622](https://zenodo.org/records/21081622); only `Input_rasters.zip` and `ownmet_Forcing_data.txt` are needed, in `data/`. The Los Angeles tiles and forcing are built from public sources by the scripts below (USGS 3DEP, LA County building outlines, Meta/WRI canopy height, ESA WorldCover, the Iowa Environmental Mesonet ASOS archive, ERA5 through Open-Meteo); HRRR comes from the NOAA archive on AWS. No account or key is needed. `data_checksums.sha256` records what was downloaded.
+Not in git. The SOLWEIG-GPU v2.0 sample (Austin, Texas, 2 m) is on [Zenodo 21081622](https://zenodo.org/records/21081622); only `Input_rasters.zip` and `ownmet_Forcing_data.txt` are needed, in `data/`. The Los Angeles tiles and forcing are built from public sources by the scripts below (USGS 3DEP, LA County building outlines, Meta/WRI canopy height, ESA WorldCover, the Iowa Environmental Mesonet ASOS archive, ERA5 through Open-Meteo); HRRR comes from the NOAA archive on AWS, station reports from the public MADIS archive. No account or key is needed. `data_checksums.sha256` records what was downloaded.
 
 ## Running
 

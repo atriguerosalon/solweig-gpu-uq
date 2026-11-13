@@ -1,0 +1,266 @@
+{
+  "times": 732,
+  "stations_total": 440,
+  "years": [
+    "2021",
+    "2022",
+    "2023"
+  ],
+  "lapse_K_per_km": 0.0,
+  "hours": {
+    "15:00 PDT": {
+      "qc": {
+        "stations_bad_height_or_moved": 9,
+        "reports_gross": 708,
+        "stations_under_40_reports": 14,
+        "stations_noisy": 2,
+        "stations_used": 415,
+        "reports_used": 125418
+      },
+      "raw_bias_mean": -0.506,
+      "sd": {
+        "basin_common_c": 0.406,
+        "station_offset_m": 1.334,
+        "local_daily_e": 1.012,
+        "total_r": 1.689
+      },
+      "by_network": {
+        "APRSWXNET": {
+          "n": 102,
+          "offset_mean": 1.141,
+          "offset_sd": 1.204,
+          "local_sd": 1.139
+        },
+        "MesoWest": {
+          "n": 306,
+          "offset_mean": -0.383,
+          "offset_sd": 1.085,
+          "local_sd": 0.954
+        }
+      },
+      "by_distance": {
+        "km": [
+          0.31,
+          0.8,
+          1.63,
+          2.53,
+          4.02,
+          6.56,
+          10.05,
+          16.31,
+          25.03,
+          40.2,
+          61.73
+        ],
+        "pairs": [
+          26,
+          85,
+          302,
+          454,
+          1250,
+          2203,
+          3086,
+          7720,
+          11546,
+          28044,
+          27906
+        ],
+        "offset_semivariance": [
+          1.193,
+          1.037,
+          1.108,
+          1.102,
+          1.571,
+          1.451,
+          1.552,
+          1.564,
+          1.803,
+          1.882,
+          1.863
+        ],
+        "local_error_corr": [
+          0.762,
+          0.735,
+          0.672,
+          0.613,
+          0.495,
+          0.371,
+          0.256,
+          0.136,
+          0.027,
+          -0.05,
+          -0.085
+        ],
+        "offset_variance": 1.778
+      },
+      "local_error_corr_fit": {
+        "c0": 0.856,
+        "length_km": 7.78
+      },
+      "pairs_within_3km": {
+        "n": 867,
+        "median_km": 2.03,
+        "offset_diff_sd": 1.479,
+        "local_diff_sd": 0.945
+      },
+      "explained_offset": {
+        "ridge": {
+          "r2_cv": 0.192,
+          "resid_sd": 1.207
+        },
+        "boosting": {
+          "r2_cv": 0.132,
+          "resid_sd": 1.251
+        },
+        "ridge_plus_network": {
+          "r2_cv": 0.326,
+          "resid_sd": 1.103
+        },
+        "ridge_coef_per_sd": {
+          "tree_100": 0.145,
+          "built_100": 0.091,
+          "green_100": -0.192,
+          "bare_100": -0.109,
+          "water_100": 0.066,
+          "tree_500": -0.071,
+          "built_500": 0.082,
+          "green_500": -0.055,
+          "bare_500": 0.033,
+          "water_500": 0.055,
+          "coast_km": -0.357,
+          "above_hrrr_terrain_m": -0.489,
+          "elev_m": 0.221
+        },
+        "n_stations": 402
+      },
+      "note": "sd values in K; local_daily_e is the RMS of e over stations and times"
+    },
+    "04:00 PDT": {
+      "qc": {
+        "stations_bad_height_or_moved": 9,
+        "reports_gross": 508,
+        "stations_under_40_reports": 14,
+        "stations_noisy": 0,
+        "stations_used": 417,
+        "reports_used": 125132
+      },
+      "raw_bias_mean": -0.175,
+      "sd": {
+        "basin_common_c": 0.337,
+        "station_offset_m": 1.261,
+        "local_daily_e": 1.294,
+        "total_r": 1.843
+      },
+      "by_network": {
+        "APRSWXNET": {
+          "n": 101,
+          "offset_mean": 0.064,
+          "offset_sd": 1.042,
+          "local_sd": 1.085
+        },
+        "MesoWest": {
+          "n": 309,
+          "offset_mean": -0.028,
+          "offset_sd": 1.327,
+          "local_sd": 1.355
+        }
+      },
+      "by_distance": {
+        "km": [
+          0.31,
+          0.8,
+          1.63,
+          2.52,
+          4.02,
+          6.56,
+          10.05,
+          16.3,
+          25.04,
+          40.25,
+          61.8
+        ],
+        "pairs": [
+          26,
+          83,
+          301,
+          453,
+          1262,
+          2217,
+          3114,
+          7752,
+          11575,
+          28298,
+          28271
+        ],
+        "offset_semivariance": [
+          0.376,
+          0.485,
+          0.942,
+          1.1,
+          1.36,
+          1.506,
+          1.495,
+          1.473,
+          1.392,
+          1.633,
+          1.677
+        ],
+        "local_error_corr": [
+          0.67,
+          0.655,
+          0.439,
+          0.371,
+          0.29,
+          0.217,
+          0.151,
+          0.071,
+          0.025,
+          -0.019,
+          -0.063
+        ],
+        "offset_variance": 1.59
+      },
+      "local_error_corr_fit": {
+        "c0": 0.537,
+        "length_km": 7.48
+      },
+      "pairs_within_3km": {
+        "n": 863,
+        "median_km": 2.03,
+        "offset_diff_sd": 1.386,
+        "local_diff_sd": 1.524
+      },
+      "explained_offset": {
+        "ridge": {
+          "r2_cv": 0.139,
+          "resid_sd": 1.163
+        },
+        "boosting": {
+          "r2_cv": 0.315,
+          "resid_sd": 1.038
+        },
+        "ridge_plus_network": {
+          "r2_cv": 0.152,
+          "resid_sd": 1.155
+        },
+        "ridge_coef_per_sd": {
+          "tree_100": -0.005,
+          "built_100": -0.023,
+          "green_100": 0.051,
+          "bare_100": -0.041,
+          "water_100": -0.055,
+          "tree_500": 0.058,
+          "built_500": 0.078,
+          "green_500": -0.159,
+          "bare_500": -0.042,
+          "water_500": 0.097,
+          "coast_km": -0.022,
+          "above_hrrr_terrain_m": 0.394,
+          "elev_m": 0.181
+        },
+        "n_stations": 404
+      },
+      "note": "sd values in K; local_daily_e is the RMS of e over stations and times"
+    }
+  }
+}
