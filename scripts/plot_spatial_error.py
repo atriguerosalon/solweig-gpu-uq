@@ -6,7 +6,10 @@
     b  correlation between members' UTCI anomaly maps at 15:00 (tile mean removed) against the correlation length,
        for sigma = 1, 2 and 3 K, the venue
     c  with errors like HRRR's (figures/hrrr/hrrr_errors.json): at each lead the measured size, a share c0 uniform
-       over the tile and the rest local; line: local length 1 km, band: 250 m to 3 km (stations cannot tell)
+       over the tile and the rest local; line: local length 1 km, band: 250 m to 3 km (airports cannot tell)
+    d  the same at 0 and 22 h with the local part's structure measured at ~415 public stations
+       (street_ta_structure.py): 7.8 km length plus a share uncorrelated even at 300 m, drawn at 250 m; point:
+       that share 0.14 (the fit), bar: from none to 0.24 (the closest pairs)
 
 No title or caption in the image; the caption is in docs/FIGURES.md.
 
@@ -55,7 +58,7 @@ def main() -> None:
     res = {t: load(t) for t in ("expo", "pacoima")}
     lengths = [250.0, 1000.0, 3000.0, 10000.0, "uniform"]
     labels = ["250 m", "1 km", "3 km", "10 km", "uniform"]
-    fig, (a, b, cp) = plt.subplots(1, 3, figsize=(16, 4))
+    fig, (a, b, cp, dp) = plt.subplots(1, 4, figsize=(21, 4))
     for tile, ls, mk in (("expo", "-", "o"), ("pacoima", "--", "s")):
         for ev, (lab, c) in EVENTS.items():
             pts = sorted((xpos(r["L_m"], lengths), r[ev]["fss_member"][0]) for r in res[tile]
@@ -104,7 +107,31 @@ def main() -> None:
     cp.set_ylabel("fractions skill score at 2 m")
     cp.set_ylim(0, 1.02)
     cp.legend(frameon=False, fontsize=8, loc="lower left")
-    for ax, letter in ((a, "a"), (b, "b"), (cp, "c")):
+    for ti, (tile, mk) in enumerate((("expo", "o"), ("pacoima", "s"))):
+        for ei, ev in enumerate(("event_top10", "event_cool10", "event_top50")):
+            lab, col = EVENTS[ev]
+            for li, lead in enumerate(("0", "22")):
+                v = {}
+                for tag, key in (("_measured", "fit"), ("_measured_nonugget", "none"), ("_measured_nug24", "pairs")):
+                    f = D / f"spatial_error_fss_{tile}{tag}_lead{lead}.json"
+                    if f.exists():
+                        v[key] = json.loads(f.read_text())["results"][0][ev]["fss_member"][0]
+                if "fit" not in v:
+                    continue
+                x = li + (ti - 0.5) * 0.36 + (ei - 1) * 0.1
+                lo, hi = min(v.values()), max(v.values())
+                dp.plot([x, x], [lo, hi], color=col, lw=1.2)
+                dp.plot(x, v["fit"], mk, color=col, mfc="white" if tile == "pacoima" else col,
+                        label=lab if (tile == "expo" and lead == "0") else None)
+    dp.plot([], [], "ko", label="venue")
+    dp.plot([], [], "ks", mfc="white", label="Pacoima")
+    dp.set_xticks([0, 1], ["0 h", "22 h"])
+    dp.set_xlim(-0.6, 1.6)
+    dp.set_xlabel("HRRR lead time, local error structure measured")
+    dp.set_ylabel("fractions skill score at 2 m")
+    dp.set_ylim(0, 1.02)
+    dp.legend(frameon=False, fontsize=8, loc="lower left", ncol=2)
+    for ax, letter in ((a, "a"), (b, "b"), (cp, "c"), (dp, "d")):
         ax.text(-0.12, 1.02, letter, transform=ax.transAxes, fontsize=13, fontweight="bold", va="bottom")
         ax.grid(alpha=0.3)
     fig.tight_layout()

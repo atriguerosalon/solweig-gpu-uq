@@ -117,7 +117,8 @@ def utci_day(err):
 
 
 def one_case(case):
-    tile, sigma, L, c0, Ls, seed = case
+    tile, sigma, L, c0, Ls, seed = case[:6]
+    c_mid, L_mid = case[6] if len(case) > 6 else (0.0, None)
     from analyse_la_forecast_error import SCALES_PX, fractions, fss
 
     t = time.perf_counter()
@@ -126,8 +127,10 @@ def one_case(case):
     makers = []  # (share of the variance, field maker); L = "uniform" gives one value per tile for its share
     makers.append((c0, (lambda: np.full(shape, rng.standard_normal(), np.float32)) if L == "uniform"
                    else grf_maker(float(L), shape, rng)))
-    if c0 < 1:
-        makers.append((1 - c0, grf_maker(float(Ls), shape, rng)))
+    if c_mid > 0:  # optional middle component (--mid), e.g. the ~8 km local error measured at stations
+        makers.append((c_mid, grf_maker(float(L_mid), shape, rng)))
+    if c0 + c_mid < 1 - 1e-9:
+        makers.append((1 - c0 - c_mid, grf_maker(float(Ls), shape, rng)))
 
     def draw():
         return sum(np.sqrt(w) * mk() for w, mk in makers).astype(np.float32)
@@ -175,7 +178,7 @@ def one_case(case):
             rec[f"useful_scale_m_{kind}"] = ok[0] if ok else None
         return rec
 
-    res = {"tile": tile, "sigma": sigma, "L_m": L, "c0": c0, "Ls_m": Ls, "seed": seed,
+    res = {"tile": tile, "sigma": sigma, "L_m": L, "c0": c0, "Ls_m": Ls, "seed": seed, "c_mid": c_mid, "L_mid_m": L_mid,
            "event_32_4h": skill(ev32), "event_top10": skill(top), "event_cool10": skill(cool), "event_top50": skill(half),
            "anomaly_correlation_mean": float(np.mean([np.corrcoef(anom[k], anom[j])[0, 1] for k in range(len(anom))
                                                       for j in range(len(anom)) if j != k][: 4 * len(anom)])),
@@ -202,6 +205,8 @@ def main() -> None:
     ap.add_argument("--lengths", default="250,1000,3000,10000,uniform", help="correlation lengths in m, or uniform")
     ap.add_argument("--c0", type=float, default=1.0, help="share of the variance with length L (rest: length --short)")
     ap.add_argument("--shorts", default="250", help="the other length(s), m, when c0 < 1 (comma-separated)")
+    ap.add_argument("--mid", default="", help="share,length_m of a middle component (the rest after c0 and it "
+                    "goes to --shorts); e.g. 0.30,7800 from street_ta_structure.py")
     ap.add_argument("--tag", default="")
     ap.add_argument("--procs", type=int, default=6)
     ap.add_argument("--members", type=int, default=20, help="fewer only to check the script")
@@ -215,6 +220,9 @@ def main() -> None:
     if args.c0 >= 1:  # the second length plays no part: one case per (sigma, L), seeds as before
         cases = [(args.tile, s, L, args.c0, shorts[0], 1000 * i + 17 * j + 1) for i, s in enumerate(sigmas)
                  for j, L in enumerate(lengths)]
+    if args.mid:
+        cm, lm = (float(x) for x in args.mid.split(","))
+        cases = [c + ((cm, lm),) for c in cases]
     with Pool(args.procs, initializer=init, initargs=([str(args.runs), str(args.rasters), str(args.met)], MEMBERS)) as pool:
         results = pool.map(one_case, cases, chunksize=1)
     from analyse_la_forecast_error import SCALES_PX
@@ -222,7 +230,7 @@ def main() -> None:
     out = ROOT / "figures" / "spatial_error"
     out.mkdir(parents=True, exist_ok=True)
     rep = {"tile": args.tile, "members": MEMBERS, "rho": RHO, "scales_m": [n * PIXEL_M for n in SCALES_PX],
-           "c0": args.c0, "shorts_m": shorts, "results": results}
+           "c0": args.c0, "shorts_m": shorts, "mid": args.mid, "results": results}
     dst = out / f"spatial_error_fss_{args.tile}{args.tag}.json"
     dst.write_text(json.dumps(rep, indent=1))
     print(f"[spatial] wrote {dst}", flush=True)
