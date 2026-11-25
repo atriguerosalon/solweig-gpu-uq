@@ -1,0 +1,1014 @@
+{
+ "days": 122,
+ "usable_stations": 340,
+ "complete_station_days": 32921,
+ "hours_with_data": 2919,
+ "hottest_tenth_days": [
+  "2022-08-07",
+  "2022-08-31",
+  "2022-09-01",
+  "2022-09-02",
+  "2022-09-03",
+  "2022-09-04",
+  "2022-09-05",
+  "2022-09-06",
+  "2022-09-07",
+  "2022-09-08",
+  "2022-09-09",
+  "2022-09-27"
+ ],
+ "draws": 400,
+ "boot": 500,
+ "protocols": {
+  "P1": {
+   "station_days": 32921,
+   "test_stations": 340,
+   "hourly_coverage_90": 0.893,
+   "hourly_coverage_90_hottest_tenth": 0.831,
+   "base_rate": {
+    "E32": 0.262,
+    "E35": 0.092
+   },
+   "methods": {
+    "A": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.618,
+       "width": 3.63
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.775,
+       "width": 3.69
+      },
+      "MesoWest": {
+       "coverage_90": 0.594,
+       "width": 3.63
+      },
+      "CWOP": {
+       "coverage_90": 0.765,
+       "width": 3.63
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.928,
+       "width": 1.57
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.874,
+       "width": 2.83
+      },
+      "MesoWest": {
+       "coverage_90": 0.932,
+       "width": 1.67
+      },
+      "CWOP": {
+       "coverage_90": 0.905,
+       "width": 1.15
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.971,
+       "width": 0.82
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.885,
+       "width": 2.55
+      },
+      "MesoWest": {
+       "coverage_90": 0.973,
+       "width": 0.87
+      },
+      "CWOP": {
+       "coverage_90": 0.962,
+       "width": 0.58
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0504,
+       "reliability": 0.005,
+       "mean_p": 0.221,
+       "rate": 0.262
+      },
+      "hottest_tenth": {
+       "brier": 0.0424,
+       "reliability": 0.0057,
+       "mean_p": 0.775,
+       "rate": 0.813
+      },
+      "MesoWest": {
+       "brier": 0.0489,
+       "reliability": 0.0041,
+       "mean_p": 0.237,
+       "rate": 0.274
+      },
+      "CWOP": {
+       "brier": 0.0618,
+       "reliability": 0.0133,
+       "mean_p": 0.153,
+       "rate": 0.219
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0252,
+       "reliability": 0.004,
+       "mean_p": 0.067,
+       "rate": 0.092
+      },
+      "hottest_tenth": {
+       "brier": 0.0831,
+       "reliability": 0.0143,
+       "mean_p": 0.451,
+       "rate": 0.54
+      },
+      "MesoWest": {
+       "brier": 0.0246,
+       "reliability": 0.0039,
+       "mean_p": 0.071,
+       "rate": 0.096
+      },
+      "CWOP": {
+       "brier": 0.0305,
+       "reliability": 0.0048,
+       "mean_p": 0.046,
+       "rate": 0.077
+      }
+     }
+    },
+    "B": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.888,
+       "width": 4.22
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.916,
+       "width": 4.22
+      },
+      "MesoWest": {
+       "coverage_90": 0.904,
+       "width": 4.23
+      },
+      "CWOP": {
+       "coverage_90": 0.844,
+       "width": 4.21
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.979,
+       "width": 2.33
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.946,
+       "width": 4.18
+      },
+      "MesoWest": {
+       "coverage_90": 0.984,
+       "width": 2.48
+      },
+      "CWOP": {
+       "coverage_90": 0.952,
+       "width": 1.66
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.992,
+       "width": 1.14
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.967,
+       "width": 3.89
+      },
+      "MesoWest": {
+       "coverage_90": 0.994,
+       "width": 1.22
+      },
+      "CWOP": {
+       "coverage_90": 0.982,
+       "width": 0.79
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0447,
+       "reliability": 0.0007,
+       "mean_p": 0.248,
+       "rate": 0.262
+      },
+      "hottest_tenth": {
+       "brier": 0.0387,
+       "reliability": 0.0021,
+       "mean_p": 0.787,
+       "rate": 0.813
+      },
+      "MesoWest": {
+       "brier": 0.0441,
+       "reliability": 0.0006,
+       "mean_p": 0.266,
+       "rate": 0.274
+      },
+      "CWOP": {
+       "brier": 0.0508,
+       "reliability": 0.0078,
+       "mean_p": 0.172,
+       "rate": 0.219
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0211,
+       "reliability": 0.0013,
+       "mean_p": 0.082,
+       "rate": 0.092
+      },
+      "hottest_tenth": {
+       "brier": 0.0712,
+       "reliability": 0.0053,
+       "mean_p": 0.49,
+       "rate": 0.54
+      },
+      "MesoWest": {
+       "brier": 0.0207,
+       "reliability": 0.0012,
+       "mean_p": 0.088,
+       "rate": 0.096
+      },
+      "CWOP": {
+       "brier": 0.0249,
+       "reliability": 0.003,
+       "mean_p": 0.057,
+       "rate": 0.077
+      }
+     }
+    },
+    "C": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.91,
+       "width": 4.28
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.915,
+       "width": 4.28
+      },
+      "MesoWest": {
+       "coverage_90": 0.937,
+       "width": 4.28
+      },
+      "CWOP": {
+       "coverage_90": 0.805,
+       "width": 4.3
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.943,
+       "width": 2.7
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.905,
+       "width": 3.76
+      },
+      "MesoWest": {
+       "coverage_90": 0.945,
+       "width": 2.75
+      },
+      "CWOP": {
+       "coverage_90": 0.933,
+       "width": 2.52
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.912,
+       "width": 0.68
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.648,
+       "width": 1.02
+      },
+      "MesoWest": {
+       "coverage_90": 0.913,
+       "width": 0.7
+      },
+      "CWOP": {
+       "coverage_90": 0.9,
+       "width": 0.6
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0535,
+       "reliability": 0.0001,
+       "mean_p": 0.26,
+       "rate": 0.262
+      },
+      "hottest_tenth": {
+       "brier": 0.0431,
+       "reliability": 0.0003,
+       "mean_p": 0.813,
+       "rate": 0.813
+      },
+      "MesoWest": {
+       "brier": 0.0542,
+       "reliability": 0.0002,
+       "mean_p": 0.277,
+       "rate": 0.274
+      },
+      "CWOP": {
+       "brier": 0.0532,
+       "reliability": 0.0035,
+       "mean_p": 0.19,
+       "rate": 0.219
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0244,
+       "reliability": 0.0002,
+       "mean_p": 0.09,
+       "rate": 0.092
+      },
+      "hottest_tenth": {
+       "brier": 0.0813,
+       "reliability": 0.0024,
+       "mean_p": 0.539,
+       "rate": 0.54
+      },
+      "MesoWest": {
+       "brier": 0.0242,
+       "reliability": 0.0001,
+       "mean_p": 0.096,
+       "rate": 0.096
+      },
+      "CWOP": {
+       "brier": 0.0275,
+       "reliability": 0.0014,
+       "mean_p": 0.068,
+       "rate": 0.077
+      }
+     }
+    },
+    "C_net": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.893,
+       "width": 4.02
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.904,
+       "width": 3.97
+      },
+      "MesoWest": {
+       "coverage_90": 0.894,
+       "width": 3.64
+      },
+      "CWOP": {
+       "coverage_90": 0.917,
+       "width": 5.73
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.943,
+       "width": 2.7
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.905,
+       "width": 3.76
+      },
+      "MesoWest": {
+       "coverage_90": 0.945,
+       "width": 2.75
+      },
+      "CWOP": {
+       "coverage_90": 0.933,
+       "width": 2.52
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.915,
+       "width": 0.72
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.658,
+       "width": 1.07
+      },
+      "MesoWest": {
+       "coverage_90": 0.913,
+       "width": 0.7
+      },
+      "CWOP": {
+       "coverage_90": 0.92,
+       "width": 0.89
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0535,
+       "reliability": 0.0001,
+       "mean_p": 0.26,
+       "rate": 0.262
+      },
+      "hottest_tenth": {
+       "brier": 0.0431,
+       "reliability": 0.0003,
+       "mean_p": 0.813,
+       "rate": 0.813
+      },
+      "MesoWest": {
+       "brier": 0.0542,
+       "reliability": 0.0002,
+       "mean_p": 0.277,
+       "rate": 0.274
+      },
+      "CWOP": {
+       "brier": 0.0532,
+       "reliability": 0.0035,
+       "mean_p": 0.19,
+       "rate": 0.219
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0244,
+       "reliability": 0.0002,
+       "mean_p": 0.09,
+       "rate": 0.092
+      },
+      "hottest_tenth": {
+       "brier": 0.0813,
+       "reliability": 0.0024,
+       "mean_p": 0.539,
+       "rate": 0.54
+      },
+      "MesoWest": {
+       "brier": 0.0242,
+       "reliability": 0.0001,
+       "mean_p": 0.096,
+       "rate": 0.096
+      },
+      "CWOP": {
+       "brier": 0.0275,
+       "reliability": 0.0014,
+       "mean_p": 0.068,
+       "rate": 0.077
+      }
+     }
+    }
+   },
+   "differences": {
+    "B-A D2 (coverage)": {
+     "diff": 0.0513,
+     "ci95": [
+      0.0443,
+      0.0597
+     ]
+    },
+    "B-A E32 (Brier)": {
+     "diff": -0.0057,
+     "ci95": [
+      -0.0085,
+      -0.003
+     ]
+    },
+    "C-B D2 (coverage)": {
+     "diff": -0.0359,
+     "ci95": [
+      -0.0437,
+      -0.0289
+     ]
+    },
+    "C-B D1 (coverage)": {
+     "diff": 0.0219,
+     "ci95": [
+      0.0109,
+      0.0335
+     ]
+    },
+    "C-B E32 (Brier)": {
+     "diff": 0.0088,
+     "ci95": [
+      0.0069,
+      0.0109
+     ]
+    },
+    "B-A D1 (coverage)": {
+     "diff": 0.2703,
+     "ci95": [
+      0.2291,
+      0.3116
+     ]
+    },
+    "C_net-C D1 (coverage)": {
+     "diff": -0.0168,
+     "ci95": [
+      -0.0286,
+      -0.0046
+     ]
+    }
+   }
+  },
+  "P2": {
+   "station_days": 7998,
+   "test_stations": 319,
+   "hourly_coverage_90": 0.878,
+   "hourly_coverage_90_hottest_tenth": 0.832,
+   "base_rate": {
+    "E32": 0.367,
+    "E35": 0.202
+   },
+   "methods": {
+    "A": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.774,
+       "width": 3.73
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.801,
+       "width": 3.76
+      },
+      "MesoWest": {
+       "coverage_90": 0.772,
+       "width": 3.73
+      },
+      "CWOP": {
+       "coverage_90": 0.825,
+       "width": 3.75
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.93,
+       "width": 1.58
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.87,
+       "width": 2.89
+      },
+      "MesoWest": {
+       "coverage_90": 0.935,
+       "width": 1.62
+      },
+      "CWOP": {
+       "coverage_90": 0.904,
+       "width": 1.42
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.951,
+       "width": 1.11
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.878,
+       "width": 2.59
+      },
+      "MesoWest": {
+       "coverage_90": 0.951,
+       "width": 1.15
+      },
+      "CWOP": {
+       "coverage_90": 0.95,
+       "width": 0.95
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0446,
+       "reliability": 0.0102,
+       "mean_p": 0.316,
+       "rate": 0.367
+      },
+      "hottest_tenth": {
+       "brier": 0.0471,
+       "reliability": 0.0086,
+       "mean_p": 0.769,
+       "rate": 0.819
+      },
+      "MesoWest": {
+       "brier": 0.0437,
+       "reliability": 0.0104,
+       "mean_p": 0.329,
+       "rate": 0.379
+      },
+      "CWOP": {
+       "brier": 0.0531,
+       "reliability": 0.0106,
+       "mean_p": 0.264,
+       "rate": 0.32
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0396,
+       "reliability": 0.0086,
+       "mean_p": 0.155,
+       "rate": 0.202
+      },
+      "hottest_tenth": {
+       "brier": 0.0909,
+       "reliability": 0.0198,
+       "mean_p": 0.433,
+       "rate": 0.537
+      },
+      "MesoWest": {
+       "brier": 0.0399,
+       "reliability": 0.0099,
+       "mean_p": 0.162,
+       "rate": 0.211
+      },
+      "CWOP": {
+       "brier": 0.041,
+       "reliability": 0.0034,
+       "mean_p": 0.127,
+       "rate": 0.16
+      }
+     }
+    },
+    "B": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.925,
+       "width": 4.29
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.921,
+       "width": 4.29
+      },
+      "MesoWest": {
+       "coverage_90": 0.948,
+       "width": 4.29
+      },
+      "CWOP": {
+       "coverage_90": 0.824,
+       "width": 4.28
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.973,
+       "width": 2.33
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.943,
+       "width": 4.34
+      },
+      "MesoWest": {
+       "coverage_90": 0.976,
+       "width": 2.4
+      },
+      "CWOP": {
+       "coverage_90": 0.952,
+       "width": 2.04
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.985,
+       "width": 1.65
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.964,
+       "width": 3.98
+      },
+      "MesoWest": {
+       "coverage_90": 0.985,
+       "width": 1.71
+      },
+      "CWOP": {
+       "coverage_90": 0.979,
+       "width": 1.38
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0362,
+       "reliability": 0.0047,
+       "mean_p": 0.335,
+       "rate": 0.367
+      },
+      "hottest_tenth": {
+       "brier": 0.0412,
+       "reliability": 0.0038,
+       "mean_p": 0.784,
+       "rate": 0.819
+      },
+      "MesoWest": {
+       "brier": 0.0352,
+       "reliability": 0.0047,
+       "mean_p": 0.348,
+       "rate": 0.379
+      },
+      "CWOP": {
+       "brier": 0.0446,
+       "reliability": 0.0073,
+       "mean_p": 0.281,
+       "rate": 0.32
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.0321,
+       "reliability": 0.0041,
+       "mean_p": 0.173,
+       "rate": 0.202
+      },
+      "hottest_tenth": {
+       "brier": 0.0753,
+       "reliability": 0.0084,
+       "mean_p": 0.473,
+       "rate": 0.537
+      },
+      "MesoWest": {
+       "brier": 0.032,
+       "reliability": 0.0047,
+       "mean_p": 0.18,
+       "rate": 0.211
+      },
+      "CWOP": {
+       "brier": 0.0356,
+       "reliability": 0.0034,
+       "mean_p": 0.142,
+       "rate": 0.16
+      }
+     }
+    },
+    "C": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.929,
+       "width": 4.35
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.917,
+       "width": 4.35
+      },
+      "MesoWest": {
+       "coverage_90": 0.958,
+       "width": 4.35
+      },
+      "CWOP": {
+       "coverage_90": 0.79,
+       "width": 4.37
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.945,
+       "width": 2.83
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.9,
+       "width": 3.77
+      },
+      "MesoWest": {
+       "coverage_90": 0.947,
+       "width": 2.86
+      },
+      "CWOP": {
+       "coverage_90": 0.937,
+       "width": 2.73
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.833,
+       "width": 0.49
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.58,
+       "width": 0.67
+      },
+      "MesoWest": {
+       "coverage_90": 0.834,
+       "width": 0.53
+      },
+      "CWOP": {
+       "coverage_90": 0.809,
+       "width": 0.32
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0381,
+       "reliability": 0.0007,
+       "mean_p": 0.353,
+       "rate": 0.367
+      },
+      "hottest_tenth": {
+       "brier": 0.0447,
+       "reliability": 0.0005,
+       "mean_p": 0.816,
+       "rate": 0.819
+      },
+      "MesoWest": {
+       "brier": 0.0371,
+       "reliability": 0.0009,
+       "mean_p": 0.365,
+       "rate": 0.379
+      },
+      "CWOP": {
+       "brier": 0.0468,
+       "reliability": 0.0015,
+       "mean_p": 0.307,
+       "rate": 0.32
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.037,
+       "reliability": 0.001,
+       "mean_p": 0.188,
+       "rate": 0.202
+      },
+      "hottest_tenth": {
+       "brier": 0.0886,
+       "reliability": 0.0016,
+       "mean_p": 0.514,
+       "rate": 0.537
+      },
+      "MesoWest": {
+       "brier": 0.0356,
+       "reliability": 0.0015,
+       "mean_p": 0.194,
+       "rate": 0.211
+      },
+      "CWOP": {
+       "brier": 0.0492,
+       "reliability": 0.0037,
+       "mean_p": 0.165,
+       "rate": 0.16
+      }
+     }
+    },
+    "C_net": {
+     "D1": {
+      "all": {
+       "coverage_90": 0.928,
+       "width": 4.06
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.91,
+       "width": 4.03
+      },
+      "MesoWest": {
+       "coverage_90": 0.932,
+       "width": 3.73
+      },
+      "CWOP": {
+       "coverage_90": 0.929,
+       "width": 5.81
+      }
+     },
+     "D2": {
+      "all": {
+       "coverage_90": 0.941,
+       "width": 2.78
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.894,
+       "width": 3.72
+      },
+      "MesoWest": {
+       "coverage_90": 0.947,
+       "width": 2.86
+      },
+      "CWOP": {
+       "coverage_90": 0.909,
+       "width": 2.42
+      }
+     },
+     "D2_35": {
+      "all": {
+       "coverage_90": 0.837,
+       "width": 0.54
+      },
+      "hottest_tenth": {
+       "coverage_90": 0.589,
+       "width": 0.72
+      },
+      "MesoWest": {
+       "coverage_90": 0.834,
+       "width": 0.53
+      },
+      "CWOP": {
+       "coverage_90": 0.838,
+       "width": 0.64
+      }
+     },
+     "E32": {
+      "all": {
+       "brier": 0.0381,
+       "reliability": 0.0007,
+       "mean_p": 0.353,
+       "rate": 0.367
+      },
+      "hottest_tenth": {
+       "brier": 0.0447,
+       "reliability": 0.0005,
+       "mean_p": 0.816,
+       "rate": 0.819
+      },
+      "MesoWest": {
+       "brier": 0.0371,
+       "reliability": 0.0009,
+       "mean_p": 0.365,
+       "rate": 0.379
+      },
+      "CWOP": {
+       "brier": 0.0468,
+       "reliability": 0.0015,
+       "mean_p": 0.307,
+       "rate": 0.32
+      }
+     },
+     "E35": {
+      "all": {
+       "brier": 0.037,
+       "reliability": 0.001,
+       "mean_p": 0.188,
+       "rate": 0.202
+      },
+      "hottest_tenth": {
+       "brier": 0.0886,
+       "reliability": 0.0016,
+       "mean_p": 0.514,
+       "rate": 0.537
+      },
+      "MesoWest": {
+       "brier": 0.0356,
+       "reliability": 0.0015,
+       "mean_p": 0.194,
+       "rate": 0.211
+      },
+      "CWOP": {
+       "brier": 0.0492,
+       "reliability": 0.0037,
+       "mean_p": 0.165,
+       "rate": 0.16
+      }
+     }
+    }
+   },
+   "differences": {
+    "B-A D2 (coverage)": {
+     "diff": 0.0429,
+     "ci95": [
+      0.0374,
+      0.0486
+     ]
+    },
+    "B-A E32 (Brier)": {
+     "diff": -0.0084,
+     "ci95": [
+      -0.0103,
+      -0.0065
+     ]
+    },
+    "C-B D2 (coverage)": {
+     "diff": -0.028,
+     "ci95": [
+      -0.0332,
+      -0.0226
+     ]
+    },
+    "C-B D1 (coverage)": {
+     "diff": 0.0043,
+     "ci95": [
+      -0.0033,
+      0.0128
+     ]
+    },
+    "C-B E32 (Brier)": {
+     "diff": 0.0019,
+     "ci95": [
+      -0.0003,
+      0.0044
+     ]
+    },
+    "B-A D1 (coverage)": {
+     "diff": 0.1508,
+     "ci95": [
+      0.1141,
+      0.1906
+     ]
+    },
+    "C_net-C D1 (coverage)": {
+     "diff": -0.0014,
+     "ci95": [
+      -0.013,
+      0.0116
+     ]
+    }
+   }
+  }
+ }
+}

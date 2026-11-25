@@ -150,6 +150,19 @@ A first air-temperature layer on top of HRRR, scored on stations it never saw (5
 
 Data: `figures/street_ta/street_ta_baseline.json` (no height correction: `street_ta_baseline_nolapse.json`). Script: `scripts/street_ta_structure.py`.
 
+### figures/street_ta/decision_calibration.png
+
+![](../figures/street_ta/decision_calibration.png)
+
+Calibrate the hours or the decision? People act on numbers computed from a whole day of air temperature (the daily maximum, hours above a threshold, four hours or more above 32 °C), which no station reports directly. Hourly air temperature at stations held out in 5 km blocks, June to September 2022, about 340 public stations and 32,921 complete station-days, with the forecast layer of street_ta_baseline.png (HRRR 1 h forecast, mean bias, offsets from the surroundings). Three ways to get 90% intervals and event probabilities from the same predictions: **A** each hour calibrated and the hours drawn as if independent; **B** whole-day error trajectories drawn from the calibration stations; **C** each decision quantity calibrated directly (split conformal, isotonic regression for the event; light: per station network). Two tests: stations held out over the whole summer, and calibration on June to August with testing on September, which holds the 31 August to 9 September 2022 heatwave. The design and hypotheses were written down before the full run.
+
+**a** Daily maximum: A covers 0.62 (independent hours push the maximum upward), B 0.89, C 0.91; in September 0.77, 0.93 and 0.93.
+**b** Hours above 32 °C: all methods cover 0.93 or more overall; on the hottest tenth of days A drops to 0.87.
+**c** Hours above 35 °C: C's single quantile is set by the many days with none, so on the hottest tenth of days it covers 0.65 (0.58 in September), while B stays at 0.97 (counts drawn from whole days are conservative).
+**d** Brier score of the event "4 h or more above 32 °C" (lower is better): A 0.050, B 0.045, C 0.054 over the summer; A 0.045, B 0.036, C 0.038 in September.
+
+The hourly intervals themselves cover 0.89 overall and 0.83 on the hottest tenth of days. Limits: air temperature only, one summer, 1 h forecasts, station scale; B assumes whole-day errors are exchangeable between stations, which 5 km blocks make only approximate. Data: `figures/street_ta/decision_calibration.json`. Script: `scripts/decision_calibration.py`.
+
 ### figures/spatial_error/spatial_error_fss.png
 
 ![](../figures/spatial_error/spatial_error_fss.png)
